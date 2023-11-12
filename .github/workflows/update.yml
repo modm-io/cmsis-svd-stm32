@@ -1,0 +1,34 @@
+name: Update
+
+on:
+  schedule:
+    - cron:  '30 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Configure Git
+        run: |
+          git config --global user.email "bot@modm.io"
+          git config --global user.name "modm update bot"
+
+      - name: Run update.py script
+        run: |
+          python3 update.py -d -c
+      - name: Git push
+        run: |
+          git push origin main
+
+      - name: Switch to dummy branch
+        run: |
+          git checkout -b keep-alive
+      - name: Keep Alive
+        if: always()
+        uses: gautamkrishnar/keepalive-workflow@v1
+        with:
+          committer_username: modm update bot
+          committer_email: bot@modm.io
