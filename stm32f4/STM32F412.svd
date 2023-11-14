@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2022 STMicroelectronics.
+Copyright (c) 2023 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -18,7 +18,7 @@ Copyright (c) 2022 STMicroelectronics.
 -->
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
    <name>STM32F412</name>
-   <version>1.5</version>
+   <version>1.6</version>
    <description>STM32F412</description>
    <cpu>
     <name>CM4</name>

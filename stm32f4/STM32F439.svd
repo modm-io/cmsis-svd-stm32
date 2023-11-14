@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2022 STMicroelectronics.
+Copyright (c) 2023 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2022 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F439</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <description>STM32F439</description>
   <cpu>
     <name>CM4</name>
@@ -4962,6 +4962,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+			<field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
             <field>
               <name>ASYNCWAIT</name>
               <description>ASYNCWAIT</description>
@@ -4990,6 +4996,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>WAITCFG</name>
               <description>WAITCFG</description>
               <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>WRAPMOD</name>
+              <description>WRAPMOD</description>
+              <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -5106,7 +5118,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+			<field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
             <field>
+
+
+
+
+
+
               <name>ASYNCWAIT</name>
               <description>ASYNCWAIT</description>
               <bitOffset>15</bitOffset>
@@ -5256,7 +5280,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+			<field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
             <field>
+
+
+
+
+
+
               <name>ASYNCWAIT</name>
               <description>ASYNCWAIT</description>
               <bitOffset>15</bitOffset>
@@ -5406,7 +5442,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+			<field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
             <field>
+
+
+
+
+
+
               <name>ASYNCWAIT</name>
               <description>ASYNCWAIT</description>
               <bitOffset>15</bitOffset>
@@ -6202,15 +6250,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -6250,15 +6292,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -6286,7 +6322,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <displayName>BWTR3</displayName>
           <description>SRAM/NOR-Flash write timing registers
           3</description>
-          <addressOffset>0x114</addressOffset>
+          <alternateRegister>BWTR1</alternateRegister>
+          <addressOffset>0x104</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0FFFFFFF</resetValue>
@@ -6298,15 +6335,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -6334,7 +6365,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <displayName>BWTR4</displayName>
           <description>SRAM/NOR-Flash write timing registers
           4</description>
-          <addressOffset>0x11C</addressOffset>
+          <alternateRegister>BWTR2</alternateRegister>
+          <addressOffset>0x10C</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0FFFFFFF</resetValue>
@@ -6346,15 +6378,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -6490,21 +6516,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SDCLK</name>
+              <name>CLK</name>
               <description>SDRAM clock configuration</description>
               <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>RBURST</name>
-              <description>Burst read</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RPIPE</name>
-              <description>Read pipe</description>
-              <bitOffset>13</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
           </fields>
@@ -11060,7 +11074,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SPI4ENR</name>
+              <name>SPI4EN</name>
               <description>SPI4 clock enable</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
@@ -11100,6 +11114,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>SPI6ENR</name>
               <description>SPI6 clock enable</description>
               <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SAI1EN</name>
+              <description>SAI1 clock enable</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>LTDCEN</name>
+              <description>LTDC clock enable</description>
+              <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -15943,11 +15969,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>SPI1 global interrupt</description>
         <value>35</value>
       </interrupt>
-      <interrupt>
-        <name>SPI1</name>
-        <description>SPI1 global interrupt</description>
-        <value>35</value>
-      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -16345,20 +16366,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>SPI2 global interrupt</description>
         <value>36</value>
       </interrupt>
-      <interrupt>
-        <name>SPI2</name>
-        <description>SPI2 global interrupt</description>
-        <value>36</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="SPI1">
       <name>SPI3</name>
       <baseAddress>0x40003C00</baseAddress>
-      <interrupt>
-        <name>SPI3</name>
-        <description>SPI3 global interrupt</description>
-        <value>51</value>
-      </interrupt>
       <interrupt>
         <name>SPI3</name>
         <description>SPI3 global interrupt</description>
@@ -16381,11 +16392,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>SPI 4 global interrupt</description>
         <value>84</value>
       </interrupt>
-      <interrupt>
-        <name>SPI4</name>
-        <description>SPI 4 global interrupt</description>
-        <value>84</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="SPI1">
       <name>SPI5</name>
@@ -16395,20 +16401,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>SPI 5 global interrupt</description>
         <value>85</value>
       </interrupt>
-      <interrupt>
-        <name>SPI5</name>
-        <description>SPI 5 global interrupt</description>
-        <value>85</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="SPI1">
       <name>SPI6</name>
       <baseAddress>0x40015400</baseAddress>
-      <interrupt>
-        <name>SPI6</name>
-        <description>SPI 6 global interrupt</description>
-        <value>86</value>
-      </interrupt>
       <interrupt>
         <name>SPI6</name>
         <description>SPI 6 global interrupt</description>
@@ -16426,11 +16422,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>SDIO</name>
-        <description>SDIO global interrupt</description>
-        <value>49</value>
-      </interrupt>
       <interrupt>
         <name>SDIO</name>
         <description>SDIO global interrupt</description>
@@ -17280,7 +17271,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <baseAddress>0x40012000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x400</size>
+        <size>0x51</size>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
@@ -18401,20 +18392,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>USART1 global interrupt</description>
         <value>37</value>
       </interrupt>
-      <interrupt>
-        <name>USART1</name>
-        <description>USART1 global interrupt</description>
-        <value>37</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART6">
       <name>USART2</name>
       <baseAddress>0x40004400</baseAddress>
-      <interrupt>
-        <name>USART2</name>
-        <description>USART2 global interrupt</description>
-        <value>38</value>
-      </interrupt>
       <interrupt>
         <name>USART2</name>
         <description>USART2 global interrupt</description>
@@ -18429,20 +18410,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>USART3 global interrupt</description>
         <value>39</value>
       </interrupt>
-      <interrupt>
-        <name>USART3</name>
-        <description>USART3 global interrupt</description>
-        <value>39</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART6">
       <name>UART7</name>
       <baseAddress>0x40007800</baseAddress>
-      <interrupt>
-        <name>UART7</name>
-        <description>UART 7 global interrupt</description>
-        <value>82</value>
-      </interrupt>
       <interrupt>
         <name>UART7</name>
         <description>UART 7 global interrupt</description>
@@ -18882,36 +18853,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
       <interrupt>
         <name>PVD</name>
         <description>PVD through EXTI line detection
@@ -26500,7 +26441,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <baseAddress>0x40028000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x400</size>
+        <size>0x61</size>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
@@ -26635,67 +26576,67 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PM</name>
-              <description>no description available</description>
+              <description>PM</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>HU</name>
-              <description>no description available</description>
+              <description>HU</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>HM</name>
-              <description>no description available</description>
+              <description>HM</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DAIF</name>
-              <description>no description available</description>
+              <description>DAIF</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RAM</name>
-              <description>no description available</description>
+              <description>RAM</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BFD</name>
-              <description>no description available</description>
+              <description>BFD</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PCF</name>
-              <description>no description available</description>
+              <description>PCF</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SAIF</name>
-              <description>no description available</description>
+              <description>SAIF</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SAF</name>
-              <description>no description available</description>
+              <description>SAF</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>HPF</name>
-              <description>no description available</description>
+              <description>HPF</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RA</name>
-              <description>no description available</description>
+              <description>RA</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -26713,7 +26654,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HTH</name>
-              <description>no description available</description>
+              <description>HTH</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -26731,7 +26672,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HTL</name>
-              <description>no description available</description>
+              <description>HTL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -26749,31 +26690,31 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MB</name>
-              <description>no description available</description>
+              <description>MB</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MW</name>
-              <description>no description available</description>
+              <description>MW</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CR</name>
-              <description>no description available</description>
+              <description>CR</description>
               <bitOffset>2</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>MR</name>
-              <description>no description available</description>
+              <description>MR</description>
               <bitOffset>6</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>PA</name>
-              <description>no description available</description>
+              <description>PA</description>
               <bitOffset>11</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
@@ -26790,7 +26731,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TD</name>
-              <description>no description available</description>
+              <description>TD</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
@@ -26808,43 +26749,43 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>FCB</name>
-              <description>no description available</description>
+              <description>FCB</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TFCE</name>
-              <description>no description available</description>
+              <description>TFCE</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RFCE</name>
-              <description>no description available</description>
+              <description>RFCE</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>UPFD</name>
-              <description>no description available</description>
+              <description>UPFD</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PLT</name>
-              <description>no description available</description>
+              <description>PLT</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>ZQPD</name>
-              <description>no description available</description>
+              <description>ZQPD</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PT</name>
-              <description>no description available</description>
+              <description>PT</description>
               <bitOffset>16</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
@@ -26861,13 +26802,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>VLANTI</name>
-              <description>no description available</description>
+              <description>VLANTI</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>VLANTC</name>
-              <description>no description available</description>
+              <description>VLANTC</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -26885,43 +26826,43 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PD</name>
-              <description>no description available</description>
+              <description>PD</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MPE</name>
-              <description>no description available</description>
+              <description>MPE</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WFE</name>
-              <description>no description available</description>
+              <description>WFE</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MPR</name>
-              <description>no description available</description>
+              <description>MPR</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WFR</name>
-              <description>no description available</description>
+              <description>WFR</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GU</name>
-              <description>no description available</description>
+              <description>GU</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WFFRPR</name>
-              <description>no description available</description>
+              <description>WFFRPR</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -26985,35 +26926,35 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PMTS</name>
-              <description>no description available</description>
+              <description>PMTS</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCS</name>
-              <description>no description available</description>
+              <description>MMCS</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCRS</name>
-              <description>no description available</description>
+              <description>MMCRS</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCTS</name>
-              <description>no description available</description>
+              <description>MMCTS</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>TSTS</name>
-              <description>no description available</description>
+              <description>TSTS</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -27032,13 +26973,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PMTIM</name>
-              <description>no description available</description>
+              <description>PMTIM</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSTIM</name>
-              <description>no description available</description>
+              <description>TSTIM</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27099,25 +27040,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA1H</name>
-              <description>no description available</description>
+              <description>MACA1H</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>MBC</name>
-              <description>no description available</description>
+              <description>MBC</description>
               <bitOffset>24</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>SA</name>
-              <description>no description available</description>
+              <description>SA</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AE</name>
-              <description>no description available</description>
+              <description>AE</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27135,7 +27076,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA1LR</name>
-              <description>no description available</description>
+              <description>MACA1LR</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27153,25 +27094,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MAC2AH</name>
-              <description>no description available</description>
+              <description>MAC2AH</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>MBC</name>
-              <description>no description available</description>
+              <description>MBC</description>
               <bitOffset>24</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>SA</name>
-              <description>no description available</description>
+              <description>SA</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AE</name>
-              <description>no description available</description>
+              <description>AE</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27189,7 +27130,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA2L</name>
-              <description>no description available</description>
+              <description>MACA2L</description>
               <bitOffset>0</bitOffset>
               <bitWidth>31</bitWidth>
             </field>
@@ -27207,25 +27148,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA3H</name>
-              <description>no description available</description>
+              <description>MACA3H</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>MBC</name>
-              <description>no description available</description>
+              <description>MBC</description>
               <bitOffset>24</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>SA</name>
-              <description>no description available</description>
+              <description>SA</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AE</name>
-              <description>no description available</description>
+              <description>AE</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27243,7 +27184,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MBCA3L</name>
-              <description>no description available</description>
+              <description>MBCA3L</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27273,37 +27214,37 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>CR</name>
-              <description>no description available</description>
+              <description>CR</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CSR</name>
-              <description>no description available</description>
+              <description>CSR</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ROR</name>
-              <description>no description available</description>
+              <description>ROR</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MCF</name>
-              <description>no description available</description>
+              <description>MCF</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MCP</name>
-              <description>no description available</description>
+              <description>MCP</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MCFHP</name>
-              <description>no description available</description>
+              <description>MCFHP</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27321,19 +27262,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFCES</name>
-              <description>no description available</description>
+              <description>RFCES</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RFAES</name>
-              <description>no description available</description>
+              <description>RFAES</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RGUFS</name>
-              <description>no description available</description>
+              <description>RGUFS</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27351,19 +27292,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFSCS</name>
-              <description>no description available</description>
+              <description>TGFSCS</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFMSCS</name>
-              <description>no description available</description>
+              <description>TGFMSCS</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFS</name>
-              <description>no description available</description>
+              <description>TGFS</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27381,19 +27322,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFCEM</name>
-              <description>no description available</description>
+              <description>RFCEM</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RFAEM</name>
-              <description>no description available</description>
+              <description>RFAEM</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RGUFM</name>
-              <description>no description available</description>
+              <description>RGUFM</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27411,19 +27352,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFSCM</name>
-              <description>no description available</description>
+              <description>TGFSCM</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFMSCM</name>
-              <description>no description available</description>
+              <description>TGFMSCM</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFM</name>
-              <description>no description available</description>
+              <description>TGFM</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27441,7 +27382,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFSCC</name>
-              <description>no description available</description>
+              <description>TGFSCC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27459,7 +27400,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFMSCC</name>
-              <description>no description available</description>
+              <description>TGFMSCC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27495,7 +27436,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFCFC</name>
-              <description>no description available</description>
+              <description>RFCFC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27513,7 +27454,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFAEC</name>
-              <description>no description available</description>
+              <description>RFAEC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27531,7 +27472,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RGUFC</name>
-              <description>no description available</description>
+              <description>RGUFC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27562,97 +27503,97 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSE</name>
-              <description>no description available</description>
+              <description>TSE</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSFCU</name>
-              <description>no description available</description>
+              <description>TSFCU</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSPTPPSV2E</name>
-              <description>no description available</description>
+              <description>TSPTPPSV2E</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSPTPOEFE</name>
-              <description>no description available</description>
+              <description>TSSPTPOEFE</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSIPV6FE</name>
-              <description>no description available</description>
+              <description>TSSIPV6FE</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSIPV4FE</name>
-              <description>no description available</description>
+              <description>TSSIPV4FE</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSEME</name>
-              <description>no description available</description>
+              <description>TSSEME</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSMRME</name>
-              <description>no description available</description>
+              <description>TSSMRME</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSCNT</name>
-              <description>no description available</description>
+              <description>TSCNT</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>TSPFFMAE</name>
-              <description>no description available</description>
+              <description>TSPFFMAE</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSTI</name>
-              <description>no description available</description>
+              <description>TSSTI</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSTU</name>
-              <description>no description available</description>
+              <description>TSSTU</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSITE</name>
-              <description>no description available</description>
+              <description>TSITE</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TTSARU</name>
-              <description>no description available</description>
+              <description>TTSARU</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSARFE</name>
-              <description>no description available</description>
+              <description>TSSARFE</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSSR</name>
-              <description>no description available</description>
+              <description>TSSSR</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27670,7 +27611,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STSSI</name>
-              <description>no description available</description>
+              <description>STSSI</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
             </field>
@@ -27688,7 +27629,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STS</name>
-              <description>no description available</description>
+              <description>STS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27706,13 +27647,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STSS</name>
-              <description>no description available</description>
+              <description>STSS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>31</bitWidth>
             </field>
             <field>
               <name>STPNS</name>
-              <description>no description available</description>
+              <description>STPNS</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27730,7 +27671,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSUS</name>
-              <description>no description available</description>
+              <description>TSUS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27748,13 +27689,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSUSS</name>
-              <description>no description available</description>
+              <description>TSUSS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>31</bitWidth>
             </field>
             <field>
               <name>TSUPNS</name>
-              <description>no description available</description>
+              <description>TSUPNS</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27772,7 +27713,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSA</name>
-              <description>no description available</description>
+              <description>TSA</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27808,7 +27749,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TTSL</name>
-              <description>no description available</description>
+              <description>TTSL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27826,13 +27767,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSSO</name>
-              <description>no description available</description>
+              <description>TSSO</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSTTR</name>
-              <description>no description available</description>
+              <description>TSTTR</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27886,73 +27827,73 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>SR</name>
-              <description>no description available</description>
+              <description>SR</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DA</name>
-              <description>no description available</description>
+              <description>DA</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DSL</name>
-              <description>no description available</description>
+              <description>DSL</description>
               <bitOffset>2</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>EDFE</name>
-              <description>no description available</description>
+              <description>EDFE</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PBL</name>
-              <description>no description available</description>
+              <description>PBL</description>
               <bitOffset>8</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>RTPR</name>
-              <description>no description available</description>
+              <description>RTPR</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>FB</name>
-              <description>no description available</description>
+              <description>FB</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RDP</name>
-              <description>no description available</description>
+              <description>RDP</description>
               <bitOffset>17</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>USP</name>
-              <description>no description available</description>
+              <description>USP</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FPM</name>
-              <description>no description available</description>
+              <description>FPM</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AAB</name>
-              <description>no description available</description>
+              <description>AAB</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MB</name>
-              <description>no description available</description>
+              <description>MB</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27970,7 +27911,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TPD</name>
-              <description>no description available</description>
+              <description>TPD</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28006,7 +27947,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>SRL</name>
-              <description>no description available</description>
+              <description>SRL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28024,7 +27965,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STL</name>
-              <description>no description available</description>
+              <description>STL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28040,147 +27981,147 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TS</name>
-              <description>no description available</description>
+              <description>TS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TPSS</name>
-              <description>no description available</description>
+              <description>TPSS</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TBUS</name>
-              <description>no description available</description>
+              <description>TBUS</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TJTS</name>
-              <description>no description available</description>
+              <description>TJTS</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>ROS</name>
-              <description>no description available</description>
+              <description>ROS</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TUS</name>
-              <description>no description available</description>
+              <description>TUS</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RS</name>
-              <description>no description available</description>
+              <description>RS</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RBUS</name>
-              <description>no description available</description>
+              <description>RBUS</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RPSS</name>
-              <description>no description available</description>
+              <description>RPSS</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>PWTS</name>
-              <description>no description available</description>
+              <description>PWTS</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>ETS</name>
-              <description>no description available</description>
+              <description>ETS</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>FBES</name>
-              <description>no description available</description>
+              <description>FBES</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>ERS</name>
-              <description>no description available</description>
+              <description>ERS</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>AIS</name>
-              <description>no description available</description>
+              <description>AIS</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>NIS</name>
-              <description>no description available</description>
+              <description>NIS</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RPS</name>
-              <description>no description available</description>
+              <description>RPS</description>
               <bitOffset>17</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>TPS</name>
-              <description>no description available</description>
+              <description>TPS</description>
               <bitOffset>20</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>EBS</name>
-              <description>no description available</description>
+              <description>EBS</description>
               <bitOffset>23</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCS</name>
-              <description>no description available</description>
+              <description>MMCS</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>PMTS</name>
-              <description>no description available</description>
+              <description>PMTS</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>TSTS</name>
-              <description>no description available</description>
+              <description>TSTS</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -28283,91 +28224,91 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TIE</name>
-              <description>no description available</description>
+              <description>TIE</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TPSIE</name>
-              <description>no description available</description>
+              <description>TPSIE</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TBUIE</name>
-              <description>no description available</description>
+              <description>TBUIE</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TJTIE</name>
-              <description>no description available</description>
+              <description>TJTIE</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ROIE</name>
-              <description>no description available</description>
+              <description>ROIE</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TUIE</name>
-              <description>no description available</description>
+              <description>TUIE</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RIE</name>
-              <description>no description available</description>
+              <description>RIE</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RBUIE</name>
-              <description>no description available</description>
+              <description>RBUIE</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RPSIE</name>
-              <description>no description available</description>
+              <description>RPSIE</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RWTIE</name>
-              <description>no description available</description>
+              <description>RWTIE</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ETIE</name>
-              <description>no description available</description>
+              <description>ETIE</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBEIE</name>
-              <description>no description available</description>
+              <description>FBEIE</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ERIE</name>
-              <description>no description available</description>
+              <description>ERIE</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AISE</name>
-              <description>no description available</description>
+              <description>AISE</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>NISE</name>
-              <description>no description available</description>
+              <description>NISE</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -28385,25 +28326,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MFC</name>
-              <description>no description available</description>
+              <description>MFC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>OMFC</name>
-              <description>no description available</description>
+              <description>OMFC</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MFA</name>
-              <description>no description available</description>
+              <description>MFA</description>
               <bitOffset>17</bitOffset>
               <bitWidth>11</bitWidth>
             </field>
             <field>
               <name>OFOC</name>
-              <description>no description available</description>
+              <description>OFOC</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -28475,7 +28416,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HTBAP</name>
-              <description>no description available</description>
+              <description>HTBAP</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28493,7 +28434,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HRBAP</name>
-              <description>no description available</description>
+              <description>HRBAP</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -47460,6 +47401,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
+              <name>BFB2</name>
+              <description>Dual-bank Boot option byte</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
               <name>WDG_SW</name>
               <description>WDG_SW User option bytes</description>
               <bitOffset>5</bitOffset>
@@ -57693,16 +57640,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>LTDC global error interrupt</description>
         <value>89</value>
       </interrupt>
-      <interrupt>
-        <name>LCD_TFT</name>
-        <description>LTDC global interrupt</description>
-        <value>88</value>
-      </interrupt>
-      <interrupt>
-        <name>LCD_TFT_1</name>
-        <description>LTDC global error interrupt</description>
-        <value>89</value>
-      </interrupt>
       <registers>
         <register>
           <name>SSCR</name>
@@ -57719,7 +57656,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Horizontal Synchronization Width (in
               units of pixel clock period)</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>VSH</name>
@@ -57745,7 +57682,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Accumulated Horizontal back porch (in
               units of pixel clock period)</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>AVBP</name>
@@ -57767,10 +57704,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>AAV</name>
-              <description>AAV</description>
+              <name>AAW</name>
+              <description>AAW</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>AAH</name>
@@ -57796,7 +57733,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Total Width (in units of pixel clock
               period)</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>TOTALH</name>
@@ -58749,11 +58686,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>SAI1 global interrupt</description>
         <value>87</value>
       </interrupt>
-      <interrupt>
-        <name>SAI1</name>
-        <description>SAI1 global interrupt</description>
-        <value>87</value>
-      </interrupt>
       <registers>
         <register>
           <name>BCR1</name>
@@ -59600,11 +59532,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>DMA2D global interrupt</description>
         <value>90</value>
       </interrupt>
-      <interrupt>
-        <name>DMA2D</name>
-        <description>DMA2D global interrupt</description>
-        <value>90</value>
-      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -60287,36 +60214,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>72</value>
       </interrupt>
       <interrupt>
-        <name>I2C3_EV</name>
-        <description>I2C3 event interrupt</description>
-        <value>72</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_ER</name>
-        <description>I2C3 error interrupt</description>
-        <value>73</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_ER</name>
-        <description>I2C3 error interrupt</description>
-        <value>73</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_EV</name>
-        <description>I2C3 event interrupt</description>
-        <value>72</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_EV</name>
-        <description>I2C3 event interrupt</description>
-        <value>72</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_ER</name>
-        <description>I2C3 error interrupt</description>
-        <value>73</value>
-      </interrupt>
-      <interrupt>
         <name>I2C3_ER</name>
         <description>I2C3 error interrupt</description>
         <value>73</value>
@@ -60802,36 +60699,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>33</value>
       </interrupt>
       <interrupt>
-        <name>I2C2_EV</name>
-        <description>I2C2 event interrupt</description>
-        <value>33</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_ER</name>
-        <description>I2C2 error interrupt</description>
-        <value>34</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_ER</name>
-        <description>I2C2 error interrupt</description>
-        <value>34</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_EV</name>
-        <description>I2C2 event interrupt</description>
-        <value>33</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_EV</name>
-        <description>I2C2 event interrupt</description>
-        <value>33</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_ER</name>
-        <description>I2C2 error interrupt</description>
-        <value>34</value>
-      </interrupt>
-      <interrupt>
         <name>I2C2_ER</name>
         <description>I2C2 error interrupt</description>
         <value>34</value>
@@ -60844,36 +60711,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <name>I2C1_EV</name>
         <description>I2C1 event interrupt</description>
         <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_EV</name>
-        <description>I2C1 event interrupt</description>
-        <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_ER</name>
-        <description>I2C1 error interrupt</description>
-        <value>32</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_ER</name>
-        <description>I2C1 error interrupt</description>
-        <value>32</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_EV</name>
-        <description>I2C1 event interrupt</description>
-        <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_EV</name>
-        <description>I2C1 event interrupt</description>
-        <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_ER</name>
-        <description>I2C1 error interrupt</description>
-        <value>32</value>
       </interrupt>
       <interrupt>
         <name>I2C1_ER</name>

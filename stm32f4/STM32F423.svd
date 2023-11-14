@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2022 STMicroelectronics.
+Copyright (c) 2023 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2022 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F423</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <description>STM32F423</description>
   <cpu>
     <name>CM4</name>
@@ -24776,6 +24776,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
+              <name>BFB2</name>
+              <description>Dual-bank Boot option byte</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
               <name>WDG_SW</name>
               <description>WDG_SW User option bytes</description>
               <bitOffset>5</bitOffset>
@@ -24806,6 +24812,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Not write protect</description>
               <bitOffset>16</bitOffset>
               <bitWidth>12</bitWidth>
+            </field>
+	        <field>
+              <name>DB1M</name>
+              <description>Dual-bank on 1 Mbyte Flash memory devices</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SPRMOD</name>
+              <description>Selection of protection mode for nWPRi bits</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
             </field>
           </fields>
         </register>
@@ -37671,6 +37689,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
+              <name>ADC2EN</name>
+              <description>ADC2 clock enable</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADC3EN</name>
+              <description>ADC3 clock enable</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
               <name>SDIOEN</name>
               <description>SDIO clock enable</description>
               <bitOffset>11</bitOffset>
@@ -37714,15 +37744,15 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DFSDMEN</name>
-              <description>DFSDMEN</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>SPI5EN</name>
               <description>SPI5 clock enable</description>
               <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SPI6EN</name>
+              <description>SPI6 clock enable</description>
+              <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -37732,9 +37762,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DFSDM2EN</name>
-              <description>DFSDM2 clock enable</description>
-              <bitOffset>25</bitOffset>
+              <name>LTDCEN</name>
+              <description>LTDC clock enable</description>
+              <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>

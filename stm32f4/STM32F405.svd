@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2022 STMicroelectronics.
+Copyright (c) 2023 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2022 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F405</name>
-  <version>1.5</version>
+  <version>1.6</version>
   <description>STM32F405</description>
   <cpu>
     <name>CM4</name>
@@ -607,7 +607,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     </peripheral>
     <peripheral>
       <name>FSMC</name>
-      <description>Flexible static memory controller</description>
+      <description>Flexible memory controller</description>
       <groupName>FSMC</groupName>
       <baseAddress>0xA0000000</baseAddress>
       <addressBlock>
@@ -638,6 +638,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
               <name>ASYNCWAIT</name>
               <description>ASYNCWAIT</description>
               <bitOffset>15</bitOffset>
@@ -665,6 +671,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>WAITCFG</name>
               <description>WAITCFG</description>
               <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>WRAPMOD</name>
+              <description>WRAPMOD</description>
+              <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -780,6 +792,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>CBURSTRW</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>ASYNCWAIT</name>
@@ -932,6 +950,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
               <name>ASYNCWAIT</name>
               <description>ASYNCWAIT</description>
               <bitOffset>15</bitOffset>
@@ -1080,6 +1104,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>CBURSTRW</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>ASYNCWAIT</name>
@@ -1877,18 +1907,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
+			<field>
               <name>DATAST</name>
               <description>DATAST</description>
               <bitOffset>8</bitOffset>
@@ -1925,15 +1949,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -1961,7 +1979,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <displayName>BWTR3</displayName>
           <description>SRAM/NOR-Flash write timing registers
           3</description>
-          <addressOffset>0x114</addressOffset>
+          <alternateRegister>BWTR1</alternateRegister>
+          <addressOffset>0x104</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0FFFFFFF</resetValue>
@@ -1973,15 +1992,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -2009,7 +2022,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <displayName>BWTR4</displayName>
           <description>SRAM/NOR-Flash write timing registers
           4</description>
-          <addressOffset>0x11C</addressOffset>
+          <alternateRegister>BWTR2</alternateRegister>
+          <addressOffset>0x10C</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0FFFFFFF</resetValue>
@@ -2021,15 +2035,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -2049,6 +2057,345 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>ADDSET</description>
               <bitOffset>0</bitOffset>
               <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SDCR1</name>
+          <displayName>SDCR1</displayName>
+          <description>SDRAM Control Register 1</description>
+          <addressOffset>0x140</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x000002D0</resetValue>
+          <fields>
+            <field>
+              <name>NC</name>
+              <description>Number of column address
+              bits</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>NR</name>
+              <description>Number of row address bits</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>MWID</name>
+              <description>Memory data bus width</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>NB</name>
+              <description>Number of internal banks</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CAS</name>
+              <description>CAS latency</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>WP</name>
+              <description>Write protection</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SDCLK</name>
+              <description>SDRAM clock configuration</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>RBURST</name>
+              <description>Burst read</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>RPIPE</name>
+              <description>Read pipe</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SDCR2</name>
+          <displayName>SDCR2</displayName>
+          <description>SDRAM Control Register 2</description>
+          <addressOffset>0x144</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x000002D0</resetValue>
+          <fields>
+            <field>
+              <name>NC</name>
+              <description>Number of column address
+              bits</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>NR</name>
+              <description>Number of row address bits</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>MWID</name>
+              <description>Memory data bus width</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>NB</name>
+              <description>Number of internal banks</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CAS</name>
+              <description>CAS latency</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>WP</name>
+              <description>Write protection</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SDCLK</name>
+              <description>SDRAM clock configuration</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SDTR1</name>
+          <displayName>SDTR1</displayName>
+          <description>SDRAM Timing register 1</description>
+          <addressOffset>0x148</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x0FFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>TMRD</name>
+              <description>Load Mode Register to
+              Active</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TXSR</name>
+              <description>Exit self-refresh delay</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRAS</name>
+              <description>Self refresh time</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRC</name>
+              <description>Row cycle delay</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TWR</name>
+              <description>Recovery delay</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRP</name>
+              <description>Row precharge delay</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRCD</name>
+              <description>Row to column delay</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SDTR2</name>
+          <displayName>SDTR2</displayName>
+          <description>SDRAM Timing register 2</description>
+          <addressOffset>0x14C</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x0FFFFFFF</resetValue>
+          <fields>
+            <field>
+              <name>TMRD</name>
+              <description>Load Mode Register to
+              Active</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TXSR</name>
+              <description>Exit self-refresh delay</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRAS</name>
+              <description>Self refresh time</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRC</name>
+              <description>Row cycle delay</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TWR</name>
+              <description>Recovery delay</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRP</name>
+              <description>Row precharge delay</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>TRCD</name>
+              <description>Row to column delay</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SDCMR</name>
+          <displayName>SDCMR</displayName>
+          <description>SDRAM Command Mode register</description>
+          <addressOffset>0x150</addressOffset>
+          <size>0x20</size>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>MODE</name>
+              <description>Command mode</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>CTB2</name>
+              <description>Command target bank 2</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>CTB1</name>
+              <description>Command target bank 1</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>NRFS</name>
+              <description>Number of Auto-refresh</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MRD</name>
+              <description>Mode Register definition</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>13</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SDRTR</name>
+          <displayName>SDRTR</displayName>
+          <description>SDRAM Refresh Timer register</description>
+          <addressOffset>0x154</addressOffset>
+          <size>0x20</size>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>CRE</name>
+              <description>Clear Refresh error flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>COUNT</name>
+              <description>Refresh Timer Count</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>13</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>REIE</name>
+              <description>RES Interrupt Enable</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SDSR</name>
+          <displayName>SDSR</displayName>
+          <description>SDRAM Status register</description>
+          <addressOffset>0x158</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>RE</name>
+              <description>Refresh error flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>MODES1</name>
+              <description>Status Mode for Bank 1</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>MODES2</name>
+              <description>Status Mode for Bank 2</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>BUSY</name>
+              <description>Busy status</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
             </field>
           </fields>
         </register>
@@ -11559,33 +11906,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <name>I2S3ext</name>
       <baseAddress>0x40004000</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="SPI1">
-      <name>SPI4</name>
-      <baseAddress>0x40013400</baseAddress>
-      <interrupt>
-        <name>SPI1</name>
-        <description>SPI1 global interrupt</description>
-        <value>35</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="SPI1">
-      <name>SPI5</name>
-      <baseAddress>0x40015000</baseAddress>
-      <interrupt>
-        <name>SPI1</name>
-        <description>SPI1 global interrupt</description>
-        <value>35</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="SPI1">
-      <name>SPI6</name>
-      <baseAddress>0x40015400</baseAddress>
-      <interrupt>
-        <name>SPI3</name>
-        <description>SPI3 global interrupt</description>
-        <value>51</value>
-      </interrupt>
-    </peripheral>
     <peripheral>
       <name>SDIO</name>
       <description>Secure digital input/output
@@ -16483,24 +16803,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="UART4">
       <name>UART5</name>
       <baseAddress>0x40005000</baseAddress>
-      <interrupt>
-        <name>UART5</name>
-        <description>UART5 global interrupt</description>
-        <value>53</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="UART4">
-      <name>UART7</name>
-      <baseAddress>0x40007800</baseAddress>
-      <interrupt>
-        <name>UART4</name>
-        <description>UART4 global interrupt</description>
-        <value>52</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="UART4">
-      <name>UART8</name>
-      <baseAddress>0x40007C00</baseAddress>
       <interrupt>
         <name>UART5</name>
         <description>UART5 global interrupt</description>
@@ -54482,1908 +54784,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>PHY suspended</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
-      <name>SAI1</name>
-      <description>Serial audio interface</description>
-      <groupName>SAI1</groupName>
-      <baseAddress>0x40015800</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>SAI_ACR1</name>
-          <displayName>SAI_ACR1</displayName>
-          <description>SAI AConfiguration register 1</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000040</resetValue>
-          <fields>
-            <field>
-              <name>MCKDIV</name>
-              <description>Master clock divider</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>Audio block mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>PRTCFG</name>
-              <description>Protocol configuration</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>DS</name>
-              <description>Data size</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>LSBFIRST</name>
-              <description>Least significant bit
-              first</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CKSTR</name>
-              <description>Clock strobing edge</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SYNCEN</name>
-              <description>Synchronization enable</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>MONO</name>
-              <description>Mono mode</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OUTDRIV</name>
-              <description>Output drive</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SAIAEN</name>
-              <description>Audio block enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DMAEN</name>
-              <description>DMA enable</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>NODIV</name>
-              <description>No divider</description>
-              <bitOffset>19</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BCR1</name>
-          <displayName>SAI_BCR1</displayName>
-          <description>SAI BConfiguration register 1</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000040</resetValue>
-          <fields>
-            <field>
-              <name>MODE</name>
-              <description>Audio block mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>PRTCFG</name>
-              <description>Protocol configuration</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>DS</name>
-              <description>Data size</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>LSBFIRST</name>
-              <description>Least significant bit
-              first</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CKSTR</name>
-              <description>Clock strobing edge</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SYNCEN</name>
-              <description>Synchronization enable</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>MONO</name>
-              <description>Mono mode</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OUTDRIV</name>
-              <description>Output drive</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SAIBEN</name>
-              <description>Audio block enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DMAEN</name>
-              <description>DMA enable</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>NODIV</name>
-              <description>No divider</description>
-              <bitOffset>19</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MCKDIV</name>
-              <description>Master clock divider</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_ACR2</name>
-          <displayName>SAI_ACR2</displayName>
-          <description>SAI AConfiguration register 2</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000040</resetValue>
-          <fields>
-            <field>
-              <name>FTH</name>
-              <description>FIFO threshold</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>FFLUSH</name>
-              <description>FIFO flush</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TRIS</name>
-              <description>Tristate management on data
-              line</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTE</name>
-              <description>Mute</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEVAL</name>
-              <description>Mute value</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTECNT</name>
-              <description>Mute counter</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>6</bitWidth>
-            </field>
-            <field>
-              <name>CPL</name>
-              <description>Complement bit</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>COMP</name>
-              <description>Companding mode</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BCR2</name>
-          <displayName>SAI_BCR2</displayName>
-          <description>SAI BConfiguration register 2</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000040</resetValue>
-          <fields>
-            <field>
-              <name>FTH</name>
-              <description>FIFO threshold</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>FFLUSH</name>
-              <description>FIFO flush</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TRIS</name>
-              <description>Tristate management on data
-              line</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTE</name>
-              <description>Mute</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEVAL</name>
-              <description>Mute value</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTECNT</name>
-              <description>Mute counter</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>6</bitWidth>
-            </field>
-            <field>
-              <name>CPL</name>
-              <description>Complement bit</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>COMP</name>
-              <description>Companding mode</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_AFRCR</name>
-          <displayName>SAI_AFRCR</displayName>
-          <description>SAI AFrame configuration
-          register</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00000007</resetValue>
-          <fields>
-            <field>
-              <name>FRL</name>
-              <description>Frame length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FSALL</name>
-              <description>Frame synchronization active level
-              length</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>7</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FSDEF</name>
-              <description>Frame synchronization
-              definition</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>FSPOL</name>
-              <description>Frame synchronization
-              polarity</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FSOFF</name>
-              <description>Frame synchronization
-              offset</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BFRCR</name>
-          <displayName>SAI_BFRCR</displayName>
-          <description>SAI BFrame configuration
-          register</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00000007</resetValue>
-          <fields>
-            <field>
-              <name>FRL</name>
-              <description>Frame length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FSALL</name>
-              <description>Frame synchronization active level
-              length</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>7</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FSDEF</name>
-              <description>Frame synchronization
-              definition</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>FSPOL</name>
-              <description>Frame synchronization
-              polarity</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FSOFF</name>
-              <description>Frame synchronization
-              offset</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_ASLOTR</name>
-          <displayName>SAI_ASLOTR</displayName>
-          <description>SAI ASlot register</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FBOFF</name>
-              <description>First bit offset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-            <field>
-              <name>SLOTSZ</name>
-              <description>Slot size</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>NBSLOT</name>
-              <description>Number of slots in an audio
-              frame</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>SLOTEN</name>
-              <description>Slot enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BSLOTR</name>
-          <displayName>SAI_BSLOTR</displayName>
-          <description>SAI BSlot register</description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FBOFF</name>
-              <description>First bit offset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-            <field>
-              <name>SLOTSZ</name>
-              <description>Slot size</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>NBSLOT</name>
-              <description>Number of slots in an audio
-              frame</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>SLOTEN</name>
-              <description>Slot enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_AIM</name>
-          <displayName>SAI_AIM</displayName>
-          <description>SAI AInterrupt mask register2</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>OVRUDRIE</name>
-              <description>Overrun/underrun interrupt
-              enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDETIE</name>
-              <description>Mute detection interrupt
-              enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFGIE</name>
-              <description>Wrong clock configuration interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQIE</name>
-              <description>FIFO request interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDYIE</name>
-              <description>Codec not ready interrupt
-              enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDETIE</name>
-              <description>Anticipated frame synchronization
-              detection interrupt enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LFSDETIE</name>
-              <description>Late frame synchronization detection
-              interrupt enable</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BIM</name>
-          <displayName>SAI_BIM</displayName>
-          <description>SAI BInterrupt mask register2</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>OVRUDRIE</name>
-              <description>Overrun/underrun interrupt
-              enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDETIE</name>
-              <description>Mute detection interrupt
-              enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFGIE</name>
-              <description>Wrong clock configuration interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQIE</name>
-              <description>FIFO request interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDYIE</name>
-              <description>Codec not ready interrupt
-              enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDETIE</name>
-              <description>Anticipated frame synchronization
-              detection interrupt enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LFSDETIE</name>
-              <description>Late frame synchronization detection
-              interrupt enable</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_ASR</name>
-          <displayName>SAI_ASR</displayName>
-          <description>SAI AStatus register</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000008</resetValue>
-          <fields>
-            <field>
-              <name>OVRUDR</name>
-              <description>Overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Wrong clock configuration
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQ</name>
-              <description>FIFO request</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDY</name>
-              <description>Codec not ready</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDET</name>
-              <description>Anticipated frame synchronization
-              detection</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LFSDET</name>
-              <description>Late frame synchronization
-              detection</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FLTH</name>
-              <description>FIFO level threshold</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BSR</name>
-          <displayName>SAI_BSR</displayName>
-          <description>SAI BStatus register</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000008</resetValue>
-          <fields>
-            <field>
-              <name>OVRUDR</name>
-              <description>Overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Wrong clock configuration
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQ</name>
-              <description>FIFO request</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDY</name>
-              <description>Codec not ready</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDET</name>
-              <description>Anticipated frame synchronization
-              detection</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LFSDET</name>
-              <description>Late frame synchronization
-              detection</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FLTH</name>
-              <description>FIFO level threshold</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_ACLRFR</name>
-          <displayName>SAI_ACLRFR</displayName>
-          <description>SAI AClear flag register</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>COVRUDR</name>
-              <description>Clear overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CMUTEDET</name>
-              <description>Mute detection flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CWCKCFG</name>
-              <description>Clear wrong clock configuration
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCNRDY</name>
-              <description>Clear codec not ready flag</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CAFSDET</name>
-              <description>Clear anticipated frame synchronization
-              detection flag</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CLFSDET</name>
-              <description>Clear late frame synchronization
-              detection flag</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BCLRFR</name>
-          <displayName>SAI_BCLRFR</displayName>
-          <description>SAI BClear flag register</description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>COVRUDR</name>
-              <description>Clear overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CMUTEDET</name>
-              <description>Mute detection flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CWCKCFG</name>
-              <description>Clear wrong clock configuration
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCNRDY</name>
-              <description>Clear codec not ready flag</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CAFSDET</name>
-              <description>Clear anticipated frame synchronization
-              detection flag</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CLFSDET</name>
-              <description>Clear late frame synchronization
-              detection flag</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_ADR</name>
-          <displayName>SAI_ADR</displayName>
-          <description>SAI AData register</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>Data</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SAI_BDR</name>
-          <displayName>SAI_BDR</displayName>
-          <description>SAI BData register</description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>Data</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
-      <name>LTDC</name>
-      <description>LCD-TFT Controller</description>
-      <groupName>LTDC</groupName>
-      <baseAddress>0x40016800</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <interrupt>
-        <name>LCD_TFT</name>
-        <description>LTDC global interrupt</description>
-        <value>88</value>
-      </interrupt>
-      <interrupt>
-        <name>LCD_TFT_1</name>
-        <description>LTDC global error interrupt</description>
-        <value>89</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>SSCR</name>
-          <displayName>SSCR</displayName>
-          <description>Synchronization Size Configuration
-          Register</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>HSW</name>
-              <description>Horizontal Synchronization Width (in
-              units of pixel clock period)</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>VSH</name>
-              <description>Vertical Synchronization Height (in
-              units of horizontal scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BPCR</name>
-          <displayName>BPCR</displayName>
-          <description>Back Porch Configuration
-          Register</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AHBP</name>
-              <description>Accumulated Horizontal back porch (in
-              units of pixel clock period)</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>AVBP</name>
-              <description>Accumulated Vertical back porch (in
-              units of horizontal scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>AWCR</name>
-          <displayName>AWCR</displayName>
-          <description>Active Width Configuration
-          Register</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AAV</name>
-              <description>AAV</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>AAH</name>
-              <description>Accumulated Active Height (in units of
-              horizontal scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>TWCR</name>
-          <displayName>TWCR</displayName>
-          <description>Total Width Configuration
-          Register</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TOTALW</name>
-              <description>Total Width (in units of pixel clock
-              period)</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>TOTALH</name>
-              <description>Total Height (in units of horizontal
-              scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>GCR</name>
-          <displayName>GCR</displayName>
-          <description>Global Control Register</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00002220</resetValue>
-          <fields>
-            <field>
-              <name>HSPOL</name>
-              <description>Horizontal Synchronization
-              Polarity</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>VSPOL</name>
-              <description>Vertical Synchronization
-              Polarity</description>
-              <bitOffset>30</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DEPOL</name>
-              <description>Data Enable Polarity</description>
-              <bitOffset>29</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>PCPOL</name>
-              <description>Pixel Clock Polarity</description>
-              <bitOffset>28</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DEN</name>
-              <description>Dither Enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DRW</name>
-              <description>Dither Red Width</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>DGW</name>
-              <description>Dither Green Width</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>DBW</name>
-              <description>Dither Blue Width</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>LTDCEN</name>
-              <description>LCD-TFT controller enable
-              bit</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SRCR</name>
-          <displayName>SRCR</displayName>
-          <description>Shadow Reload Configuration
-          Register</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VBR</name>
-              <description>Vertical Blanking Reload</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IMR</name>
-              <description>Immediate Reload</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BCCR</name>
-          <displayName>BCCR</displayName>
-          <description>Background Color Configuration
-          Register</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>BC</name>
-              <description>Background Color Red value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>24</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IER</name>
-          <displayName>IER</displayName>
-          <description>Interrupt Enable Register</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RRIE</name>
-              <description>Register Reload interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TERRIE</name>
-              <description>Transfer Error Interrupt
-              Enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FUIE</name>
-              <description>FIFO Underrun Interrupt
-              Enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LIE</name>
-              <description>Line Interrupt Enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ISR</name>
-          <displayName>ISR</displayName>
-          <description>Interrupt Status Register</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RRIF</name>
-              <description>Register Reload Interrupt
-              Flag</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TERRIF</name>
-              <description>Transfer Error interrupt
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FUIF</name>
-              <description>FIFO Underrun Interrupt
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LIF</name>
-              <description>Line Interrupt flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ICR</name>
-          <displayName>ICR</displayName>
-          <description>Interrupt Clear Register</description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CRRIF</name>
-              <description>Clears Register Reload Interrupt
-              Flag</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CTERRIF</name>
-              <description>Clears the Transfer Error Interrupt
-              Flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CFUIF</name>
-              <description>Clears the FIFO Underrun Interrupt
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CLIF</name>
-              <description>Clears the Line Interrupt
-              Flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>LIPCR</name>
-          <displayName>LIPCR</displayName>
-          <description>Line Interrupt Position Configuration
-          Register</description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LIPOS</name>
-              <description>Line Interrupt Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CPSR</name>
-          <displayName>CPSR</displayName>
-          <description>Current Position Status
-          Register</description>
-          <addressOffset>0x44</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CXPOS</name>
-              <description>Current X Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-            <field>
-              <name>CYPOS</name>
-              <description>Current Y Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CDSR</name>
-          <displayName>CDSR</displayName>
-          <description>Current Display Status
-          Register</description>
-          <addressOffset>0x48</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x0000000F</resetValue>
-          <fields>
-            <field>
-              <name>HSYNCS</name>
-              <description>Horizontal Synchronization display
-              Status</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>VSYNCS</name>
-              <description>Vertical Synchronization display
-              Status</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HDES</name>
-              <description>Horizontal Data Enable display
-              Status</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>VDES</name>
-              <description>Vertical Data Enable display
-              Status</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CR</name>
-          <displayName>L1CR</displayName>
-          <description>Layerx Control Register</description>
-          <addressOffset>0x84</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTEN</name>
-              <description>Color Look-Up Table Enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>COLKEN</name>
-              <description>Color Keying Enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LEN</name>
-              <description>Layer Enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1WHPCR</name>
-          <displayName>L1WHPCR</displayName>
-          <description>Layerx Window Horizontal Position
-          Configuration Register</description>
-          <addressOffset>0x88</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WHSPPOS</name>
-              <description>Window Horizontal Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-            <field>
-              <name>WHSTPOS</name>
-              <description>Window Horizontal Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1WVPCR</name>
-          <displayName>L1WVPCR</displayName>
-          <description>Layerx Window Vertical Position
-          Configuration Register</description>
-          <addressOffset>0x8C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WVSPPOS</name>
-              <description>Window Vertical Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-            <field>
-              <name>WVSTPOS</name>
-              <description>Window Vertical Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CKCR</name>
-          <displayName>L1CKCR</displayName>
-          <description>Layerx Color Keying Configuration
-          Register</description>
-          <addressOffset>0x90</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CKRED</name>
-              <description>Color Key Red value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CKGREEN</name>
-              <description>Color Key Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CKBLUE</name>
-              <description>Color Key Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1PFCR</name>
-          <displayName>L1PFCR</displayName>
-          <description>Layerx Pixel Format Configuration
-          Register</description>
-          <addressOffset>0x94</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>PF</name>
-              <description>Pixel Format</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CACR</name>
-          <displayName>L1CACR</displayName>
-          <description>Layerx Constant Alpha Configuration
-          Register</description>
-          <addressOffset>0x98</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CONSTA</name>
-              <description>Constant Alpha</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1DCCR</name>
-          <displayName>L1DCCR</displayName>
-          <description>Layerx Default Color Configuration
-          Register</description>
-          <addressOffset>0x9C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DCALPHA</name>
-              <description>Default Color Alpha</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCRED</name>
-              <description>Default Color Red</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCGREEN</name>
-              <description>Default Color Green</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCBLUE</name>
-              <description>Default Color Blue</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1BFCR</name>
-          <displayName>L1BFCR</displayName>
-          <description>Layerx Blending Factors Configuration
-          Register</description>
-          <addressOffset>0xA0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000607</resetValue>
-          <fields>
-            <field>
-              <name>BF1</name>
-              <description>Blending Factor 1</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>BF2</name>
-              <description>Blending Factor 2</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CFBAR</name>
-          <displayName>L1CFBAR</displayName>
-          <description>Layerx Color Frame Buffer Address
-          Register</description>
-          <addressOffset>0xAC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBADD</name>
-              <description>Color Frame Buffer Start
-              Address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CFBLR</name>
-          <displayName>L1CFBLR</displayName>
-          <description>Layerx Color Frame Buffer Length
-          Register</description>
-          <addressOffset>0xB0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBP</name>
-              <description>Color Frame Buffer Pitch in
-              bytes</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-            <field>
-              <name>CFBLL</name>
-              <description>Color Frame Buffer Line
-              Length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CFBLNR</name>
-          <displayName>L1CFBLNR</displayName>
-          <description>Layerx ColorFrame Buffer Line Number
-          Register</description>
-          <addressOffset>0xB4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBLNBR</name>
-              <description>Frame Buffer Line Number</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CLUTWR</name>
-          <displayName>L1CLUTWR</displayName>
-          <description>Layerx CLUT Write Register</description>
-          <addressOffset>0xC4</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTADD</name>
-              <description>CLUT Address</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RED</name>
-              <description>Red value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CR</name>
-          <displayName>L2CR</displayName>
-          <description>Layerx Control Register</description>
-          <addressOffset>0x104</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTEN</name>
-              <description>Color Look-Up Table Enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>COLKEN</name>
-              <description>Color Keying Enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LEN</name>
-              <description>Layer Enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2WHPCR</name>
-          <displayName>L2WHPCR</displayName>
-          <description>Layerx Window Horizontal Position
-          Configuration Register</description>
-          <addressOffset>0x108</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WHSPPOS</name>
-              <description>Window Horizontal Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-            <field>
-              <name>WHSTPOS</name>
-              <description>Window Horizontal Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2WVPCR</name>
-          <displayName>L2WVPCR</displayName>
-          <description>Layerx Window Vertical Position
-          Configuration Register</description>
-          <addressOffset>0x10C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WVSPPOS</name>
-              <description>Window Vertical Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-            <field>
-              <name>WVSTPOS</name>
-              <description>Window Vertical Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CKCR</name>
-          <displayName>L2CKCR</displayName>
-          <description>Layerx Color Keying Configuration
-          Register</description>
-          <addressOffset>0x110</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CKRED</name>
-              <description>Color Key Red value</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>9</bitWidth>
-            </field>
-            <field>
-              <name>CKGREEN</name>
-              <description>Color Key Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>7</bitWidth>
-            </field>
-            <field>
-              <name>CKBLUE</name>
-              <description>Color Key Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2PFCR</name>
-          <displayName>L2PFCR</displayName>
-          <description>Layerx Pixel Format Configuration
-          Register</description>
-          <addressOffset>0x114</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>PF</name>
-              <description>Pixel Format</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CACR</name>
-          <displayName>L2CACR</displayName>
-          <description>Layerx Constant Alpha Configuration
-          Register</description>
-          <addressOffset>0x118</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CONSTA</name>
-              <description>Constant Alpha</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2DCCR</name>
-          <displayName>L2DCCR</displayName>
-          <description>Layerx Default Color Configuration
-          Register</description>
-          <addressOffset>0x11C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DCALPHA</name>
-              <description>Default Color Alpha</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCRED</name>
-              <description>Default Color Red</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCGREEN</name>
-              <description>Default Color Green</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCBLUE</name>
-              <description>Default Color Blue</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2BFCR</name>
-          <displayName>L2BFCR</displayName>
-          <description>Layerx Blending Factors Configuration
-          Register</description>
-          <addressOffset>0x120</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000607</resetValue>
-          <fields>
-            <field>
-              <name>BF1</name>
-              <description>Blending Factor 1</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>BF2</name>
-              <description>Blending Factor 2</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CFBAR</name>
-          <displayName>L2CFBAR</displayName>
-          <description>Layerx Color Frame Buffer Address
-          Register</description>
-          <addressOffset>0x12C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBADD</name>
-              <description>Color Frame Buffer Start
-              Address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CFBLR</name>
-          <displayName>L2CFBLR</displayName>
-          <description>Layerx Color Frame Buffer Length
-          Register</description>
-          <addressOffset>0x130</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBP</name>
-              <description>Color Frame Buffer Pitch in
-              bytes</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-            <field>
-              <name>CFBLL</name>
-              <description>Color Frame Buffer Line
-              Length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CFBLNR</name>
-          <displayName>L2CFBLNR</displayName>
-          <description>Layerx ColorFrame Buffer Line Number
-          Register</description>
-          <addressOffset>0x134</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBLNBR</name>
-              <description>Frame Buffer Line Number</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CLUTWR</name>
-          <displayName>L2CLUTWR</displayName>
-          <description>Layerx CLUT Write Register</description>
-          <addressOffset>0x144</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTADD</name>
-              <description>CLUT Address</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RED</name>
-              <description>Red value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
             </field>
           </fields>
         </register>

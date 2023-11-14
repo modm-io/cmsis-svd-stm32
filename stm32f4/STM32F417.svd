@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2022 STMicroelectronics.
+Copyright (c) 2023 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2022 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F417</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <description>STM32F417</description>
   <cpu>
     <name>CM4</name>
@@ -4925,7 +4925,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       </registers>
     </peripheral>
     <peripheral>
-      <name>FMC</name>
+      <name>FSMC</name>
       <description>Flexible memory controller</description>
       <groupName>FSMC</groupName>
       <baseAddress>0xA0000000</baseAddress>
@@ -4935,8 +4935,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>FMC</name>
-        <description>FMC global interrupt</description>
+        <name>FSMC</name>
+        <description>FSMC global interrupt</description>
         <value>48</value>
       </interrupt>
       <registers>
@@ -4951,16 +4951,16 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x000030D0</resetValue>
           <fields>
             <field>
-              <name>CCLKEN</name>
-              <description>CCLKEN</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>CBURSTRW</name>
               <description>CBURSTRW</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>ASYNCWAIT</name>
@@ -4990,6 +4990,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>WAITCFG</name>
               <description>WAITCFG</description>
               <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>WRAPMOD</name>
+              <description>WRAPMOD</description>
+              <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -5105,6 +5111,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>CBURSTRW</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>ASYNCWAIT</name>
@@ -5257,6 +5269,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
               <name>ASYNCWAIT</name>
               <description>ASYNCWAIT</description>
               <bitOffset>15</bitOffset>
@@ -5405,6 +5423,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>CBURSTRW</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CPSIZE</name>
+              <description>CPSIZE</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>ASYNCWAIT</name>
@@ -6202,18 +6226,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
+			<field>
               <name>DATAST</name>
               <description>DATAST</description>
               <bitOffset>8</bitOffset>
@@ -6250,15 +6268,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -6286,7 +6298,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <displayName>BWTR3</displayName>
           <description>SRAM/NOR-Flash write timing registers
           3</description>
-          <addressOffset>0x114</addressOffset>
+          <alternateRegister>BWTR1</alternateRegister>
+          <addressOffset>0x104</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0FFFFFFF</resetValue>
@@ -6298,15 +6311,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -6334,7 +6341,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <displayName>BWTR4</displayName>
           <description>SRAM/NOR-Flash write timing registers
           4</description>
-          <addressOffset>0x11C</addressOffset>
+          <alternateRegister>BWTR2</alternateRegister>
+          <addressOffset>0x10C</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x0FFFFFFF</resetValue>
@@ -6346,15 +6354,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DATLAT</name>
-              <description>DATLAT</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>CLKDIV</name>
-              <description>CLKDIV</description>
-              <bitOffset>20</bitOffset>
+              <name>BUSTURN</name>
+              <description>BUSTURN</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
             <field>
@@ -6493,18 +6495,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>SDCLK</name>
               <description>SDRAM clock configuration</description>
               <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>RBURST</name>
-              <description>Burst read</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RPIPE</name>
-              <description>Read pipe</description>
-              <bitOffset>13</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
           </fields>
@@ -11060,12 +11050,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SPI4ENR</name>
-              <description>SPI4 clock enable</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>SYSCFGEN</name>
               <description>System configuration controller clock
               enable</description>
@@ -11088,18 +11072,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>TIM11EN</name>
               <description>TIM11 clock enable</description>
               <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SPI5ENR</name>
-              <description>SPI5 clock enable</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SPI6ENR</name>
-              <description>SPI6 clock enable</description>
-              <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -15943,11 +15915,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>SPI1 global interrupt</description>
         <value>35</value>
       </interrupt>
-      <interrupt>
-        <name>SPI1</name>
-        <description>SPI1 global interrupt</description>
-        <value>35</value>
-      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -16345,20 +16312,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>SPI2 global interrupt</description>
         <value>36</value>
       </interrupt>
-      <interrupt>
-        <name>SPI2</name>
-        <description>SPI2 global interrupt</description>
-        <value>36</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="SPI1">
       <name>SPI3</name>
       <baseAddress>0x40003C00</baseAddress>
-      <interrupt>
-        <name>SPI3</name>
-        <description>SPI3 global interrupt</description>
-        <value>51</value>
-      </interrupt>
       <interrupt>
         <name>SPI3</name>
         <description>SPI3 global interrupt</description>
@@ -16373,48 +16330,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <name>I2S3ext</name>
       <baseAddress>0x40004000</baseAddress>
     </peripheral>
-    <peripheral derivedFrom="SPI1">
-      <name>SPI4</name>
-      <baseAddress>0x40013400</baseAddress>
-      <interrupt>
-        <name>SPI4</name>
-        <description>SPI 4 global interrupt</description>
-        <value>84</value>
-      </interrupt>
-      <interrupt>
-        <name>SPI4</name>
-        <description>SPI 4 global interrupt</description>
-        <value>84</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="SPI1">
-      <name>SPI5</name>
-      <baseAddress>0x40015000</baseAddress>
-      <interrupt>
-        <name>SPI5</name>
-        <description>SPI 5 global interrupt</description>
-        <value>85</value>
-      </interrupt>
-      <interrupt>
-        <name>SPI5</name>
-        <description>SPI 5 global interrupt</description>
-        <value>85</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="SPI1">
-      <name>SPI6</name>
-      <baseAddress>0x40015400</baseAddress>
-      <interrupt>
-        <name>SPI6</name>
-        <description>SPI 6 global interrupt</description>
-        <value>86</value>
-      </interrupt>
-      <interrupt>
-        <name>SPI6</name>
-        <description>SPI 6 global interrupt</description>
-        <value>86</value>
-      </interrupt>
-    </peripheral>
     <peripheral>
       <name>SDIO</name>
       <description>Secure digital input/output
@@ -16426,11 +16341,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>SDIO</name>
-        <description>SDIO global interrupt</description>
-        <value>49</value>
-      </interrupt>
       <interrupt>
         <name>SDIO</name>
         <description>SDIO global interrupt</description>
@@ -17280,7 +17190,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <baseAddress>0x40012000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x400</size>
+        <size>0x51</size>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
@@ -18401,20 +18311,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>USART1 global interrupt</description>
         <value>37</value>
       </interrupt>
-      <interrupt>
-        <name>USART1</name>
-        <description>USART1 global interrupt</description>
-        <value>37</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART6">
       <name>USART2</name>
       <baseAddress>0x40004400</baseAddress>
-      <interrupt>
-        <name>USART2</name>
-        <description>USART2 global interrupt</description>
-        <value>38</value>
-      </interrupt>
       <interrupt>
         <name>USART2</name>
         <description>USART2 global interrupt</description>
@@ -18428,34 +18328,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <name>USART3</name>
         <description>USART3 global interrupt</description>
         <value>39</value>
-      </interrupt>
-      <interrupt>
-        <name>USART3</name>
-        <description>USART3 global interrupt</description>
-        <value>39</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="USART6">
-      <name>UART7</name>
-      <baseAddress>0x40007800</baseAddress>
-      <interrupt>
-        <name>UART7</name>
-        <description>UART 7 global interrupt</description>
-        <value>82</value>
-      </interrupt>
-      <interrupt>
-        <name>UART7</name>
-        <description>UART 7 global interrupt</description>
-        <value>82</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="USART6">
-      <name>UART8</name>
-      <baseAddress>0x40007C00</baseAddress>
-      <interrupt>
-        <name>UART8</name>
-        <description>UART 8 global interrupt</description>
-        <value>83</value>
       </interrupt>
     </peripheral>
     <peripheral>
@@ -18882,36 +18754,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>PVD</name>
-        <description>PVD through EXTI line detection
-        interrupt</description>
-        <value>1</value>
-      </interrupt>
       <interrupt>
         <name>PVD</name>
         <description>PVD through EXTI line detection
@@ -26500,7 +26342,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       <baseAddress>0x40028000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x400</size>
+        <size>0x61</size>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
@@ -26635,67 +26477,67 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PM</name>
-              <description>no description available</description>
+              <description>PM</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>HU</name>
-              <description>no description available</description>
+              <description>HU</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>HM</name>
-              <description>no description available</description>
+              <description>HM</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DAIF</name>
-              <description>no description available</description>
+              <description>DAIF</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RAM</name>
-              <description>no description available</description>
+              <description>RAM</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>BFD</name>
-              <description>no description available</description>
+              <description>BFD</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PCF</name>
-              <description>no description available</description>
+              <description>PCF</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SAIF</name>
-              <description>no description available</description>
+              <description>SAIF</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>SAF</name>
-              <description>no description available</description>
+              <description>SAF</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>HPF</name>
-              <description>no description available</description>
+              <description>HPF</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RA</name>
-              <description>no description available</description>
+              <description>RA</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -26713,7 +26555,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HTH</name>
-              <description>no description available</description>
+              <description>HTH</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -26731,7 +26573,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HTL</name>
-              <description>no description available</description>
+              <description>HTL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -26749,31 +26591,31 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MB</name>
-              <description>no description available</description>
+              <description>MB</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MW</name>
-              <description>no description available</description>
+              <description>MW</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CR</name>
-              <description>no description available</description>
+              <description>CR</description>
               <bitOffset>2</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>MR</name>
-              <description>no description available</description>
+              <description>MR</description>
               <bitOffset>6</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>PA</name>
-              <description>no description available</description>
+              <description>PA</description>
               <bitOffset>11</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
@@ -26790,7 +26632,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TD</name>
-              <description>no description available</description>
+              <description>TD</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
@@ -26808,43 +26650,43 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>FCB</name>
-              <description>no description available</description>
+              <description>FCB</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TFCE</name>
-              <description>no description available</description>
+              <description>TFCE</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RFCE</name>
-              <description>no description available</description>
+              <description>RFCE</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>UPFD</name>
-              <description>no description available</description>
+              <description>UPFD</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PLT</name>
-              <description>no description available</description>
+              <description>PLT</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>ZQPD</name>
-              <description>no description available</description>
+              <description>ZQPD</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PT</name>
-              <description>no description available</description>
+              <description>PT</description>
               <bitOffset>16</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
@@ -26861,13 +26703,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>VLANTI</name>
-              <description>no description available</description>
+              <description>VLANTI</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>VLANTC</name>
-              <description>no description available</description>
+              <description>VLANTC</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -26885,43 +26727,43 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PD</name>
-              <description>no description available</description>
+              <description>PD</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MPE</name>
-              <description>no description available</description>
+              <description>MPE</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WFE</name>
-              <description>no description available</description>
+              <description>WFE</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MPR</name>
-              <description>no description available</description>
+              <description>MPR</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WFR</name>
-              <description>no description available</description>
+              <description>WFR</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GU</name>
-              <description>no description available</description>
+              <description>GU</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>WFFRPR</name>
-              <description>no description available</description>
+              <description>WFFRPR</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -26985,35 +26827,35 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PMTS</name>
-              <description>no description available</description>
+              <description>PMTS</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCS</name>
-              <description>no description available</description>
+              <description>MMCS</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCRS</name>
-              <description>no description available</description>
+              <description>MMCRS</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCTS</name>
-              <description>no description available</description>
+              <description>MMCTS</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>TSTS</name>
-              <description>no description available</description>
+              <description>TSTS</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -27032,13 +26874,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>PMTIM</name>
-              <description>no description available</description>
+              <description>PMTIM</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSTIM</name>
-              <description>no description available</description>
+              <description>TSTIM</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27099,25 +26941,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA1H</name>
-              <description>no description available</description>
+              <description>MACA1H</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>MBC</name>
-              <description>no description available</description>
+              <description>MBC</description>
               <bitOffset>24</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>SA</name>
-              <description>no description available</description>
+              <description>SA</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AE</name>
-              <description>no description available</description>
+              <description>AE</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27135,7 +26977,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA1LR</name>
-              <description>no description available</description>
+              <description>MACA1LR</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27153,25 +26995,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MAC2AH</name>
-              <description>no description available</description>
+              <description>MAC2AH</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>MBC</name>
-              <description>no description available</description>
+              <description>MBC</description>
               <bitOffset>24</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>SA</name>
-              <description>no description available</description>
+              <description>SA</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AE</name>
-              <description>no description available</description>
+              <description>AE</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27189,7 +27031,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA2L</name>
-              <description>no description available</description>
+              <description>MACA2L</description>
               <bitOffset>0</bitOffset>
               <bitWidth>31</bitWidth>
             </field>
@@ -27207,25 +27049,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MACA3H</name>
-              <description>no description available</description>
+              <description>MACA3H</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>MBC</name>
-              <description>no description available</description>
+              <description>MBC</description>
               <bitOffset>24</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>SA</name>
-              <description>no description available</description>
+              <description>SA</description>
               <bitOffset>30</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AE</name>
-              <description>no description available</description>
+              <description>AE</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27243,7 +27085,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MBCA3L</name>
-              <description>no description available</description>
+              <description>MBCA3L</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27273,37 +27115,37 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>CR</name>
-              <description>no description available</description>
+              <description>CR</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>CSR</name>
-              <description>no description available</description>
+              <description>CSR</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ROR</name>
-              <description>no description available</description>
+              <description>ROR</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MCF</name>
-              <description>no description available</description>
+              <description>MCF</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MCP</name>
-              <description>no description available</description>
+              <description>MCP</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MCFHP</name>
-              <description>no description available</description>
+              <description>MCFHP</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27321,19 +27163,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFCES</name>
-              <description>no description available</description>
+              <description>RFCES</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RFAES</name>
-              <description>no description available</description>
+              <description>RFAES</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RGUFS</name>
-              <description>no description available</description>
+              <description>RGUFS</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27351,19 +27193,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFSCS</name>
-              <description>no description available</description>
+              <description>TGFSCS</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFMSCS</name>
-              <description>no description available</description>
+              <description>TGFMSCS</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFS</name>
-              <description>no description available</description>
+              <description>TGFS</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27381,19 +27223,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFCEM</name>
-              <description>no description available</description>
+              <description>RFCEM</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RFAEM</name>
-              <description>no description available</description>
+              <description>RFAEM</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RGUFM</name>
-              <description>no description available</description>
+              <description>RGUFM</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27411,19 +27253,19 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFSCM</name>
-              <description>no description available</description>
+              <description>TGFSCM</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFMSCM</name>
-              <description>no description available</description>
+              <description>TGFMSCM</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TGFM</name>
-              <description>no description available</description>
+              <description>TGFM</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27441,7 +27283,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFSCC</name>
-              <description>no description available</description>
+              <description>TGFSCC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27459,7 +27301,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TGFMSCC</name>
-              <description>no description available</description>
+              <description>TGFMSCC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27495,7 +27337,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFCFC</name>
-              <description>no description available</description>
+              <description>RFCFC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27513,7 +27355,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RFAEC</name>
-              <description>no description available</description>
+              <description>RFAEC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27531,7 +27373,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>RGUFC</name>
-              <description>no description available</description>
+              <description>RGUFC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27562,97 +27404,97 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSE</name>
-              <description>no description available</description>
+              <description>TSE</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSFCU</name>
-              <description>no description available</description>
+              <description>TSFCU</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSPTPPSV2E</name>
-              <description>no description available</description>
+              <description>TSPTPPSV2E</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSPTPOEFE</name>
-              <description>no description available</description>
+              <description>TSSPTPOEFE</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSIPV6FE</name>
-              <description>no description available</description>
+              <description>TSSIPV6FE</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSIPV4FE</name>
-              <description>no description available</description>
+              <description>TSSIPV4FE</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSEME</name>
-              <description>no description available</description>
+              <description>TSSEME</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSMRME</name>
-              <description>no description available</description>
+              <description>TSSMRME</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSCNT</name>
-              <description>no description available</description>
+              <description>TSCNT</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>TSPFFMAE</name>
-              <description>no description available</description>
+              <description>TSPFFMAE</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSTI</name>
-              <description>no description available</description>
+              <description>TSSTI</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSTU</name>
-              <description>no description available</description>
+              <description>TSSTU</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSITE</name>
-              <description>no description available</description>
+              <description>TSITE</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TTSARU</name>
-              <description>no description available</description>
+              <description>TTSARU</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSARFE</name>
-              <description>no description available</description>
+              <description>TSSARFE</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSSSR</name>
-              <description>no description available</description>
+              <description>TSSSR</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27670,7 +27512,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STSSI</name>
-              <description>no description available</description>
+              <description>STSSI</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
             </field>
@@ -27688,7 +27530,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STS</name>
-              <description>no description available</description>
+              <description>STS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27706,13 +27548,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STSS</name>
-              <description>no description available</description>
+              <description>STSS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>31</bitWidth>
             </field>
             <field>
               <name>STPNS</name>
-              <description>no description available</description>
+              <description>STPNS</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27730,7 +27572,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSUS</name>
-              <description>no description available</description>
+              <description>TSUS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27748,13 +27590,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSUSS</name>
-              <description>no description available</description>
+              <description>TSUSS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>31</bitWidth>
             </field>
             <field>
               <name>TSUPNS</name>
-              <description>no description available</description>
+              <description>TSUPNS</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27772,7 +27614,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSA</name>
-              <description>no description available</description>
+              <description>TSA</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27808,7 +27650,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TTSL</name>
-              <description>no description available</description>
+              <description>TTSL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -27826,13 +27668,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TSSO</name>
-              <description>no description available</description>
+              <description>TSSO</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSTTR</name>
-              <description>no description available</description>
+              <description>TSTTR</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27886,73 +27728,73 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>SR</name>
-              <description>no description available</description>
+              <description>SR</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DA</name>
-              <description>no description available</description>
+              <description>DA</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>DSL</name>
-              <description>no description available</description>
+              <description>DSL</description>
               <bitOffset>2</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>EDFE</name>
-              <description>no description available</description>
+              <description>EDFE</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>PBL</name>
-              <description>no description available</description>
+              <description>PBL</description>
               <bitOffset>8</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>RTPR</name>
-              <description>no description available</description>
+              <description>RTPR</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>FB</name>
-              <description>no description available</description>
+              <description>FB</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RDP</name>
-              <description>no description available</description>
+              <description>RDP</description>
               <bitOffset>17</bitOffset>
               <bitWidth>6</bitWidth>
             </field>
             <field>
               <name>USP</name>
-              <description>no description available</description>
+              <description>USP</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FPM</name>
-              <description>no description available</description>
+              <description>FPM</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AAB</name>
-              <description>no description available</description>
+              <description>AAB</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MB</name>
-              <description>no description available</description>
+              <description>MB</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -27970,7 +27812,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TPD</name>
-              <description>no description available</description>
+              <description>TPD</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28006,7 +27848,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>SRL</name>
-              <description>no description available</description>
+              <description>SRL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28024,7 +27866,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>STL</name>
-              <description>no description available</description>
+              <description>STL</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28040,147 +27882,147 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TS</name>
-              <description>no description available</description>
+              <description>TS</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TPSS</name>
-              <description>no description available</description>
+              <description>TPSS</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TBUS</name>
-              <description>no description available</description>
+              <description>TBUS</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TJTS</name>
-              <description>no description available</description>
+              <description>TJTS</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>ROS</name>
-              <description>no description available</description>
+              <description>ROS</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>TUS</name>
-              <description>no description available</description>
+              <description>TUS</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RS</name>
-              <description>no description available</description>
+              <description>RS</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RBUS</name>
-              <description>no description available</description>
+              <description>RBUS</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RPSS</name>
-              <description>no description available</description>
+              <description>RPSS</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>PWTS</name>
-              <description>no description available</description>
+              <description>PWTS</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>ETS</name>
-              <description>no description available</description>
+              <description>ETS</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>FBES</name>
-              <description>no description available</description>
+              <description>FBES</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>ERS</name>
-              <description>no description available</description>
+              <description>ERS</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>AIS</name>
-              <description>no description available</description>
+              <description>AIS</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>NIS</name>
-              <description>no description available</description>
+              <description>NIS</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RPS</name>
-              <description>no description available</description>
+              <description>RPS</description>
               <bitOffset>17</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>TPS</name>
-              <description>no description available</description>
+              <description>TPS</description>
               <bitOffset>20</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>EBS</name>
-              <description>no description available</description>
+              <description>EBS</description>
               <bitOffset>23</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>MMCS</name>
-              <description>no description available</description>
+              <description>MMCS</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>PMTS</name>
-              <description>no description available</description>
+              <description>PMTS</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
             <field>
               <name>TSTS</name>
-              <description>no description available</description>
+              <description>TSTS</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -28283,91 +28125,91 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>TIE</name>
-              <description>no description available</description>
+              <description>TIE</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TPSIE</name>
-              <description>no description available</description>
+              <description>TPSIE</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TBUIE</name>
-              <description>no description available</description>
+              <description>TBUIE</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TJTIE</name>
-              <description>no description available</description>
+              <description>TJTIE</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ROIE</name>
-              <description>no description available</description>
+              <description>ROIE</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TUIE</name>
-              <description>no description available</description>
+              <description>TUIE</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RIE</name>
-              <description>no description available</description>
+              <description>RIE</description>
               <bitOffset>6</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RBUIE</name>
-              <description>no description available</description>
+              <description>RBUIE</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RPSIE</name>
-              <description>no description available</description>
+              <description>RPSIE</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>RWTIE</name>
-              <description>no description available</description>
+              <description>RWTIE</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ETIE</name>
-              <description>no description available</description>
+              <description>ETIE</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>FBEIE</name>
-              <description>no description available</description>
+              <description>FBEIE</description>
               <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>ERIE</name>
-              <description>no description available</description>
+              <description>ERIE</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>AISE</name>
-              <description>no description available</description>
+              <description>AISE</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>NISE</name>
-              <description>no description available</description>
+              <description>NISE</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -28385,25 +28227,25 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>MFC</name>
-              <description>no description available</description>
+              <description>MFC</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
             </field>
             <field>
               <name>OMFC</name>
-              <description>no description available</description>
+              <description>OMFC</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>MFA</name>
-              <description>no description available</description>
+              <description>MFA</description>
               <bitOffset>17</bitOffset>
               <bitWidth>11</bitWidth>
             </field>
             <field>
               <name>OFOC</name>
-              <description>no description available</description>
+              <description>OFOC</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -28475,7 +28317,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HTBAP</name>
-              <description>no description available</description>
+              <description>HTBAP</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -28493,7 +28335,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <fields>
             <field>
               <name>HRBAP</name>
-              <description>no description available</description>
+              <description>HRBAP</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -47491,18 +47333,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>16</bitOffset>
               <bitWidth>12</bitWidth>
             </field>
-            <field>
-              <name>DB1M</name>
-              <description>Dual-bank on 1 Mbyte Flash memory devices</description>
-              <bitOffset>30</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SPRMOD</name>
-              <description>Selection of protection mode for nWPRi bits</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -57674,2604 +57504,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
       </registers>
     </peripheral>
     <peripheral>
-      <name>LTDC</name>
-      <description>LCD-TFT Controller</description>
-      <groupName>LTDC</groupName>
-      <baseAddress>0x40016800</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <interrupt>
-        <name>LCD_TFT</name>
-        <description>LTDC global interrupt</description>
-        <value>88</value>
-      </interrupt>
-      <interrupt>
-        <name>LCD_TFT_1</name>
-        <description>LTDC global error interrupt</description>
-        <value>89</value>
-      </interrupt>
-      <interrupt>
-        <name>LCD_TFT</name>
-        <description>LTDC global interrupt</description>
-        <value>88</value>
-      </interrupt>
-      <interrupt>
-        <name>LCD_TFT_1</name>
-        <description>LTDC global error interrupt</description>
-        <value>89</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>SSCR</name>
-          <displayName>SSCR</displayName>
-          <description>Synchronization Size Configuration
-          Register</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>HSW</name>
-              <description>Horizontal Synchronization Width (in
-              units of pixel clock period)</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>VSH</name>
-              <description>Vertical Synchronization Height (in
-              units of horizontal scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BPCR</name>
-          <displayName>BPCR</displayName>
-          <description>Back Porch Configuration
-          Register</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AHBP</name>
-              <description>Accumulated Horizontal back porch (in
-              units of pixel clock period)</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>AVBP</name>
-              <description>Accumulated Vertical back porch (in
-              units of horizontal scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>AWCR</name>
-          <displayName>AWCR</displayName>
-          <description>Active Width Configuration
-          Register</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AAV</name>
-              <description>AAV</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>AAH</name>
-              <description>Accumulated Active Height (in units of
-              horizontal scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>TWCR</name>
-          <displayName>TWCR</displayName>
-          <description>Total Width Configuration
-          Register</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TOTALW</name>
-              <description>Total Width (in units of pixel clock
-              period)</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-            <field>
-              <name>TOTALH</name>
-              <description>Total Height (in units of horizontal
-              scan line)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>GCR</name>
-          <displayName>GCR</displayName>
-          <description>Global Control Register</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00002220</resetValue>
-          <fields>
-            <field>
-              <name>HSPOL</name>
-              <description>Horizontal Synchronization
-              Polarity</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>VSPOL</name>
-              <description>Vertical Synchronization
-              Polarity</description>
-              <bitOffset>30</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DEPOL</name>
-              <description>Data Enable Polarity</description>
-              <bitOffset>29</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>PCPOL</name>
-              <description>Pixel Clock Polarity</description>
-              <bitOffset>28</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DEN</name>
-              <description>Dither Enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DRW</name>
-              <description>Dither Red Width</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>DGW</name>
-              <description>Dither Green Width</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>DBW</name>
-              <description>Dither Blue Width</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>LTDCEN</name>
-              <description>LCD-TFT controller enable
-              bit</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SRCR</name>
-          <displayName>SRCR</displayName>
-          <description>Shadow Reload Configuration
-          Register</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>VBR</name>
-              <description>Vertical Blanking Reload</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IMR</name>
-              <description>Immediate Reload</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BCCR</name>
-          <displayName>BCCR</displayName>
-          <description>Background Color Configuration
-          Register</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>BC</name>
-              <description>Background Color Red value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>24</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IER</name>
-          <displayName>IER</displayName>
-          <description>Interrupt Enable Register</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RRIE</name>
-              <description>Register Reload interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TERRIE</name>
-              <description>Transfer Error Interrupt
-              Enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FUIE</name>
-              <description>FIFO Underrun Interrupt
-              Enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LIE</name>
-              <description>Line Interrupt Enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ISR</name>
-          <displayName>ISR</displayName>
-          <description>Interrupt Status Register</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RRIF</name>
-              <description>Register Reload Interrupt
-              Flag</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TERRIF</name>
-              <description>Transfer Error interrupt
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FUIF</name>
-              <description>FIFO Underrun Interrupt
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LIF</name>
-              <description>Line Interrupt flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ICR</name>
-          <displayName>ICR</displayName>
-          <description>Interrupt Clear Register</description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CRRIF</name>
-              <description>Clears Register Reload Interrupt
-              Flag</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CTERRIF</name>
-              <description>Clears the Transfer Error Interrupt
-              Flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CFUIF</name>
-              <description>Clears the FIFO Underrun Interrupt
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CLIF</name>
-              <description>Clears the Line Interrupt
-              Flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>LIPCR</name>
-          <displayName>LIPCR</displayName>
-          <description>Line Interrupt Position Configuration
-          Register</description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LIPOS</name>
-              <description>Line Interrupt Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CPSR</name>
-          <displayName>CPSR</displayName>
-          <description>Current Position Status
-          Register</description>
-          <addressOffset>0x44</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CXPOS</name>
-              <description>Current X Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-            <field>
-              <name>CYPOS</name>
-              <description>Current Y Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CDSR</name>
-          <displayName>CDSR</displayName>
-          <description>Current Display Status
-          Register</description>
-          <addressOffset>0x48</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x0000000F</resetValue>
-          <fields>
-            <field>
-              <name>HSYNCS</name>
-              <description>Horizontal Synchronization display
-              Status</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>VSYNCS</name>
-              <description>Vertical Synchronization display
-              Status</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HDES</name>
-              <description>Horizontal Data Enable display
-              Status</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>VDES</name>
-              <description>Vertical Data Enable display
-              Status</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CR</name>
-          <displayName>L1CR</displayName>
-          <description>Layerx Control Register</description>
-          <addressOffset>0x84</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTEN</name>
-              <description>Color Look-Up Table Enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>COLKEN</name>
-              <description>Color Keying Enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LEN</name>
-              <description>Layer Enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1WHPCR</name>
-          <displayName>L1WHPCR</displayName>
-          <description>Layerx Window Horizontal Position
-          Configuration Register</description>
-          <addressOffset>0x88</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WHSPPOS</name>
-              <description>Window Horizontal Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-            <field>
-              <name>WHSTPOS</name>
-              <description>Window Horizontal Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1WVPCR</name>
-          <displayName>L1WVPCR</displayName>
-          <description>Layerx Window Vertical Position
-          Configuration Register</description>
-          <addressOffset>0x8C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WVSPPOS</name>
-              <description>Window Vertical Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-            <field>
-              <name>WVSTPOS</name>
-              <description>Window Vertical Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CKCR</name>
-          <displayName>L1CKCR</displayName>
-          <description>Layerx Color Keying Configuration
-          Register</description>
-          <addressOffset>0x90</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CKRED</name>
-              <description>Color Key Red value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CKGREEN</name>
-              <description>Color Key Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>CKBLUE</name>
-              <description>Color Key Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1PFCR</name>
-          <displayName>L1PFCR</displayName>
-          <description>Layerx Pixel Format Configuration
-          Register</description>
-          <addressOffset>0x94</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>PF</name>
-              <description>Pixel Format</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CACR</name>
-          <displayName>L1CACR</displayName>
-          <description>Layerx Constant Alpha Configuration
-          Register</description>
-          <addressOffset>0x98</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CONSTA</name>
-              <description>Constant Alpha</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1DCCR</name>
-          <displayName>L1DCCR</displayName>
-          <description>Layerx Default Color Configuration
-          Register</description>
-          <addressOffset>0x9C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DCALPHA</name>
-              <description>Default Color Alpha</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCRED</name>
-              <description>Default Color Red</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCGREEN</name>
-              <description>Default Color Green</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCBLUE</name>
-              <description>Default Color Blue</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1BFCR</name>
-          <displayName>L1BFCR</displayName>
-          <description>Layerx Blending Factors Configuration
-          Register</description>
-          <addressOffset>0xA0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000607</resetValue>
-          <fields>
-            <field>
-              <name>BF1</name>
-              <description>Blending Factor 1</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>BF2</name>
-              <description>Blending Factor 2</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CFBAR</name>
-          <displayName>L1CFBAR</displayName>
-          <description>Layerx Color Frame Buffer Address
-          Register</description>
-          <addressOffset>0xAC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBADD</name>
-              <description>Color Frame Buffer Start
-              Address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CFBLR</name>
-          <displayName>L1CFBLR</displayName>
-          <description>Layerx Color Frame Buffer Length
-          Register</description>
-          <addressOffset>0xB0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBP</name>
-              <description>Color Frame Buffer Pitch in
-              bytes</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-            <field>
-              <name>CFBLL</name>
-              <description>Color Frame Buffer Line
-              Length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CFBLNR</name>
-          <displayName>L1CFBLNR</displayName>
-          <description>Layerx ColorFrame Buffer Line Number
-          Register</description>
-          <addressOffset>0xB4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBLNBR</name>
-              <description>Frame Buffer Line Number</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L1CLUTWR</name>
-          <displayName>L1CLUTWR</displayName>
-          <description>Layerx CLUT Write Register</description>
-          <addressOffset>0xC4</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTADD</name>
-              <description>CLUT Address</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RED</name>
-              <description>Red value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CR</name>
-          <displayName>L2CR</displayName>
-          <description>Layerx Control Register</description>
-          <addressOffset>0x104</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTEN</name>
-              <description>Color Look-Up Table Enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>COLKEN</name>
-              <description>Color Keying Enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LEN</name>
-              <description>Layer Enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2WHPCR</name>
-          <displayName>L2WHPCR</displayName>
-          <description>Layerx Window Horizontal Position
-          Configuration Register</description>
-          <addressOffset>0x108</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WHSPPOS</name>
-              <description>Window Horizontal Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-            <field>
-              <name>WHSTPOS</name>
-              <description>Window Horizontal Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>12</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2WVPCR</name>
-          <displayName>L2WVPCR</displayName>
-          <description>Layerx Window Vertical Position
-          Configuration Register</description>
-          <addressOffset>0x10C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WVSPPOS</name>
-              <description>Window Vertical Stop
-              Position</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-            <field>
-              <name>WVSTPOS</name>
-              <description>Window Vertical Start
-              Position</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CKCR</name>
-          <displayName>L2CKCR</displayName>
-          <description>Layerx Color Keying Configuration
-          Register</description>
-          <addressOffset>0x110</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CKRED</name>
-              <description>Color Key Red value</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>9</bitWidth>
-            </field>
-            <field>
-              <name>CKGREEN</name>
-              <description>Color Key Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>7</bitWidth>
-            </field>
-            <field>
-              <name>CKBLUE</name>
-              <description>Color Key Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2PFCR</name>
-          <displayName>L2PFCR</displayName>
-          <description>Layerx Pixel Format Configuration
-          Register</description>
-          <addressOffset>0x114</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>PF</name>
-              <description>Pixel Format</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CACR</name>
-          <displayName>L2CACR</displayName>
-          <description>Layerx Constant Alpha Configuration
-          Register</description>
-          <addressOffset>0x118</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CONSTA</name>
-              <description>Constant Alpha</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2DCCR</name>
-          <displayName>L2DCCR</displayName>
-          <description>Layerx Default Color Configuration
-          Register</description>
-          <addressOffset>0x11C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DCALPHA</name>
-              <description>Default Color Alpha</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCRED</name>
-              <description>Default Color Red</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCGREEN</name>
-              <description>Default Color Green</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>DCBLUE</name>
-              <description>Default Color Blue</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2BFCR</name>
-          <displayName>L2BFCR</displayName>
-          <description>Layerx Blending Factors Configuration
-          Register</description>
-          <addressOffset>0x120</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000607</resetValue>
-          <fields>
-            <field>
-              <name>BF1</name>
-              <description>Blending Factor 1</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>BF2</name>
-              <description>Blending Factor 2</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CFBAR</name>
-          <displayName>L2CFBAR</displayName>
-          <description>Layerx Color Frame Buffer Address
-          Register</description>
-          <addressOffset>0x12C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBADD</name>
-              <description>Color Frame Buffer Start
-              Address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CFBLR</name>
-          <displayName>L2CFBLR</displayName>
-          <description>Layerx Color Frame Buffer Length
-          Register</description>
-          <addressOffset>0x130</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBP</name>
-              <description>Color Frame Buffer Pitch in
-              bytes</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-            <field>
-              <name>CFBLL</name>
-              <description>Color Frame Buffer Line
-              Length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>13</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CFBLNR</name>
-          <displayName>L2CFBLNR</displayName>
-          <description>Layerx ColorFrame Buffer Line Number
-          Register</description>
-          <addressOffset>0x134</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CFBLNBR</name>
-              <description>Frame Buffer Line Number</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>11</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>L2CLUTWR</name>
-          <displayName>L2CLUTWR</displayName>
-          <description>Layerx CLUT Write Register</description>
-          <addressOffset>0x144</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CLUTADD</name>
-              <description>CLUT Address</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RED</name>
-              <description>Red value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>Green value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>Blue value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
-      <name>SAI</name>
-      <description>Serial audio interface</description>
-      <groupName>SAI</groupName>
-      <baseAddress>0x40015800</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <interrupt>
-        <name>SAI1</name>
-        <description>SAI1 global interrupt</description>
-        <value>87</value>
-      </interrupt>
-      <interrupt>
-        <name>SAI1</name>
-        <description>SAI1 global interrupt</description>
-        <value>87</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>BCR1</name>
-          <displayName>BCR1</displayName>
-          <description>BConfiguration register 1</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000040</resetValue>
-          <fields>
-            <field>
-              <name>MCJDIV</name>
-              <description>Master clock divider</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>NODIV</name>
-              <description>No divider</description>
-              <bitOffset>19</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DMAEN</name>
-              <description>DMA enable</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SAIBEN</name>
-              <description>Audio block B enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OutDri</name>
-              <description>Output drive</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MONO</name>
-              <description>Mono mode</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SYNCEN</name>
-              <description>Synchronization enable</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>CKSTR</name>
-              <description>Clock strobing edge</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LSBFIRST</name>
-              <description>Least significant bit
-              first</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS</name>
-              <description>Data size</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>PRTCFG</name>
-              <description>Protocol configuration</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>Audio block mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BCR2</name>
-          <displayName>BCR2</displayName>
-          <description>BConfiguration register 2</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>COMP</name>
-              <description>Companding mode</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>CPL</name>
-              <description>Complement bit</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTECN</name>
-              <description>Mute counter</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>6</bitWidth>
-            </field>
-            <field>
-              <name>MUTEVAL</name>
-              <description>Mute value</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTE</name>
-              <description>Mute</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TRIS</name>
-              <description>Tristate management on data
-              line</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FFLUS</name>
-              <description>FIFO flush</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FTH</name>
-              <description>FIFO threshold</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BFRCR</name>
-          <displayName>BFRCR</displayName>
-          <description>BFRCR</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000007</resetValue>
-          <fields>
-            <field>
-              <name>FSOFF</name>
-              <description>Frame synchronization
-              offset</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSPOL</name>
-              <description>Frame synchronization
-              polarity</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSDEF</name>
-              <description>Frame synchronization
-              definition</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSALL</name>
-              <description>Frame synchronization active level
-              length</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>7</bitWidth>
-            </field>
-            <field>
-              <name>FRL</name>
-              <description>Frame length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BSLOTR</name>
-          <displayName>BSLOTR</displayName>
-          <description>BSlot register</description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>SLOTEN</name>
-              <description>Slot enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-            <field>
-              <name>NBSLOT</name>
-              <description>Number of slots in an audio
-              frame</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>SLOTSZ</name>
-              <description>Slot size</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>FBOFF</name>
-              <description>First bit offset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BIM</name>
-          <displayName>BIM</displayName>
-          <description>BInterrupt mask register2</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LFSDETIE</name>
-              <description>Late frame synchronization detection
-              interrupt enable</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDETIE</name>
-              <description>Anticipated frame synchronization
-              detection interrupt enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDYIE</name>
-              <description>Codec not ready interrupt
-              enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQIE</name>
-              <description>FIFO request interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Wrong clock configuration interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection interrupt
-              enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OVRUDRIE</name>
-              <description>Overrun/underrun interrupt
-              enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BSR</name>
-          <displayName>BSR</displayName>
-          <description>BStatus register</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FLVL</name>
-              <description>FIFO level threshold</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>LFSDET</name>
-              <description>Late frame synchronization
-              detection</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDET</name>
-              <description>Anticipated frame synchronization
-              detection</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDY</name>
-              <description>Codec not ready</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQ</name>
-              <description>FIFO request</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Wrong clock configuration
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OVRUDR</name>
-              <description>Overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BCLRFR</name>
-          <displayName>BCLRFR</displayName>
-          <description>BClear flag register</description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LFSDET</name>
-              <description>Clear late frame synchronization
-              detection flag</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CAFSDET</name>
-              <description>Clear anticipated frame synchronization
-              detection flag</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDY</name>
-              <description>Clear codec not ready flag</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Clear wrong clock configuration
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OVRUDR</name>
-              <description>Clear overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BDR</name>
-          <displayName>BDR</displayName>
-          <description>BData register</description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>Data</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ACR1</name>
-          <displayName>ACR1</displayName>
-          <description>AConfiguration register 1</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000040</resetValue>
-          <fields>
-            <field>
-              <name>MCJDIV</name>
-              <description>Master clock divider</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>NODIV</name>
-              <description>No divider</description>
-              <bitOffset>19</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DMAEN</name>
-              <description>DMA enable</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SAIAEN</name>
-              <description>Audio block A enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OutDri</name>
-              <description>Output drive</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MONO</name>
-              <description>Mono mode</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SYNCEN</name>
-              <description>Synchronization enable</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>CKSTR</name>
-              <description>Clock strobing edge</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LSBFIRST</name>
-              <description>Least significant bit
-              first</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DS</name>
-              <description>Data size</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>PRTCFG</name>
-              <description>Protocol configuration</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>Audio block mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ACR2</name>
-          <displayName>ACR2</displayName>
-          <description>AConfiguration register 2</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>COMP</name>
-              <description>Companding mode</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>CPL</name>
-              <description>Complement bit</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTECN</name>
-              <description>Mute counter</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>6</bitWidth>
-            </field>
-            <field>
-              <name>MUTEVAL</name>
-              <description>Mute value</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTE</name>
-              <description>Mute</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TRIS</name>
-              <description>Tristate management on data
-              line</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FFLUS</name>
-              <description>FIFO flush</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FTH</name>
-              <description>FIFO threshold</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>AFRCR</name>
-          <displayName>AFRCR</displayName>
-          <description>AFRCR</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000007</resetValue>
-          <fields>
-            <field>
-              <name>FSOFF</name>
-              <description>Frame synchronization
-              offset</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSPOL</name>
-              <description>Frame synchronization
-              polarity</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSDEF</name>
-              <description>Frame synchronization
-              definition</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FSALL</name>
-              <description>Frame synchronization active level
-              length</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>7</bitWidth>
-            </field>
-            <field>
-              <name>FRL</name>
-              <description>Frame length</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ASLOTR</name>
-          <displayName>ASLOTR</displayName>
-          <description>ASlot register</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>SLOTEN</name>
-              <description>Slot enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-            <field>
-              <name>NBSLOT</name>
-              <description>Number of slots in an audio
-              frame</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>SLOTSZ</name>
-              <description>Slot size</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>FBOFF</name>
-              <description>First bit offset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>AIM</name>
-          <displayName>AIM</displayName>
-          <description>AInterrupt mask register2</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LFSDET</name>
-              <description>Late frame synchronization detection
-              interrupt enable</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDETIE</name>
-              <description>Anticipated frame synchronization
-              detection interrupt enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDYIE</name>
-              <description>Codec not ready interrupt
-              enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQIE</name>
-              <description>FIFO request interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Wrong clock configuration interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection interrupt
-              enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OVRUDRIE</name>
-              <description>Overrun/underrun interrupt
-              enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ASR</name>
-          <displayName>ASR</displayName>
-          <description>AStatus register</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FLVL</name>
-              <description>FIFO level threshold</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>LFSDET</name>
-              <description>Late frame synchronization
-              detection</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>AFSDET</name>
-              <description>Anticipated frame synchronization
-              detection</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDY</name>
-              <description>Codec not ready</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FREQ</name>
-              <description>FIFO request</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Wrong clock configuration flag. This bit
-              is read only.</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OVRUDR</name>
-              <description>Overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ACLRFR</name>
-          <displayName>ACLRFR</displayName>
-          <description>AClear flag register</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LFSDET</name>
-              <description>Clear late frame synchronization
-              detection flag</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CAFSDET</name>
-              <description>Clear anticipated frame synchronization
-              detection flag.</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CNRDY</name>
-              <description>Clear codec not ready flag</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WCKCFG</name>
-              <description>Clear wrong clock configuration
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>MUTEDET</name>
-              <description>Mute detection flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>OVRUDR</name>
-              <description>Clear overrun / underrun</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ADR</name>
-          <displayName>ADR</displayName>
-          <description>AData register</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>Data</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
-      <name>DMA2D</name>
-      <description>DMA2D controller</description>
-      <groupName>DMA2D</groupName>
-      <baseAddress>0x4002B000</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0xC00</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <interrupt>
-        <name>DMA2D</name>
-        <description>DMA2D global interrupt</description>
-        <value>90</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2D</name>
-        <description>DMA2D global interrupt</description>
-        <value>90</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>CR</name>
-          <displayName>CR</displayName>
-          <description>control register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>MODE</name>
-              <description>DMA2D mode</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>CEIE</name>
-              <description>Configuration Error Interrupt
-              Enable</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CTCIE</name>
-              <description>CLUT transfer complete interrupt
-              enable</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CAEIE</name>
-              <description>CLUT access error interrupt
-              enable</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TWIE</name>
-              <description>Transfer watermark interrupt
-              enable</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TCIE</name>
-              <description>Transfer complete interrupt
-              enable</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TEIE</name>
-              <description>Transfer error interrupt
-              enable</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ABORT</name>
-              <description>Abort</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SUSP</name>
-              <description>Suspend</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>START</name>
-              <description>Start</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ISR</name>
-          <displayName>ISR</displayName>
-          <description>Interrupt Status Register</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CEIF</name>
-              <description>Configuration error interrupt
-              flag</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CTCIF</name>
-              <description>CLUT transfer complete interrupt
-              flag</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CAEIF</name>
-              <description>CLUT access error interrupt
-              flag</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TWIF</name>
-              <description>Transfer watermark interrupt
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TCIF</name>
-              <description>Transfer complete interrupt
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TEIF</name>
-              <description>Transfer error interrupt
-              flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IFCR</name>
-          <displayName>IFCR</displayName>
-          <description>interrupt flag clear register</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CCEIF</name>
-              <description>Clear configuration error interrupt
-              flag</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCTCIF</name>
-              <description>Clear CLUT transfer complete interrupt
-              flag</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CAECIF</name>
-              <description>Clear CLUT access error interrupt
-              flag</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CTWIF</name>
-              <description>Clear transfer watermark interrupt
-              flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CTCIF</name>
-              <description>Clear transfer complete interrupt
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CTEIF</name>
-              <description>Clear Transfer error interrupt
-              flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>FGMAR</name>
-          <displayName>FGMAR</displayName>
-          <description>foreground memory address
-          register</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>MA</name>
-              <description>Memory address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>FGOR</name>
-          <displayName>FGOR</displayName>
-          <description>foreground offset register</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LO</name>
-              <description>Line offset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>14</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BGMAR</name>
-          <displayName>BGMAR</displayName>
-          <description>background memory address
-          register</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>MA</name>
-              <description>Memory address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BGOR</name>
-          <displayName>BGOR</displayName>
-          <description>background offset register</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LO</name>
-              <description>Line offset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>14</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>FGPFCCR</name>
-          <displayName>FGPFCCR</displayName>
-          <description>foreground PFC control
-          register</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>ALPHA</name>
-              <description>Alpha value</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>AM</name>
-              <description>Alpha mode</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>CS</name>
-              <description>CLUT size</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>START</name>
-              <description>Start</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCM</name>
-              <description>CLUT color mode</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CM</name>
-              <description>Color mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>FGCOLR</name>
-          <displayName>FGCOLR</displayName>
-          <description>foreground color register</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RED</name>
-              <description>Red Value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>Green Value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>Blue Value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BGPFCCR</name>
-          <displayName>BGPFCCR</displayName>
-          <description>background PFC control
-          register</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>ALPHA</name>
-              <description>Alpha value</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>AM</name>
-              <description>Alpha mode</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>CS</name>
-              <description>CLUT size</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>START</name>
-              <description>Start</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCM</name>
-              <description>CLUT Color mode</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CM</name>
-              <description>Color mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BGCOLR</name>
-          <displayName>BGCOLR</displayName>
-          <description>background color register</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RED</name>
-              <description>Red Value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>Green Value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>Blue Value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>FGCMAR</name>
-          <displayName>FGCMAR</displayName>
-          <description>foreground CLUT memory address
-          register</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>MA</name>
-              <description>Memory Address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BGCMAR</name>
-          <displayName>BGCMAR</displayName>
-          <description>background CLUT memory address
-          register</description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>MA</name>
-              <description>Memory address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>OPFCCR</name>
-          <displayName>OPFCCR</displayName>
-          <description>output PFC control register</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CM</name>
-              <description>Color mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>OCOLR</name>
-          <displayName>OCOLR</displayName>
-          <description>output color register</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>APLHA</name>
-              <description>Alpha Channel Value</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RED</name>
-              <description>Red Value</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>Green Value</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>Blue Value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>OMAR</name>
-          <displayName>OMAR</displayName>
-          <description>output memory address register</description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>MA</name>
-              <description>Memory Address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>OOR</name>
-          <displayName>OOR</displayName>
-          <description>output offset register</description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LO</name>
-              <description>Line Offset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>14</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>NLR</name>
-          <displayName>NLR</displayName>
-          <description>number of line register</description>
-          <addressOffset>0x44</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>PL</name>
-              <description>Pixel per lines</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>14</bitWidth>
-            </field>
-            <field>
-              <name>NL</name>
-              <description>Number of lines</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>LWR</name>
-          <displayName>LWR</displayName>
-          <description>line watermark register</description>
-          <addressOffset>0x48</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>LW</name>
-              <description>Line watermark</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>AMTCR</name>
-          <displayName>AMTCR</displayName>
-          <description>AHB master timer configuration
-          register</description>
-          <addressOffset>0x4C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DT</name>
-              <description>Dead Time</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>EN</name>
-              <description>Enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>FGCLUT</name>
-          <displayName>FGCLUT</displayName>
-          <description>FGCLUT</description>
-          <addressOffset>0x400</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>APLHA</name>
-              <description>APLHA</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RED</name>
-              <description>RED</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>GREEN</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>BLUE</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BGCLUT</name>
-          <displayName>BGCLUT</displayName>
-          <description>BGCLUT</description>
-          <addressOffset>0x800</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>APLHA</name>
-              <description>APLHA</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>RED</name>
-              <description>RED</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>GREEN</name>
-              <description>GREEN</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-            <field>
-              <name>BLUE</name>
-              <description>BLUE</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
       <name>I2C3</name>
       <description>Inter-integrated circuit</description>
       <groupName>I2C</groupName>
@@ -60285,36 +57517,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <name>I2C3_EV</name>
         <description>I2C3 event interrupt</description>
         <value>72</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_EV</name>
-        <description>I2C3 event interrupt</description>
-        <value>72</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_ER</name>
-        <description>I2C3 error interrupt</description>
-        <value>73</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_ER</name>
-        <description>I2C3 error interrupt</description>
-        <value>73</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_EV</name>
-        <description>I2C3 event interrupt</description>
-        <value>72</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_EV</name>
-        <description>I2C3 event interrupt</description>
-        <value>72</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C3_ER</name>
-        <description>I2C3 error interrupt</description>
-        <value>73</value>
       </interrupt>
       <interrupt>
         <name>I2C3_ER</name>
@@ -60802,36 +58004,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>33</value>
       </interrupt>
       <interrupt>
-        <name>I2C2_EV</name>
-        <description>I2C2 event interrupt</description>
-        <value>33</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_ER</name>
-        <description>I2C2 error interrupt</description>
-        <value>34</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_ER</name>
-        <description>I2C2 error interrupt</description>
-        <value>34</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_EV</name>
-        <description>I2C2 event interrupt</description>
-        <value>33</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_EV</name>
-        <description>I2C2 event interrupt</description>
-        <value>33</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C2_ER</name>
-        <description>I2C2 error interrupt</description>
-        <value>34</value>
-      </interrupt>
-      <interrupt>
         <name>I2C2_ER</name>
         <description>I2C2 error interrupt</description>
         <value>34</value>
@@ -60844,36 +58016,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <name>I2C1_EV</name>
         <description>I2C1 event interrupt</description>
         <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_EV</name>
-        <description>I2C1 event interrupt</description>
-        <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_ER</name>
-        <description>I2C1 error interrupt</description>
-        <value>32</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_ER</name>
-        <description>I2C1 error interrupt</description>
-        <value>32</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_EV</name>
-        <description>I2C1 event interrupt</description>
-        <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_EV</name>
-        <description>I2C1 event interrupt</description>
-        <value>31</value>
-      </interrupt>
-      <interrupt>
-        <name>I2C1_ER</name>
-        <description>I2C1 error interrupt</description>
-        <value>32</value>
       </interrupt>
       <interrupt>
         <name>I2C1_ER</name>

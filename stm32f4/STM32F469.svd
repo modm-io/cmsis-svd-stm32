@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2022 STMicroelectronics.
+Copyright (c) 2023 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2022 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F469</name>
-  <version>1.7</version>
+  <version>1.8</version>
   <description>STM32F469</description>
   <cpu>
     <name>CM4</name>
@@ -58660,7 +58660,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Horizontal Synchronization Width (in
               units of pixel clock period)</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>VSH</name>
@@ -58686,7 +58686,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Accumulated Horizontal back porch (in
               units of pixel clock period)</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>AVBP</name>
@@ -58708,10 +58708,10 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>AAV</name>
-              <description>AAV</description>
+              <name>AAW</name>
+              <description>AAW</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>AAH</name>
@@ -58737,7 +58737,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Total Width (in units of pixel clock
               period)</description>
               <bitOffset>16</bitOffset>
-              <bitWidth>10</bitWidth>
+              <bitWidth>12</bitWidth>
             </field>
             <field>
               <name>TOTALH</name>
@@ -62970,7 +62970,7 @@ This field configures the less significant byte of the header packet word count 
               <field>
                 <name>WCMSB</name>
                 <description>WordCount MSB
-This field configures the most significant byte of the header packet’s word count for long packets, or data 1 for short packets.</description>
+This field configures the most significant byte of the header packet word count for long packets, or data 1 for short packets.</description>
                 <bitOffset>16</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -63190,12 +63190,10 @@ This field configures the timeout counter that triggers a low-power reception ti
               </field>
               <field>
                 <name>HSTX_TOCNT</name>
-                <description>High-speed transmission timeout counter
-This field configures the timeout counter that triggers a high-speed transmission timeout contention detection (measured in TOCKDIV cycles).
-If using the non-burst mode and there is no enough time to switch from high-speed to low-power and back in the period from one line data finishing to the next line sync start, the DSI link returns the low-power state once per frame, then configure the TOCKDIV and HSTX_TOCNT to be in accordance with:
-HSTX_TOCNT * lanebyteclkperiod * TOCKDIV ≥ the time of one FRAME data transmission * (1 + 10%)
-In burst mode, RGB pixel packets are time-compressed, leaving more time during a scan line. Therefore, if in burst mode and there is enough time to switch from high-speed to low-power and back in the period from one line data finishing to the next line sync start, the DSI link can return low-power mode and back in this time interval to save power. For this, configure the TOCKDIV and HSTX_TOCNT to be in accordance with:
-HSTX_TOCNT * lanebyteclkperiod * TOCKDIV ≥ the time of one LINE data transmission * (1 + 10%)</description>
+                <description> High-speed transmission timeout counter
+This field configures the timeout counter that triggers a high-speed transmission timeout
+contention detection (measured in TOCKDIV cycles).
+</description>
                 <bitOffset>16</bitOffset>
                 <bitWidth>16</bitWidth>
                 <access>read-write</access>
@@ -63301,7 +63299,7 @@ This field sets a period for which the DSI Host keeps the link still, after send
               <field>
                 <name>BTA_TOCNT</name>
                 <description>Bus-turn-around timeout counter
-This field sets a period for which the DSI Host keeps the link still, after completing a bus-turn-around. This period is measured in cycles of lanebyteclk. The counting starts when the D‑PHY enters the Stop state and causes no interrupts.</description>
+This field sets a period for which the DSI Host keeps the link still, after completing a bus-turn-around. This period is measured in cycles of lanebyteclk. The counting starts when the D-PHY enters the Stop state and causes no interrupts.</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>16</bitWidth>
                 <access>read-write</access>
@@ -63371,7 +63369,7 @@ This bit enables the automatic mechanism to stop providing clock in the clock la
               <field>
                 <name>LP2HS_TIME</name>
                 <description>Low-power to high-speed time
-This field configures the maximum time that the D-PHY clock lane takes to go from low‑power to high-speed transmission measured in lane byte clock cycles.</description>
+This field configures the maximum time that the D-PHY clock lane takes to go from low power to high-speed transmission measured in lane byte clock cycles.</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>10</bitWidth>
                 <access>read-write</access>
@@ -63379,7 +63377,7 @@ This field configures the maximum time that the D-PHY clock lane takes to go fro
               <field>
                 <name>HS2LP_TIME</name>
                 <description>High-speed to low-power time
-This field configures the maximum time that the D-PHY clock lane takes to go from high‑speed to low-power transmission measured in lane byte clock cycles.</description>
+This field configures the maximum time that the D-PHY clock lane takes to go from high speed to low-power transmission measured in lane byte clock cycles.</description>
                 <bitOffset>16</bitOffset>
                 <bitWidth>10</bitWidth>
                 <access>read-write</access>
@@ -65107,56 +65105,6 @@ If LTDC interface in command mode is chosen and currently works in the command m
                     <description>24-bit</description>
                     <value>0x5</value>
                   </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0x6</name>
-                    <description>reserved</description>
-                    <value>0x6</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0x7</name>
-                    <description>reserved</description>
-                    <value>0x7</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0x8</name>
-                    <description>reserved</description>
-                    <value>0x8</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0x9</name>
-                    <description>reserved</description>
-                    <value>0x9</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0xA</name>
-                    <description>reserved</description>
-                    <value>0xA</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0xB</name>
-                    <description>reserved</description>
-                    <value>0xB</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0xC</name>
-                    <description>reserved</description>
-                    <value>0xC</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0xD</name>
-                    <description>reserved</description>
-                    <value>0xD</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0xE</name>
-                    <description>reserved</description>
-                    <value>0xE</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>B_0xF</name>
-                    <description>reserved</description>
-                    <value>0xF</value>
-                  </enumeratedValue>
                 </enumeratedValues>
               </field>
               <field>
@@ -65624,7 +65572,7 @@ This bit must only be changed when DSI Host is stopped (DSI_CR.EN = 0).</descrip
                 <name>COLMUX</name>
                 <description>Color multiplexing
 This bit selects the color multiplexing used by DSI Host.
-This field must only be changed when DSI is stopped (DSI_WCR.DSIEN = 0 and DSI_CR.EN�=�0).</description>
+This field must only be changed when DSI is stopped (DSI_WCR.DSIEN = 0 and DSI_CR.EN=0).</description>
                 <bitOffset>1</bitOffset>
                 <bitWidth>3</bitWidth>
                 <access>read-write</access>
@@ -65728,7 +65676,7 @@ This bit must only be changed when DSI Host is stopped (DSI_CR.EN = 0).</descrip
                 <name>VSPOL</name>
                 <description>VSync polarity
 This bit selects the VSync edge on which the LTDC is halted.
-This bit must only be changed when DSI is stopped (DSI_WCR.DSIEN = 0 and DSI_CR.EN�=�0).</description>
+This bit must only be changed when DSI is stopped (DSI_WCR.DSIEN = 0 and DSI_CR.EN=0).</description>
                 <bitOffset>7</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -66639,7 +66587,7 @@ Default value = 00.</description>
               <field>
                 <name>SDDC</name>
                 <description>SDD control
-This bit switches on the additional current path to meet the SDDTx parameter defined by MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY Specification on both clock and data lanes.</description>
+This bit switches on the additional current path to meet the SDDTx parameter defined by MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY Specification on both clock and data lanes.</description>
                 <bitOffset>12</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -66678,7 +66626,7 @@ Default value = 00.</description>
                 <name>FLPRXLPM</name>
                 <description>Forces LP receiver in low-power mode
 This bit enables the low-power mode of LP receiver (LPRX). When set, the LPRX
-operates in low-power mode all the time (when this is not activated, LPRX operates in low‑power mode during ULPS only).</description>
+operates in low-power mode all the time (when this is not activated, LPRX operates in low power mode during ULPS only).</description>
                 <bitOffset>22</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -66717,8 +66665,8 @@ This signal can be used to tune the cutoff frequency of low-pass filter at the i
               <field>
                 <name>TCLKPREP</name>
                 <description>t&lt;sub&gt;CLK-PREPARE&lt;/sub&gt;
-This field defines the t&lt;sub&gt;CLK-PREPARE&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the TCLKPREPEN bit of the DSI_WPCR0 is set.
-TCLKPREP = 2 x t&lt;sub&gt;CLK-PREPARE&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TCLKPREPEN bit of the DSI_WPCR0 is reset is 120 (60�ns + 20�*�UI).</description>
+This field defines the t&lt;sub&gt;CLK-PREPARE&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the TCLKPREPEN bit of the DSI_WPCR0 is set.
+TCLKPREP = 2 x t&lt;sub&gt;CLK-PREPARE&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TCLKPREPEN bit of the DSI_WPCR0 is reset is 120 (60ns + 20*UI).</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66726,8 +66674,8 @@ TCLKPREP = 2 x t&lt;sub&gt;CLK-PREPARE&lt;/sub&gt; expressed in ns.The default v
               <field>
                 <name>TCLKZERO</name>
                 <description>t&lt;sub&gt;CLK-ZERO&lt;/sub&gt;
-This field defines the t&lt;sub&gt;CLK-ZERO&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the TCLKZEROEN bit of the DSI_WPCR0 is set.
-TCLKZERO = t&lt;sub&gt;CLK-ZERO&lt;/sub&gt; / 2 expressed in ns.The default value used by the D-PHY when TCLKZEROEN bit of the DSI_WPCR0 is reset is 195 (390�ns).</description>
+This field defines the t&lt;sub&gt;CLK-ZERO&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the TCLKZEROEN bit of the DSI_WPCR0 is set.
+TCLKZERO = t&lt;sub&gt;CLK-ZERO&lt;/sub&gt; / 2 expressed in ns.The default value used by the D-PHY when TCLKZEROEN bit of the DSI_WPCR0 is reset is 195 (390ns).</description>
                 <bitOffset>8</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66735,8 +66683,8 @@ TCLKZERO = t&lt;sub&gt;CLK-ZERO&lt;/sub&gt; / 2 expressed in ns.The default valu
               <field>
                 <name>THSPREP</name>
                 <description>t&lt;sub&gt;HS-PREPARE&lt;/sub&gt;
-This field defines the t&lt;sub&gt;HS-PREPARE&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSPREPEN bit of the DSI_WPCR0 is set.
-THSPREP = 2 x t&lt;sub&gt;HS-PREPARE&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSPREPEN bit of the DSI_WPCR0 is reset is 126 (63�ns + 12�*�UI).</description>
+This field defines the t&lt;sub&gt;HS-PREPARE&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSPREPEN bit of the DSI_WPCR0 is set.
+THSPREP = 2 x t&lt;sub&gt;HS-PREPARE&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSPREPEN bit of the DSI_WPCR0 is reset is 126 (63ns + 12*UI).</description>
                 <bitOffset>16</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66744,8 +66692,8 @@ THSPREP = 2 x t&lt;sub&gt;HS-PREPARE&lt;/sub&gt; expressed in ns.The default val
               <field>
                 <name>THSTRAIL</name>
                 <description>t&lt;sub&gt;HSTRAIL&lt;/sub&gt;
-This field defines the t&lt;sub&gt;HS-TRAIL&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSTRAILEN bit of the DSI_WPCR0 is set.
-THSTRAIL = 2 x t&lt;sub&gt;HS-TRAIL&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSTRAILEN bit of the DSI_WPCR0 is reset is 140 (70�ns�+�8�*�UI).</description>
+This field defines the t&lt;sub&gt;HS-TRAIL&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSTRAILEN bit of the DSI_WPCR0 is set.
+THSTRAIL = 2 x t&lt;sub&gt;HS-TRAIL&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSTRAILEN bit of the DSI_WPCR0 is reset is 140 (70ns+8*UI).</description>
                 <bitOffset>24</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66764,8 +66712,8 @@ THSTRAIL = 2 x t&lt;sub&gt;HS-TRAIL&lt;/sub&gt; expressed in ns.The default valu
               <field>
                 <name>THSZERO</name>
                 <description>t&lt;sub&gt;HS-ZERO&lt;/sub&gt;
-This field defines the t&lt;sub&gt;HS-ZERO&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSZEROEN bit of the DSI_WPCR1 is set.
-THSZERO = t&lt;sub&gt;HS-ZERO&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSZEROEN bit of the DSI_WPCR1 is reset is 175, (175�ns).</description>
+This field defines the t&lt;sub&gt;HS-ZERO&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSZEROEN bit of the DSI_WPCR1 is set.
+THSZERO = t&lt;sub&gt;HS-ZERO&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSZEROEN bit of the DSI_WPCR1 is reset is 175, (175ns).</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66773,8 +66721,8 @@ THSZERO = t&lt;sub&gt;HS-ZERO&lt;/sub&gt; expressed in ns.The default value used
               <field>
                 <name>TLPXD</name>
                 <description>t&lt;sub&gt;LPX&lt;/sub&gt; for data lanes
-This field defines the t&lt;sub&gt;LPX&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification for the data lanes. This value is used by the D-PHY when the TLPXDEN bit of the DSI_WPCR1 is set.
-TLPXD = 2 x t&lt;sub&gt;LPX&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TLPXDEN bit of the DSI_WPCR1 is reset is 100 (50�ns).</description>
+This field defines the t&lt;sub&gt;LPX&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification for the data lanes. This value is used by the D-PHY when the TLPXDEN bit of the DSI_WPCR1 is set.
+TLPXD = 2 x t&lt;sub&gt;LPX&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TLPXDEN bit of the DSI_WPCR1 is reset is 100 (50ns).</description>
                 <bitOffset>8</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66782,8 +66730,8 @@ TLPXD = 2 x t&lt;sub&gt;LPX&lt;/sub&gt; expressed in ns.The default value used b
               <field>
                 <name>THSEXIT</name>
                 <description>t&lt;sub&gt;HSEXIT&lt;/sub&gt;
-This field defines the t&lt;sub&gt;HS-EXHigh-SpeedIT&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSEXITEN bit of the DSI_WPCR1 is set.
-THSEXIT = t&lt;sub&gt;HS-ZERO&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSEXITEN bit of the DSI_WPCR1 is reset is 100 (100�ns).</description>
+This field defines the t&lt;sub&gt;HS-EXHigh-SpeedIT&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the THSEXITEN bit of the DSI_WPCR1 is set.
+THSEXIT = t&lt;sub&gt;HS-ZERO&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when THSEXITEN bit of the DSI_WPCR1 is reset is 100 (100ns).</description>
                 <bitOffset>16</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66791,8 +66739,8 @@ THSEXIT = t&lt;sub&gt;HS-ZERO&lt;/sub&gt; expressed in ns.The default value used
               <field>
                 <name>TLPXC</name>
                 <description>t&lt;sub&gt;LPXC&lt;/sub&gt; for clock lane
-This field defines the t&lt;sub&gt;LPX&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification for the clock lane. This value is used by the D-PHY when the TLPXCEN bit of the DSI_WPCR1 is set.
-TLPXC = 2 x t&lt;sub&gt;LPX&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TLPXCEN bit of the DSI_WPCR1 is reset is 100 (50�ns).</description>
+This field defines the t&lt;sub&gt;LPX&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification for the clock lane. This value is used by the D-PHY when the TLPXCEN bit of the DSI_WPCR1 is set.
+TLPXC = 2 x t&lt;sub&gt;LPX&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TLPXCEN bit of the DSI_WPCR1 is reset is 100 (50ns).</description>
                 <bitOffset>24</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
@@ -66811,8 +66759,8 @@ TLPXC = 2 x t&lt;sub&gt;LPX&lt;/sub&gt; expressed in ns.The default value used b
               <field>
                 <name>TCLKPOST</name>
                 <description>t&lt;sub&gt;CLK-POST&lt;/sub&gt;
-This field defines the t&lt;sub&gt;CLK-POST&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;�&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the TCLKPOSTEN bit of the DSI_WPCR0 is set.
-TCLKPOST = 2 x t&lt;sub&gt;CLK-POST&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TCLKPOSTEN bit of the DSI_WPCR0 is reset is 200 (100�ns + 120�*�UI).</description>
+This field defines the t&lt;sub&gt;CLK-POST&lt;/sub&gt; has specified in the MIPI&lt;sup&gt;&lt;/sup&gt; D-PHY specification. This value is used by the D-PHY when the TCLKPOSTEN bit of the DSI_WPCR0 is set.
+TCLKPOST = 2 x t&lt;sub&gt;CLK-POST&lt;/sub&gt; expressed in ns.The default value used by the D-PHY when TCLKPOSTEN bit of the DSI_WPCR0 is reset is 200 (100ns + 120*UI).</description>
                 <bitOffset>0</bitOffset>
                 <bitWidth>8</bitWidth>
                 <access>read-write</access>
