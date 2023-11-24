@@ -18,7 +18,7 @@ Copyright (c) 2023 STMicroelectronics.
 -->
 <device xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xsi:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32H735</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <description>STM32H735</description>
   <cpu>
     <name>CM7</name>
@@ -20676,49 +20676,9 @@ A read from this register resets the RRDY flag in the CORDIC_CSR register.</desc
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>PVD_PVM</name>
-        <description>PVD through EXTI line</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI0</name>
-        <description>EXTI Line 0 interrupt</description>
-        <value>6</value>
-      </interrupt>
-      <interrupt>
         <name>EXTI1</name>
         <description>EXTI Line 1 interrupt</description>
         <value>7</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI2</name>
-        <description>EXTI Line 2 interrupt</description>
-        <value>8</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI3</name>
-        <description>EXTI Line 3interrupt</description>
-        <value>9</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI4</name>
-        <description>EXTI Line 4interrupt</description>
-        <value>10</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI9_5</name>
-        <description>EXTI Line[9:5] interrupts</description>
-        <value>23</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI15_10</name>
-        <description>EXTI Line[15:10] interrupts</description>
-        <value>40</value>
-      </interrupt>
-      <interrupt>
-        <name>WKUP</name>
-        <description>WKUP1 to WKUP6 pins</description>
-        <value>149</value>
       </interrupt>
       <registers>
         <register>
@@ -32404,6 +32364,16 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <description>WKUP1 to WKUP6 pins</description>
         <value>149</value>
       </interrupt>
+	  <interrupt>
+        <name>FPU</name>
+        <description> CPU FPU interrupt</description>
+        <value>81</value>
+      </interrupt>
+	  <interrupt>
+        <name>TEMP_IT</name>
+        <description>Temperature sensor global interrupt</description>
+        <value>147</value>
+      </interrupt>
       <registers>
         <register>
           <name>RTSR1</name>
@@ -41477,6 +41447,12 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <name>EFGI</name>
               <description>Event FIFO Get Index.</description>
               <bitOffset>8</bitOffset>
+              <bitWidth>5</bitWidth>
+            </field>
+            <field>
+              <name>EFPI</name>
+              <description>Event FIFO put index.</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
             <field>
@@ -68469,6 +68445,26 @@ Instruction to be sent to the external SPI device</description>
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>OTG_HS_EP1_OUT</name>
+        <description>USB OTG_HS OUT endpoint1 global interrupt</description>
+        <value>74</value>
+      </interrupt>
+      <interrupt>
+        <name>OTG_HS_EP1_IN</name>
+        <description>USB OTG_HS IN endpoint1 global interrupt</description>
+        <value>75</value>
+      </interrupt>
+      <interrupt>
+        <name>OTG_HS_WKUP</name>
+        <description>USB OTG_HS wakeup Interrupt through EXTI linet</description>
+        <value>76</value>
+      </interrupt>
+      <interrupt>
+        <name>OTG_HS</name>
+        <description>USB OTG_HS global interrupt</description>
+        <value>77</value>
+      </interrupt>
       <registers>
         <register>
           <name>OTG_HS_DCFG</name>
@@ -82969,6 +82965,11 @@ Writing this bit to 1 clears the OVR_RIS bit in PSSI_RIS.</description>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+	  <interrupt>
+        <name>ECC_DIAG_IT</name>
+        <description>ECC diagnostic global interrup</description>
+        <value>145</value>
+      </interrupt>
       <registers>
         <register>
           <name>IER</name>
@@ -85491,26 +85492,26 @@ Note: The reset value of the field is 0x20.</description>
           <resetValue>0x01010280</resetValue>
           <fields>
             <field>
-              <name>DIVN1</name>
+              <name>DIVN2</name>
               <description>Multiplication factor for PLL1
               VCO</description>
               <bitOffset>0</bitOffset>
               <bitWidth>9</bitWidth>
             </field>
             <field>
-              <name>DIVP1</name>
+              <name>DIVP2</name>
               <description>PLL1 DIVP division factor</description>
               <bitOffset>9</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
             <field>
-              <name>DIVQ1</name>
+              <name>DIVQ2</name>
               <description>PLL1 DIVQ division factor</description>
               <bitOffset>16</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
             <field>
-              <name>DIVR1</name>
+              <name>DIVR2</name>
               <description>PLL1 DIVR division factor</description>
               <bitOffset>24</bitOffset>
               <bitWidth>7</bitWidth>
@@ -90477,6 +90478,11 @@ DFSDM1 peripheral clocks are the kernel clocks selected by SAI1SEL and DFSDM1SEL
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+	  <interrupt>
+        <name>HASH_RNG</name>
+        <description>HASH OR RNG interrupt </description>
+        <value>80</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -99481,8 +99487,8 @@ DFSDM1 peripheral clocks are the kernel clocks selected by SAI1SEL and DFSDM1SEL
           </fields>
         </register>
         <register>
-          <name>CRR6</name>
-          <displayName>CRR6</displayName>
+          <name>CCR6</name>
+          <displayName>CCR6</displayName>
           <description>capture/compare register 6</description>
           <addressOffset>0x5C</addressOffset>
           <size>0x20</size>
@@ -104168,6 +104174,11 @@ DFSDM1 peripheral clocks are the kernel clocks selected by SAI1SEL and DFSDM1SEL
 	<peripheral derivedFrom="USART1">
       <name>UART9</name>
       <baseAddress>0x40011800</baseAddress>
+      <interrupt>
+        <name>UART9</name>
+        <description>UART9 interrupt</description>
+        <value>155</value>
+      </interrupt>
     </peripheral>
 	<peripheral derivedFrom="USART1">
       <name>USART10</name>

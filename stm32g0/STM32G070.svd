@@ -20,7 +20,7 @@ Copyright (c) 2023 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32G070</name>
-  <version>1.7</version>
+  <version>1.8</version>
   <description>STM32G070</description>
   <cpu>
     <name>CM0</name>
@@ -86,7 +86,7 @@ It is cleared by software writing 1 to it.</description>
               <field>
                 <name>EOSMP</name>
                 <description>End of sampling flag
-This bit is set by hardware during the conversion, at the end of the sampling phase.It is cleared by software by programming it to '1â.</description>
+This bit is set by hardware during the conversion, at the end of the sampling phase.It is cleared by software by programming it to '1'.</description>
                 <bitOffset>1</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -523,7 +523,7 @@ Note: The software is allowed to set ADEN only when all bits of ADC_CR registers
                 <description>ADC disable command
 This bit is set by software to disable the ADC (ADDIS command) and put it into power-down state (OFF state).
 It is cleared by hardware once the ADC is effectively disabled (ADEN is also cleared by hardware at this time).
-Note: Setting ADDIS to '1â is only effective when ADEN=1 and ADSTART=0 (which ensures that no conversion is ongoing)</description>
+Note: Setting ADDIS to '1' is only effective when ADEN=1 and ADSTART=0 (which ensures that no conversion is ongoing)</description>
                 <bitOffset>1</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -571,7 +571,7 @@ After writing to ADC_CHSELR register or changing CHSELRMOD or SCANDIRW, it is ma
                 <description>ADC stop conversion command
 This bit is set by software to stop and discard an ongoing conversion (ADSTP Command).
 It is cleared by hardware when the conversion is effectively discarded and the ADC is ready to accept a new start conversion command.
-Note: Setting ADSTP to '1â is only effective when ADSTART=1 and ADDIS=0 (ADC is enabled and may be converting and there is no pending request to disable the ADC)</description>
+Note: Setting ADSTP to '1' is only effective when ADSTART=1 and ADDIS=0 (ADC is enabled and may be converting and there is no pending request to disable the ADC)</description>
                 <bitOffset>4</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -8875,7 +8875,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -9264,7 +9264,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -9653,7 +9653,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -10042,7 +10042,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -10431,7 +10431,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -10820,7 +10820,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -11209,7 +11209,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -14915,119 +14915,6 @@ It is not read-only when the channel is enabled (EN=1).</description>
       <baseAddress>0x50001400</baseAddress>
     </peripheral>
     <peripheral>
-      <name>RNG</name>
-      <description>Random number generator</description>
-      <groupName>RNG</groupName>
-      <baseAddress>0x40025000</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>CR</name>
-          <displayName>CR</displayName>
-          <description>control register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RNGEN</name>
-              <description>Random number generator
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>IE</name>
-              <description>Interrupt enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CED</name>
-              <description>Clock error detection</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>BYP</name>
-              <description>Bypass mode enable</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SR</name>
-          <displayName>SR</displayName>
-          <description>status register</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>SEIS</name>
-              <description>Seed error interrupt
-              status</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>CEIS</name>
-              <description>Clock error interrupt
-              status</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>SECS</name>
-              <description>Seed error current status</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>CECS</name>
-              <description>Clock error current status</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>DRDY</name>
-              <description>Data ready</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>DR</name>
-          <displayName>DR</displayName>
-          <description>data register</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RNDATA</name>
-              <description>Random data</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
       <name>CRC</name>
       <description>Cyclic redundancy check calculation
       unit</description>
@@ -16615,7 +16502,7 @@ Note: This bit cannot be modified as long as LOCK level 1, 2 or 3 has been progr
               <description>Slave mode selection
 When external signals are selected the active edge of the trigger signal (TRGI) is linked to the polarity selected on the external input (see Input Control register and Control Register description.
 Other codes: reserved.
-Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS=â00100â). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
+Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS='00100'). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
 Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or the TRGO2 signals must be enabled prior to receive events from the master timer, and the clock frequency (prescaler) must not be changed on-the-fly while triggers are received from the master timer.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
@@ -16623,7 +16510,7 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
               <enumeratedValues>
                 <enumeratedValue>
                   <name>B_0x0</name>
-                  <description>Slave mode disabled - if CEN = '1â then the prescaler is clocked directly by the internal clock.</description>
+                  <description>Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -16645,11 +16532,6 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
                   <name>B_0x7</name>
                   <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
                   <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter.</description>
-                  <value>0x8</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -16725,7 +16607,7 @@ Note: These bits must be changed only when they are not used (e.g. when SMS=000)
               <description>Slave mode selection
 When external signals are selected the active edge of the trigger signal (TRGI) is linked to the polarity selected on the external input (see Input Control register and Control Register description.
 Other codes: reserved.
-Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS=â00100â). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
+Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS='00100'). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
 Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or the TRGO2 signals must be enabled prior to receive events from the master timer, and the clock frequency (prescaler) must not be changed on-the-fly while triggers are received from the master timer.</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
@@ -16733,33 +16615,8 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
               <enumeratedValues>
                 <enumeratedValue>
                   <name>B_0x0</name>
-                  <description>Slave mode disabled - if CEN = '1â then the prescaler is clocked directly by the internal clock.</description>
+                  <description>Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.</description>
                   <value>0x0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter.</description>
-                  <value>0x8</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -16793,21 +16650,6 @@ Note: These bits must be changed only when they are not used (e.g. when SMS=000)
                   <name>B_0x3</name>
                   <description>Internal Trigger 3 (ITR3)</description>
                   <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>TI1 Edge Detector (TI1F_ED)</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Filtered Timer Input 1 (TI1FP1)</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Filtered Timer Input 2 (TI2FP2)</description>
-                  <value>0x6</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -17097,8 +16939,7 @@ refer to CC1IF description</description>
             </field>
             <field>
               <name>COMIF</name>
-              <description>COM interrupt flag
-This flag is set by hardware on a COM event (once the capture/compare control bits âCCxE, CCxNE, OCxMâ have been updated). It is cleared by software.</description>
+              <description>COM interrupt flag</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -17158,7 +16999,7 @@ This flag is set by hardware as soon as the break input goes active. It can be c
             <field>
               <name>CC1OF</name>
               <description>Capture/Compare 1 overcapture flag
-This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0â.</description>
+This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -17323,7 +17164,7 @@ This bit is set by software in order to generate an event, it is automatically c
               <name>CC1S</name>
               <description>Capture/Compare 1 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -17373,7 +17214,7 @@ This bit decreases the latency between a trigger event and a transition on the t
             <field>
               <name>OC1PE</name>
               <description>Output Compare 1 preload enable
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
 The PWM mode can be used without validating the preload register only in one pulse mode (OPM bit set in TIMx_CR1 register). Else the behavior is not guaranteed.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -17395,8 +17236,8 @@ The PWM mode can be used without validating the preload register only in one pul
               <name>OC1M1</name>
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from frozen mode to PWM mode.
 On channels that have a complementary output, this bit field is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the OC1M active bits take the new value from the preloaded bits only when a COM event is generated.
 The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>4</bitOffset>
@@ -17413,63 +17254,13 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
                   <description>Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
                   <value>0x1</value>
                 </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Toggle - OC1REF toggles when TIMx_CNT=TIMx_CCR1.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Force inactive level - OC1REF is forced low.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Force active level - OC1REF is forced high.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Retrigerrable OPM mode 1 - In up-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update. In down-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update.</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Retrigerrable OPM mode 2 - In up-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 2 and the channels becomes inactive again at the next update. In down-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update.</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Combined PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC is the logical OR between OC1REF and OC2REF.</description>
-                  <value>0xC</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xD</name>
-                  <description>Combined PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC is the logical AND between OC1REF and OC2REF.</description>
-                  <value>0xD</value>
-                </enumeratedValue>
               </enumeratedValues>
             </field>
             <field>
               <name>CC2S</name>
               <description>Capture/Compare 2 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TIMx_CCER).</description>
+Note: CC2S bits are writable only when the channel is OFF (CC2E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -17521,8 +17312,8 @@ Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TI
               <name>OC1M2</name>
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from frozen mode to PWM mode.
 On channels that have a complementary output, this bit field is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the OC1M active bits take the new value from the preloaded bits only when a COM event is generated.
 The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>16</bitOffset>
@@ -17538,56 +17329,6 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
                   <name>B_0x1</name>
                   <description>Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
                   <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Toggle - OC1REF toggles when TIMx_CNT=TIMx_CCR1.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Force inactive level - OC1REF is forced low.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Force active level - OC1REF is forced high.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Retrigerrable OPM mode 1 - In up-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update. In down-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update.</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Retrigerrable OPM mode 2 - In up-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 2 and the channels becomes inactive again at the next update. In down-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update.</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Combined PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC is the logical OR between OC1REF and OC2REF.</description>
-                  <value>0xC</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xD</name>
-                  <description>Combined PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC is the logical AND between OC1REF and OC2REF.</description>
-                  <value>0xD</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -17615,7 +17356,7 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <name>CC1S</name>
               <description>Capture/Compare 1 Selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -17645,7 +17386,7 @@ Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TI
             <field>
               <name>IC1PSC</name>
               <description>Input capture 1 prescaler
-This bit-field defines the ratio of the prescaler acting on CC1 input (IC1). The prescaler is reset as soon as CC1E=â0â (TIMx_CCER register).</description>
+This bit-field defines the ratio of the prescaler acting on CC1 input (IC1). The prescaler is reset as soon as CC1E='0' (TIMx_CCER register).</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -17766,7 +17507,7 @@ This bit-field defines the frequency used to sample TI1 input and the length of 
               <name>CC2S</name>
               <description>Capture/Compare 2 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TIMx_CCER).</description>
+Note: CC2S bits are writable only when the channel is OFF (CC2E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -17891,7 +17632,7 @@ CC1 channel configured as output:
 CC1 channel configured as input:
 This bit is used in conjunction with CC1P to define the polarity of TI1FP1 and TI2FP1. Refer
 to CC1P description.
-Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
+Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=00 (the channel is configured in output).
 On channels that have a complementary output, this bit is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the CC1NP active bit takes the new value from the preloaded bit only when a Commutation event is generated.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -18055,18 +17796,7 @@ Refer to CC1NP description</description>
           <fields>
             <field>
               <name>DTG</name>
-              <description>Dead-time generator setup
-This bit-field defines the duration of the dead-time inserted between the complementary outputs. DT correspond to this duration.
-DTG[7:5]=0xx =&gt; DT=DTG[7:0]x tdtg with tdtg=tDTS
-DTG[7:5]=10x =&gt; DT=(64+DTG[5:0])xtdtg with Tdtg=2xtDTS
-DTG[7:5]=110 =&gt; DT=(32+DTG[4:0])xtdtg with Tdtg=8xtDTS
-DTG[7:5]=111 =&gt; DT=(32+DTG[4:0])xtdtg with Tdtg=16xtDTS
-Example if TDTS=125ns (8MHz), dead-time possible values are:
-0 to 15875 ns by 125 ns steps,
-16 Âµs to 31750 ns by 250 ns steps,
-32 Âµs to 63 Âµs by 1 Âµs steps,
-64 Âµs to 126 Âµs by 2 Âµs steps
-Note: This bit-field can not be modified as long as LOCK level 1, 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register).</description>
+              <description>Dead-time generator setup</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -18106,7 +17836,7 @@ Note: The LOCK bits can be written only once after the reset. Once the TIMx_BDTR
               <name>OSSI</name>
               <description>Off-state selection for Idle mode
 This bit is used when MOE=0 on channels configured as outputs.
-See OC/OCN enable description for more details (enable register (TIM15_CCER) on pageÂ 818).
+See OC/OCN enable description for more details (enable register (TIM15_CCER) on page818).
 Note: This bit can not be modified as soon as the LOCK level 2 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
@@ -18128,7 +17858,7 @@ Note: This bit can not be modified as soon as the LOCK level 2 has been programm
               <name>OSSR</name>
               <description>Off-state selection for Run mode
 This bit is used when MOE=1 on channels that have a complementary output which are configured as outputs. OSSR is not implemented if no complementary output is implemented in the timer.
-See OC/OCN enable description for more details (enable register (TIM15_CCER) on pageÂ 818).
+See OC/OCN enable description for more details (enable register (TIM15_CCER) on page818).
 Note: This bit can not be modified as soon as the LOCK level 2 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
@@ -18208,7 +17938,7 @@ Note: This bit can not be modified as long as LOCK level 1 has been programmed (
               <name>MOE</name>
               <description>Main output enable
 This bit is cleared asynchronously by hardware as soon as the break input is active. It is set by software or automatically depending on the AOE bit. It is acting only on the channels which are configured in output.
-See OC/OCN enable description for more details (enable register (TIM15_CCER) on pageÂ 818).</description>
+See OC/OCN enable description for more details (enable register (TIM15_CCER) on page818).</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -23603,12 +23333,12 @@ If TAMPFLT = 00 Tamper 1 input falling edge and low level triggers a tamper dete
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>B_0x0</name>
-                    <description>If TAMPFLT â  00 Tamper 1 input staying low triggers a tamper detection event.</description>
+                    <description>If TAMPFLT different from 00 Tamper 1 input staying low triggers a tamper detection event.</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>B_0x1</name>
-                    <description>If TAMPFLT â  00 Tamper 1 input staying high triggers a tamper detection event.</description>
+                    <description>If TAMPFLT equal 00 Tamper 1 input staying high triggers a tamper detection event.</description>
                     <value>0x1</value>
                   </enumeratedValue>
                 </enumeratedValues>
@@ -23624,12 +23354,12 @@ If TAMPFLT = 00 Tamper 2 input falling edge and low level triggers a tamper dete
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>B_0x0</name>
-                    <description>If TAMPFLT â  00 Tamper 2 input staying low triggers a tamper detection event.</description>
+                    <description>If TAMPFLT different from 00 Tamper 2 input staying low triggers a tamper detection event.</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>B_0x1</name>
-                    <description>If TAMPFLT â  00 Tamper 2 input staying high triggers a tamper detection event.</description>
+                    <description>If TAMPFLT equal 00 Tamper 2 input staying high triggers a tamper detection event.</description>
                     <value>0x1</value>
                   </enumeratedValue>
                 </enumeratedValues>
@@ -23645,12 +23375,12 @@ If TAMPFLT = 00 Tamper 3 input falling edge and low level triggers a tamper dete
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>B_0x0</name>
-                    <description>If TAMPFLT â  00 Tamper 3 input staying low triggers a tamper detection event.</description>
+                    <description>If TAMPFLT different 00 Tamper 3 input staying low triggers a tamper detection event.</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>B_0x1</name>
-                    <description>If TAMPFLT â  00 Tamper 3 input staying high triggers a tamper detection event.</description>
+                    <description>If TAMPFLT=00 Tamper 3 input staying high triggers a tamper detection event.</description>
                     <value>0x1</value>
                   </enumeratedValue>
                 </enumeratedValues>
@@ -26341,12 +26071,7 @@ In the default configuration this register is reset on a tamper detection event.
             </field>
             <field>
               <name>RXTOL</name>
-              <description>Rx-Tolerance The RXTOL bit is set and
-              cleared by software. ** Start-Bit, +/- 200 s rise,
-              +/- 200 s fall. ** Data-Bit: +/- 200 s rise. +/- 350
-              s fall. ** Start-Bit: +/- 400 s rise, +/- 400 s fall
-              ** Data-Bit: +/-300 s rise, +/- 500 s
-              fall</description>
+              <description>Rx-Tolerance</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -29123,12 +28848,12 @@ TAMPTS is valid even if TSE = 0 in the RTC_CR register. Timestamp flag is set af
                 <description>RTC_OUT2 output enable
 Setting this bit allows to remap the RTC outputs on RTC_OUT2 as follows:
 OUT2EN = 0: RTC output 2 disable
-If OSEL â  00 or TAMPOE = 1: TAMPALRM is output on RTC_OUT1
+If OSEL different 00 or TAMPOE = 1: TAMPALRM is output on RTC_OUT1
 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on RTC_OUT1
 OUT2EN = 1: RTC output 2 enable
-If (OSEL â  00 or TAMPOE = 1) and COE = 0: TAMPALRM is output on RTC_OUT2
+If (OSEL different 00 or TAMPOE = 1) and COE = 0: TAMPALRM is output on RTC_OUT2
 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on RTC_OUT2
-If (OSELâ  00 or TAMPOE = 1) and COE = 1: CALIB is output on RTC_OUT2 and TAMPALRM is output on RTC_OUT1.</description>
+If (OSEL 00 or TAMPOE = 1) and COE = 1: CALIB is output on RTC_OUT2 and TAMPALRM is output on RTC_OUT1.</description>
                 <bitOffset>31</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -29194,9 +28919,7 @@ Note: CALM[1:0] are stuck at 00 when CALW8 = 1. Refer to digital calibration.</d
               </field>
               <field>
                 <name>CALP</name>
-                <description>Increase frequency of RTC by 488.5ppm
-This feature is intended to be used in conjunction with CALM, which lowers the frequency of the calendar with a fine resolution. if the input frequency is 32768Hz, the number of RTCCLK pulses added during a 32-second window is calculated as follows: (512 Ã CALP) - CALM.
-Refer to .</description>
+                <description>Increase frequency of RTC by 488</description>
                 <bitOffset>15</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>

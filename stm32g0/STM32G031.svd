@@ -20,7 +20,7 @@ Copyright (c) 2023 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32G031</name>
-  <version>1.4</version>
+  <version>1.5</version>
   <description>STM32G031</description>
     <cpu>
     <name>CM0</name>
@@ -37,554 +37,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <resetValue>0x0</resetValue>
   <resetMask>0xFFFFFFFF</resetMask>
   <peripherals>
-    <peripheral>
-      <name>AES</name>
-      <description>Advanced encryption standard hardware
-      accelerator 1</description>
-      <groupName>AES</groupName>
-      <baseAddress>0x40026000</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <interrupt>
-        <name>AES_RNG</name>
-        <description>AES and RNG global interrupts</description>
-        <value>31</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>CR</name>
-          <displayName>CR</displayName>
-          <description>control register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>NPBLB</name>
-              <description>Number of padding bytes in last block of
-              payload</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>KEYSIZE</name>
-              <description>Key size selection</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CHMOD2</name>
-              <description>AES chaining mode Bit2</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>GCMPH</name>
-              <description>Used only for GCM, CCM and GMAC
-              algorithms and has no effect when other algorithms
-              are selected</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>DMAOUTEN</name>
-              <description>Enable DMA management of data output
-              phase</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DMAINEN</name>
-              <description>Enable DMA management of data input
-              phase</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ERRIE</name>
-              <description>Error interrupt enable</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCFIE</name>
-              <description>CCF flag interrupt enable</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ERRC</name>
-              <description>Error clear</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCFC</name>
-              <description>Computation Complete Flag
-              Clear</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CHMOD10</name>
-              <description>AES chaining mode Bit1
-              Bit0</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>AES operating mode</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>DATATYPE</name>
-              <description>Data type selection (for data in and
-              data out to/from the cryptographic
-              block)</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>EN</name>
-              <description>AES enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SR</name>
-          <displayName>SR</displayName>
-          <description>status register</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>BUSY</name>
-              <description>Busy flag</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WRERR</name>
-              <description>Write error flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RDERR</name>
-              <description>Read error flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCF</name>
-              <description>Computation complete flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>DINR</name>
-          <displayName>DINR</displayName>
-          <description>data input register</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_DINR</name>
-              <description>Data Input Register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>DOUTR</name>
-          <displayName>DOUTR</displayName>
-          <description>data output register</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_DOUTR</name>
-              <description>Data output register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR0</name>
-          <displayName>KEYR0</displayName>
-          <description>key register 0</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR0</name>
-              <description>Data Output Register (LSB key
-              [31:0])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR1</name>
-          <displayName>KEYR1</displayName>
-          <description>key register 1</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR1</name>
-              <description>AES key register (key
-              [63:32])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR2</name>
-          <displayName>KEYR2</displayName>
-          <description>key register 2</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR2</name>
-              <description>AES key register (key
-              [95:64])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR3</name>
-          <displayName>KEYR3</displayName>
-          <description>key register 3</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR3</name>
-              <description>AES key register (MSB key
-              [127:96])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR0</name>
-          <displayName>IVR0</displayName>
-          <description>initialization vector register
-          0</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR0</name>
-              <description>initialization vector register (LSB IVR
-              [31:0])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR1</name>
-          <displayName>IVR1</displayName>
-          <description>initialization vector register
-          1</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR1</name>
-              <description>Initialization Vector Register (IVR
-              [63:32])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR2</name>
-          <displayName>IVR2</displayName>
-          <description>initialization vector register
-          2</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR2</name>
-              <description>Initialization Vector Register (IVR
-              [95:64])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR3</name>
-          <displayName>IVR3</displayName>
-          <description>initialization vector register
-          3</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR3</name>
-              <description>Initialization Vector Register (MSB IVR
-              [127:96])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR4</name>
-          <displayName>KEYR4</displayName>
-          <description>key register 4</description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR4</name>
-              <description>AES key register (MSB key
-              [159:128])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR5</name>
-          <displayName>KEYR5</displayName>
-          <description>key register 5</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR5</name>
-              <description>AES key register (MSB key
-              [191:160])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR6</name>
-          <displayName>KEYR6</displayName>
-          <description>key register 6</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR6</name>
-              <description>AES key register (MSB key
-              [223:192])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR7</name>
-          <displayName>KEYR7</displayName>
-          <description>key register 7</description>
-          <addressOffset>0x3C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR7</name>
-              <description>AES key register (MSB key
-              [255:224])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP0R</name>
-          <displayName>SUSP0R</displayName>
-          <description>AES suspend register 0</description>
-          <addressOffset>0x40</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP0R</name>
-              <description>AES suspend register 0</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP1R</name>
-          <displayName>SUSP1R</displayName>
-          <description>AES suspend register 1</description>
-          <addressOffset>0x44</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP1R</name>
-              <description>AES suspend register 1</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP2R</name>
-          <displayName>SUSP2R</displayName>
-          <description>AES suspend register 2</description>
-          <addressOffset>0x48</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP2R</name>
-              <description>AES suspend register 2</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP3R</name>
-          <displayName>SUSP3R</displayName>
-          <description>AES suspend register 3</description>
-          <addressOffset>0x4C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP3R</name>
-              <description>AES suspend register 3</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP4R</name>
-          <displayName>SUSP4R</displayName>
-          <description>AES suspend register 4</description>
-          <addressOffset>0x50</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP4R</name>
-              <description>AES suspend register 4</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP5R</name>
-          <displayName>SUSP5R</displayName>
-          <description>AES suspend register 5</description>
-          <addressOffset>0x54</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP5R</name>
-              <description>AES suspend register 5</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP6R</name>
-          <displayName>SUSP6R</displayName>
-          <description>AES suspend register 6</description>
-          <addressOffset>0x58</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP6R</name>
-              <description>AES suspend register 6</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SUSP7R</name>
-          <displayName>SUSP7R</displayName>
-          <description>AES suspend register 7</description>
-          <addressOffset>0x5C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_SUSP7R</name>
-              <description>AES suspend register 7</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
     <peripheral>
       <name>IWDG</name>
       <description>Independent watchdog</description>
@@ -2768,7 +2220,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         </register>
       </registers>
     </peripheral>
-    <peripheral>
+	<peripheral>
       <name>PWR</name>
       <description>Power control</description>
       <groupName>PWR</groupName>
@@ -2778,6 +2230,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>PVD</name>
+        <description>Power voltage detector interrupt</description>
+        <value>1</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -2786,7 +2243,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
-          <resetValue>0x00000200</resetValue>
+          <resetValue>0x00000208</resetValue>
           <fields>
             <field>
               <name>LPR</name>
@@ -2855,17 +2312,39 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
             <field>
               <name>PVDFT</name>
-              <description>Power voltage detector falling threshold
-              selection</description>
+              <description>Power voltage detector falling threshold selection</description>
               <bitOffset>1</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
               <name>PVDRT</name>
-              <description>Power voltage detector rising threshold
-              selection</description>
+              <description>Power voltage detector rising threshold selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
+            </field>
+			<field>
+              <name>PVMENDAC</name>
+              <description>PVMENDAC</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>PVMENUSB</name>
+              <description>PVMENUSB</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>IOSV</name>
+              <description>IOSV</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>USV</name>
+              <description>USV</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
             </field>
           </fields>
         </register>
@@ -2888,6 +2367,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>EWUP2</name>
               <description>Enable Wakeup pin WKUP2</description>
               <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>EWUP3</name>
+              <description>Enable Wakeup pin WKUP3</description>
+              <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -2916,9 +2401,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>ULPEN</name>
-              <description>Enable the periodical sampling mode for
-              PDR detection</description>
+              <name>ENB_ULP</name>
+              <description>Ultra-low-power enable</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -2957,6 +2441,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>WP2</name>
               <description>Wakeup pin WKUP2 polarity</description>
               <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>WP3</name>
+              <description>Wakeup pin WKUP3 polarity</description>
+              <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -3014,6 +2504,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+			<field>
+              <name>WUF3</name>
+              <description>Wakeup flag 3</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
             <field>
               <name>WUF4</name>
               <description>Wakeup flag 4</description>
@@ -3055,6 +2551,18 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
           <fields>
+		    <field>
+              <name>PVMODAC</name>
+              <description>VDDA monitoring output flag</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			 <field>
+              <name>PVMOUSB</name>
+              <description>USB supply voltage monitoring output flag</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
             <field>
               <name>PVDO</name>
               <description>Power voltage detector
@@ -3120,6 +2628,12 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <name>CWUF4</name>
               <description>Clear wakeup flag 4</description>
               <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			 <field>
+              <name>CWUF3</name>
+              <description>Clear wakeup flag 3</description>
+              <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -3664,6 +3178,41 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
+              <name>PU12</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU11</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU10</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU9</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU8</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
               <name>PU7</name>
               <description>Port C pull-up bit y
               (y=0..15)</description>
@@ -3675,6 +3224,48 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Port C pull-up bit y
               (y=0..15)</description>
               <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU5</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU4</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU3</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU2</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU1</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU0</name>
+              <description>Port C pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -3813,6 +3404,90 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
+		    <field>
+              <name>PU15</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU14</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU13</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU12</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU11</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU10</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU9</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU8</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>PU7</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU6</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU5</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU4</name>
+              <description>Port D pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
             <field>
               <name>PU3</name>
               <description>Port D pull-up bit y
@@ -3853,6 +3528,48 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
+		    <field>
+              <name>PD15</name>
+              <description>Port D pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD14</name>
+              <description>Port D pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD13</name>
+              <description>Port D pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD12</name>
+              <description>Port D pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD11</name>
+              <description>Port D pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD10</name>
+              <description>Port D pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
             <field>
               <name>PD9</name>
               <description>Port D pull-down bit y
@@ -3865,6 +3582,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <description>Port D pull-down bit y
               (y=0..15)</description>
               <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>PD7</name>
+              <description>Port D pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -3918,6 +3642,254 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             </field>
           </fields>
         </register>
+		<register>
+          <name>PUCRE</name>
+          <displayName>PUCRE</displayName>
+          <description>Power Port E pull-UP control
+          register</description>
+          <addressOffset>0x40</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+		    <field>
+              <name>PU15</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU14</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU13</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU12</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU11</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU10</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU9</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU8</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>PU7</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU6</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU5</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU4</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU3</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU2</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU1</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU0</name>
+              <description>Port E pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+		<register>
+          <name>PDCRE</name>
+          <displayName>PDCRE</displayName>
+          <description>Power Port E pull-down control
+          register</description>
+          <addressOffset>0x44</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+		    <field>
+              <name>PD15</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD14</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD13</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD12</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD11</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD10</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD9</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD8</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			 <field>
+              <name>PD7</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD6</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD5</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD4</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD3</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD2</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD1</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD0</name>
+              <description>Port E pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
         <register>
           <name>PUCRF</name>
           <displayName>PUCRF</displayName>
@@ -3928,6 +3900,83 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
+            <field>
+              <name>PU13</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU12</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU11</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU10</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU9</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU8</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>PU7</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU6</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU5</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU4</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PU3</name>
+              <description>Port F pull-up bit y
+              (y=0..15)</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
             <field>
               <name>PU2</name>
               <description>Port F pull-up bit y
@@ -3961,6 +4010,83 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
+		    <field>
+              <name>PD13</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD12</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD11</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD10</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD9</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD8</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			 <field>
+              <name>PD7</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD6</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD5</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD4</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PD3</name>
+              <description>Port F pull-down bit y
+              (y=0..15)</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
             <field>
               <name>PD2</name>
               <description>Port F pull-down bit y
@@ -5086,7 +5212,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -5475,7 +5601,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -5864,7 +5990,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -6253,7 +6379,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -6642,7 +6768,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -7031,7 +7157,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -7420,7 +7546,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -13945,227 +14071,6 @@ It is not read-only when the channel is enabled (EN=1).</description>
         <value>28</value>
       </interrupt>
     </peripheral>
-	<peripheral>
-      <name>RNG</name>
-      <description>Random number generator</description>
-      <groupName>RNG</groupName>
-      <baseAddress>0x40025000</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-	  <interrupt>
-        <name>AES_RNG</name>
-        <description>AES and RNG global interrupts</description>
-        <value>31</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>RNG_CR</name>
-          <displayName>RNG_CR</displayName>
-          <description>control register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-		  <field>
-            <name>RNGEN</name>
-            <description>True random number generator enable</description>
-            <bitOffset>2</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-write</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>True random number generator is disabled. Analog noise sources are powered off and logic clocked by the RNG clock is gated.</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>True random number generator is enabled.</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-          </field>
-          <field>
-            <name>IE</name>
-            <description>Interrupt Enable</description>
-            <bitOffset>3</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-write</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>RNG Interrupt is disabled</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>RNG Interrupt is enabled. An interrupt is pending as soon as DRDY='1', SEIS='1' or CEIS=1 in the RNG_SR register.</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-          </field>
-          <field>
-            <name>CED</name>
-            <description>Clock error detection
-The clock error detection cannot be enabled nor disabled on-the-fly when the RNG is enabled, i.e. to enable or disable CED the RNG must be disabled.</description>
-            <bitOffset>5</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-write</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>Clock error detection is enable</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>Clock error detection is disable</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-          </field>
-          </fields>
-        </register>
-        <register>
-          <name>RNG_SR</name>
-          <displayName>RNG_SR</displayName>
-          <description>status register</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-		  <field>
-            <name>DRDY</name>
-            <description>Data Ready
-Once the output buffer becomes empty (after reading the RNG_DR register), this bit returns to 0 until a new random value is generated.
-Note: The DRDY bit can rise when the peripheral is disabled (RNGEN=0 in the RNG_CR register).
-If IE=1 in the RNG_CR register, an interrupt is generated when DRDY=1.</description>
-            <bitOffset>0</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-only</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>The RNG_DR register is not yet valid, no random data is available.</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>The RNG_DR register contains valid random data.</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-          </field>
-          <field>
-            <name>CECS</name>
-            <description>Clock error current status
-Note: CECS bit is valid only if the CED bit in the RNG_CR register is set to 0.</description>
-            <bitOffset>1</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-only</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>The RNG clock is correct (fRNGCLK&gt; fHCLK/32). If the CEIS bit is set, this means that a slow clock was detected and the situation has been recovered.</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>The RNG clock is too slow (fRNGCLK&lt; fHCLK/32).</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-          </field>
-          <field>
-            <name>SECS</name>
-            <description>Seed error current status
-One of the noise source has provided more than 64 consecutive bits at a constant value (â0â or â1â), or more than 32 consecutive occurrence of two bit patterns (â01â or â10â)
-Both noise sources have delivered more than 32 consecutive bits at a constant value (â0â or â1â), or more than 16 consecutive occurrence of two bit patterns (â01â or â10â)</description>
-            <bitOffset>2</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-only</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>No faulty sequence has currently been detected. If the SEIS bit is set, this means that a faulty sequence was detected and the situation has been recovered.</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>At least one of the following faulty sequence has been detected:</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-          </field>
-          <field>
-            <name>CEIS</name>
-            <description>Clock error interrupt status
-This bit is set at the same time as CECS. It is cleared by writing 0. Writing 1 has no effect.
-An interrupt is pending if IE = 1 in the RNG_CR register.</description>
-            <bitOffset>5</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-write</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>The RNG clock is correct (fRNGCLK&gt; fHCLK/32)</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>The RNG has been detected too slow (fRNGCLK&lt; fHCLK/32)</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-
-          </field>
-          <field>
-            <name>SEIS</name>
-            <description>Seed error interrupt status
-This bit is set at the same time as SECS. It is cleared by writing 0. Writing 1 has no effect.
-An interrupt is pending if IE = 1 in the RNG_CR register.</description>
-            <bitOffset>6</bitOffset>
-            <bitWidth>1</bitWidth>
-            <access>read-write</access>
-            <enumeratedValues>
-              <enumeratedValue>
-                <name>B_0x0</name>
-                <description>No faulty sequence detected</description>
-                <value>0x0</value>
-              </enumeratedValue>
-              <enumeratedValue>
-                <name>B_0x1</name>
-                <description>At least one faulty sequence has been detected. See SECS bit description for details.</description>
-                <value>0x1</value>
-              </enumeratedValue>
-            </enumeratedValues>
-
-          </field>
-          </fields>
-        </register>
-        <register>
-          <name>RNG_DR</name>
-          <displayName>RNG_DR</displayName>
-          <description>data register</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RNDATA</name>
-              <description>Random data</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
     <peripheral>
       <name>SPI1</name>
       <description>Serial peripheral interface/Inter-IC
@@ -17972,7 +17877,7 @@ An interrupt is pending if IE = 1 in the RNG_CR register.</description>
         </register>
         <register>
           <name>ITLINE31</name>
-          <displayName>SYSCFG_ITLINE30</displayName>
+          <displayName>SYSCFG_ITLINE31</displayName>
           <description>interrupt line 25 status
           register</description>
           <addressOffset>0xFC</addressOffset>

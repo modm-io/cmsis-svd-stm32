@@ -18,7 +18,7 @@ Copyright (c) 2023 STMicroelectronics.
 -->
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32G050</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <description>STM32G050</description>
   <cpu>
     <name>CM0</name>
@@ -84,7 +84,7 @@ It is cleared by software writing 1 to it.</description>
               <field>
                 <name>EOSMP</name>
                 <description>End of sampling flag
-This bit is set by hardware during the conversion, at the end of the sampling phase.It is cleared by software by programming it to '1â.</description>
+This bit is set by hardware during the conversion, at the end of the sampling phase.It is cleared by software by programming it to '1'.</description>
                 <bitOffset>1</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -521,7 +521,7 @@ Note: The software is allowed to set ADEN only when all bits of ADC_CR registers
                 <description>ADC disable command
 This bit is set by software to disable the ADC (ADDIS command) and put it into power-down state (OFF state).
 It is cleared by hardware once the ADC is effectively disabled (ADEN is also cleared by hardware at this time).
-Note: Setting ADDIS to '1â is only effective when ADEN=1 and ADSTART=0 (which ensures that no conversion is ongoing)</description>
+Note: Setting ADDIS to '1' is only effective when ADEN=1 and ADSTART=0 (which ensures that no conversion is ongoing)</description>
                 <bitOffset>1</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -569,7 +569,7 @@ After writing to ADC_CHSELR register or changing CHSELRMOD or SCANDIRW, it is ma
                 <description>ADC stop conversion command
 This bit is set by software to stop and discard an ongoing conversion (ADSTP Command).
 It is cleared by hardware when the conversion is effectively discarded and the ADC is ready to accept a new start conversion command.
-Note: Setting ADSTP to '1â is only effective when ADSTART=1 and ADDIS=0 (ADC is enabled and may be converting and there is no pending request to disable the ADC)</description>
+Note: Setting ADSTP to '1' is only effective when ADSTART=1 and ADDIS=0 (ADC is enabled and may be converting and there is no pending request to disable the ADC)</description>
                 <bitOffset>4</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -5072,7 +5072,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -5461,7 +5461,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -5850,7 +5850,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -6239,7 +6239,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -6628,7 +6628,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -7017,7 +7017,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -7406,7 +7406,7 @@ It is read-only when the channel is enabled (EN=1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216-1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single DMA 'read followed by writeâ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single DMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC=0 in the DMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC=1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -14324,8 +14324,8 @@ Note: This bit can only be programmed when the I2C is disabled (PE = 0).</descri
             <field>
               <name>WUPEN</name>
               <description>Wakeup from Stop mode enable
-Note: If the Wakeup from Stop mode feature is not supported, this bit is reserved and forced by hardware to '0â. Refer to .
-Note: WUPEN can be set only when DNF = '0000â</description>
+Note: If the Wakeup from Stop mode feature is not supported, this bit is reserved and forced by hardware to '0'. Refer to .
+Note: WUPEN can be set only when DNF = '0000'</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -14364,7 +14364,7 @@ Note: WUPEN can be set only when DNF = '0000â</description>
             <field>
               <name>SMBHEN</name>
               <description>SMBus Host Address enable
-Note: If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0â. Refer to .</description>
+Note: If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0'. Refer to .</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -14384,7 +14384,7 @@ Note: If the SMBus feature is not supported, this bit is reserved and forced by 
             <field>
               <name>SMBDEN</name>
               <description>SMBus Device Default Address enable
-Note: If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0â. Refer to .</description>
+Note: If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0'. Refer to .</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -14405,7 +14405,7 @@ Note: If the SMBus feature is not supported, this bit is reserved and forced by 
               <name>ALERTEN</name>
               <description>SMBus alert enable
 Note: When ALERTEN=0, the SMBA pin can be used as a standard GPIO.
-If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0â. Refer to .</description>
+If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0'. Refer to .</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -14425,7 +14425,7 @@ If the SMBus feature is not supported, this bit is reserved and forced by hardwa
             <field>
               <name>PECEN</name>
               <description>PEC enable
-Note: If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0â. Refer to .</description>
+Note: If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0'. Refer to .</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -14528,10 +14528,10 @@ Note: Changing this bit when the START bit is set is not allowed.</description>
             <field>
               <name>START</name>
               <description>Start generation
-This bit is set by software, and cleared by hardware after the Start followed by the address sequence is sent, by an arbitration loss, by a timeout error detection, or when PE = 0. It can also be cleared by software by writing '1â to the ADDRCF bit in the I2C_ICR register.
+This bit is set by software, and cleared by hardware after the Start followed by the address sequence is sent, by an arbitration loss, by a timeout error detection, or when PE = 0. It can also be cleared by software by writing '1' to the ADDRCF bit in the I2C_ICR register.
 If the I2C is already in master mode with AUTOEND = 0, setting this bit generates a Repeated Start condition when RELOAD=0, after the end of the NBYTES transfer.
 Otherwise setting this bit generates a START condition once the bus is free.
-Note: Writing '0â to this bit has no effect.
+Note: Writing '0' to this bit has no effect.
 The START bit can be set even if the bus is BUSY or I2C is in slave mode.
 This bit has no effect when RELOAD is set.</description>
               <bitOffset>13</bitOffset>
@@ -14555,7 +14555,7 @@ This bit has no effect when RELOAD is set.</description>
               <description>Stop generation (master mode)
 The bit is set by software, cleared by hardware when a STOP condition is detected, or when PE = 0.
 In Master Mode:
-Note: Writing '0â to this bit has no effect.</description>
+Note: Writing '0' to this bit has no effect.</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -14576,7 +14576,7 @@ Note: Writing '0â to this bit has no effect.</description>
               <name>NACK</name>
               <description>NACK generation (slave mode)
 The bit is set by software, cleared by hardware when the NACK is sent, or when a STOP condition or an Address matched is received, or when PE=0.
-Note: Writing '0â to this bit has no effect.
+Note: Writing '0' to this bit has no effect.
 This bit is used in slave mode only: in master receiver mode, NACK is automatically generated after last byte preceding STOP or RESTART condition, whatever the NACK bit value.
 When an overrun occurs in slave receiver NOSTRETCH mode, a NACK is automatically generated whatever the NACK bit value.
 When hardware PEC checking is enabled (PECBYTE=1), the PEC acknowledge value does not depend on the NACK value.</description>
@@ -14599,7 +14599,7 @@ When hardware PEC checking is enabled (PECBYTE=1), the PEC acknowledge value doe
             <field>
               <name>NBYTES</name>
               <description>Number of bytes
-The number of bytes to be transmitted/received is programmed there. This field is donât care in slave mode with SBC=0.
+The number of bytes to be transmitted/received is programmed there. This field is don't care in slave mode with SBC=0.
 Note: Changing these bits when the START bit is set is not allowed.</description>
               <bitOffset>16</bitOffset>
               <bitWidth>8</bitWidth>
@@ -14650,10 +14650,10 @@ Note: This bit has no effect in slave mode or when the RELOAD bit is set.</descr
               <name>PECBYTE</name>
               <description>Packet error checking byte
 This bit is set by software, and cleared by hardware when the PEC is transferred, or when a STOP condition or an Address matched is received, also when PE=0.
-Note: Writing '0â to this bit has no effect.
+Note: Writing '0' to this bit has no effect.
 This bit has no effect when RELOAD is set.
 This bit has no effect is slave mode when SBC=0.
-If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0â. Refer to .</description>
+If the SMBus feature is not supported, this bit is reserved and forced by hardware to '0'. Refer to .</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -14766,37 +14766,37 @@ As soon as OA2MSK is not equal to 0, the reserved I2C addresses (0b0000xxx and 0
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x1</name>
-                  <description>OA2[1] is masked and donât care. Only OA2[7:2] are compared.</description>
+                  <description>OA2[1] is masked and don't care. Only OA2[7:2] are compared.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x2</name>
-                  <description>OA2[2:1] are masked and donât care. Only OA2[7:3] are compared.</description>
+                  <description>OA2[2:1] are masked and don't care. Only OA2[7:3] are compared.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x3</name>
-                  <description>OA2[3:1] are masked and donât care. Only OA2[7:4] are compared.</description>
+                  <description>OA2[3:1] are masked and don't care. Only OA2[7:4] are compared.</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x4</name>
-                  <description>OA2[4:1] are masked and donât care. Only OA2[7:5] are compared.</description>
+                  <description>OA2[4:1] are masked and don't care. Only OA2[7:5] are compared.</description>
                   <value>0x4</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x5</name>
-                  <description>OA2[5:1] are masked and donât care. Only OA2[7:6] are compared.</description>
+                  <description>OA2[5:1] are masked and don't care. Only OA2[7:6] are compared.</description>
                   <value>0x5</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x6</name>
-                  <description>OA2[6:1] are masked and donât care. Only OA2[7] is compared.</description>
+                  <description>OA2[6:1] are masked and don't care. Only OA2[7] is compared.</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x7</name>
-                  <description>OA2[7:1] are masked and donât care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged.</description>
+                  <description>OA2[7:1] are masked and don't care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged.</description>
                   <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -19696,12 +19696,12 @@ TAMPTS is valid even if TSE = 0 in the RTC_CR register. Timestamp flag is set af
                 <description>RTC_OUT2 output enable
 Setting this bit allows to remap the RTC outputs on RTC_OUT2 as follows:
 OUT2EN = 0: RTC output 2 disable
-If OSEL â  00 or TAMPOE = 1: TAMPALRM is output on RTC_OUT1
+If OSEL different 00 or TAMPOE = 1: TAMPALRM is output on RTC_OUT1
 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on RTC_OUT1
 OUT2EN = 1: RTC output 2 enable
-If (OSEL â  00 or TAMPOE = 1) and COE = 0: TAMPALRM is output on RTC_OUT2
+If (OSEL different 00 or TAMPOE = 1) and COE = 0: TAMPALRM is output on RTC_OUT2
 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on RTC_OUT2
-If (OSELâ  00 or TAMPOE = 1) and COE = 1: CALIB is output on RTC_OUT2 and TAMPALRM is output on RTC_OUT1.</description>
+If (OSEL different 00 or TAMPOE = 1) and COE = 1: CALIB is output on RTC_OUT2 and TAMPALRM is output on RTC_OUT1.</description>
                 <bitOffset>31</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -19768,7 +19768,7 @@ Note: CALM[1:0] are stuck at 00 when CALW8 = 1. Refer to digital calibration.</d
               <field>
                 <name>CALP</name>
                 <description>Increase frequency of RTC by 488.5ppm
-This feature is intended to be used in conjunction with CALM, which lowers the frequency of the calendar with a fine resolution. if the input frequency is 32768Hz, the number of RTCCLK pulses added during a 32-second window is calculated as follows: (512 Ã CALP) - CALM.
+This feature is intended to be used in conjunction with CALM, which lowers the frequency of the calendar with a fine resolution. if the input frequency is 32768Hz, the number of RTCCLK pulses added during a 32-second window is calculated as follows: (512 * CALP) - CALM.
 Refer to .</description>
                 <bitOffset>15</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -20871,7 +20871,7 @@ Note: This bit is not used in I2S mode.</description>
                 <name>CRCL</name>
                 <description>CRC length
 This bit is set and cleared by software to select the CRC length.
-Note: This bit should be written only when SPI is disabled (SPE = '0â) for correct operation.
+Note: This bit should be written only when SPI is disabled (SPE = '0') for correct operation.
 This bit is not used in I2S mode.</description>
                 <bitOffset>11</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -20913,7 +20913,7 @@ This bit is not used in I2S mode.</description>
               <field>
                 <name>CRCEN</name>
                 <description>Hardware CRC calculation enable
-Note: This bit should be written only when SPI is disabled (SPE = '0â) for correct operation.
+Note: This bit should be written only when SPI is disabled (SPE = '0') for correct operation.
 This bit is not used in I2S mode.</description>
                 <bitOffset>13</bitOffset>
                 <bitWidth>1</bitWidth>
@@ -21048,7 +21048,7 @@ Note: This bit is not used in I2S mode and SPI TI mode.</description>
                 <name>NSSP</name>
                 <description>NSS pulse management
 This bit is used in master mode only. it allows the SPI to generate an NSS pulse between two consecutive data when doing continuous transfers. In the case of a single data transfer, it forces the NSS pin high level after the transfer.
-It has no meaning if CPHA = â1â, or FRF = â1â.
+It has no meaning if CPHA = '1', or FRF = '1'.
 Note: 1. This bit must be written only when the SPI is disabled (SPE=0).
 2. This bit is not used in I2S mode and SPI TI mode.</description>
                 <bitOffset>3</bitOffset>
@@ -21146,7 +21146,7 @@ This bit controls the generation of an interrupt when an error condition occurs 
                 <name>DS</name>
                 <description>Data size
 These bits configure the data length for SPI transfers.
-If software attempts to write one of the âNot usedâ values, they are forced to the value â0111â
+If software attempts to write one of the 'Not used' values, they are forced to the value '0111'
 (8-bit)
 Note: These bits are not used in I2S mode.</description>
                 <bitOffset>8</bitOffset>
@@ -21258,10 +21258,7 @@ Note: This bit is not used in I2S mode.</description>
               </field>
               <field>
                 <name>LDMA_RX</name>
-                <description>Last DMA transfer for reception
-This bit is used in data packing mode, to define if the total number of data to receive by DMA is odd or even. It has significance only if the RXDMAEN bit in the SPIx_CR2 register is set and if packing mode is used (data length =&lt; 8-bit and write access to SPIx_DR is 16-bit wide). It has to be written when the SPI is disabled (SPE = 0 in the SPIx_CR1 register).
-Note: Refer to  if the CRCEN bit is set.
-This bit is not used in IÂ²S mode.</description>
+                <description>Last DMA transfer for reception</description>
                 <bitOffset>13</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -21280,10 +21277,7 @@ This bit is not used in IÂ²S mode.</description>
               </field>
               <field>
                 <name>LDMA_TX</name>
-                <description>Last DMA transfer for transmission
-This bit is used in data packing mode, to define if the total number of data to transmit by DMA is odd or even. It has significance only if the TXDMAEN bit in the SPIx_CR2 register is set and if packing mode is used (data length =&lt; 8-bit and write access to SPIx_DR is 16-bit wide). It has to be written when the SPI is disabled (SPE = 0 in the SPIx_CR1 register).
-Note: Refer to  if the CRCEN bit is set.
-This bit is not used in IÂ²S mode.</description>
+                <description>Last DMA transfer for transmission</description>
                 <bitOffset>14</bitOffset>
                 <bitWidth>1</bitWidth>
                 <access>read-write</access>
@@ -21495,9 +21489,7 @@ This flag is set by hardware and reset when SPIx_SR is read by software.</descri
               </field>
               <field>
                 <name>FRLVL</name>
-                <description>FIFO reception level
-These bits are set and cleared by hardware.
-Note: These bits are not used in IÂ²S mode and in SPI receive-only mode while CRC calculation is enabled.</description>
+                <description>FIFO reception level</description>
                 <bitOffset>9</bitOffset>
                 <bitWidth>2</bitWidth>
                 <access>read-only</access>
@@ -23125,12 +23117,12 @@ If TAMPFLT = 00 Tamper 1 input falling edge and low level triggers a tamper dete
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>B_0x0</name>
-                    <description>If TAMPFLT â  00 Tamper 1 input staying low triggers a tamper detection event.</description>
+                    <description>If TAMPFLT different 00 Tamper 1 input staying low triggers a tamper detection event.</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>B_0x1</name>
-                    <description>If TAMPFLT â  00 Tamper 1 input staying high triggers a tamper detection event.</description>
+                    <description>If TAMPFLT = 00 Tamper 1 input staying high triggers a tamper detection event.</description>
                     <value>0x1</value>
                   </enumeratedValue>
                 </enumeratedValues>
@@ -23146,12 +23138,12 @@ If TAMPFLT = 00 Tamper 2 input falling edge and low level triggers a tamper dete
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>B_0x0</name>
-                    <description>If TAMPFLT â  00 Tamper 2 input staying low triggers a tamper detection event.</description>
+                    <description>If TAMPFLT different 00 Tamper 2 input staying low triggers a tamper detection event.</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>B_0x1</name>
-                    <description>If TAMPFLT â  00 Tamper 2 input staying high triggers a tamper detection event.</description>
+                    <description>If TAMPFLT = 00 Tamper 2 input staying high triggers a tamper detection event.</description>
                     <value>0x1</value>
                   </enumeratedValue>
                 </enumeratedValues>
@@ -23167,12 +23159,12 @@ If TAMPFLT = 00 Tamper 3 input falling edge and low level triggers a tamper dete
                 <enumeratedValues>
                   <enumeratedValue>
                     <name>B_0x0</name>
-                    <description>If TAMPFLT â  00 Tamper 3 input staying low triggers a tamper detection event.</description>
+                    <description>If TAMPFLT different 00 Tamper 3 input staying low triggers a tamper detection event.</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>B_0x1</name>
-                    <description>If TAMPFLT â  00 Tamper 3 input staying high triggers a tamper detection event.</description>
+                    <description>If TAMPFLT = 00 Tamper 3 input staying high triggers a tamper detection event.</description>
                     <value>0x1</value>
                   </enumeratedValue>
                 </enumeratedValues>
@@ -24352,7 +24344,7 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
               <enumeratedValues>
                 <enumeratedValue>
                   <name>B_0x0</name>
-                  <description>Slave mode disabled - if CEN = '1â then the prescaler is clocked directly by the internal clock.</description>
+                  <description>Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -24389,11 +24381,6 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
                   <name>B_0x7</name>
                   <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
                   <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter.Codes above 1000: Reserved.</description>
-                  <value>0x8</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -24664,48 +24651,13 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
               <enumeratedValues>
                 <enumeratedValue>
                   <name>B_0x0</name>
-                  <description>Slave mode disabled - if CEN = '1â then the prescaler is clocked directly by the internal clock.</description>
+                  <description>Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x1</name>
                   <description>Encoder mode 1 - Counter counts up/down on TI1FP1 edge depending on TI2FP2 level.</description>
                   <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Encoder mode 2 - Counter counts up/down on TI2FP2 edge depending on TI1FP1 level.</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter.Codes above 1000: Reserved.</description>
-                  <value>0x8</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -24739,26 +24691,6 @@ Note: These bits must be changed only when they are not used (e.g. when SMS=000)
                   <name>B_0x3</name>
                   <description>Internal Trigger 3 (ITR3)</description>
                   <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>TI1 Edge Detector (TI1F_ED)</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Filtered Timer Input 1 (TI1FP1)</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Filtered Timer Input 2 (TI2FP2)</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>External Trigger input (ETRF)</description>
-                  <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -25140,8 +25072,7 @@ Refer to CC1IF description</description>
             </field>
             <field>
               <name>COMIF</name>
-              <description>COM interrupt flag
-This flag is set by hardware on COM event (when Capture/compare Control bits - CCxE, CCxNE, OCxM - have been updated). It is cleared by software.</description>
+              <description>COM interrupt flag</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -25221,7 +25152,7 @@ This flag is set by hardware as soon as the break 2 input goes active. It can be
             <field>
               <name>CC1OF</name>
               <description>Capture/Compare 1 overcapture flag
-This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0â.</description>
+This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -25475,7 +25406,7 @@ This bit is set by software in order to generate an event, it is automatically c
               <name>CC1S</name>
               <description>Capture/Compare 1 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -25525,7 +25456,7 @@ This bit decreases the latency between a trigger event and a transition on the t
             <field>
               <name>OC1PE</name>
               <description>Output Compare 1 preload enable
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
 The PWM mode can be used without validating the preload register only in one pulse mode (OPM bit set in TIMx_CR1 register). Else the behavior is not guaranteed.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -25547,8 +25478,8 @@ The PWM mode can be used without validating the preload register only in one pul
               <name>OC1M1</name>
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-Note: In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+Note: In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from 'frozen' mode to 'PWM' mode.
 Note: On channels having a complementary output, this bit field is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the OC1M active bits take the new value from the preloaded bits only when a COM event is generated.
 Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>4</bitOffset>
@@ -25564,66 +25495,6 @@ Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
                   <name>B_0x1</name>
                   <description>Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
                   <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Toggle - OC1REF toggles when TIMx_CNT=TIMx_CCR1.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Force inactive level - OC1REF is forced low.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Force active level - OC1REF is forced high.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive. In downcounting, channel 1 is inactive (OC1REF='0â) as long as TIMx_CNT&gt;TIMx_CCR1 else active (OC1REF=â1â).</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>PWM mode 2 - In upcounting, channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active. In downcounting, channel 1 is active as long as TIMx_CNT&gt;TIMx_CCR1 else inactive.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Retrigerrable OPM mode 1 - In up-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update. In down-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update.</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Retrigerrable OPM mode 2 - In up-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 2 and the channels becomes inactive again at the next update. In down-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update.</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Combined PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC is the logical OR between OC1REF and OC2REF.</description>
-                  <value>0xC</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xD</name>
-                  <description>Combined PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC is the logical AND between OC1REF and OC2REF.</description>
-                  <value>0xD</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xE</name>
-                  <description>Asymmetric PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC outputs OC1REF when the counter is counting up, OC2REF when it is counting down.</description>
-                  <value>0xE</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xF</name>
-                  <description>Asymmetric PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC outputs OC1REF when the counter is counting up, OC2REF when it is counting down.</description>
-                  <value>0xF</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -25650,7 +25521,7 @@ Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <name>CC2S</name>
               <description>Capture/Compare 2 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TIMx_CCER).</description>
+Note: CC2S bits are writable only when the channel is OFF (CC2E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -25713,8 +25584,8 @@ Refer to OC1CE description.</description>
               <name>OC1M2</name>
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-Note: In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+Note: In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from 'frozen' mode to 'PWM' mode.
 Note: On channels having a complementary output, this bit field is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the OC1M active bits take the new value from the preloaded bits only when a COM event is generated.
 Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>16</bitOffset>
@@ -25730,66 +25601,6 @@ Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
                   <name>B_0x1</name>
                   <description>Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
                   <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Toggle - OC1REF toggles when TIMx_CNT=TIMx_CCR1.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Force inactive level - OC1REF is forced low.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Force active level - OC1REF is forced high.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive. In downcounting, channel 1 is inactive (OC1REF='0â) as long as TIMx_CNT&gt;TIMx_CCR1 else active (OC1REF=â1â).</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>PWM mode 2 - In upcounting, channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active. In downcounting, channel 1 is active as long as TIMx_CNT&gt;TIMx_CCR1 else inactive.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Retrigerrable OPM mode 1 - In up-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update. In down-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update.</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Retrigerrable OPM mode 2 - In up-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 2 and the channels becomes inactive again at the next update. In down-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update.</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Combined PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC is the logical OR between OC1REF and OC2REF.</description>
-                  <value>0xC</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xD</name>
-                  <description>Combined PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC is the logical AND between OC1REF and OC2REF.</description>
-                  <value>0xD</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xE</name>
-                  <description>Asymmetric PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC outputs OC1REF when the counter is counting up, OC2REF when it is counting down.</description>
-                  <value>0xE</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xF</name>
-                  <description>Asymmetric PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC outputs OC1REF when the counter is counting up, OC2REF when it is counting down.</description>
-                  <value>0xF</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -25818,7 +25629,7 @@ Refer to OC1M[3:0] description.</description>
               <name>CC1S</name>
               <description>Capture/Compare 1 Selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -25848,7 +25659,7 @@ Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TI
             <field>
               <name>IC1PSC</name>
               <description>Input capture 1 prescaler
-This bit-field defines the ratio of the prescaler acting on CC1 input (IC1). The prescaler is reset as soon as CC1E=â0â (TIMx_CCER register).</description>
+This bit-field defines the ratio of the prescaler acting on CC1 input (IC1). The prescaler is reset as soon as CC1E='0' (TIMx_CCER register).</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -25969,7 +25780,7 @@ This bit-field defines the frequency used to sample TI1 input and the length of 
               <name>CC2S</name>
               <description>Capture/Compare 2 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TIMx_CCER).</description>
+Note: CC2S bits are writable only when the channel is OFF (CC2E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -26028,7 +25839,7 @@ Refer to IC1F[3:0] description.</description>
               <name>CC3S</name>
               <description>Capture/Compare 3 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC3S bits are writable only when the channel is OFF (CC3E = '0â in TIMx_CCER).</description>
+Note: CC3S bits are writable only when the channel is OFF (CC3E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -26091,7 +25902,7 @@ Refer to OC1CE description.</description>
               <name>CC4S</name>
               <description>Capture/Compare 4 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC4S bits are writable only when the channel is OFF (CC4E = '0â in TIMx_CCER).</description>
+Note: CC4S bits are writable only when the channel is OFF (CC4E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -26183,7 +25994,7 @@ Refer to OC3M[3:0] description.</description>
               <name>CC3S</name>
               <description>Capture/compare 3 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC3S bits are writable only when the channel is OFF (CC3E = '0â in TIMx_CCER).</description>
+Note: CC3S bits are writable only when the channel is OFF (CC3E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -26230,7 +26041,7 @@ Refer to IC1F[3:0] description.</description>
               <name>CC4S</name>
               <description>Capture/Compare 4 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC4S bits are writable only when the channel is OFF (CC4E = '0â in TIMx_CCER).</description>
+Note: CC4S bits are writable only when the channel is OFF (CC4E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -26358,7 +26169,7 @@ On channels having a complementary output, this bit is preloaded. If the CCPC bi
 CC1 channel configured as output:
 CC1 channel configured as input:
 This bit is used in conjunction with CC1P to define the polarity of TI1FP1 and TI2FP1. Refer to CC1P description.
-Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (channel configured as output).
+Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (channel configured as output).
 On channels having a complementary output, this bit is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the CC1NP active bit takes the new value from the preloaded bit only when a Commutation event is generated.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -26536,7 +26347,7 @@ This bit is a read-only copy of the UIF bit of the TIMx_ISR register. If the UIF
               <name>PSC</name>
               <description>Prescaler value
 The counter clock frequency (CK_CNT) is equal to fCK_PSC / (PSC[15:0] + 1).
-PSC contains the value to be loaded in the active prescaler register at each update event (including when the counter is cleared through UG bit of TIMx_EGR register or through trigger controller when configured in âreset modeâ).</description>
+PSC contains the value to be loaded in the active prescaler register at each update event (including when the counter is cleared through UG bit of TIMx_EGR register or through trigger controller when configured in 'reset mode').</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
               <access>read-write</access>
@@ -26660,18 +26471,7 @@ The counter is blocked while the auto-reload value is null.</description>
           <fields>
             <field>
               <name>DTG</name>
-              <description>Dead-time generator setup
-This bit-field defines the duration of the dead-time inserted between the complementary outputs. DT correspond to this duration.
-DTG[7:5]=0xx =&gt; DT=DTG[7:0]x tDTG with tDTG=tDTS.
-DTG[7:5]=10x =&gt; DT=(64+DTG[5:0])xtDTG with tDTG=2xtDTS.
-DTG[7:5]=110 =&gt; DT=(32+DTG[4:0])xtDTG with tDTG=8xtDTS.
-DTG[7:5]=111 =&gt; DT=(32+DTG[4:0])xtDTG with tDTG=16xtDTS.
-Example if tDTS=125Â ns (8Â MHz), dead-time possible values are:
-0 to 15875Â ns by 125Â ns steps,
-16Â Î¼s to 31750Â nsÂ  by 250Â ns steps,
-32Â Î¼s to 63Â Î¼s by 1Â Î¼s steps,
-64Â Î¼s to 126Â Î¼s by 2Â Î¼s steps
-Note: This bit-field can not be modified as long as LOCK level 1, 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register).</description>
+              <description>Dead-time generator setup</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -27415,7 +27215,7 @@ Note: it is also possible to apply this distortion on combined PWM signals.</des
             <field>
               <name>BKINE</name>
               <description>BRK BKIN input enable
-This bit enables the BKIN alternate function input for the timerâs BRK input. BKIN input is 'ORedâ with the other BRK sources.
+This bit enables the BKIN alternate function input for the timer's BRK input. BKIN input is 'ORed' with the other BRK sources.
 Note: This bit can not be modified as long as LOCK level 1 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -27510,7 +27310,7 @@ Note: These bits can not be modified as long as LOCK level 1 has been programmed
             <field>
               <name>BK2INE</name>
               <description>BRK2 BKIN input enable
-This bit enables the BKIN2 alternate function input for the timerâs BRK2 input. BKIN2 input is 'ORedâ with the other BRK2 sources.
+This bit enables the BKIN2 alternate function input for the timer's BRK2 input. BKIN2 input is 'ORed' with the other BRK2 sources.
 Note: This bit can not be modified as long as LOCK level 1 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -27831,12 +27631,12 @@ This bit-field indicates the division ratio between the timer clock (CK_INT) fre
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x1</name>
-                  <description>tDTS = 2 Ã tCK_INT</description>
+                  <description>tDTS = 2 * tCK_INT</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x2</name>
-                  <description>tDTS = 4 Ã tCK_INT</description>
+                  <description>tDTS = 4 * tCK_INT</description>
                   <value>0x2</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -28023,11 +27823,6 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
                   <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
                   <value>0x7</value>
                 </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI)</description>
-                  <value>0x8</value>
-                </enumeratedValue>
               </enumeratedValues>
             </field>
             <field>
@@ -28100,31 +27895,6 @@ Note: These bits must be changed only when they are not used (e.g. when SMS=000)
                   <name>B_0x7</name>
                   <description>External Trigger input (ETRF)</description>
                   <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Internal Trigger 4 (ITR4)</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Internal Trigger 5 (ITR5)</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xA</name>
-                  <description>Internal Trigger 6 (ITR6)</description>
-                  <value>0xA</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xB</name>
-                  <description>Internal Trigger 7 (ITR7)</description>
-                  <value>0xB</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Internal Trigger 8 (ITR8)</description>
-                  <value>0xC</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -28331,41 +28101,6 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
                   <description>Encoder mode 1 - Counter counts up/down on TI1FP1 edge depending on TI2FP2 level.</description>
                   <value>0x1</value>
                 </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Encoder mode 2 - Counter counts up/down on TI2FP2 edge depending on TI1FP1 level.</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI)</description>
-                  <value>0x8</value>
-                </enumeratedValue>
               </enumeratedValues>
             </field>
             <field>
@@ -28398,51 +28133,6 @@ Note: These bits must be changed only when they are not used (e.g. when SMS=000)
                   <name>B_0x3</name>
                   <description>Internal Trigger 3 (ITR3)</description>
                   <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>TI1 Edge Detector (TI1F_ED)</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Filtered Timer Input 1 (TI1FP1)</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Filtered Timer Input 2 (TI2FP2)</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>External Trigger input (ETRF)</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Internal Trigger 4 (ITR4)</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Internal Trigger 5 (ITR5)</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xA</name>
-                  <description>Internal Trigger 6 (ITR6)</description>
-                  <value>0xA</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xB</name>
-                  <description>Internal Trigger 7 (ITR7)</description>
-                  <value>0xB</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Internal Trigger 8 (ITR8)</description>
-                  <value>0xC</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -28788,7 +28478,7 @@ This flag is set by hardware on the TRG trigger event (active edge detected on T
             <field>
               <name>CC1OF</name>
               <description>Capture/Compare 1 overcapture flag
-This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0â.</description>
+This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -29035,7 +28725,7 @@ Note: CC2S bits are writable only when the channel is OFF (CC2E = 0 in TIMx_CCER
               <name>OC1M1</name>
               <description>Output compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
-Note: In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from 'frozen' mode to 'PWM' mode.
 Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
@@ -29073,43 +28763,13 @@ Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x6</name>
-                  <description>PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive. In downcounting, channel 1 is inactive (OC1REF='0) as long as TIMx_CNT&gt;TIMx_CCR1 else active (OC1REF=1).</description>
+                  <description>PWM mode 1 - In upcounting, channel 1 is active as long as TIMx_CNT>TIMx_CCR1 else inactive. In downcounting, channel 1 is inactive (OC1REF='0) as long as TIMx_CNT>TIMx_CCR1 else active (OC1REF=1).</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x7</name>
-                  <description>PWM mode 2 - In upcounting, channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active. In downcounting, channel 1 is active as long as TIMx_CNT&gt;TIMx_CCR1 else inactive.</description>
+                  <description>PWM mode 2 - In upcounting, channel 1 is inactive as long as TIMx_CNT>TIMx_CCR1 else active. In downcounting, channel 1 is active as long as TIMx_CNT>TIMx_CCR1 else inactive.</description>
                   <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Retriggerable OPM mode 1 - In up-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update. In down-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update.</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Retriggerable OPM mode 2 - In up-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 2 and the channels becomes inactive again at the next update. In down-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update.</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Combined PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC is the logical OR between OC1REF and OC2REF.</description>
-                  <value>0xC</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xD</name>
-                  <description>Combined PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC is the logical AND between OC1REF and OC2REF.</description>
-                  <value>0xD</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xE</name>
-                  <description>Asymmetric PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC outputs OC1REF when the counter is counting up, OC2REF when it is counting down.</description>
-                  <value>0xE</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xF</name>
-                  <description>Asymmetric PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC outputs OC1REF when the counter is counting up, OC2REF when it is counting down.</description>
-                  <value>0xF</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -30174,10 +29834,7 @@ Note: The clock of the slave timer or ADC must be enabled prior to receive event
           <fields>
             <field>
               <name>UIF</name>
-              <description>Update interrupt flag
-This bit is set by hardware on an update event. It is cleared by software.
-At overflow or underflow regarding the repetition counter value and if UDIS = 0 in the TIMx_CR1 register.
-When CNT is reinitialized by software using the UG bit in the TIMx_EGR register, if URS = 0 and UDIS = 0 in the TIMx_CR1 register.</description>
+              <description>Update interrupt flag</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -30442,12 +30099,12 @@ This bit-field indicates the division ratio between the timer clock (CK_INT) fre
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x1</name>
-                  <description>tDTS = 2 Ã tCK_INT</description>
+                  <description>tDTS = 2 * tCK_INT</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x2</name>
-                  <description>tDTS = 4 Ã tCK_INT</description>
+                  <description>tDTS = 4 * tCK_INT</description>
                   <value>0x2</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -30535,8 +30192,8 @@ This bit-field indicates the division ratio between the timer clock (CK_INT) fre
               <name>UIF</name>
               <description>Update interrupt flag
 This bit is set by hardware on an update event. It is cleared by software.
-At overflow and if UDIS=â0â in the TIMx_CR1 register.
-When CNT is reinitialized by software using the UG bit in TIMx_EGR register, if URS=â0â and UDIS=â0â in the TIMx_CR1 register.</description>
+At overflow and if UDIS='0' in the TIMx_CR1 register.
+When CNT is reinitialized by software using the UG bit in TIMx_EGR register, if URS='0' and UDIS='0' in the TIMx_CR1 register.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -30578,7 +30235,7 @@ If channel CC1 is configured as input: this bit is set when counter value has be
             <field>
               <name>CC1OF</name>
               <description>Capture/Compare 1 overcapture flag
-This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0â.</description>
+This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -30766,12 +30423,12 @@ Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT &lt; TIMx_CCR1 else inactive.</description>
+                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT > TIMx_CCR1 else inactive.</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT &lt; TIMx_CCR1 else active</description>
+                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT > TIMx_CCR1 else active</description>
                   <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -30796,36 +30453,6 @@ Note: The OC1M[3] bit is not contiguous, located in bit 16.</description>
                   <name>B_0x1</name>
                   <description>Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1). </description>
                   <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1). </description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Toggle - OC1REF toggles when TIMx_CNT = TIMx_CCR1. </description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Force inactive level - OC1REF is forced low. </description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Force active level - OC1REF is forced high.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT &lt; TIMx_CCR1 else inactive.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT &lt; TIMx_CCR1 else active</description>
-                  <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -30867,7 +30494,7 @@ Note: CC1S bits are writable only when the channel is OFF (CC1E = 0 in TIMx_CCER
               <name>IC1PSC</name>
               <description>Input capture 1 prescaler
 This bit-field defines the ratio of the prescaler acting on CC1 input (IC1).
-The prescaler is reset as soon as CC1E=â0â (TIMx_CCER register).</description>
+The prescaler is reset as soon as CC1E='0' (TIMx_CCER register).</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -31553,7 +31180,7 @@ Note: This bit cannot be modified as long as LOCK level 1, 2 or 3 has been progr
               <description>Slave mode selection
 When external signals are selected the active edge of the trigger signal (TRGI) is linked to the polarity selected on the external input (see Input Control register and Control Register description.
 Other codes: reserved.
-Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS=â00100â). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
+Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS='00100'). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
 Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or the TRGO2 signals must be enabled prior to receive events from the master timer, and the clock frequency (prescaler) must not be changed on-the-fly while triggers are received from the master timer.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
@@ -31561,7 +31188,7 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
               <enumeratedValues>
                 <enumeratedValue>
                   <name>B_0x0</name>
-                  <description>Slave mode disabled - if CEN = '1â then the prescaler is clocked directly by the internal clock.</description>
+                  <description>Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -31583,11 +31210,6 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
                   <name>B_0x7</name>
                   <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
                   <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter.</description>
-                  <value>0x8</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -31663,7 +31285,7 @@ Note: These bits must be changed only when they are not used (e.g. when SMS=000)
               <description>Slave mode selection
 When external signals are selected the active edge of the trigger signal (TRGI) is linked to the polarity selected on the external input (see Input Control register and Control Register description.
 Other codes: reserved.
-Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS=â00100â). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
+Note: The gated mode must not be used if TI1F_ED is selected as the trigger input (TS='00100'). Indeed, TI1F_ED outputs 1 pulse for each transition on TI1F, whereas the gated mode checks the level of the trigger signal.
 Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or the TRGO2 signals must be enabled prior to receive events from the master timer, and the clock frequency (prescaler) must not be changed on-the-fly while triggers are received from the master timer.</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
@@ -31671,33 +31293,8 @@ Note: The clock of the slave peripherals (timer, ADC, ...) receiving the TRGO or
               <enumeratedValues>
                 <enumeratedValue>
                   <name>B_0x0</name>
-                  <description>Slave mode disabled - if CEN = '1â then the prescaler is clocked directly by the internal clock.</description>
+                  <description>Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock.</description>
                   <value>0x0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Combined reset + trigger mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter, generates an update of the registers and starts the counter.</description>
-                  <value>0x8</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -31731,21 +31328,6 @@ Note: These bits must be changed only when they are not used (e.g. when SMS=000)
                   <name>B_0x3</name>
                   <description>Internal Trigger 3 (ITR3)</description>
                   <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>TI1 Edge Detector (TI1F_ED)</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Filtered Timer Input 1 (TI1FP1)</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>Filtered Timer Input 2 (TI2FP2)</description>
-                  <value>0x6</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -32035,8 +31617,7 @@ refer to CC1IF description</description>
             </field>
             <field>
               <name>COMIF</name>
-              <description>COM interrupt flag
-This flag is set by hardware on a COM event (once the capture/compare control bits âCCxE, CCxNE, OCxMâ have been updated). It is cleared by software.</description>
+              <description>COM interrupt flag</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -32096,7 +31677,7 @@ This flag is set by hardware as soon as the break input goes active. It can be c
             <field>
               <name>CC1OF</name>
               <description>Capture/Compare 1 overcapture flag
-This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0â.</description>
+This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -32261,7 +31842,7 @@ This bit is set by software in order to generate an event, it is automatically c
               <name>CC1S</name>
               <description>Capture/Compare 1 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -32311,7 +31892,7 @@ This bit decreases the latency between a trigger event and a transition on the t
             <field>
               <name>OC1PE</name>
               <description>Output Compare 1 preload enable
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
 The PWM mode can be used without validating the preload register only in one pulse mode (OPM bit set in TIMx_CR1 register). Else the behavior is not guaranteed.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -32333,8 +31914,8 @@ The PWM mode can be used without validating the preload register only in one pul
               <name>OC1M1</name>
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from 'frozen' mode to 'PWM' mode.
 On channels that have a complementary output, this bit field is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the OC1M active bits take the new value from the preloaded bits only when a COM event is generated.
 The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>4</bitOffset>
@@ -32373,33 +31954,13 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive.</description>
+                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT>TIMx_CCR1 else inactive.</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active.</description>
+                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT>TIMx_CCR1 else active.</description>
                   <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Retrigerrable OPM mode 1 - In up-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update. In down-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update.</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Retrigerrable OPM mode 2 - In up-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 2 and the channels becomes inactive again at the next update. In down-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update.</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Combined PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC is the logical OR between OC1REF and OC2REF.</description>
-                  <value>0xC</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xD</name>
-                  <description>Combined PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC is the logical AND between OC1REF and OC2REF.</description>
-                  <value>0xD</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -32407,7 +31968,7 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <name>CC2S</name>
               <description>Capture/Compare 2 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TIMx_CCER).</description>
+Note: CC2S bits are writable only when the channel is OFF (CC2E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -32459,8 +32020,8 @@ Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TI
               <name>OC1M2</name>
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+In PWM mode, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from 'frozen' mode to 'PWM' mode.
 On channels that have a complementary output, this bit field is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the OC1M active bits take the new value from the preloaded bits only when a COM event is generated.
 The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>16</bitOffset>
@@ -32476,56 +32037,6 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
                   <name>B_0x1</name>
                   <description>Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
                   <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Toggle - OC1REF toggles when TIMx_CNT=TIMx_CCR1.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Force inactive level - OC1REF is forced low.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Force active level - OC1REF is forced high.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x8</name>
-                  <description>Retrigerrable OPM mode 1 - In up-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update. In down-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes inactive again at the next update.</description>
-                  <value>0x8</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x9</name>
-                  <description>Retrigerrable OPM mode 2 - In up-counting mode, the channel is inactive until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 2 and the channels becomes inactive again at the next update. In down-counting mode, the channel is active until a trigger event is detected (on TRGI signal). Then, a comparison is performed as in PWM mode 1 and the channels becomes active again at the next update.</description>
-                  <value>0x9</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xC</name>
-                  <description>Combined PWM mode 1 - OC1REF has the same behavior as in PWM mode 1. OC1REFC is the logical OR between OC1REF and OC2REF.</description>
-                  <value>0xC</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0xD</name>
-                  <description>Combined PWM mode 2 - OC1REF has the same behavior as in PWM mode 2. OC1REFC is the logical AND between OC1REF and OC2REF.</description>
-                  <value>0xD</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -32553,7 +32064,7 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <name>CC1S</name>
               <description>Capture/Compare 1 Selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -32583,7 +32094,7 @@ Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TI
             <field>
               <name>IC1PSC</name>
               <description>Input capture 1 prescaler
-This bit-field defines the ratio of the prescaler acting on CC1 input (IC1). The prescaler is reset as soon as CC1E=â0â (TIMx_CCER register).</description>
+This bit-field defines the ratio of the prescaler acting on CC1 input (IC1). The prescaler is reset as soon as CC1E='0' (TIMx_CCER register).</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -32704,7 +32215,7 @@ This bit-field defines the frequency used to sample TI1 input and the length of 
               <name>CC2S</name>
               <description>Capture/Compare 2 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
-Note: CC2S bits are writable only when the channel is OFF (CC2E = '0â in TIMx_CCER).</description>
+Note: CC2S bits are writable only when the channel is OFF (CC2E = '0' in TIMx_CCER).</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -32829,7 +32340,7 @@ CC1 channel configured as output:
 CC1 channel configured as input:
 This bit is used in conjunction with CC1P to define the polarity of TI1FP1 and TI2FP1. Refer
 to CC1P description.
-Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
+Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
 On channels that have a complementary output, this bit is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the CC1NP active bit takes the new value from the preloaded bit only when a Commutation event is generated.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -32993,18 +32504,7 @@ Refer to CC1NP description</description>
           <fields>
             <field>
               <name>DTG</name>
-              <description>Dead-time generator setup
-This bit-field defines the duration of the dead-time inserted between the complementary outputs. DT correspond to this duration.
-DTG[7:5]=0xx =&gt; DT=DTG[7:0]x tdtg with tdtg=tDTS
-DTG[7:5]=10x =&gt; DT=(64+DTG[5:0])xtdtg with Tdtg=2xtDTS
-DTG[7:5]=110 =&gt; DT=(32+DTG[4:0])xtdtg with Tdtg=8xtDTS
-DTG[7:5]=111 =&gt; DT=(32+DTG[4:0])xtdtg with Tdtg=16xtDTS
-Example if TDTS=125ns (8MHz), dead-time possible values are:
-0 to 15875 ns by 125 ns steps,
-16 Âµs to 31750 ns by 250 ns steps,
-32 Âµs to 63 Âµs by 1 Âµs steps,
-64 Âµs to 126 Âµs by 2 Âµs steps
-Note: This bit-field can not be modified as long as LOCK level 1, 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register).</description>
+              <description>Dead-time generator setup</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -33044,7 +32544,7 @@ Note: The LOCK bits can be written only once after the reset. Once the TIMx_BDTR
               <name>OSSI</name>
               <description>Off-state selection for Idle mode
 This bit is used when MOE=0 on channels configured as outputs.
-See OC/OCN enable description for more details (enable register (TIM15_CCER) on pageÂ 818).
+See OC/OCN enable description for more details (enable register (TIM15_CCER) on page818).
 Note: This bit can not be modified as soon as the LOCK level 2 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
@@ -33066,7 +32566,7 @@ Note: This bit can not be modified as soon as the LOCK level 2 has been programm
               <name>OSSR</name>
               <description>Off-state selection for Run mode
 This bit is used when MOE=1 on channels that have a complementary output which are configured as outputs. OSSR is not implemented if no complementary output is implemented in the timer.
-See OC/OCN enable description for more details (enable register (TIM15_CCER) on pageÂ 818).
+See OC/OCN enable description for more details (enable register (TIM15_CCER) on page818).
 Note: This bit can not be modified as soon as the LOCK level 2 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
@@ -33146,7 +32646,7 @@ Note: This bit can not be modified as long as LOCK level 1 has been programmed (
               <name>MOE</name>
               <description>Main output enable
 This bit is cleared asynchronously by hardware as soon as the break input is active. It is set by software or automatically depending on the AOE bit. It is acting only on the channels which are configured in output.
-See OC/OCN enable description for more details (enable register (TIM15_CCER) on pageÂ 818).</description>
+See OC/OCN enable description for more details (enable register (TIM15_CCER) on page818).</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -33399,7 +32899,7 @@ This 5-bit field defines the length of DMA transfers (the timer recognizes a bur
             <field>
               <name>BKINE</name>
               <description>BRK BKIN input enable
-This bit enables the BKIN alternate function input for the timerâs BRK input. BKIN input is 'ORedâ with the other BRK sources.
+This bit enables the BKIN alternate function input for the timer's BRK input. BKIN input is 'ORed' with the other BRK sources.
 Note: This bit can not be modified as long as LOCK level 1 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -33974,8 +33474,7 @@ If channel CC1 is configured as input: this bit is set when counter value has be
             </field>
             <field>
               <name>COMIF</name>
-              <description>COM interrupt flag
-This flag is set by hardware on a COM event (once the capture/compare control bits âCCxE, CCxNE, OCxMâ have been updated). It is cleared by software.</description>
+              <description>COM interrupt flag</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -34015,7 +33514,7 @@ This flag is set by hardware as soon as the break input goes active. It can be c
             <field>
               <name>CC1OF</name>
               <description>Capture/Compare 1 overcapture flag
-This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0â.</description>
+This flag is set by hardware only when the corresponding channel is configured in input capture mode. It is cleared by software by writing it to '0'.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -34145,7 +33644,7 @@ This bit is set by software in order to generate an event, it is automatically c
               <description>Capture/Compare 1 selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
 Others: Reserved
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -34185,7 +33684,7 @@ This bit decreases the latency between a trigger event and a transition on the t
             <field>
               <name>OC1PE</name>
               <description>Output Compare 1 preload enable
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
 The PWM mode can be used without validating the preload register only in one pulse mode (OPM bit set in TIMx_CR1 register). Else the behavior is not guaranteed.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -34208,8 +33707,8 @@ The PWM mode can be used without validating the preload register only in one pul
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
 All other values: Reserved
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-In PWM mode 1 or 2, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+In PWM mode 1 or 2, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from 'frozen' mode to 'PWM' mode.
 The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
@@ -34247,12 +33746,12 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive. </description>
+                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT>TIMx_CCR1 else inactive. </description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active. </description>
+                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT>TIMx_CCR1 else active. </description>
                   <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -34262,8 +33761,8 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <description>Output Compare 1 mode
 These bits define the behavior of the output reference signal OC1REF from which OC1 and OC1N are derived. OC1REF is active high whereas OC1 and OC1N active level depends on CC1P and CC1NP bits.
 All other values: Reserved
-Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
-In PWM mode 1 or 2, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from âfrozenâ mode to âPWMâ mode.
+Note: These bits can not be modified as long as LOCK level 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
+In PWM mode 1 or 2, the OCREF level changes only when the result of the comparison changes or when the output compare mode switches from 'frozen' mode to 'PWM' mode.
 The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
@@ -34278,36 +33777,6 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
                   <name>B_0x1</name>
                   <description>Set channel 1 to active level on match. OC1REF signal is forced high when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
                   <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x2</name>
-                  <description>Set channel 1 to inactive level on match. OC1REF signal is forced low when the counter TIMx_CNT matches the capture/compare register 1 (TIMx_CCR1).</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x3</name>
-                  <description>Toggle - OC1REF toggles when TIMx_CNT=TIMx_CCR1.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x4</name>
-                  <description>Force inactive level - OC1REF is forced low.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x5</name>
-                  <description>Force active level - OC1REF is forced high.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x6</name>
-                  <description>PWM mode 1 - Channel 1 is active as long as TIMx_CNT&lt;TIMx_CCR1 else inactive. </description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>B_0x7</name>
-                  <description>PWM mode 2 - Channel 1 is inactive as long as TIMx_CNT&lt;TIMx_CCR1 else active. </description>
-                  <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -34329,7 +33798,7 @@ The OC1M[3] bit is not contiguous, located in bit 16.</description>
               <description>Capture/Compare 1 Selection
 This bit-field defines the direction of the channel (input/output) as well as the used input.
 Others: Reserved
-Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TIMx_CCER).</description>
+Note: CC1S bits are writable only when the channel is OFF (CC1E = '0' in TIMx_CCER).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -34350,7 +33819,7 @@ Note: CC1S bits are writable only when the channel is OFF (CC1E = '0â in TI
               <name>IC1PSC</name>
               <description>Input capture 1 prescaler
 This bit-field defines the ratio of the prescaler acting on CC1 input (IC1).
-The prescaler is reset as soon as CC1E=â0â (TIMx_CCER register).</description>
+The prescaler is reset as soon as CC1E='0' (TIMx_CCER register).</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -34551,7 +34020,7 @@ CC1 channel configured as output:
 CC1 channel configured as input:
 This bit is used in conjunction with CC1P to define the polarity of TI1FP1 and TI2FP1. Refer
 to the description of CC1P.
-Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S=â00â (the channel is configured in output).
+Note: This bit is not writable as soon as LOCK level 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register) and CC1S='00' (the channel is configured in output).
 On channels that have a complementary output, this bit is preloaded. If the CCPC bit is set in the TIMx_CR2 register then the CC1NP active bit takes the new value from the preloaded bit only when a commutation event is generated.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -34674,18 +34143,7 @@ On channels that have a complementary output, this bit is preloaded. If the CCPC
           <fields>
             <field>
               <name>DTG</name>
-              <description>Dead-time generator setup
-This bit-field defines the duration of the dead-time inserted between the complementary outputs. DT correspond to this duration.
-DTG[7:5]=0xx =&gt; DT=DTG[7:0]x tdtg with tdtg=tDTS
-DTG[7:5]=10x =&gt; DT=(64+DTG[5:0])xtdtg with Tdtg=2xtDTS
-DTG[7:5]=110 =&gt; DT=(32+DTG[4:0])xtdtg with Tdtg=8xtDTS
-DTG[7:5]=111 =&gt; DT=(32+DTG[4:0])xtdtg with Tdtg=16xtDTS
-Example if TDTS=125ns (8MHz), dead-time possible values are:
-0 to 15875 ns by 125 ns steps,
-16 Âµs to 31750 ns by 250 ns steps,
-32 Âµs to 63 Âµs by 1 Âµs steps,
-64 Âµs to 126 Âµs by 2 Âµs steps
-Note: This bit-field can not be modified as long as LOCK level 1, 2 or 3 has been programmed (LOCK bits in TIMx_BDTR register).</description>
+              <description>Dead-time generator setup</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -34725,7 +34183,7 @@ Note: The LOCK bits can be written only once after the reset. Once the TIMx_BDTR
               <name>OSSI</name>
               <description>Off-state selection for Idle mode
 This bit is used when MOE=0 on channels configured as outputs.
-See OC/OCN enable description for more details (enable register (TIM16_CCER)(TIMx_CCER)(x = 16 to 17) on pageÂ 846).
+See OC/OCN enable description for more details (enable register (TIM16_CCER)(TIMx_CCER)(x = 16 to 17) on page846).
 Note: This bit can not be modified as soon as the LOCK level 2 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
@@ -34747,7 +34205,7 @@ Note: This bit can not be modified as soon as the LOCK level 2 has been programm
               <name>OSSR</name>
               <description>Off-state selection for Run mode
 This bit is used when MOE=1 on channels that have a complementary output which are configured as outputs. OSSR is not implemented if no complementary output is implemented in the timer.
-See OC/OCN enable description for more details (enable register (TIM16_CCER)(TIMx_CCER)(x = 16 to 17) on pageÂ 846).
+See OC/OCN enable description for more details (enable register (TIM16_CCER)(TIMx_CCER)(x = 16 to 17) on page846).
 Note: This bit can not be modified as soon as the LOCK level 2 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
@@ -34827,7 +34285,7 @@ Note: This bit can not be modified as long as LOCK level 1 has been programmed (
               <name>MOE</name>
               <description>Main output enable
 This bit is cleared asynchronously by hardware as soon as the break input is active. It is set by software or automatically depending on the AOE bit. It is acting only on the channels which are configured in output.
-enable register (TIM16_CCER)(TIMx_CCER)(x = 16 to 17) on pageÂ 846).</description>
+enable register (TIM16_CCER)(TIMx_CCER)(x = 16 to 17) on page846).</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35081,7 +34539,7 @@ This 5-bit field defines the length of DMA transfers (the timer recognizes a bur
             <field>
               <name>BKINE</name>
               <description>BRK BKIN input enable
-This bit enables the BKIN alternate function input for the timerâs BRK input. BKIN input is 'ORedâ with the other BRK sources.
+This bit enables the BKIN alternate function input for the timer's BRK input. BKIN input is 'ORed' with the other BRK sources.
 Note: This bit can not be modified as long as LOCK level 1 has been programmed (LOCK bits in TIMx_BDTR register).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -35271,7 +34729,7 @@ This bit enables the receiver. It is set and cleared by software.</description>
               <name>TE</name>
               <description>Transmitter enable
 This bit enables the transmitter. It is set and cleared by software.
-Note: During transmission, a low pulse on the TE bit ('0â followed by '1â) sends a preamble (idle line) after the current word, except in Smartcard mode. In order to generate an idle character, the TE must not be immediately written to '1â. To ensure the required duration, the software can poll the TEACK bit in the USART_ISR register.
+Note: During transmission, a low pulse on the TE bit ('0' followed by '1') sends a preamble (idle line) after the current word, except in Smartcard mode. In order to generate an idle character, the TE must not be immediately written to '1'. To ensure the required duration, the software can poll the TEACK bit in the USART_ISR register.
 In Smartcard mode, when TE is set, there is a 1 bit-time delay before the transmission starts.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -35393,7 +34851,7 @@ This bit is set and cleared by software.</description>
               <name>PS</name>
               <description>Parity selection
 This bit selects the odd or even parity when the parity generation/detection is enabled (PCE bit set). It is set and cleared by software. The parity is selected after the current byte.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35413,8 +34871,8 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
             <field>
               <name>PCE</name>
               <description>Parity control enable
-This bit selects the hardware parity control (generation and detection). When the parity control is enabled, the computed parity is inserted at the MSB position (9th bit if MÂ =Â 1; 8th bit if MÂ =Â 0) and the parity is checked on the received data. This bit is set and cleared by software. Once it is set, PCE is active after the current byte (in reception and in transmission).
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bit selects the hardware parity control (generation and detection). When the parity control is enabled, the computed parity is inserted at the MSB position (9th bit if M=1; 8th bit if M=0) and the parity is checked on the received data. This bit is set and cleared by software. Once it is set, PCE is active after the current byte (in reception and in transmission).
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35435,7 +34893,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <name>WAKE</name>
               <description>Receiver wakeup method
 This bit determines the USART wakeup method from Mute mode. It is set or cleared by software.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35456,7 +34914,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <name>M0</name>
               <description>Word length
 This bit is used in conjunction with bit 28 (M1) to determine the word length. It is set or cleared by software (refer to bit 28 (M1)description).
-This bit can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bit can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35504,7 +34962,7 @@ This bit is set and cleared by software.</description>
             <field>
               <name>OVER8</name>
               <description>Oversampling mode
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: In LIN, IrDA and Smartcard modes, this bit must be kept cleared.</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -35527,7 +34985,7 @@ Note: In LIN, IrDA and Smartcard modes, this bit must be kept cleared.</descript
               <description>Driver Enable deassertion time
 This 5-bit value defines the time between the end of the last stop bit, in a transmitted message, and the de-activation of the DE (Driver Enable) signal. It is expressed in sample time units (1/8 or 1/16 bit time, depending on the oversampling rate).
 If the USART_TDR register is written during the DEDT time, the new data is transmitted only when the DEDT and DEAT times have both elapsed.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If the Driver Enable feature is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>16</bitOffset>
               <bitWidth>5</bitWidth>
@@ -35537,7 +34995,7 @@ Note: If the Driver Enable feature is not supported, this bit is reserved and mu
               <name>DEAT</name>
               <description>Driver Enable assertion time
 This 5-bit value defines the time between the activation of the DE (Driver Enable) signal and the beginning of the start bit. It is expressed in sample time units (1/8 or 1/16 bit time, depending on the oversampling rate).
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If the Driver Enable feature is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>21</bitOffset>
               <bitWidth>5</bitWidth>
@@ -35589,10 +35047,10 @@ Note: If the USART does not support Smartcard mode, this bit is reserved and mus
               <name>M1</name>
               <description>Word length
 This bit must be used in conjunction with bit 12 (M0) to determine the word length. It is set or cleared by software.
-M[1:0] = '00â: 1 start bit, 8 Data bits, n Stop bit
-M[1:0] = '01â: 1 start bit, 9 Data bits, n Stop bit
-M[1:0] = '10â: 1 start bit, 7 Data bits, n Stop bit
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+M[1:0] = '00': 1 start bit, 8 Data bits, n Stop bit
+M[1:0] = '01': 1 start bit, 9 Data bits, n Stop bit
+M[1:0] = '10': 1 start bit, 7 Data bits, n Stop bit
+This bit can only be written when the USART is disabled (UE=0).
 Note: In 7-bits data length mode, the Smartcard mode, LIN master mode and Auto baud rate (0x7F and 0x55 frames detection) are not supported.</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
@@ -35602,7 +35060,7 @@ Note: In 7-bits data length mode, the Smartcard mode, LIN master mode and Auto b
               <name>FIFOEN</name>
               <description>FIFO mode enable
 This bit is set and cleared by software.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: FIFO mode can be used on standard UART communication, in SPI master/slave mode and in Smartcard modes only. It must not be enabled in IrDA and LIN modes.</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
@@ -35743,7 +35201,7 @@ This bit enables the receiver. It is set and cleared by software.</description>
               <name>TE</name>
               <description>Transmitter enable
 This bit enables the transmitter. It is set and cleared by software.
-Note: During transmission, a low pulse on the TE bit ('0â followed by '1â) sends a preamble (idle line) after the current word, except in Smartcard mode. In order to generate an idle character, the TE must not be immediately written to '1â. To ensure the required duration, the software can poll the TEACK bit in the USART_ISR register.
+Note: During transmission, a low pulse on the TE bit ('0' followed by '1') sends a preamble (idle line) after the current word, except in Smartcard mode. In order to generate an idle character, the TE must not be immediately written to '1'. To ensure the required duration, the software can poll the TEACK bit in the USART_ISR register.
 In Smartcard mode, when TE is set, there is a 1 bit-time delay before the transmission starts.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
@@ -35865,7 +35323,7 @@ This bit is set and cleared by software.</description>
               <name>PS</name>
               <description>Parity selection
 This bit selects the odd or even parity when the parity generation/detection is enabled (PCE bit set). It is set and cleared by software. The parity is selected after the current byte.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35885,8 +35343,8 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
             <field>
               <name>PCE</name>
               <description>Parity control enable
-This bit selects the hardware parity control (generation and detection). When the parity control is enabled, the computed parity is inserted at the MSB position (9th bit if MÂ =Â 1; 8th bit if MÂ =Â 0) and the parity is checked on the received data. This bit is set and cleared by software. Once it is set, PCE is active after the current byte (in reception and in transmission).
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bit selects the hardware parity control (generation and detection). When the parity control is enabled, the computed parity is inserted at the MSB position (9th bit if M=1; 8th bit if M=0) and the parity is checked on the received data. This bit is set and cleared by software. Once it is set, PCE is active after the current byte (in reception and in transmission).
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35907,7 +35365,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <name>WAKE</name>
               <description>Receiver wakeup method
 This bit determines the USART wakeup method from Mute mode. It is set or cleared by software.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35928,7 +35386,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <name>M0</name>
               <description>Word length
 This bit is used in conjunction with bit 28 (M1) to determine the word length. It is set or cleared by software (refer to bit 28 (M1)description).
-This bit can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bit can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -35976,7 +35434,7 @@ This bit is set and cleared by software.</description>
             <field>
               <name>OVER8</name>
               <description>Oversampling mode
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: In LIN, IrDA and Smartcard modes, this bit must be kept cleared.</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -35999,7 +35457,7 @@ Note: In LIN, IrDA and Smartcard modes, this bit must be kept cleared.</descript
               <description>Driver Enable deassertion time
 This 5-bit value defines the time between the end of the last stop bit, in a transmitted message, and the de-activation of the DE (Driver Enable) signal. It is expressed in sample time units (1/8 or 1/16 bit time, depending on the oversampling rate).
 If the USART_TDR register is written during the DEDT time, the new data is transmitted only when the DEDT and DEAT times have both elapsed.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If the Driver Enable feature is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>16</bitOffset>
               <bitWidth>5</bitWidth>
@@ -36009,7 +35467,7 @@ Note: If the Driver Enable feature is not supported, this bit is reserved and mu
               <name>DEAT</name>
               <description>Driver Enable assertion time
 This 5-bit value defines the time between the activation of the DE (Driver Enable) signal and the beginning of the start bit. It is expressed in sample time units (1/8 or 1/16 bit time, depending on the oversampling rate).
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If the Driver Enable feature is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>21</bitOffset>
               <bitWidth>5</bitWidth>
@@ -36061,10 +35519,10 @@ Note: If the USART does not support Smartcard mode, this bit is reserved and mus
               <name>M1</name>
               <description>Word length
 This bit must be used in conjunction with bit 12 (M0) to determine the word length. It is set or cleared by software.
-M[1:0] = '00â: 1 start bit, 8 Data bits, n Stop bit
-M[1:0] = '01â: 1 start bit, 9 Data bits, n Stop bit
-M[1:0] = '10â: 1 start bit, 7 Data bits, n Stop bit
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+M[1:0] = '00': 1 start bit, 8 Data bits, n Stop bit
+M[1:0] = '01': 1 start bit, 9 Data bits, n Stop bit
+M[1:0] = '10': 1 start bit, 7 Data bits, n Stop bit
+This bit can only be written when the USART is disabled (UE=0).
 Note: In 7-bits data length mode, the Smartcard mode, LIN master mode and Auto baud rate (0x7F and 0x55 frames detection) are not supported.</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36074,7 +35532,7 @@ Note: In 7-bits data length mode, the Smartcard mode, LIN master mode and Auto b
               <name>FIFOEN</name>
               <description>FIFO mode enable
 This bit is set and cleared by software.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: FIFO mode can be used on standard UART communication, in SPI master/slave mode and in Smartcard modes only. It must not be enabled in IrDA and LIN modes.</description>
               <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36148,7 +35606,7 @@ Note: When SPI slave mode is not supported, this bit is reserved and must be kep
               <name>ADDM7</name>
               <description>7-bit Address Detection/4-bit Address Detection
 This bit is for selection between 4-bit address detection or 7-bit address detection.
-This bit can only be written when the USART is disabled (UEÂ =Â 0)
+This bit can only be written when the USART is disabled (UE=0)
 Note: In 7-bit and 9-bit data modes, the address detection is done on 6-bit and 8-bit address (ADD[5:0] and ADD[7:0]) respectively.</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36170,7 +35628,7 @@ Note: In 7-bit and 9-bit data modes, the address detection is done on 6-bit and 
               <name>LBDL</name>
               <description>LIN break detection length
 This bit is for selection between 11 bit or 10 bit break detection.
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If LIN mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36214,7 +35672,7 @@ Note: If LIN mode is not supported, this bit is reserved and must be kept at res
               <description>Last bit clock pulse
 This bit is used to select whether the clock pulse associated with the last data bit transmitted (MSB) has to be output on the SCLK pin in synchronous mode.
 The last bit is the 7th or 8th or 9th data bit transmitted depending on the 7 or 8 or 9 bit format selected by the M bit in the USART_CR1 register.
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If synchronous mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36236,7 +35694,7 @@ Note: If synchronous mode is not supported, this bit is reserved and must be kep
               <name>CPHA</name>
               <description>Clock phase
 This bit is used to select the phase of the clock output on the SCLK pin in synchronous mode. It works in conjunction with the CPOL bit to produce the desired clock/data relationship (see  and )
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If synchronous mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36258,7 +35716,7 @@ Note: If synchronous mode is not supported, this bit is reserved and must be kep
               <name>CPOL</name>
               <description>Clock polarity
 This bit enables the user to select the polarity of the clock output on the SCLK pin in synchronous mode. It works in conjunction with the CPHA bit to produce the desired clock/data relationship
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If synchronous mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36280,7 +35738,7 @@ Note: If synchronous mode is not supported, this bit is reserved and must be kep
               <name>CLKEN</name>
               <description>Clock enable
 This bit enables the user to enable the SCLK pin.
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If neither synchronous mode nor Smartcard mode is supported, this bit is reserved and must be kept at reset value. Refer to .
 In Smartcard mode, in order to provide correctly the SCLK clock to the smartcard, the steps below must be respected:
 UE = 0
@@ -36308,7 +35766,7 @@ UE = 1</description>
               <name>STOP</name>
               <description>stop bits
 These bits are used for programming the stop bits.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -36340,7 +35798,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <description>LIN mode enable
 This bit is set and cleared by software.
 The LIN mode enables the capability to send LIN synchronous breaks (13 low bits) using the SBKRQ bit in the USART_CR1 register, and to detect LIN Sync breaks.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If the USART does not support LIN mode, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36362,7 +35820,7 @@ Note: If the USART does not support LIN mode, this bit is reserved and must be k
               <name>SWAP</name>
               <description>Swap TX/RX pins
 This bit is set and cleared by software.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36384,7 +35842,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <description>RX pin active level inversion
 This bit is set and cleared by software.
 This enables the use of an external inverter on the RX line.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36406,7 +35864,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <description>TX pin active level inversion
 This bit is set and cleared by software.
 This enables the use of an external inverter on the TX line.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36427,7 +35885,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <name>DATAINV</name>
               <description>Binary data inversion
 This bit is set and cleared by software.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36448,7 +35906,7 @@ This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</de
               <name>MSBFIRST</name>
               <description>Most significant bit first
 This bit is set and cleared by software.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bitfield can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36490,8 +35948,8 @@ Note: If the USART does not support the auto baud rate feature, this bit is rese
               <name>ABRMOD</name>
               <description>Auto baud rate mode
 These bits are set and cleared by software.
-This bitfield can only be written when ABREN = 0 or the USART is disabled (UEÂ =Â 0).
-Note: If DATAINVÂ =Â 1 and/or MSBFIRSTÂ =Â 1 the patterns must be the same on the line, for example 0xAA for MSBFIRST)
+This bitfield can only be written when ABREN = 0 or the USART is disabled (UE=0).
+Note: If DATAINV=1 and/or MSBFIRST=1 the patterns must be the same on the line, for example 0xAA for MSBFIRST)
 If the USART does not support the auto baud rate feature, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>21</bitOffset>
               <bitWidth>2</bitWidth>
@@ -36547,11 +36005,11 @@ Note: If the USART does not support the Receiver timeout feature, this bit is re
 ADD[7:4]:
 These bits give the address of the USART node or a character code to be recognized.
 They are used to wake up the MCU with 7-bit address mark detection in multiprocessor communication during Mute mode or low-power mode. The MSB of the character sent by the transmitter should be equal to 1. They can also be used for character detection during normal reception, Mute mode inactive (for example, end of block detection in ModBus protocol). In this case, the whole received character (8-bit) is compared to the ADD[7:0] value and CMF flag is set on match.
-These bits can only be written when reception is disabled (RE = 0) or the USART is disabled (UEÂ =Â 0).
+These bits can only be written when reception is disabled (RE = 0) or the USART is disabled (UE=0).
 ADD[3:0]:
 These bits give the address of the USART node or a character code to be recognized.
 They are used for wakeup with address mark detection, in multiprocessor communication during Mute mode or low-power mode.
-These bits can only be written when reception is disabled (RE = 0) or the USART is disabled (UEÂ =Â 0).</description>
+These bits can only be written when reception is disabled (RE = 0) or the USART is disabled (UE=0).</description>
               <bitOffset>24</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -36570,7 +36028,7 @@ These bits can only be written when reception is disabled (RE = 0) or the USART 
             <field>
               <name>EIE</name>
               <description>Error interrupt enable
-Error Interrupt Enable Bit is required to enable interrupt generation in case of a framing error, overrun error noise flag or SPI slave underrun error (FEÂ =Â 1 or OREÂ =Â 1 or NEÂ =Â 1 or UDR = 1 in the USART_ISR register).</description>
+Error Interrupt Enable Bit is required to enable interrupt generation in case of a framing error, overrun error noise flag or SPI slave underrun error (FE=1 or ORE=1 or NE=1 or UDR = 1 in the USART_ISR register).</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36591,7 +36049,7 @@ Error Interrupt Enable Bit is required to enable interrupt generation in case of
               <name>IREN</name>
               <description>IrDA mode enable
 This bit is set and cleared by software.
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If IrDA mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36613,7 +36071,7 @@ Note: If IrDA mode is not supported, this bit is reserved and must be kept at re
               <name>IRLP</name>
               <description>IrDA low-power
 This bit is used for selecting between normal and low-power IrDA modes
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If IrDA mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36635,7 +36093,7 @@ Note: If IrDA mode is not supported, this bit is reserved and must be kept at re
               <name>HDSEL</name>
               <description>Half-duplex selection
 Selection of Single-wire Half-duplex mode
-This bit can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bit can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36655,7 +36113,7 @@ This bit can only be written when the USART is disabled (UEÂ =Â 0).</descrip
             <field>
               <name>NACK</name>
               <description>Smartcard NACK enable
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If the USART does not support Smartcard mode, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36677,7 +36135,7 @@ Note: If the USART does not support Smartcard mode, this bit is reserved and mus
               <name>SCEN</name>
               <description>Smartcard mode enable
 This bit is used for enabling Smartcard mode.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If the USART does not support Smartcard mode, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36738,7 +36196,7 @@ This bit is set/reset by software</description>
             <field>
               <name>RTSE</name>
               <description>RTS enable
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If the hardware flow control feature is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36759,7 +36217,7 @@ Note: If the hardware flow control feature is not supported, this bit is reserve
             <field>
               <name>CTSE</name>
               <description>CTS enable
-This bit can only be written when the USART is disabled (UEÂ =Â 0)
+This bit can only be written when the USART is disabled (UE=0)
 Note: If the hardware flow control feature is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36801,7 +36259,7 @@ Note: If the hardware flow control feature is not supported, this bit is reserve
               <name>ONEBIT</name>
               <description>One sample bit method enable
 This bit enables the user to select the sample method. When the one sample bit method is selected the noise detection flag (NE) is disabled.
-This bit can only be written when the USART is disabled (UEÂ =Â 0).</description>
+This bit can only be written when the USART is disabled (UE=0).</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -36823,7 +36281,7 @@ This bit can only be written when the USART is disabled (UEÂ =Â 0).</descrip
               <description>Overrun Disable
 This bit is used to disable the receive overrun detection.
 the ORE flag is not set and the new received data overwrites the previous content of the USART_RDR register. When FIFO mode is enabled, the RXFIFO is bypassed and data is written directly in USART_RDR register. Even when FIFO management is enabled, the RXNE flag is to be used.
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: This control bit enables checking the communication flow w/o reading the data</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36866,7 +36324,7 @@ Note: The reception errors are: parity error, framing error or noise error.</des
               <name>DEM</name>
               <description>Driver enable mode
 This bit enables the user to activate the external transceiver control, through the DE signal.
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If the Driver Enable feature is not supported, this bit is reserved and must be kept at reset value. .</description>
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36887,7 +36345,7 @@ Note: If the Driver Enable feature is not supported, this bit is reserved and mu
             <field>
               <name>DEP</name>
               <description>Driver enable polarity selection
-This bit can only be written when the USART is disabled (UEÂ =Â 0).
+This bit can only be written when the USART is disabled (UE=0).
 Note: If the Driver Enable feature is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
@@ -36911,8 +36369,8 @@ Note: If the Driver Enable feature is not supported, this bit is reserved and mu
 This bitfield specifies the number of retries for transmission and reception in Smartcard mode.
 In transmission mode, it specifies the number of automatic retransmission retries, before generating a transmission error (FE bit set).
 In reception mode, it specifies the number or erroneous reception trials, before generating a reception error (RXNE/RXFNE and PE bits set).
-This bitfield must be programmed only when the USART is disabled (UEÂ =Â 0).
-When the USART is enabled (UEÂ =Â 1), this bitfield may only be written to 0x0, in order to stop retransmission.
+This bitfield must be programmed only when the USART is disabled (UE=0).
+When the USART is enabled (UE=1), this bitfield may only be written to 0x0, in order to stop retransmission.
 Note: If Smartcard mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>17</bitOffset>
               <bitWidth>3</bitWidth>
@@ -36964,8 +36422,8 @@ Note: If Smartcard mode is not supported, this bit is reserved and must be kept 
               <name>WUS</name>
               <description>Wakeup from low-power mode interrupt flag selection
 This bitfield specifies the event which activates the WUF (Wakeup from low-power mode flag).
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
-If the USART does not support the wakeup from Stop feature, this bit is reserved and must be kept at reset value. Refer to pageÂ 835.</description>
+This bitfield can only be written when the USART is disabled (UE=0).
+If the USART does not support the wakeup from Stop feature, this bit is reserved and must be kept at reset value. Refer to page835.</description>
               <bitOffset>20</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
@@ -36992,7 +36450,7 @@ If the USART does not support the wakeup from Stop feature, this bit is reserved
               <description>Wakeup from low-power mode interrupt enable
 This bit is set and cleared by software.
 Note: WUFIE must be set before entering in low-power mode.
-If the USART does not support the wakeup from Stop feature, this bit is reserved and must be kept at reset value. Refer to pageÂ 835.</description>
+If the USART does not support the wakeup from Stop feature, this bit is reserved and must be kept at reset value. Refer to page835.</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -37187,15 +36645,15 @@ In IrDA low-power and normal IrDA mode:
 PSC[7:0] = IrDA Normal and Low-Power baud rate
 PSC[7:0] is used to program the prescaler for dividing the USART source clock to achieve the low-power frequency: the source clock is divided by the value given in the register (8 significant bits):
 In Smartcard mode:
-PSC[4:0]Â =Â Prescaler value
+PSC[4:0]=Prescaler value
 PSC[4:0] is used to program the prescaler for dividing the USART source clock to provide the Smartcard clock. The value given in the register (5 significant bits) is multiplied by 2 to give the division factor of the source clock frequency:
 ...
-0010Â 0000: Divides the source clock by 32 (IrDA mode)
+00100000: Divides the source clock by 32 (IrDA mode)
 ...
-1111Â 1111: Divides the source clock by 255 (IrDA mode)
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+11111111: Divides the source clock by 255 (IrDA mode)
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: Bits [7:5] must be kept cleared if Smartcard mode is used.
-This bitfield is reserved and forced by hardware to '0â when the Smartcard and IrDA modes are not supported. Refer to .</description>
+This bitfield is reserved and forced by hardware to '0' when the Smartcard and IrDA modes are not supported. Refer to .</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -37232,7 +36690,7 @@ This bitfield is reserved and forced by hardware to '0â when the Smartcard 
               <description>Guard time value
 This bitfield is used to program the Guard time value in terms of number of baud clock periods.
 This is used in Smartcard mode. The Transmission Complete flag is set after this guard time value.
-This bitfield can only be written when the USART is disabled (UEÂ =Â 0).
+This bitfield can only be written when the USART is disabled (UE=0).
 Note: If Smartcard mode is not supported, this bit is reserved and must be kept at reset value. Refer to .</description>
               <bitOffset>8</bitOffset>
               <bitWidth>8</bitWidth>
@@ -37310,7 +36768,7 @@ This enables to discard the received data without reading them, and avoid an ove
             <field>
               <name>TXFRQ</name>
               <description>Transmit data flush request
-When FIFO mode is disabled, writing '1â to this bit sets the TXE flag. This enables to discard the transmit data. This bit must be used only in Smartcard mode, when data have not been sent due to errors (NACK) and the FE flag is active in the USART_ISR register. If the USART does not support Smartcard mode, this bit is reserved and must be kept at reset value.
+When FIFO mode is disabled, writing '1' to this bit sets the TXE flag. This enables to discard the transmit data. This bit must be used only in Smartcard mode, when data have not been sent due to errors (NACK) and the FE flag is active in the USART_ISR register. If the USART does not support Smartcard mode, this bit is reserved and must be kept at reset value.
 When FIFO is enabled, TXFRQ bit is set to flush the whole FIFO. This sets the TXFE flag (Transmit FIFO empty, bit 23 in the USART_ISR register). Flushing the Transmit FIFO is supported in both UART and Smartcard modes.
 Note: In FIFO mode, the TXFNF flag is reset during the flush request until TxFIFO is empty in order to ensure that no data are written in the data register.</description>
               <bitOffset>4</bitOffset>
@@ -37356,7 +36814,7 @@ Note: This error is associated with the character in the USART_RDR.</description
               <description>Framing error
 This bit is set by hardware when a de-synchronization, excessive noise or a break character is detected. It is cleared by software, writing 1 to the FECF bit in the USART_ICR register.
 When transmitting data in Smartcard mode, this bit is set when the maximum number of transmit attempts is reached without success (the card NACKs the data frame).
-An interrupt is generated if EIEÂ =Â 1 in the USART_CR1 register.
+An interrupt is generated if EIE=1 in the USART_CR1 register.
 Note: This error is associated with the character in the USART_RDR.</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
@@ -37379,7 +36837,7 @@ Note: This error is associated with the character in the USART_RDR.</description
               <description>Noise detection flag
 This bit is set by hardware when noise is detected on a received frame. It is cleared by software, writing 1 to the NECF bit in the USART_ICR register.
 Note: This bit does not generate an interrupt as it appears at the same time as the RXFNE bit which itself generates an interrupt. An interrupt is generated when the NE flag is set during multi buffer communication if the EIE bit is set.
-When the line is noise-free, the NE flag can be disabled by programming the ONEBIT bit to 1 to increase the USART tolerance to deviations (Refer to Tolerance of the USART receiver to clock deviation on pageÂ 861).
+When the line is noise-free, the NE flag can be disabled by programming the ONEBIT bit to 1 to increase the USART tolerance to deviations (Refer to Tolerance of the USART receiver to clock deviation on page861).
 This error is associated with the character in the USART_RDR.</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -37402,7 +36860,7 @@ This error is associated with the character in the USART_RDR.</description>
               <description>Overrun error
 This bit is set by hardware when the data currently being received in the shift register is
 ready to be transferred into the USART_RDR register while RXFF = 1. It is cleared by a software, writing 1 to the ORECF, in the USART_ICR register.
-An interrupt is generated if RXFNEIEÂ =Â 1 or EIE = 1 in the USART_CR1 register.
+An interrupt is generated if RXFNEIE=1 or EIE = 1 in the USART_CR1 register.
 Note: When this bit is set, the USART_RDR register content is not lost but the shift register is overwritten. An interrupt is generated if the ORE flag is set during multi buffer communication if the EIE bit is set.
 This bit is permanently forced to 0 (no overrun detection) when the bit OVRDIS is set in the USART_CR3 register.</description>
               <bitOffset>3</bitOffset>
@@ -37424,9 +36882,9 @@ This bit is permanently forced to 0 (no overrun detection) when the bit OVRDIS i
             <field>
               <name>IDLE</name>
               <description>Idle line detected
-This bit is set by hardware when an Idle Line is detected. An interrupt is generated if IDLEIEÂ =Â 1 in the USART_CR1 register. It is cleared by software, writing 1 to the IDLECF in the USART_ICR register.
+This bit is set by hardware when an Idle Line is detected. An interrupt is generated if IDLEIE=1 in the USART_CR1 register. It is cleared by software, writing 1 to the IDLECF in the USART_ICR register.
 Note: The IDLE bit is not set again until the RXFNE bit has been set (i.e. a new idle line occurs).
-If Mute mode is enabled (MMEÂ =Â 1), IDLE is set if the USART is not mute (RWUÂ =Â 0), whatever the Mute mode selected by the WAKE bit. If RWUÂ =Â 1, IDLE is not set.</description>
+If Mute mode is enabled (MME=1), IDLE is set if the USART is not mute (RWU=0), whatever the Mute mode selected by the WAKE bit. If RWU=1, IDLE is not set.</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37448,7 +36906,7 @@ If Mute mode is enabled (MMEÂ =Â 1), IDLE is set if the USART is not mute (R
               <description>RXFIFO not empty
 RXFNE bit is set by hardware when the RXFIFO is not empty, meaning that data can be read from the USART_RDR register. Every read operation from the USART_RDR frees a location in the RXFIFO.
 RXFNE is cleared when the RXFIFO is empty. The RXFNE flag can also be cleared by writing 1 to the RXFRQ in the USART_RQR register.
-An interrupt is generated if RXFNEIEÂ =Â 1 in the USART_CR1 register.</description>
+An interrupt is generated if RXFNEIE=1 in the USART_CR1 register.</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37470,7 +36928,7 @@ An interrupt is generated if RXFNEIEÂ =Â 1 in the USART_CR1 register.</descr
               <description>Transmission complete
 This bit indicates that the last data written in the USART_TDR has been transmitted out of the shift register.
 It is set by hardware when the transmission of a frame containing data is complete and when TXFE is set.
-An interrupt is generated if TCIEÂ =Â 1 in the USART_CR1 register.
+An interrupt is generated if TCIE=1 in the USART_CR1 register.
 TC bit is is cleared by software, by writing 1 to the TCCF in the USART_ICR register or by a write to the USART_TDR register.
 Note: If TE bit is reset and no transmission is on going, the TC bit is immediately set.</description>
               <bitOffset>6</bitOffset>
@@ -37538,7 +36996,7 @@ Note: If the USART does not support LIN mode, this bit is reserved and kept at r
               <name>CTSIF</name>
               <description>CTS interrupt flag
 This bit is set by hardware when the nCTS input toggles, if the CTSE bit is set. It is cleared by software, by writing 1 to the CTSCF bit in the USART_ICR register.
-An interrupt is generated if CTSIEÂ =Â 1 in the USART_CR3 register.
+An interrupt is generated if CTSIE=1 in the USART_CR3 register.
 Note: If the hardware flow control feature is not supported, this bit is reserved and kept at reset value.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
@@ -37581,7 +37039,7 @@ Note: If the hardware flow control feature is not supported, this bit is reserve
               <name>RTOF</name>
               <description>Receiver timeout
 This bit is set by hardware when the timeout value, programmed in the RTOR register has lapsed, without any communication. It is cleared by software, writing 1 to the RTOCF bit in the USART_ICR register.
-An interrupt is generated if RTOIEÂ =Â 1 in the USART_CR2 register.
+An interrupt is generated if RTOIE=1 in the USART_CR2 register.
 In Smartcard mode, the timeout corresponds to the CWT or BWT timings.
 Note: If a time equal to the value programmed in RTOR register separates 2 characters, RTOF is not set. If this time exceeds this value + 2 sample times (2/16 or 2/8, depending on the oversampling method), RTOF flag is set.
 The counter counts even if RE = 0 but RTOF is set only when RE = 1. If the timeout has already elapsed when RE is set, then RTOF is set.
@@ -37605,8 +37063,8 @@ If the USART does not support the Receiver timeout feature, this bit is reserved
             <field>
               <name>EOBF</name>
               <description>End of block flag
-This bit is set by hardware when a complete block has been received (for example TÂ =Â 1 Smartcard mode). The detection is done when the number of received bytes (from the start of the block, including the prologue) is equal or greater than BLEN + 4.
-An interrupt is generated if the EOBIEÂ =Â 1 in the USART_CR2 register.
+This bit is set by hardware when a complete block has been received (for example T=1 Smartcard mode). The detection is done when the number of received bytes (from the start of the block, including the prologue) is equal or greater than BLEN + 4.
+An interrupt is generated if the EOBIE=1 in the USART_CR2 register.
 It is cleared by software, writing 1 to the EOBCF in the USART_ICR register.
 Note: If Smartcard mode is not supported, this bit is reserved and kept at reset value. Refer to .</description>
               <bitOffset>12</bitOffset>
@@ -37659,7 +37117,7 @@ Note: If the USART does not support the auto baud rate feature, this bit is rese
             <field>
               <name>ABRF</name>
               <description>Auto baud rate flag
-This bit is set by hardware when the automatic baud rate has been set (RXFNE is also set, generating an interrupt if RXFNEIE = 1) or when the auto baud rate operation was completed without success (ABREÂ =Â 1) (ABRE, RXFNE and FE are also set in this case)
+This bit is set by hardware when the automatic baud rate has been set (RXFNE is also set, generating an interrupt if RXFNEIE = 1) or when the auto baud rate operation was completed without success (ABRE=1) (ABRE, RXFNE and FE are also set in this case)
 It is cleared by software, in order to request a new auto baud rate detection, by writing 1 to the ABRRQ in the USART_RQR register.
 Note: If the USART does not support the auto baud rate feature, this bit is reserved and kept at reset value.</description>
               <bitOffset>15</bitOffset>
@@ -37690,7 +37148,7 @@ This bit is set and reset by hardware. It is active when a communication is ongo
               <name>CMF</name>
               <description>Character match flag
 This bit is set by hardware, when a the character defined by ADD[7:0] is received. It is cleared by software, writing 1 to the CMCF in the USART_ICR register.
-An interrupt is generated if CMIEÂ =Â 1in the USART_CR1 register.</description>
+An interrupt is generated if CMIE=1in the USART_CR1 register.</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37753,7 +37211,7 @@ Note: If the USART does not support the wakeup from Stop feature, this bit is re
               <name>WUF</name>
               <description>Wakeup from low-power mode flag
 This bit is set by hardware, when a wakeup event is detected. The event is defined by the WUS bitfield. It is cleared by software, writing a 1 to the WUCF in the USART_ICR register.
-An interrupt is generated if WUFIEÂ =Â 1 in the USART_CR3 register.
+An interrupt is generated if WUFIE=1 in the USART_CR3 register.
 Note: When UESM is cleared, WUF flag is also cleared.
 If the USART does not support the wakeup from Stop feature, this bit is reserved and kept at reset value. Refer to .</description>
               <bitOffset>20</bitOffset>
@@ -37764,7 +37222,7 @@ If the USART does not support the wakeup from Stop feature, this bit is reserved
               <name>TEACK</name>
               <description>Transmit enable acknowledge flag
 This bit is set/reset by hardware, when the Transmit Enable value is taken into account by the USART.
-It can be used when an idle frame request is generated by writing TEÂ =Â 0, followed by TEÂ =Â 1 in the USART_CR1 register, in order to respect the TEÂ =Â 0 minimum period.</description>
+It can be used when an idle frame request is generated by writing TE=0, followed by TE=1 in the USART_CR1 register, in order to respect the TE=0 minimum period.</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37783,7 +37241,7 @@ Note: If the USART does not support the wakeup from Stop feature, this bit is re
               <name>TXFE</name>
               <description>TXFIFO empty
 This bit is set by hardware when TXFIFO is empty. When the TXFIFO contains at least one data, this flag is cleared. The TXFE flag can also be set by writing 1 to the bit TXFRQ (bit 4) in the USART_RQR register.
-An interrupt is generated if the TXFEIE bit Â =Â 1 (bit 30) in the USART_CR1 register.</description>
+An interrupt is generated if the TXFEIE bit =1 (bit 30) in the USART_CR1 register.</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37803,8 +37261,8 @@ An interrupt is generated if the TXFEIE bit Â =Â 1 (bit 30) in the USART_CR1
             <field>
               <name>RXFF</name>
               <description>RXFIFO full
-This bit is set by hardware when the number of received data corresponds to RXFIFOÂ sizeÂ +Â 1 (RXFIFO full + 1 data in the USART_RDR register.
-An interrupt is generated if the RXFFIE bit Â =Â 1 in the USART_CR1 register.</description>
+This bit is set by hardware when the number of received data corresponds to RXFIFOsize+1 (RXFIFO full + 1 data in the USART_RDR register.
+An interrupt is generated if the RXFFIE bit =1 in the USART_CR1 register.</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37825,9 +37283,9 @@ An interrupt is generated if the RXFFIE bit Â =Â 1 in the USART_CR1 register
               <name>TCBGT</name>
               <description>Transmission complete before guard time flag
 This bit is set when the last data written in the USART_TDR has been transmitted correctly out of the shift register.
-It is set by hardware in Smartcard mode, if the transmission of a frame containing data is complete and if the smartcard did not send back any NACK. An interrupt is generated if TCBGTIEÂ =Â 1 in the USART_CR3 register.
+It is set by hardware in Smartcard mode, if the transmission of a frame containing data is complete and if the smartcard did not send back any NACK. An interrupt is generated if TCBGTIE=1 in the USART_CR3 register.
 This bit is cleared by software, by writing 1 to the TCBGTCF in the USART_ICR register or by a write to the USART_TDR register.
-Note: If the USART does not support the Smartcard mode, this bit is reserved and kept at reset value. If the USART supports the Smartcard mode and the Smartcard mode is enabled, the TCBGT reset value is '1â. Refer to on pageÂ 835.</description>
+Note: If the USART does not support the Smartcard mode, this bit is reserved and kept at reset value. If the USART supports the Smartcard mode and the Smartcard mode is enabled, the TCBGT reset value is '1'. Refer to on page835.</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37847,8 +37305,8 @@ Note: If the USART does not support the Smartcard mode, this bit is reserved and
             <field>
               <name>RXFT</name>
               <description>RXFIFO threshold flag
-This bit is set by hardware when the threshold programmed in RXFTCFG in USART_CR3 register is reached. This means that there are (RXFTCFG - 1) data in the Receive FIFO and one data in the USART_RDR register. An interrupt is generated if the RXFTIE bit Â =Â 1 (bit 27) in the USART_CR3 register.
-Note: When the RXFTCFG threshold is configured to '101â, RXFT flag is set if 16 data are available i.e. 15 data in the RXFIFO and 1 data in the USART_RDR. Consequently, the 17th received data does not cause an overrun error. The overrun error occurs after receiving the 18th data.</description>
+This bit is set by hardware when the threshold programmed in RXFTCFG in USART_CR3 register is reached. This means that there are (RXFTCFG - 1) data in the Receive FIFO and one data in the USART_RDR register. An interrupt is generated if the RXFTIE bit =1 (bit 27) in the USART_CR3 register.
+Note: When the RXFTCFG threshold is configured to '101', RXFT flag is set if 16 data are available i.e. 15 data in the RXFIFO and 1 data in the USART_RDR. Consequently, the 17th received data does not cause an overrun error. The overrun error occurs after receiving the 18th data.</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37868,7 +37326,7 @@ Note: When the RXFTCFG threshold is configured to '101â, RXFT flag is set i
             <field>
               <name>TXFT</name>
               <description>TXFIFO threshold flag
-This bit is set by hardware when the TXFIFO reaches the threshold programmed in TXFTCFG of USART_CR3 register i.e. the TXFIFO contains TXFTCFG empty locations. An interrupt is generated if the TXFTIE bit Â =Â 1 (bit 31) in the USART_CR3 register.</description>
+This bit is set by hardware when the TXFIFO reaches the threshold programmed in TXFTCFG of USART_CR3 register i.e. the TXFIFO contains TXFTCFG empty locations. An interrupt is generated if the TXFTIE bit =1 (bit 31) in the USART_CR3 register.</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37924,7 +37382,7 @@ An interrupt is generated if PEIE = 1 in the USART_CR1 register.</description>
               <description>Framing error
 This bit is set by hardware when a de-synchronization, excessive noise or a break character is detected. It is cleared by software, writing 1 to the FECF bit in the USART_ICR register.
 When transmitting data in Smartcard mode, this bit is set when the maximum number of transmit attempts is reached without success (the card NACKs the data frame).
-An interrupt is generated if EIEÂ =Â 1 in the USART_CR1 register.</description>
+An interrupt is generated if EIE=1 in the USART_CR1 register.</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37946,7 +37404,7 @@ An interrupt is generated if EIEÂ =Â 1 in the USART_CR1 register.</descripti
               <description>Noise detection flag
 This bit is set by hardware when noise is detected on a received frame. It is cleared by software, writing 1 to the NECF bit in the USART_ICR register.
 Note: This bit does not generate an interrupt as it appears at the same time as the RXNE bit which itself generates an interrupt. An interrupt is generated when the NE flag is set during multi buffer communication if the EIE bit is set.
-When the line is noise-free, the NE flag can be disabled by programming the ONEBIT bit to 1 to increase the USART tolerance to deviations (Refer to Tolerance of the USART receiver to clock deviation on pageÂ 861).</description>
+When the line is noise-free, the NE flag can be disabled by programming the ONEBIT bit to 1 to increase the USART tolerance to deviations (Refer to Tolerance of the USART receiver to clock deviation on page861).</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -37967,8 +37425,8 @@ When the line is noise-free, the NE flag can be disabled by programming the ONEB
               <name>ORE</name>
               <description>Overrun error
 This bit is set by hardware when the data currently being received in the shift register is
-ready to be transferred into the USART_RDR register while RXNEÂ =Â 1. It is cleared by a software, writing 1 to the ORECF, in the USART_ICR register.
-An interrupt is generated if RXNEIEÂ =Â 1 or EIE Â =Â  1 in the USART_CR1 register.
+ready to be transferred into the USART_RDR register while RXNE=1. It is cleared by a software, writing 1 to the ORECF, in the USART_ICR register.
+An interrupt is generated if RXNEIE=1 or EIE = 1 in the USART_CR1 register.
 Note: When this bit is set, the USART_RDR register content is not lost but the shift register is overwritten. An interrupt is generated if the ORE flag is set during multi buffer communication if the EIE bit is set.
 This bit is permanently forced to 0 (no overrun detection) when the bit OVRDIS is set in the USART_CR3 register.</description>
               <bitOffset>3</bitOffset>
@@ -37990,9 +37448,9 @@ This bit is permanently forced to 0 (no overrun detection) when the bit OVRDIS i
             <field>
               <name>IDLE</name>
               <description>Idle line detected
-This bit is set by hardware when an Idle Line is detected. An interrupt is generated if IDLEIEÂ =Â 1 in the USART_CR1 register. It is cleared by software, writing 1 to the IDLECF in the USART_ICR register.
+This bit is set by hardware when an Idle Line is detected. An interrupt is generated if IDLEIE=1 in the USART_CR1 register. It is cleared by software, writing 1 to the IDLECF in the USART_ICR register.
 Note: The IDLE bit is not set again until the RXNE bit has been set (i.e. a new idle line occurs).
-If Mute mode is enabled (MMEÂ =Â 1), IDLE is set if the USART is not mute (RWUÂ =Â 0), whatever the Mute mode selected by the WAKE bit. If RWUÂ =Â 1, IDLE is not set.</description>
+If Mute mode is enabled (MME=1), IDLE is set if the USART is not mute (RWU=0), whatever the Mute mode selected by the WAKE bit. If RWU=1, IDLE is not set.</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -38013,7 +37471,7 @@ If Mute mode is enabled (MMEÂ =Â 1), IDLE is set if the USART is not mute (R
               <name>RXNE</name>
               <description>Read data register not empty
 RXNE bit is set by hardware when the content of the USART_RDR shift register has been transferred to the USART_RDR register. It is cleared by reading from the USART_RDR register. The RXNE flag can also be cleared by writing 1 to the RXFRQ in the USART_RQR register.
-An interrupt is generated if RXNEIEÂ =Â 1 in the USART_CR1 register.</description>
+An interrupt is generated if RXNEIE=1 in the USART_CR1 register.</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -38035,7 +37493,7 @@ An interrupt is generated if RXNEIEÂ =Â 1 in the USART_CR1 register.</descri
               <description>Transmission complete
 This bit indicates that the last data written in the USART_TDR has been transmitted out of the shift register.
 It is set by hardware when the transmission of a frame containing data is complete and when TXE is set.
-An interrupt is generated if TCIEÂ =Â 1 in the USART_CR1 register.
+An interrupt is generated if TCIE=1 in the USART_CR1 register.
 TC bit is is cleared by software, by writing 1 to the TCCF in the USART_ICR register or by a write to the USART_TDR register.
 Note: If TE bit is reset and no transmission is on going, the TC bit is set immediately.</description>
               <bitOffset>6</bitOffset>
@@ -38057,8 +37515,8 @@ Note: If TE bit is reset and no transmission is on going, the TC bit is set imme
             <field>
               <name>TXE</name>
               <description>Transmit data register empty
-TXE is set by hardware when the content of the USART_TDR register has been transferred into the shift register. It is cleared by writing to the USART_TDR register. The TXE flag can also be set by writing 1 to the TXFRQ in the USART_RQR register, in order to discard the data (only in Smartcard TÂ =Â 0 mode, in case of transmission failure).
-An interrupt is generated if the TXEIE bit Â =Â 1 in the USART_CR1 register.</description>
+TXE is set by hardware when the content of the USART_TDR register has been transferred into the shift register. It is cleared by writing to the USART_TDR register. The TXE flag can also be set by writing 1 to the TXFRQ in the USART_RQR register, in order to discard the data (only in Smartcard T=0 mode, in case of transmission failure).
+An interrupt is generated if the TXEIE bit =1 in the USART_CR1 register.</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -38101,7 +37559,7 @@ Note: If the USART does not support LIN mode, this bit is reserved and kept at r
               <name>CTSIF</name>
               <description>CTS interrupt flag
 This bit is set by hardware when the nCTS input toggles, if the CTSE bit is set. It is cleared by software, by writing 1 to the CTSCF bit in the USART_ICR register.
-An interrupt is generated if CTSIEÂ =Â 1 in the USART_CR3 register.
+An interrupt is generated if CTSIE=1 in the USART_CR3 register.
 Note: If the hardware flow control feature is not supported, this bit is reserved and kept at reset value.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
@@ -38144,7 +37602,7 @@ Note: If the hardware flow control feature is not supported, this bit is reserve
               <name>RTOF</name>
               <description>Receiver timeout
 This bit is set by hardware when the timeout value, programmed in the RTOR register has lapsed, without any communication. It is cleared by software, writing 1 to the RTOCF bit in the USART_ICR register.
-An interrupt is generated if RTOIEÂ =Â 1 in the USART_CR2 register.
+An interrupt is generated if RTOIE=1 in the USART_CR2 register.
 In Smartcard mode, the timeout corresponds to the CWT or BWT timings.
 Note: If a time equal to the value programmed in RTOR register separates 2 characters, RTOF is not set. If this time exceeds this value + 2 sample times (2/16 or 2/8, depending on the oversampling method), RTOF flag is set.
 The counter counts even if RE = 0 but RTOF is set only when RE = 1. If the timeout has already elapsed when RE is set, then RTOF is set.
@@ -38168,8 +37626,8 @@ If the USART does not support the Receiver timeout feature, this bit is reserved
             <field>
               <name>EOBF</name>
               <description>End of block flag
-This bit is set by hardware when a complete block has been received (for example TÂ =Â 1 Smartcard mode). The detection is done when the number of received bytes (from the start of the block, including the prologue) is equal or greater than BLEN + 4.
-An interrupt is generated if the EOBIEÂ =Â 1 in the USART_CR2 register.
+This bit is set by hardware when a complete block has been received (for example T=1 Smartcard mode). The detection is done when the number of received bytes (from the start of the block, including the prologue) is equal or greater than BLEN + 4.
+An interrupt is generated if the EOBIE=1 in the USART_CR2 register.
 It is cleared by software, writing 1 to the EOBCF in the USART_ICR register.
 Note: If Smartcard mode is not supported, this bit is reserved and kept at reset value. Refer to .</description>
               <bitOffset>12</bitOffset>
@@ -38222,7 +37680,7 @@ Note: If the USART does not support the auto baud rate feature, this bit is rese
             <field>
               <name>ABRF</name>
               <description>Auto baud rate flag
-This bit is set by hardware when the automatic baud rate has been set (RXNE is also set, generating an interrupt if RXNEIE = 1) or when the auto baud rate operation was completed without success (ABREÂ =Â 1) (ABRE, RXNE and FE are also set in this case)
+This bit is set by hardware when the automatic baud rate has been set (RXNE is also set, generating an interrupt if RXNEIE = 1) or when the auto baud rate operation was completed without success (ABRE=1) (ABRE, RXNE and FE are also set in this case)
 It is cleared by software, in order to request a new auto baud rate detection, by writing 1 to the ABRRQ in the USART_RQR register.
 Note: If the USART does not support the auto baud rate feature, this bit is reserved and kept at reset value.</description>
               <bitOffset>15</bitOffset>
@@ -38253,7 +37711,7 @@ This bit is set and reset by hardware. It is active when a communication is ongo
               <name>CMF</name>
               <description>Character match flag
 This bit is set by hardware, when a the character defined by ADD[7:0] is received. It is cleared by software, writing 1 to the CMCF in the USART_ICR register.
-An interrupt is generated if CMIEÂ =Â 1in the USART_CR1 register.</description>
+An interrupt is generated if CMIE=1in the USART_CR1 register.</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -38316,7 +37774,7 @@ Note: If the USART does not support the wakeup from Stop feature, this bit is re
               <name>WUF</name>
               <description>Wakeup from low-power mode flag
 This bit is set by hardware, when a wakeup event is detected. The event is defined by the WUS bitfield. It is cleared by software, writing a 1 to the WUCF in the USART_ICR register.
-An interrupt is generated if WUFIEÂ =Â 1 in the USART_CR3 register.
+An interrupt is generated if WUFIE=1 in the USART_CR3 register.
 Note: When UESM is cleared, WUF flag is also cleared.
 If the USART does not support the wakeup from Stop feature, this bit is reserved and kept at reset value. Refer to .</description>
               <bitOffset>20</bitOffset>
@@ -38327,7 +37785,7 @@ If the USART does not support the wakeup from Stop feature, this bit is reserved
               <name>TEACK</name>
               <description>Transmit enable acknowledge flag
 This bit is set/reset by hardware, when the Transmit Enable value is taken into account by the USART.
-It can be used when an idle frame request is generated by writing TEÂ =Â 0, followed by TEÂ =Â 1 in the USART_CR1 register, in order to respect the TEÂ =Â 0 minimum period.</description>
+It can be used when an idle frame request is generated by writing TE=0, followed by TE=1 in the USART_CR1 register, in order to respect the TE=0 minimum period.</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -38346,9 +37804,9 @@ Note: If the USART does not support the wakeup from Stop feature, this bit is re
               <name>TCBGT</name>
               <description>Transmission complete before guard time flag
 This bit is set when the last data written in the USART_TDR has been transmitted correctly out of the shift register.
-It is set by hardware in Smartcard mode, if the transmission of a frame containing data is complete and if the smartcard did not send back any NACK. An interrupt is generated if TCBGTIEÂ =Â 1 in the USART_CR3 register.
+It is set by hardware in Smartcard mode, if the transmission of a frame containing data is complete and if the smartcard did not send back any NACK. An interrupt is generated if TCBGTIE=1 in the USART_CR3 register.
 This bit is cleared by software, by writing 1 to the TCBGTCF in the USART_ICR register or by a write to the USART_TDR register.
-Note: If the USART does not support the Smartcard mode, this bit is reserved and kept at reset value. If the USART supports the Smartcard mode and the Smartcard mode is enabled, the TCBGT reset value is '1â. Refer to on pageÂ 835.</description>
+Note: If the USART does not support the Smartcard mode, this bit is reserved and kept at reset value. If the USART supports the Smartcard mode and the Smartcard mode is enabled, the TCBGT reset value is '1'. Refer to on page835.</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -38462,7 +37920,7 @@ Note: If the hardware flow control feature is not supported, this bit is reserve
               <name>RTOCF</name>
               <description>Receiver timeout clear flag
 Writing 1 to this bit clears the RTOF flag in the USART_ISR register.
-Note: If the USART does not support the Receiver timeout feature, this bit is reserved and must be kept at reset value. Refer to pageÂ 835.</description>
+Note: If the USART does not support the Receiver timeout feature, this bit is reserved and must be kept at reset value. Refer to page835.</description>
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
@@ -38497,7 +37955,7 @@ Writing 1 to this bit clears the CMF flag in the USART_ISR register.</descriptio
               <name>WUCF</name>
               <description>Wakeup from low-power mode clear flag
 Writing 1 to this bit clears the WUF flag in the USART_ISR register.
-Note: If the USART does not support the wakeup from Stop feature, this bit is reserved and must be kept at reset value. Refer to pageÂ 835.</description>
+Note: If the USART does not support the wakeup from Stop feature, this bit is reserved and must be kept at reset value. Refer to page835.</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
@@ -38669,7 +38127,7 @@ These bits contain the value of the watchdog counter, decremented every
             <field>
               <name>WDGA</name>
               <description>Activation bit
-This bit is set by software and only cleared by hardware after a reset. When WDGAÂ =Â 1, the watchdog can generate a reset.</description>
+This bit is set by software and only cleared by hardware after a reset. When WDGA=1, the watchdog can generate a reset.</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>

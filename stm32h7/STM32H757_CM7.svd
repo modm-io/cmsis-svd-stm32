@@ -20,7 +20,7 @@ Copyright (c) 2023 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32H757_CM7</name>
-  <version>1.7</version>
+  <version>1.8</version>
   <description>STM32H757_CM7</description>
   <cpu>
     <name>CM7</name>
@@ -40128,10 +40128,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>ICSCR</name>
-          <displayName>ICSCR</displayName>
-          <description>RCC Internal Clock Source Calibration
-          Register</description>
+          <name>HSICFGR</name>
+          <displayName>HSICFGR</displayName>
+          <description>RCC HSI configuration register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
           <resetValue>0x40000000</resetValue>
@@ -40146,22 +40145,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>HSITRIM</name>
               <description>HSI clock trimming</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>6</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>CSICAL</name>
-              <description>CSI clock calibration</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>8</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>CSITRIM</name>
-              <description>CSI clock trimming</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>5</bitWidth>
+              <bitOffset>24</bitOffset>
+              <bitWidth>7</bitWidth>
               <access>read-write</access>
             </field>
           </fields>
@@ -40577,26 +40562,26 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x01010280</resetValue>
           <fields>
             <field>
-              <name>DIVN1</name>
+              <name>DIVN2</name>
               <description>Multiplication factor for PLL1
               VCO</description>
               <bitOffset>0</bitOffset>
               <bitWidth>9</bitWidth>
             </field>
             <field>
-              <name>DIVP1</name>
+              <name>DIVP2</name>
               <description>PLL1 DIVP division factor</description>
               <bitOffset>9</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
             <field>
-              <name>DIVQ1</name>
+              <name>DIVQ2</name>
               <description>PLL1 DIVQ division factor</description>
               <bitOffset>16</bitOffset>
               <bitWidth>7</bitWidth>
             </field>
             <field>
-              <name>DIVR1</name>
+              <name>DIVR2</name>
               <description>PLL1 DIVR division factor</description>
               <bitOffset>24</bitOffset>
               <bitWidth>7</bitWidth>
@@ -47886,6 +47871,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>Arm Cortex-M4 Send even
         interrupt</description>
         <value>65</value>
+      </interrupt>
+	  <interrupt>
+        <name>FPU</name>
+        <description>CPU2</description>
+        <value>81</value>
       </interrupt>
       <interrupt>
         <name>WKUP</name>
@@ -100285,8 +100275,8 @@ Minimum value is 16</description>
           </fields>
         </register>
         <register>
-          <name>CRR6</name>
-          <displayName>CRR6</displayName>
+          <name>CCR6</name>
+          <displayName>CCR6</displayName>
           <description>capture/compare register 6</description>
           <addressOffset>0x5C</addressOffset>
           <size>0x20</size>
@@ -102740,6 +102730,12 @@ Minimum value is 16</description>
               <name>EFGI</name>
               <description>Event FIFO Get Index.</description>
               <bitOffset>8</bitOffset>
+              <bitWidth>5</bitWidth>
+            </field>
+            <field>
+              <name>EFPI</name>
+              <description>Event FIFO put index.</description>
+              <bitOffset>16</bitOffset>
               <bitWidth>5</bitWidth>
             </field>
             <field>
