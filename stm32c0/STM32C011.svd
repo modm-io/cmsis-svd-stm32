@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2021 STMicroelectronics.
+Copyright (c) 2023 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2021 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32C011</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <description>STM32C011</description>
   <cpu>
     <name>CM0</name>
@@ -8722,6 +8722,1101 @@ Other: reserved</description>
             </fields>
           </register>
         </registers>
+    </peripheral>
+    <peripheral>
+      <name>FLASH</name>
+      <description>Spider_FLASH register block</description>
+      <groupName>FLASH</groupName>
+      <baseAddress>0x40022000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>FLASH</name>
+        <description>Flash global interrupt</description>
+        <value>3</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>FLASH_ACR</name>
+          <displayName>FLASH_ACR</displayName>
+          <description>FLASH access control register</description>
+          <addressOffset>0x000</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x40600</resetValue>
+          <resetMask>0xFFFEFFFF</resetMask>
+          <fields>
+            <field>
+              <name>LATENCY</name>
+              <description>Flash memory access latency
+The value in this bitfield represents the number of CPU wait states when accessing the flash memory.
+Other: Reserved
+A new write into the bitfield becomes effective when it returns the same value upon read.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Zero wait states</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>One wait state</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PRFTEN</name>
+              <description>CPU Prefetch enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>CPU Prefetch disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>CPU Prefetch enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ICEN</name>
+              <description>CPU Instruction cache enable</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>CPU Instruction cache is disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>CPU Instruction cache is enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ICRST</name>
+              <description>CPU Instruction cache reset
+This bit can be written only when the instruction cache is disabled.</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>CPU Instruction cache is not reset</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>CPU Instruction cache is reset</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EMPTY</name>
+              <description>Main flash memory area empty
+This bit indicates whether the first location of the Main flash memory area was read as erased or as programmed during OBL. It is not affected by the system reset. Software may need to change this bit value after a flash memory program or erase operation.
+The bit can be set and reset by software.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Main flash memory area programmed</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Main flash memory area empty</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DBG_SWEN</name>
+              <description>Debug access software enable
+Software may use this bit to enable/disable the debugger read access.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Debugger disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Debugger enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_KEYR</name>
+          <displayName>FLASH_KEYR</displayName>
+          <description>FLASH key register</description>
+          <addressOffset>0x008</addressOffset>
+          <size>0x20</size>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>KEY</name>
+              <description>FLASH key
+The following values must be written consecutively to unlock the FLASH control register (FLASH_CR), thus enabling programming/erasing operations:
+KEY1: 0x4567 0123
+KEY2: 0xCDEF 89AB</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_OPTKEYR</name>
+          <displayName>FLASH_OPTKEYR</displayName>
+          <description>FLASH option key register</description>
+          <addressOffset>0x00C</addressOffset>
+          <size>0x20</size>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>OPTKEY</name>
+              <description>Option byte key
+The following values must be written consecutively to unlock the flash memory option registers, enabling option byte programming/erasing operations:
+KEY1: 0x0819 2A3B
+KEY2: 0x4C5D 6E7F</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_SR</name>
+          <displayName>FLASH_SR</displayName>
+          <description>FLASH status register</description>
+          <addressOffset>0x010</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFF0FFFF</resetMask>
+          <fields>
+            <field>
+              <name>EOP</name>
+              <description>End of operation
+Set by hardware when one or more flash memory operation (programming / erase) has been completed successfully.
+This bit is set only if the end of operation interrupts are enabled (EOPIE=1).
+Cleared by writing 1.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OPERR</name>
+              <description>Operation error
+Set by hardware when a flash memory operation (program / erase) completes unsuccessfully.
+This bit is set only if error interrupts are enabled (ERRIE=1).
+Cleared by writing  1 .</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PROGERR</name>
+              <description>Programming error
+Set by hardware when a double-word address to be programmed contains a value different from '0xFFFF FFFF' before programming, except if the data to write is '0x0000 0000'.
+Cleared by writing 1.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>WRPERR</name>
+              <description>Write protection error
+Set by hardware when an address to be erased/programmed belongs to a write-protected part (by WRP, PCROP or RDP Level 1) of the flash memory.
+Cleared by writing 1.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PGAERR</name>
+              <description>Programming alignment error
+Set by hardware when the data to program cannot be contained in the same double word (64-bit) flash memory in case of standard programming, or if there is a change of page during fast programming.
+Cleared by writing 1.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SIZERR</name>
+              <description>Size error
+Set by hardware when the size of the access is a byte or half-word during a program or a fast program sequence. Only double word programming is allowed (consequently: word access).
+Cleared by writing 1.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PGSERR</name>
+              <description>Programming sequence error
+Set by hardware when a write access to the flash memory is performed by the code while PG or FSTPG have not been set previously. Set also by hardware when PROGERR, SIZERR, PGAERR, WRPERR, MISSERR or FASTERR is set due to a previous programming error.
+Cleared by writing 1.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MISSERR</name>
+              <description>Fast programming data miss error
+In Fast programming mode, 16 double words (128 bytes) must be sent to flash memory successively, and the new data must be sent to the logic control before the current data is fully programmed. MISSERR is set by hardware when the new data is not present in time.
+Cleared by writing 1.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FASTERR</name>
+              <description>Fast programming error
+Set by hardware when a fast programming sequence (activated by FSTPG) is interrupted due to an error (alignment, size, write protection or data miss). The corresponding status bit (PGAERR, SIZERR, WRPERR or MISSERR) is set at the same time.
+Cleared by writing 1.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RDERR</name>
+              <description>PCROP read error
+Set by hardware when an address to be read belongs to a read protected area of the flash memory (PCROP protection). An interrupt is generated if RDERRIE is set in FLASH_CR.
+Cleared by writing 1.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OPTVERR</name>
+              <description>Option and Engineering bits loading validity error</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BSY1</name>
+              <description>Busy
+This flag indicates that a flash memory operation requested by FLASH control register (FLASH_CR) is in progress. This bit is set at the beginning of the flash memory operation, and cleared when the operation finishes or when an error occurs.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>CFGBSY</name>
+              <description>Programming or erase configuration busy.
+This flag is set and reset by hardware.
+For flash program operation, it is set when the first word is sent, and cleared after the second word is sent when the operation completes or ends with an error.
+For flash erase operation, it is set when setting the STRT bit of the FLASH_CR register and cleared when the operation completes or ends with an error.
+When set, a programming or erase operation is ongoing and the corresponding settings in the FLASH control register (FLASH_CR) are used (busy) and cannot be changed. Any other flash operation launch must be postponed.
+When cleared, the programming and erase settings in the FLASH control register (FLASH_CR) can be modified.
+Note: The CFGBSY bit is also set when attempting to write locked flash memory (with the first byte sent). When the CFGBSY bit is set, writing into the FLASH_CR register causes HardFault.To clear the CFGBSY bit, send a double word to the flash memory and wait until the access is finished (otherwise the CFGBSY bit remains set).</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_CR</name>
+          <displayName>FLASH_CR</displayName>
+          <description>FLASH control register</description>
+          <addressOffset>0x014</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0xC0000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>PG</name>
+              <description>Flash memory programming enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PER</name>
+              <description>Page erase enable</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>MER1</name>
+              <description>Mass erase
+When set, this bit triggers the mass erase, that is, all user pages.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PNB</name>
+              <description>Page number selection
+These bits select the page to erase:
+...
+Note: Values corresponding to addresses outside the Main memory are not allowed. See Table 6 and Table 7.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x00</name>
+                  <description>page 0</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x01</name>
+                  <description>page 1</description>
+                  <value>0x01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>STRT</name>
+              <description>Start erase operation
+This bit triggers an erase operation when set.
+This bit is possible to set only by software and to clear only by hardware. The hardware clears it when one of BSY1 and BSY2 flags in the FLASH_SR register transits to zero.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>OPTSTRT</name>
+              <description>Start of modification of option bytes
+This bit triggers an options operation when set.
+This bit is set only by software, and is cleared when the BSY1 bit is cleared in FLASH_SR.</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FSTPG</name>
+              <description>Fast programming enable</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EOPIE</name>
+              <description>End-of-operation interrupt enable
+This bit enables the interrupt generation upon setting the EOP flag in the FLASH_SR register.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ERRIE</name>
+              <description>Error interrupt enable
+This bit enables the interrupt generation upon setting the OPERR flag in the FLASH_SR register.</description>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RDERRIE</name>
+              <description>PCROP read error interrupt enable
+This bit enables the interrupt generation upon setting the RDERR flag in the FLASH_SR register.</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OBL_LAUNCH</name>
+              <description>Option byte load launch
+When set, this bit triggers the load of option bytes into option registers. It is automatically cleared upon the completion of the load. The high state of the bit indicates pending option byte load.
+The bit cannot be cleared by software. It cannot be written as long as OPTLOCK is set.</description>
+              <bitOffset>27</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SEC_PROT</name>
+              <description>Securable memory area protection enable
+This bit enables the protection on securable area, provided that a non-null securable memory area size (SEC_SIZE[4:0]) is defined in option bytes.
+This bit is possible to set only by software and to clear only through a system reset.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable (securable area accessible)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable (securable area not accessible)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OPTLOCK</name>
+              <description>Options Lock
+This bit is set only. When set, all bits concerning user option in FLASH_CR register and so option page are locked. This bit is cleared by hardware after detecting the unlock sequence. The LOCK bit must be cleared before doing the unlock sequence for OPTLOCK bit.
+In case of an unsuccessful unlock operation, this bit remains set until the next reset.</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>FLASH_CR Lock
+This bit is set only. When set, the FLASH_CR register is locked. It is cleared by hardware after detecting the unlock sequence.
+In case of an unsuccessful unlock operation, this bit remains set until the next system reset.</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_OPTR</name>
+          <displayName>FLASH_OPTR</displayName>
+          <description>FLASH option register</description>
+          <addressOffset>0x020</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x00000000</resetMask>
+          <fields>
+            <field>
+              <name>RDP</name>
+              <description>Read protection level
+Other: Level 1, memories read protection active</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0xAA</name>
+                  <description>Level 0, read protection not active</description>
+                  <value>0xAA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0xCC</name>
+                  <description>Level 2, chip read protection active</description>
+                  <value>0xCC</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>BOR_EN</name>
+              <description>Brown out reset enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Configurable brown out reset disabled, power-on reset defined by POR/PDR levels</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Configurable brown out reset enabled, values of BORR_LEV and BORF_LEV taken into account</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>BORR_LEV</name>
+              <description> BOR threshold at falling VDD supply
+Falling VDD crossings this threshold activates the reset signal.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>BOR rising level 1 with threshold around 2.1 V</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>BOR rising level 2 with threshold around 2.3 V</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x2</name>
+                  <description>BOR rising level 3 with threshold around 2.6 V</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x3</name>
+                  <description>BOR rising level 4 with threshold around 2.9 V</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>BORF_LEV</name>
+              <description> BOR threshold at falling VDD supply
+Falling VDD crossings this threshold activates the reset signal.</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>BOR falling level 1 with threshold around 2.0 V</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>BOR falling level 2 with threshold around 2.2 V</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x2</name>
+                  <description>BOR falling level 3 with threshold around 2.5 V</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x3</name>
+                  <description>BOR falling level 4 with threshold around 2.8 V</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>NRST_STOP</name>
+              <description>None</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>NRST_STDBY</name>
+              <description>None</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>NRST_SHDW</name>
+              <description>None</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>IWDG_SW</name>
+              <description>None</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>IWDG_STOP</name>
+              <description>Independent watchdog counter freeze in Stop mode</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Independent watchdog counter is frozen in Stop mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Independent watchdog counter is running in Stop mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>IWGD_STDBY</name>
+              <description>None</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>WWDG_SW</name>
+              <description>Window watchdog selection</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Hardware window watchdog</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Software window watchdog</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>HSE_NOT_REMAPPED</name>
+              <description>HSE remapping enable/disable
+When cleared, the bit remaps the HSE clock source from PF0-OSC_IN/PF1-OSC_OUT pins to PC14-OSCX_IN/PC15-OSCX_OUT. Thus PC14-OSCX_IN/PC15-OSCX_OUT are shared by both LSE and HSE and the two clock sources cannot be use simultaneously.
+On packages with less than 48 pins, the remapping is always enabled (PF0-OSC_IN/PF1-OSC_OUT are not available), regardless of this bit. As all STM32C011xx packages have less than 48 pins, this bit is only applicable to STM32C031xx.
+Note: On 48 pins packages, when HSE_NOT_REMAPPED is reset, HSE cannot be used in bypass mode. Refer to product errata sheet for more details.</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RAM_PARITY_CHECK</name>
+              <description>SRAM parity check control enable/disable</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SECURE_MUXING_EN</name>
+              <description>Multiple-bonding security
+The bit allows enabling automatic I/O configuration to prevent conflicts on I/Os connected (bonded) onto the same pin.
+If the software sets one of the I/Os connected to the same pin as active by configuring the SYSCFG_CFGR3 register, enabling this bit automatically forces the other I/Os in digital input mode, regardless of their software configuration.
+When the bit is disabled, the SYSCFG_CFGR3 register setting is ignored, all GPIOs linked to a given pin are active and can be set in the mode specified by the corresponding GPIOx_MODER register. The user software must ensure that there is no conflict between GPIOs.</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>NBOOT_SEL</name>
+              <description>BOOT0 signal source selection
+This option bit defines the source of the BOOT0 signal.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>BOOT0 pin (legacy mode)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>nBOOT0 option bit</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>NBOOT1</name>
+              <description>Boot configuration
+Together with the BOOT0 pin or option bit nBOOT0 (depending on nBOOT_SEL option bit configuration), this bit selects boot mode from the Main flash memory, SRAM or the System memory. Refer to Section 3: Boot configuration.</description>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>NBOOT0</name>
+              <description>nBOOT0 option bit</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>nBOOT0 = 0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>nBOOT0 = 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>NRST_MODE</name>
+              <description>NRST pin configuration</description>
+              <bitOffset>27</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Reset input only: a low level on the NRST pin generates system reset; internal RESET is not propagated to the NRST pin.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x2</name>
+                  <description>Standard GPIO: only internal RESET is possible</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x3</name>
+                  <description>Bidirectional reset: the NRST pin is configured in reset input/output (legacy) mode</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>IRHEN</name>
+              <description>Internal reset holder enable bit</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Internal resets are propagated as simple pulse on NRST pin</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Internal resets drives NRST pin low until it is seen as low level</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_PCROP1ASR</name>
+          <displayName>FLASH_PCROP1ASR</displayName>
+          <description>FLASH PCROP area A start address register</description>
+          <addressOffset>0x024</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFF00</resetMask>
+          <fields>
+            <field>
+              <name>PCROP1A_STRT</name>
+              <description>PCROP1A area start offset
+Contains the offset of the first subpage of the PCROP1A area.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>6</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_PCROP1AER</name>
+          <displayName>FLASH_PCROP1AER</displayName>
+          <description>FLASH PCROP area A end address register</description>
+          <addressOffset>0x028</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x7FFFFF00</resetMask>
+          <fields>
+            <field>
+              <name>PCROP1A_END</name>
+              <description>PCROP1A area end offset
+Contains the offset of the last subpage of the PCROP1A area.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>6</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PCROP_RDP</name>
+              <description>PCROP area erase upon RDP level regression
+This bit determines whether the PCROP area (and the totality of the PCROP area boundary pages) is erased by the mass erase triggered by the RDP level regression from Level 1 to Level 0:
+The software can only set this bit. It is automatically reset upon mass erase following the RDP regression from Level 1 to Level 0.</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Not erased</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Erased</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_WRP1AR</name>
+          <displayName>FLASH_WRP1AR</displayName>
+          <description>FLASH WRP area A address register</description>
+          <addressOffset>0x02C</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFC0FFC0</resetMask>
+          <fields>
+            <field>
+              <name>WRP1A_STRT</name>
+              <description>WRP area A start offset
+This bitfield contains the offset of the first page of the WRP area A.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>WRP1A_END</name>
+              <description>WRP area A end offset
+This bitfield contains the offset of the last page of the WRP area A.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_WRP1BR</name>
+          <displayName>FLASH_WRP1BR</displayName>
+          <description>FLASH WRP area B address register</description>
+          <addressOffset>0x030</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFC0FFC0</resetMask>
+          <fields>
+            <field>
+              <name>WRP1B_STRT</name>
+              <description>WRP area B start offset
+This bitfield contains the offset of the first page of the WRP area B.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>WRP1B_END</name>
+              <description>WRP area B end offset
+This bitfield contains the offset of the last page of the WRP area B.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_PCROP1BSR</name>
+          <displayName>FLASH_PCROP1BSR</displayName>
+          <description>FLASH PCROP area B start address register</description>
+          <addressOffset>0x034</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFF00</resetMask>
+          <fields>
+            <field>
+              <name>PCROP1B_STRT</name>
+              <description>PCROP1B area start offset
+Contains the offset of the first subpage of the PCROP1B area.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>6</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_PCROP1BER</name>
+          <displayName>FLASH_PCROP1BER</displayName>
+          <description>FLASH PCROP area B end address register</description>
+          <addressOffset>0x038</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFF00</resetMask>
+          <fields>
+            <field>
+              <name>PCROP1B_END</name>
+              <description>PCROP1B area end offset
+Contains the offset of the last subpage of the PCROP1B area.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>6</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FLASH_SECR</name>
+          <displayName>FLASH_SECR</displayName>
+          <description>FLASH security register</description>
+          <addressOffset>0x080</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFEFF00</resetMask>
+          <fields>
+            <field>
+              <name>SEC_SIZE</name>
+              <description>Securable memory area size
+Contains the number of securable flash memory pages.
+Note: The number of effective bits depends on the size of the flash memory in the device.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>5</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BOOT_LOCK</name>
+              <description>used to force boot from user area
+If the bit is set in association with RDP level 1, the debug capabilities are disabled, except in the case of a bad OBL (mismatch).</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_0x0</name>
+                  <description>Boot based on the pad/option bit configuration</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_0x1</name>
+                  <description>Boot forced from Main flash memory</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
     </peripheral>
 	<peripheral>
         <name>GPIOA</name>
@@ -26579,7 +27674,7 @@ These bits are write-only. A read operation always returns 0x0000.</description>
         </registers>
     </peripheral>
 	<peripheral>
-        <name>I2C</name>
+        <name>I2C1</name>
         <description>I2C register block</description>
 		<groupName>I2C</groupName>
         <baseAddress>0x40005400</baseAddress>
@@ -26589,7 +27684,7 @@ These bits are write-only. A read operation always returns 0x0000.</description>
           <usage>registers</usage>
         </addressBlock>
 		<interrupt>
-          <name>I2C</name>
+          <name>I2C1</name>
           <description>global interrupt (combined with EXTI 23)</description>
           <value>23</value>
         </interrupt>
@@ -33451,7 +34546,7 @@ It is recommended to check and then clear TSOVF only after clearing the TSF bit.
         </registers>
     </peripheral>
 	<peripheral>
-        <name>SPI</name>
+        <name>SPI1</name>
         <description>Serial peripheral interface</description>
 		<groupName>SPI</groupName>
         <baseAddress>0x40013000</baseAddress>
@@ -33461,13 +34556,13 @@ It is recommended to check and then clear TSOVF only after clearing the TSF bit.
           <usage>registers</usage>
         </addressBlock>
 		<interrupt>
-          <name>SPI</name>
-          <description>SPI/I2S global interrupt</description>
+          <name>SPI1</name>
+          <description>SPI1/I2S1 global interrupt</description>
           <value>25</value>
         </interrupt>
         <registers>
           <register>
-            <name>SPI_CR1</name>
+            <name>SPIx_CR1</name>
             <displayName>SPI_CR1</displayName>
             <description>SPI control register 1 </description>
             <addressOffset>0x0</addressOffset>
@@ -33792,7 +34887,7 @@ Note: This bit is not used in I2S mode.</description>
             </fields>
           </register>
           <register>
-            <name>SPI_CR2</name>
+            <name>SPIx_CR2</name>
             <displayName>SPI_CR2</displayName>
             <description>SPI control register 2 </description>
             <addressOffset>0x4</addressOffset>
@@ -34119,8 +35214,8 @@ This bit is not used in ImS mode.</description>
             </fields>
           </register>
           <register>
-            <name>SPI_SR</name>
-            <displayName>SPI_SR</displayName>
+            <name>SPIx_SR</name>
+            <displayName>SPIx_SR</displayName>
             <description>SPI status register </description>
             <addressOffset>0x8</addressOffset>
             <size>16</size>
@@ -34375,10 +35470,10 @@ Note: This bit is not used in I2S mode.</description>
             </fields>
           </register>
           <register>
-            <name>SPI_DR</name>
-            <displayName>SPI_DR</displayName>
+            <name>SPIx_DR</name>
+            <displayName>SPIx_DR</displayName>
             <description>SPI data register </description>
-            <addressOffset>0xc</addressOffset>
+            <addressOffset>0xC</addressOffset>
             <size>16</size>
             <resetValue>0x00000000</resetValue>
             <resetMask>0x0000FFFF</resetMask>
@@ -34396,8 +35491,8 @@ Note: Data is always right-aligned. Unused bits are ignored when writing to the 
             </fields>
           </register>
           <register>
-            <name>SPI_CRCPR</name>
-            <displayName>SPI_CRCPR</displayName>
+            <name>SPIx_CRCPR</name>
+            <displayName>SPIx_CRCPR</displayName>
             <description>SPI CRC polynomial register </description>
             <addressOffset>0x10</addressOffset>
             <size>16</size>
@@ -34416,8 +35511,8 @@ The CRC polynomial (0x0007) is the reset value of this register. Another polynom
             </fields>
           </register>
           <register>
-            <name>SPI_RXCRCR</name>
-            <displayName>SPI_RXCRCR</displayName>
+            <name>SPIx_RXCRCR</name>
+            <displayName>SPIx_RXCRCR</displayName>
             <description>SPI Rx CRC register </description>
             <addressOffset>0x14</addressOffset>
             <size>16</size>
@@ -34439,8 +35534,8 @@ These bits are not used in I2S mode.</description>
             </fields>
           </register>
           <register>
-            <name>SPI_TXCRCR</name>
-            <displayName>SPI_TXCRCR</displayName>
+            <name>SPIx_TXCRCR</name>
+            <displayName>SPIx_TXCRCR</displayName>
             <description>SPI Tx CRC register </description>
             <addressOffset>0x18</addressOffset>
             <size>16</size>
@@ -34462,10 +35557,10 @@ These bits are not used in I2S mode.</description>
             </fields>
           </register>
           <register>
-            <name>SPI_I2SCFGR</name>
-            <displayName>SPI_I2SCFGR</displayName>
-            <description>SPI_I2S configuration register </description>
-            <addressOffset>0x1c</addressOffset>
+            <name>SPIx_I2SCFGR</name>
+            <displayName>SPIx_I2SCFGR</displayName>
+            <description>SPIx_I2S configuration register </description>
+            <addressOffset>0x1C</addressOffset>
             <size>16</size>
             <resetValue>0x00000000</resetValue>
             <resetMask>0x0000FFFF</resetMask>
@@ -34696,8 +35791,8 @@ Please refer to  for additional information.</description>
             </fields>
           </register>
           <register>
-            <name>SPI_I2SPR</name>
-            <displayName>SPI_I2SPR</displayName>
+            <name>SPIx_I2SPR</name>
+            <displayName>SPIx_I2SPR</displayName>
             <description>SPI_I2S prescaler register </description>
             <addressOffset>0x20</addressOffset>
             <size>16</size>
