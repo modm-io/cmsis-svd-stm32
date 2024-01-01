@@ -17,9 +17,9 @@ Copyright (c) 2023 STMicroelectronics.
  limitations under the License.
 -->
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
-   <name>STM32L0x2</name>
-   <version>1.7</version>
-   <description>STM32L0x2</description>
+   <name>STM32L062</name>
+   <version>1.1</version>
+   <description>STM32L062</description>
    <cpu>
     <name>CM0+</name>
     <revision>r0p0</revision>
@@ -12745,188 +12745,188 @@ Copyright (c) 2023 STMicroelectronics.
       <peripheral derivedFrom="I2C1">
          <name>I2C3</name>
          <baseAddress>0x40007800</baseAddress>
-      <interrupt>
-        <name>I2C3</name>
-        <description>I2C3 global interrupt</description>
-        <value>21</value>
-      </interrupt>
       </peripheral>
-	  <peripheral>
-		<name>PWR</name>
-		<description>Power control</description>
-		<groupName>PWR</groupName>
-		<baseAddress>0x40007000</baseAddress>
-		<addressBlock>
-			<offset>0x0</offset>
-			<size>0x400</size>
-			<usage>registers</usage>
-		</addressBlock>
-		<registers>
-		  <register>
-			<name>CR</name>
-			<displayName>CR</displayName>
-			<description>power control register</description>
-			<addressOffset>0x0</addressOffset>
-			<size>0x20</size>
-			<access>read-write</access>
-			<resetValue>0x00001000</resetValue>
-			<fields>
-			  <field>
-				<name>LPSDSR</name>
-				<description>Low-power deepsleep/Sleep/Low-power run</description>
-				<bitOffset>0</bitOffset>
-				<bitWidth>1</bitWidth>
-			  </field>
-			  <field>
-				<name>PDDS</name>
-				<description>Power down deepsleep</description>
-				<bitOffset>1</bitOffset>
-				<bitWidth>1</bitWidth>
-			  </field>
-              <field>
-				<name>CWUF</name>
-				<description>Clear wakeup flag</description>
-				<bitOffset>2</bitOffset>
-				<bitWidth>1</bitWidth>
-              </field>
-              <field>
-				<name>CSBF</name>
-				<description>Clear standby flag</description>
-				<bitOffset>3</bitOffset>
-				<bitWidth>1</bitWidth>
-              </field>
-              <field>
-				<name>PVDE</name>
-				<description>Power voltage detector
+      <peripheral>
+         <name>PWR</name>
+         <description>Power control</description>
+         <groupName>PWR</groupName>
+         <baseAddress>0x40007000</baseAddress>
+         <addressBlock>
+            <offset>0x0</offset>
+            <size>0x400</size>
+            <usage>registers</usage>
+         </addressBlock>
+         <interrupt>
+            <name>I2C3</name>
+            <description>I2C3 global interrupt</description>
+            <value>21</value>
+         </interrupt>
+         <registers>
+        <register>
+          <name>CR</name>
+          <displayName>CR</displayName>
+          <description>power control register</description>
+          <addressOffset>0x0</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00001000</resetValue>
+          <fields>
+            <field>
+              <name>LPSDSR</name>
+              <description>Low-power deepsleep/Sleep/Low-power run</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PDDS</name>
+              <description>Power down deepsleep</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CWUF</name>
+              <description>Clear wakeup flag</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CSBF</name>
+              <description>Clear standby flag</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PVDE</name>
+              <description>Power voltage detector
               enable</description>
-				<bitOffset>4</bitOffset>
-				<bitWidth>1</bitWidth>
-              </field>
-              <field>
-				<name>PLS</name>
-				<description>PVD level selection</description>
-				<bitOffset>5</bitOffset>
-				<bitWidth>3</bitWidth>
-              </field>
-              <field>
-				<name>DBP</name>
-				<description>Disable backup domain write
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>PLS</name>
+              <description>PVD level selection</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>DBP</name>
+              <description>Disable backup domain write
               protection</description>
-				<bitOffset>8</bitOffset>
-				<bitWidth>1</bitWidth>
-              </field>
-              <field>
-				<name>ULP</name>
-				<description>Ultra-low-power mode</description>
-				<bitOffset>9</bitOffset>
-				<bitWidth>1</bitWidth>
-             </field>
-              <field>
-				<name>FWU</name>
-				<description>Fast wakeup</description>
-				<bitOffset>10</bitOffset>
-				<bitWidth>1</bitWidth>
-              </field>
-              <field>
-				<name>VOS</name>
-				<description>Voltage scaling range
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ULP</name>
+              <description>Ultra-low-power mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>FWU</name>
+              <description>Fast wakeup</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>VOS</name>
+              <description>Voltage scaling range
               selection</description>
-				<bitOffset>11</bitOffset>
-				<bitWidth>2</bitWidth>
-              </field>
-              <field>
-				<name>DS_EE_KOFF</name>
-				<description>Deep sleep mode with Flash memory kept
+              <bitOffset>11</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>DS_EE_KOFF</name>
+              <description>Deep sleep mode with Flash memory kept
               off</description>
-				<bitOffset>13</bitOffset>
-				<bitWidth>1</bitWidth>
-              </field>
-              <field>
-				<name>LPRUN</name>
-				<description>Low power run mode</description>
-				<bitOffset>14</bitOffset>
-				<bitWidth>1</bitWidth>
-              </field>
-		    </fields>
-		  </register>
-		  <register>
-			<name>CSR</name>
-			<displayName>CSR</displayName>
-			<description>power control/status register</description>
-			<addressOffset>0x4</addressOffset>
-			<size>0x20</size>
-			<resetValue>0x00000000</resetValue>
-			<fields>
-			  <field>
-				<name>EWUP3</name>
-				<description>Enable WKUP pin 3</description>
-				<bitOffset>10</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-write</access>
-              </field>
-              <field>
-				<name>EWUP2</name>
-				<description>Enable WKUP pin 2</description>
-				<bitOffset>9</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-write</access>
-              </field>
-              <field>
-				<name>EWUP1</name>
-				<description>Enable WKUP pin 1</description>
-				<bitOffset>8</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-write</access>
-              </field>
-              <field>
-				<name>REGLPF</name>
-				<description>Regulator LP flag</description>
-				<bitOffset>5</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-only</access>
-              </field>
-              <field>
-				<name>VOSF</name>
-				<description>Voltage Scaling select
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>LPRUN</name>
+              <description>Low power run mode</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CSR</name>
+          <displayName>CSR</displayName>
+          <description>power control/status register</description>
+          <addressOffset>0x4</addressOffset>
+          <size>0x20</size>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>EWUP3</name>
+              <description>Enable WKUP pin 3</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>EWUP2</name>
+              <description>Enable WKUP pin 2</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>EWUP1</name>
+              <description>Enable WKUP pin 1</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>REGLPF</name>
+              <description>Regulator LP flag</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>VOSF</name>
+              <description>Voltage Scaling select
               flag</description>
-				<bitOffset>4</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-only</access>
-              </field>
-			  <field>
-				<name>VREFINTRDYF</name>
-				<description>Internal voltage reference (VREFINT) ready flag
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+			<field>
+              <name>VREFINTRDYF</name>
+              <description>Internal voltage reference (VREFINT) ready flag
 This bit indicates the state of the internal voltage reference, VREFINT. </description>
-				<bitOffset>3</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-only</access>
-              </field>
-              <field>
-				<name>PVDO</name>
-				<description>PVD output</description>
-				<bitOffset>2</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-only</access>
-              </field>
-              <field>
-				<name>SBF</name>
-				<description>Standby flag</description>
-				<bitOffset>1</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-only</access>
-              </field>
-              <field>
-				<name>WUF</name>
-				<description>Wakeup flag</description>
-				<bitOffset>0</bitOffset>
-				<bitWidth>1</bitWidth>
-				<access>read-only</access>
-              </field>
-            </fields>
-		  </register>
-        </registers>
-    </peripheral>
-	<peripheral>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>PVDO</name>
+              <description>PVD output</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SBF</name>
+              <description>Standby flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>WUF</name>
+              <description>Wakeup flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+         </registers>
+      </peripheral>
+	    <peripheral>
       <name>Flash</name>
       <description>Flash</description>
       <groupName>Flash</groupName>
@@ -12936,11 +12936,6 @@ This bit indicates the state of the internal voltage reference, VREFINT. </descr
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name> FLASH</name>
-        <description>Flash memory and data EEPROM global interrupt</description>
-        <value>3</value>
-      </interrupt>
       <registers>
         <register>
           <name>ACR</name>

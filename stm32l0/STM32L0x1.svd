@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--
+Copyright (c) 2023 STMicroelectronics.
+
+ SPDX-License-Identifier: Apache-2.0
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
 <device schemaVersion="1.1"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32L0x1</name>
-  <version>1.3</version>
+  <version>1.6</version>
   <description>STM32L0x1</description>
   <!-- details about the cpu embedded in the device -->
   <cpu>
     <name>CM0+</name>
     <revision>r0p0</revision>
     <endian>little</endian>
-    <mpuPresent>false</mpuPresent>
+    <mpuPresent>true</mpuPresent>
     <fpuPresent>false</fpuPresent>
-    <nvicPrioBits>3</nvicPrioBits>
+    <nvicPrioBits>4</nvicPrioBits>
     <vendorSystickConfig>false</vendorSystickConfig>
   </cpu>
   <!--Bus Interface Properties-->
@@ -7054,6 +7071,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="USART1">
       <name>USART2</name>
       <baseAddress>0x40004400</baseAddress>
+      <interrupt>
+        <name>USART2</name>
+        <description>USART2 global interrupt</description>
+        <value>28</value>
+      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART4</name>
@@ -7067,11 +7089,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="USART1">
       <name>USART5</name>
       <baseAddress>0x40005000</baseAddress>
-      <interrupt>
-        <name>USART2</name>
-        <description>USART2 global interrupt</description>
-        <value>28</value>
-      </interrupt>
     </peripheral>
     <peripheral>
       <name>IWDG</name>
@@ -9295,8 +9312,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>COMP1_CTRL</name>
-          <displayName>COMP1_CTRL</displayName>
+          <name>COMP1_CSR</name>
+          <displayName>COMP1_CSR</displayName>
           <description>Comparator 1 control and status
           register</description>
           <addressOffset>0x18</addressOffset>
@@ -9355,8 +9372,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>COMP2_CTRL</name>
-          <displayName>COMP2_CTRL</displayName>
+          <name>COMP2_CSR</name>
+          <displayName>COMP2_CSR</displayName>
           <description>Comparator 2 control and status
           register</description>
           <addressOffset>0x1C</addressOffset>
@@ -10525,8 +10542,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00001000</resetValue>
           <fields>
             <field>
-              <name>LPDS</name>
-              <description>Low-power deep sleep</description>
+              <name>LPSDSR</name>
+              <description>Low-power deepsleep/Sleep/Low-power run</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -10600,6 +10617,14 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+            <field>
+              <name>LPDS</name>
+              <description>Regulator in Low-power deepsleep mode
+This bit allows switching the regulator to low-power mode when the CPU enters Stop
+mode. Its behavior depends on LPSDSR bit</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
           </fields>
         </register>
         <register>
@@ -10611,22 +10636,45 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>BRE</name>
-              <description>Backup regulator enable</description>
+              <name>EWUP3</name>
+              <description>Enable WKUP pin 3</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>EWUP2</name>
+              <description>Enable WKUP pin 2</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
-              <name>EWUP</name>
-              <description>Enable WKUP pin</description>
+              <name>EWUP1</name>
+              <description>Enable WKUP pin 1</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
-              <name>BRR</name>
-              <description>Backup regulator ready</description>
+              <name>REGLPF</name>
+              <description>Regulator LP flag</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>VOSF</name>
+              <description>Voltage Scaling select
+              flag</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+			<field>
+              <name>VREFINTRDYF</name>
+              <description>Internal voltage reference (VREFINT) ready flag
+This bit indicates the state of the internal voltage reference, VREFINT. </description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -10652,21 +10700,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
               <access>read-only</access>
             </field>
-            <field>
-              <name>VOSF</name>
-              <description>Voltage Scaling select
-              flag</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>REGLPF</name>
-              <description>Regulator LP flag</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
           </fields>
         </register>
       </registers>
@@ -10682,8 +10715,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>FLASH</name>
-        <description>Flash global interrupt</description>
+        <name> FLASH</name>
+        <description>Flash memory and data EEPROM global interrupt</description>
         <value>3</value>
       </interrupt>
       <registers>
@@ -10721,7 +10754,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DESAB_BUF</name>
+              <name>DISAB_BUF</name>
               <description>Disable Buffer</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
@@ -10775,7 +10808,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>FTDW</name>
+              <name>FIX</name>
               <description>Fixed time data write for Byte, Half
               Word and Word programming</description>
               <bitOffset>8</bitOffset>
@@ -10814,11 +10847,17 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
+			<field>
               <name>OBL_LAUNCH</name>
               <description>Launch the option byte
               loading</description>
               <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>NZDISABLE</name>
+              <description>Non-Zero check notification disable</description>
+              <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -10962,7 +11001,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
             <field>
               <name>RDERR</name>
               <description>RDERR</description>
-              <bitOffset>14</bitOffset>
+              <bitOffset>13</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
@@ -10983,8 +11022,8 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           </fields>
         </register>
         <register>
-          <name>OBR</name>
-          <displayName>OBR</displayName>
+          <name>OPTR</name>
+          <displayName>OPTR</displayName>
           <description>Option byte register</description>
           <addressOffset>0x1C</addressOffset>
           <size>0x20</size>
@@ -10992,37 +11031,83 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00F80000</resetValue>
           <fields>
             <field>
-              <name>RDPRT</name>
+              <name>RDPROT</name>
               <description>Read protection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
             </field>
             <field>
+              <name>WPRMOD</name>
+              <description>WPRMOD</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
               <name>BOR_LEV</name>
               <description>BOR_LEV</description>
               <bitOffset>16</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
+			<field>
+              <name>WDG_SW</name>
+              <description>WDG_SW</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
             <field>
-              <name>SPRMOD</name>
-              <description>Selection of protection mode of WPR
-              bits</description>
-              <bitOffset>8</bitOffset>
+              <name>nRST_STOP</name>
+              <description>nRST_STOP</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>nRST_STDBY</name>
+              <description>nRST_STDBY</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>BFB2</name>
+              <description>BFB2</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+			<field>
+              <name>nBOOT1</name>
+              <description>nBOOT1</description>
+              <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
         </register>
         <register>
-          <name>WRPR</name>
-          <displayName>WRPR</displayName>
+          <name>WRPROT1</name>
+          <displayName>WRPROT1</displayName>
           <description>Write protection register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
-          <access>read-write</access>
+          <access>read-only</access>
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>WRP</name>
+              <name>WRPROT1</name>
+              <description>Write protection</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+		<register>
+          <name>WRPROT2</name>
+          <displayName>WRPROT2</displayName>
+          <description>Write protection register</description>
+          <addressOffset>0x80</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>WRPROT2</name>
               <description>Write protection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
@@ -16110,7 +16195,7 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <description>MPU control register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
-          <access>read-only</access>
+          <access>read-write</access>
           <resetValue>0X00000000</resetValue>
           <fields>
             <field>

@@ -19,9 +19,9 @@ Copyright (c) 2023 STMicroelectronics.
 <device schemaVersion="1.1"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
-  <name>STM32L0x3</name>
-  <version>1.7</version>
-  <description>STM32L0x3</description>
+  <name>STM32L063</name>
+  <version>1.1</version>
+  <description>STM32L063</description>
   <!-- details about the cpu embedded in the device -->
   <cpu>
     <name>CM0+</name>
@@ -6667,11 +6667,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>USART1</name>
-        <description>USART1 global interrupt</description>
-        <value>27</value>
-      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -7512,11 +7507,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="USART1">
       <name>USART2</name>
       <baseAddress>0x40004400</baseAddress>
-      <interrupt>
-        <name>USART2</name>
-        <description>USART2 global interrupt</description>
-        <value>28</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART4</name>
@@ -7526,10 +7516,20 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>USART4/USART5 global interrupt</description>
         <value>14</value>
       </interrupt>
+      <interrupt>
+        <name>USART1</name>
+        <description>USART1 global interrupt</description>
+        <value>27</value>
+      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART5</name>
       <baseAddress>0x40005000</baseAddress>
+      <interrupt>
+        <name>USART2</name>
+        <description>USART2 global interrupt</description>
+        <value>28</value>
+      </interrupt>
     </peripheral>
     <peripheral>
       <name>TSC</name>
@@ -13520,11 +13520,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="I2C1">
       <name>I2C3</name>
       <baseAddress>0x40007800</baseAddress>
-      <interrupt>
-        <name>I2C3</name>
-        <description>I2C3 global interrupt</description>
-        <value>21</value>
-      </interrupt>
     </peripheral>
     <peripheral>
       <name>PWR</name>
@@ -13536,6 +13531,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>I2C3</name>
+        <description>I2C3 global interrupt</description>
+        <value>21</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -13704,11 +13704,6 @@ This bit indicates the state of the internal voltage reference, VREFINT. </descr
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name> FLASH</name>
-        <description>Flash memory and data EEPROM global interrupt</description>
-        <value>3</value>
-      </interrupt>
       <registers>
         <register>
           <name>ACR</name>

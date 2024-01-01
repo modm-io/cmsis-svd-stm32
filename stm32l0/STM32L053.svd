@@ -19,9 +19,9 @@ Copyright (c) 2023 STMicroelectronics.
 <device schemaVersion="1.1"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
-  <name>STM32L0x3</name>
-  <version>1.7</version>
-  <description>STM32L0x3</description>
+  <name>STM32L053</name>
+  <version>1.1</version>
+  <description>STM32L053</description>
   <!-- details about the cpu embedded in the device -->
   <cpu>
     <name>CM0+</name>
@@ -42,313 +42,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <resetValue>0x0</resetValue>
   <resetMask>0xFFFFFFFF</resetMask>
   <peripherals>
-    <peripheral>
-      <name>AES</name>
-      <description>Advanced encryption standard hardware
-      accelerator</description>
-      <groupName>AES</groupName>
-      <baseAddress>0x40026000</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <interrupt>
-        <name>AES_RNG_LPUART1</name>
-        <description>AES global interrupt RNG global interrupt and
-        LPUART1 global interrupt through</description>
-        <value>29</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>CR</name>
-          <displayName>CR</displayName>
-          <description>control register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>DMAOUTEN</name>
-              <description>Enable DMA management of data output
-              phase</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DMAINEN</name>
-              <description>Enable DMA management of data input
-              phase</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ERRIE</name>
-              <description>Error interrupt enable</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCFIE</name>
-              <description>CCF flag interrupt enable</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ERRC</name>
-              <description>Error clear</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCFC</name>
-              <description>Computation Complete Flag
-              Clear</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CHMOD</name>
-              <description>AES chaining mode</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>MODE</name>
-              <description>AES operating mode</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>DATATYPE</name>
-              <description>Data type selection (for data in and
-              data out to/from the cryptographic
-              block)</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>EN</name>
-              <description>AES enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SR</name>
-          <displayName>SR</displayName>
-          <description>status register</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>WRERR</name>
-              <description>Write error flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RDERR</name>
-              <description>Read error flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCF</name>
-              <description>Computation complete flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>DINR</name>
-          <displayName>DINR</displayName>
-          <description>data input register</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_DINR</name>
-              <description>Data Input Register.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>DOUTR</name>
-          <displayName>DOUTR</displayName>
-          <description>data output register</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_DOUTR</name>
-              <description>Data output register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR0</name>
-          <displayName>KEYR0</displayName>
-          <description>key register 0</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR0</name>
-              <description>Data Output Register (LSB key
-              [31:0])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR1</name>
-          <displayName>KEYR1</displayName>
-          <description>key register 1</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR1</name>
-              <description>AES key register (key
-              [63:32])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR2</name>
-          <displayName>KEYR2</displayName>
-          <description>key register 2</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR2</name>
-              <description>AES key register (key
-              [95:64])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>KEYR3</name>
-          <displayName>KEYR3</displayName>
-          <description>key register 3</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_KEYR3</name>
-              <description>AES key register (MSB key
-              [127:96])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR0</name>
-          <displayName>IVR0</displayName>
-          <description>initialization vector register
-          0</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR0</name>
-              <description>initialization vector register (LSB IVR
-              [31:0])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR1</name>
-          <displayName>IVR1</displayName>
-          <description>initialization vector register
-          1</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR1</name>
-              <description>Initialization Vector Register (IVR
-              [63:32])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR2</name>
-          <displayName>IVR2</displayName>
-          <description>initialization vector register
-          2</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR2</name>
-              <description>Initialization Vector Register (IVR
-              [95:64])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IVR3</name>
-          <displayName>IVR3</displayName>
-          <description>initialization vector register
-          3</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>AES_IVR3</name>
-              <description>Initialization Vector Register (MSB IVR
-              [127:96])</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
     <peripheral>
       <name>DAC</name>
       <description>Digital-to-analog converter</description>
@@ -6667,11 +6360,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>USART1</name>
-        <description>USART1 global interrupt</description>
-        <value>27</value>
-      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -7512,11 +7200,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="USART1">
       <name>USART2</name>
       <baseAddress>0x40004400</baseAddress>
-      <interrupt>
-        <name>USART2</name>
-        <description>USART2 global interrupt</description>
-        <value>28</value>
-      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART4</name>
@@ -7526,10 +7209,20 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <description>USART4/USART5 global interrupt</description>
         <value>14</value>
       </interrupt>
+      <interrupt>
+        <name>USART1</name>
+        <description>USART1 global interrupt</description>
+        <value>27</value>
+      </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART1">
       <name>USART5</name>
       <baseAddress>0x40005000</baseAddress>
+      <interrupt>
+        <name>USART2</name>
+        <description>USART2 global interrupt</description>
+        <value>28</value>
+      </interrupt>
     </peripheral>
     <peripheral>
       <name>TSC</name>
@@ -13520,11 +13213,6 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
     <peripheral derivedFrom="I2C1">
       <name>I2C3</name>
       <baseAddress>0x40007800</baseAddress>
-      <interrupt>
-        <name>I2C3</name>
-        <description>I2C3 global interrupt</description>
-        <value>21</value>
-      </interrupt>
     </peripheral>
     <peripheral>
       <name>PWR</name>
@@ -13536,6 +13224,11 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>I2C3</name>
+        <description>I2C3 global interrupt</description>
+        <value>21</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -13704,11 +13397,6 @@ This bit indicates the state of the internal voltage reference, VREFINT. </descr
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name> FLASH</name>
-        <description>Flash memory and data EEPROM global interrupt</description>
-        <value>3</value>
-      </interrupt>
       <registers>
         <register>
           <name>ACR</name>
