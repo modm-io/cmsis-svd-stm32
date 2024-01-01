@@ -9,28 +9,31 @@ from urllib.request import urlopen, Request
 from pathlib import Path
 
 _hdr = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-    'Accept-Encoding': 'none',
-    'Accept-Language': 'en-US,en;q=0.8',
-    'Connection': 'keep-alive'
+    'Sec-Fetch-Site': 'none',
+    'Accept-Encoding': 'identity',
+    'Sec-Fetch-Mode': 'navigate',
+    'Host': 'www.st.com',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15',
+    'Accept-Language': 'en-GB,en;q=0.9',
+    'Sec-Fetch-Dest': 'document',
+    'Connection': 'keep-alive',
 }
 
 def download_svd_data():
     url  = "https://www.st.com/content/st_com/en/products/microcontrollers-microprocessors/"
     url += "stm32-32-bit-arm-cortex-mcus.cxst-rs-grid.html/CL1734.cad_models_and_symbols.svd.json"
-    with urlopen(Request(url, headers=_hdr)) as data:
-        json_data = data.read().decode(encoding="utf-8", errors="ignore")
+    cmd = f"curl '{url}' -L -s --max-time 60 -o - " + " ".join(f"-H '{k}: {v}'" for k,v in _hdr.items())
+    data = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE).stdout
+    json_data = data.decode(encoding="utf-8", errors="ignore")
     rows = json.loads(json_data)["rows"]
     return [(row["localizedDescriptions"]["en"].split(" ")[0], row["version"],
              "https://www.st.com" + row["localizedLinks"]["en"]) for row in rows]
 
 def download_zip(url, path):
     if path.exists(): path.unlink()
-    with tempfile.NamedTemporaryFile() as outfile:
-        os.system(f'wget -q --user-agent="{_hdr["User-Agent"]}" "{url}" -O {outfile.name}')
-        shutil.copy(outfile.name, str(path))
+    cmd = f"curl '{url}' -L -s --max-time 60 -o {path} " + " ".join(f"-H '{k}: {v}'" for k,v in _hdr.items())
+    assert subprocess.call(cmd, shell=True) == 0
 
 
 def download_families(download = True):
