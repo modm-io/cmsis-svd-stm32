@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2024 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -18,7 +18,7 @@ Copyright (c) 2023 STMicroelectronics.
 -->
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32G051</name>
-  <version>1.3</version>
+  <version>1.4</version>
   <description>STM32G051</description>
   <cpu>
     <name>CM0</name>
@@ -12552,7 +12552,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>MER</name>
+              <name>MER1</name>
               <description>Mass erase</description>
               <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
@@ -12561,7 +12561,19 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <name>PNB</name>
               <description>Page number</description>
               <bitOffset>3</bitOffset>
-              <bitWidth>6</bitWidth>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>BKER</name>
+              <description>Bank selection for erase operation</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>MER2</name>
+              <description>Mass erase, Bank 2</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>STRT</name>
@@ -12613,6 +12625,12 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Securable memory area protection
               enable</description>
               <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SEC_PROT2</name>
+              <description>Securable memory area protection enable, Bank 2</description>
+              <bitOffset>29</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>

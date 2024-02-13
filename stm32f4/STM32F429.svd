@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2024 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2023 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32F429</name>
-  <version>1.7</version>
+  <version>1.8</version>
   <description>STM32F429</description>
   <cpu>
     <name>CM4</name>
@@ -9728,6 +9728,20 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
           <resetValue>0x00000083</resetValue>
           <fields>
             <field>
+              <name>PLLSAIRDY</name>
+              <description>PLLSAI clock ready flag</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PLLSAION</name>
+              <description>PLLSAI enable</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
               <name>PLLI2SRDY</name>
               <description>PLLI2S clock ready flag</description>
               <bitOffset>27</bitOffset>
@@ -11123,13 +11137,13 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SPI5ENR</name>
+              <name>SPI5EN</name>
               <description>SPI5 clock enable</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SPI6ENR</name>
+              <name>SPI6EN</name>
               <description>SPI6 clock enable</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
