@@ -29,6 +29,7 @@ Here is the list of the SVD file versions for each STM32 family:
 - STM32U5: v1.3
 - STM32WB: v1.2
 - STM32WL: v1.0
+- STM32WL: v1.2
 <!--/families-->
 
 This repository is updated periodically by GitHub Actions.
