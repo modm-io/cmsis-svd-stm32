@@ -24,12 +24,10 @@ jobs:
         run: |
           git push origin main
 
-      - name: Switch to dummy branch
-        run: |
-          git checkout -b keep-alive
-      - name: Keep Alive
-        if: always()
-        uses: gautamkrishnar/keepalive-workflow@v1
-        with:
-          committer_username: modm update bot
-          committer_email: bot@modm.io
+  keep-alive:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/keepalive-workflow@v2
