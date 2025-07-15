@@ -21,8 +21,7 @@ _hdr = {
 }
 
 def download_svd_data():
-    url  = "https://www.st.com/content/st_com/en/products/microcontrollers-microprocessors/"
-    url += "stm32-32-bit-arm-cortex-mcus.cxst-rs-grid.html/CL1734.cad_models_and_symbols.svd.json"
+    url = "https://www.st.com/bin/st/selectors/cxst/en.cxst-cad-grid.html/CL1734.cad_models_and_symbols.svd.json"
     cmd = f"curl '{url}' -L -s --max-time 60 -o - " + " ".join(f"-H '{k}: {v}'" for k,v in _hdr.items())
     data = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE).stdout
     json_data = data.decode(encoding="utf-8", errors="ignore")
