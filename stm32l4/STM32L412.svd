@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2024 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2023 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32L412</name>
-  <version>1.9</version>
+  <version>2.1</version>
   <description>STM32L412</description>
   <cpu>
     <name>CM4</name>
@@ -14270,6 +14270,17 @@ The data alignment is applied as described in Section : Data register, data alig
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>TIM1_TRG_COM</name>
+        <description>TIM1 trigger and commutation
+        interrupt</description>
+        <value>26</value>
+      </interrupt>
+      <interrupt>
+        <name>TIM1_CC</name>
+        <description>TIM1 Capture Compare interrupt</description>
+        <value>27</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR1</name>
@@ -14877,7 +14888,7 @@ The data alignment is applied as described in Section : Data register, data alig
               <bitWidth>4</bitWidth>
             </field>
             <field>
-              <name>IC2PCS</name>
+              <name>IC2PSC</name>
               <description>Input capture 2 prescaler</description>
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
@@ -14896,7 +14907,7 @@ The data alignment is applied as described in Section : Data register, data alig
               <bitWidth>4</bitWidth>
             </field>
             <field>
-              <name>ICPCS</name>
+              <name>IC1PSC</name>
               <description>Input capture 1 prescaler</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
@@ -16585,15 +16596,9 @@ The data alignment is applied as described in Section : Data register, data alig
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TIM1_TRG_COM</name>
-        <description>TIM1 trigger and commutation
-        interrupt</description>
-        <value>26</value>
-      </interrupt>
-      <interrupt>
-        <name>TIM1_CC</name>
-        <description>TIM1 Capture Compare interrupt</description>
-        <value>27</value>
+        <name>TIM16</name>
+        <description>Timer 16 global interrupt</description>
+        <value>25</value>
       </interrupt>
       <registers>
         <register>
@@ -17222,9 +17227,9 @@ The data alignment is applied as described in Section : Data register, data alig
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TIM16</name>
-        <description>Timer 16 global interrupt</description>
-        <value>25</value>
+        <name>TIM2</name>
+        <description>TIM2 global interrupt</description>
+        <value>28</value>
       </interrupt>
       <registers>
         <register>
@@ -18267,9 +18272,10 @@ The data alignment is applied as described in Section : Data register, data alig
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TIM2</name>
-        <description>TIM2 global interrupt</description>
-        <value>28</value>
+        <name>TIM6_DACUNDER</name>
+        <description>TIM6 global and DAC1 underrun error
+        interrupts</description>
+        <value>54</value>
       </interrupt>
       <registers>
         <register>
@@ -18463,10 +18469,9 @@ The data alignment is applied as described in Section : Data register, data alig
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TIM6_DACUNDER</name>
-        <description>TIM6 global and DAC1 underrun error
-        interrupts</description>
-        <value>54</value>
+        <name>TSC</name>
+        <description>TSC global interrupt</description>
+        <value>77</value>
       </interrupt>
       <registers>
         <register>
@@ -19604,9 +19609,9 @@ The data alignment is applied as described in Section : Data register, data alig
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TSC</name>
-        <description>TSC global interrupt</description>
-        <value>77</value>
+        <name>USART1</name>
+        <description>USART1 global interrupt</description>
+        <value>37</value>
       </interrupt>
       <registers>
         <register>
@@ -20477,9 +20482,9 @@ The data alignment is applied as described in Section : Data register, data alig
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>USART1</name>
-        <description>USART1 global interrupt</description>
-        <value>37</value>
+        <name>WWDG</name>
+        <description>Window Watchdog interrupt</description>
+        <value>0</value>
       </interrupt>
       <registers>
         <register>
@@ -22302,17 +22307,6 @@ The data alignment is applied as described in Section : Data register, data alig
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>WWDG</name>
-        <description>Window Watchdog interrupt</description>
-        <value>0</value>
-      </interrupt>
-      <interrupt>
-        <name>USB</name>
-        <description>USB event interrupt through EXTI line
-        17</description>
-        <value>67</value>
-      </interrupt>
       <registers>
         <register>
           <name>MODER</name>
@@ -27860,14 +27854,14 @@ The data alignment is applied as described in Section : Data register, data alig
       </registers>
     </peripheral>
     <peripheral>
-      <name>USB</name>
+      <name>USB_SRAM</name>
       <description>Universal serial bus full-speed device
       interface</description>
       <groupName>USB</groupName>
-      <baseAddress>0x40006800</baseAddress>
+      <baseAddress>0x40006C00</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x800</size>
+        <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
@@ -29523,6 +29517,15 @@ The data alignment is applied as described in Section : Data register, data alig
         </register>
       </registers>
     </peripheral>
+    <peripheral derivedFrom="USB_SRAM">
+      <name>USB_FS</name>
+      <baseAddress>0x40006800</baseAddress>
+      <interrupt>
+        <name>USB_FS</name>
+        <description>USB event interrupt through EXTI</description>
+        <value>67</value>
+      </interrupt>
+    </peripheral>
     <peripheral>
       <name>USART2</name>
       <description>Universal synchronous asynchronous receiver
@@ -30395,11 +30398,6 @@ The data alignment is applied as described in Section : Data register, data alig
     <peripheral derivedFrom="USART2">
       <name>USART3</name>
       <baseAddress>0x40004800</baseAddress>
-      <interrupt>
-        <name>USART1</name>
-        <description>USART1 global interrupt</description>
-        <value>37</value>
-      </interrupt>
     </peripheral>
   </peripherals>
 </device>

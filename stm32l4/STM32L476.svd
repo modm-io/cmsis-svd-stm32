@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2024 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -18,7 +18,7 @@ Copyright (c) 2023 STMicroelectronics.
 -->
 <device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
    <name>STM32L476</name>
-   <version>1.3</version>
+   <version>1.8</version>
    <description>STM32L476</description>
     <cpu>
     <name>CM4</name>
@@ -9587,37 +9587,37 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>CSBF</name>
+                     <name>SBF</name>
                      <description>Standby flag</description>
                      <bitOffset>8</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>CWUF5</name>
+                     <name>WUF5</name>
                      <description>Wakeup flag 5</description>
                      <bitOffset>4</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>CWUF4</name>
+                     <name>WUF4</name>
                      <description>Wakeup flag 4</description>
                      <bitOffset>3</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>CWUF3</name>
+                     <name>WUF3</name>
                      <description>Wakeup flag 3</description>
                      <bitOffset>2</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>CWUF2</name>
+                     <name>WUF2</name>
                      <description>Wakeup flag 2</description>
                      <bitOffset>1</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>CWUF1</name>
+                     <name>WUF1</name>
                      <description>Wakeup flag 1</description>
                      <bitOffset>0</bitOffset>
                      <bitWidth>1</bitWidth>
@@ -9693,37 +9693,37 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                <resetValue>0x00000000</resetValue>
                <fields>
                   <field>
-                     <name>SBF</name>
+                     <name>CSBF</name>
                      <description>Clear standby flag</description>
                      <bitOffset>8</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>WUF5</name>
+                     <name>CWUF5</name>
                      <description>Clear wakeup flag 5</description>
                      <bitOffset>4</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>WUF4</name>
+                     <name>CWUF4</name>
                      <description>Clear wakeup flag 4</description>
                      <bitOffset>3</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>WUF3</name>
+                     <name>CWUF3</name>
                      <description>Clear wakeup flag 3</description>
                      <bitOffset>2</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>WUF2</name>
+                     <name>CWUF2</name>
                      <description>Clear wakeup flag 2</description>
                      <bitOffset>1</bitOffset>
                      <bitWidth>1</bitWidth>
                   </field>
                   <field>
-                     <name>WUF1</name>
+                     <name>CWUF1</name>
                      <description>Clear wakeup flag 1</description>
                      <bitOffset>0</bitOffset>
                      <bitWidth>1</bitWidth>
@@ -15679,11 +15679,6 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
-         <interrupt>
-            <name>AES</name>
-            <description>AES global interrupt</description>
-            <value>79</value>
-         </interrupt>
          <registers>
             <register>
                <name>CR</name>
@@ -22475,6 +22470,18 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                <resetValue>0x00000000</resetValue>
                <fields>
                   <field>
+                     <name>OC2M_bit3</name>
+                     <description>Output Compare 2 mode</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>OC1M_bit3</name>
+                     <description>Output Compare 1 mode</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
                      <name>OC2CE</name>
                      <description>Output compare 2 clear               enable</description>
                      <bitOffset>15</bitOffset>
@@ -22593,6 +22600,18 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                <access>read-write</access>
                <resetValue>0x00000000</resetValue>
                <fields>
+				  <field>
+					 <name>OC4M_bit3</name>
+					 <description>Output Compare 4 mode</description>
+					 <bitOffset>24</bitOffset>
+					 <bitWidth>1</bitWidth>
+				  </field>
+				  <field>
+					 <name>OC3M_bit3</name>
+					 <description>Output Compare 3 mode</description>
+					 <bitOffset>16</bitOffset>
+					 <bitWidth>1</bitWidth>
+				  </field>
                   <field>
                      <name>OC4CE</name>
                      <description>Output compare 4 clear               enable</description>
@@ -24715,6 +24734,18 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                <resetValue>0x00000000</resetValue>
                <fields>
                   <field>
+                     <name>OC2M_bit3</name>
+                     <description>Output Compare 2 mode</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>OC1M_bit3</name>
+                     <description>Output Compare 1 mode</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
                      <name>OC2CE</name>
                      <description>Output Compare 2 clear               enable</description>
                      <bitOffset>15</bitOffset>
@@ -24793,7 +24824,7 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                      <bitWidth>4</bitWidth>
                   </field>
                   <field>
-                     <name>IC2PCS</name>
+                     <name>IC2PSC</name>
                      <description>Input capture 2 prescaler</description>
                      <bitOffset>10</bitOffset>
                      <bitWidth>2</bitWidth>
@@ -24811,7 +24842,7 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                      <bitWidth>4</bitWidth>
                   </field>
                   <field>
-                     <name>ICPCS</name>
+                     <name>IC1PSC</name>
                      <description>Input capture 1 prescaler</description>
                      <bitOffset>2</bitOffset>
                      <bitWidth>2</bitWidth>
@@ -24833,6 +24864,18 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                <access>read-write</access>
                <resetValue>0x00000000</resetValue>
                <fields>
+				  <field>
+					 <name>OC4M_bit3</name>
+					 <description>Output Compare 4 mode</description>
+					 <bitOffset>24</bitOffset>
+					 <bitWidth>1</bitWidth>
+				  </field>
+				  <field>
+					 <name>OC3M_bit3</name>
+					 <description>Output Compare 3 mode</description>
+					 <bitOffset>16</bitOffset>
+					 <bitWidth>1</bitWidth>
+				  </field>
                   <field>
                      <name>OC4CE</name>
                      <description>Output compare 4 clear               enable</description>
@@ -26019,6 +26062,18 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                <resetValue>0x00000000</resetValue>
                <fields>
                   <field>
+                     <name>OC2M_bit3</name>
+                     <description>Output Compare 2 mode</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>OC1M_bit3</name>
+                     <description>Output Compare 1 mode</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
                      <name>OC2CE</name>
                      <description>Output Compare 2 clear               enable</description>
                      <bitOffset>15</bitOffset>
@@ -26097,7 +26152,7 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                      <bitWidth>4</bitWidth>
                   </field>
                   <field>
-                     <name>IC2PCS</name>
+                     <name>IC2PSC</name>
                      <description>Input capture 2 prescaler</description>
                      <bitOffset>10</bitOffset>
                      <bitWidth>2</bitWidth>
@@ -26115,7 +26170,7 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                      <bitWidth>4</bitWidth>
                   </field>
                   <field>
-                     <name>ICPCS</name>
+                     <name>IC1PSC</name>
                      <description>Input capture 1 prescaler</description>
                      <bitOffset>2</bitOffset>
                      <bitWidth>2</bitWidth>
@@ -26137,6 +26192,18 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
                <access>read-write</access>
                <resetValue>0x00000000</resetValue>
                <fields>
+                  <field>
+                     <name>OC4M_bit3</name>
+                     <description>Output Compare 4 mode</description>
+                     <bitOffset>24</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
+                  <field>
+                     <name>OC3M_bit3</name>
+                     <description>Output Compare 3 mode</description>
+                     <bitOffset>16</bitOffset>
+                     <bitWidth>1</bitWidth>
+                  </field>
                   <field>
                      <name>OC4CE</name>
                      <description>Output compare 4 clear               enable</description>
@@ -32570,6 +32637,11 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
             <name>EXTI15_10</name>
             <description>EXTI Lines 10 to 15 interrupts</description>
             <value>40</value>
+         </interrupt>
+         <interrupt>
+            <name>FPU</name>
+            <description>Floating point interrupt</description>
+            <value>81</value>
          </interrupt>
          <registers>
             <register>
@@ -55434,6 +55506,11 @@ This bit is written by software to clear the UDD flag in the LCD_SR register.</d
             <size>0x400</size>
             <usage>registers</usage>
          </addressBlock>
+         <interrupt>
+            <name>CRS</name>
+            <description>HASH and CRS interrupt</description>
+            <value>82</value>
+         </interrupt>
          <registers>
             <register>
                <name>CR</name>

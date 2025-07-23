@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2024 STMicroelectronics.
+Copyright (c) 2025 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2024 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32C071</name>
-  <version>1.1</version>
+  <version>1.3</version>
   <description>STM32C071</description>
   <cpu>
     <name>CM0+</name>
@@ -11883,7 +11883,7 @@ Setting/clearing this bit unmasks/masks the CPU wakeup with event generation on 
     </peripheral>
     <peripheral>
       <name>FLASH</name>
-      <description>Spider_FLASH register block</description>
+      <description>FLASH register block</description>
       <groupName>FLASH</groupName>
       <baseAddress>0x40022000</baseAddress>
       <addressBlock>
@@ -45944,8 +45944,8 @@ It is recommended to check and then clear TSOVF only after clearing the TSF bit.
       </interrupt>
       <registers>
         <register>
-          <name>SPI1_CR1</name>
-          <displayName>SPI1_CR1</displayName>
+          <name>SPI_CR1</name>
+          <displayName>SPI_CR1</displayName>
           <description>SPI control register 1</description>
           <addressOffset>0x00</addressOffset>
           <size>16</size>
@@ -46270,8 +46270,8 @@ Note: This bit is not used in I&lt;sup&gt;2&lt;/sup&gt;S mode.</description>
           </fields>
         </register>
         <register>
-          <name>SPI1_CR2</name>
-          <displayName>SPI1_CR2</displayName>
+          <name>SPI_CR2</name>
+          <displayName>SPI_CR2</displayName>
           <description>SPI control register 2</description>
           <addressOffset>0x04</addressOffset>
           <size>16</size>
@@ -46598,8 +46598,8 @@ Note: This bit is not used in I S mode.</description>
           </fields>
         </register>
         <register>
-          <name>SPI1_SR</name>
-          <displayName>SPI1_SR</displayName>
+          <name>SPI_SR</name>
+          <displayName>SPI_SR</displayName>
           <description>SPI status register</description>
           <addressOffset>0x08</addressOffset>
           <size>16</size>
@@ -46855,8 +46855,8 @@ Note: This bit is not used in I&lt;sup&gt;2&lt;/sup&gt;S mode.</description>
           </fields>
         </register>
         <register>
-          <name>SPI1_DR</name>
-          <displayName>SPI1_DR</displayName>
+          <name>SPI_DR</name>
+          <displayName>SPI_DR</displayName>
           <description>SPI data register</description>
           <addressOffset>0x0C</addressOffset>
           <size>16</size>
@@ -46877,8 +46877,8 @@ Note: Data is always right-aligned. Unused bits are ignored when writing to the 
           </fields>
         </register>
         <register>
-          <name>SPI1_CRCPR</name>
-          <displayName>SPI1_CRCPR</displayName>
+          <name>SPI_CRCPR</name>
+          <displayName>SPI_CRCPR</displayName>
           <description>SPI CRC polynomial register</description>
           <addressOffset>0x10</addressOffset>
           <size>16</size>
@@ -46898,8 +46898,8 @@ The CRC polynomial (0x0007) is the reset value of this register. Another polynom
           </fields>
         </register>
         <register>
-          <name>SPI1_RXCRCR</name>
-          <displayName>SPI1_RXCRCR</displayName>
+          <name>SPI_RXCRCR</name>
+          <displayName>SPI_RXCRCR</displayName>
           <description>SPI Rx CRC register</description>
           <addressOffset>0x14</addressOffset>
           <size>16</size>
@@ -46922,8 +46922,8 @@ Note: These bits are not used in I&lt;sup&gt;2&lt;/sup&gt;S mode.</description>
           </fields>
         </register>
         <register>
-          <name>SPI1_TXCRCR</name>
-          <displayName>SPI1_TXCRCR</displayName>
+          <name>SPI_TXCRCR</name>
+          <displayName>SPI_TXCRCR</displayName>
           <description>SPI Tx CRC register</description>
           <addressOffset>0x18</addressOffset>
           <size>16</size>
@@ -46946,8 +46946,8 @@ Note: These bits are not used in I&lt;sup&gt;2&lt;/sup&gt;S mode.</description>
           </fields>
         </register>
         <register>
-          <name>SPI1_I2SCFGR</name>
-          <displayName>SPI1_I2SCFGR</displayName>
+          <name>SPI_I2SCFGR</name>
+          <displayName>SPI_I2SCFGR</displayName>
           <description>SPI1_I2S configuration register</description>
           <addressOffset>0x1C</addressOffset>
           <size>16</size>
@@ -47181,8 +47181,8 @@ Note: Please refer to Section 27.7.3: Start-up description for additional inform
           </fields>
         </register>
         <register>
-          <name>SPI1_I2SPR</name>
-          <displayName>SPI1_I2SPR</displayName>
+          <name>SPI_I2SPR</name>
+          <displayName>SPI_I2SPR</displayName>
           <description>SPI1_I2S prescaler register</description>
           <addressOffset>0x20</addressOffset>
           <size>16</size>

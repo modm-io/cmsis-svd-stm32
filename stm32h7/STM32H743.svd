@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2025 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -16,11 +16,9 @@ Copyright (c) 2023 STMicroelectronics.
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<device schemaVersion="1.1"
-xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
+<device xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xsi:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32H743</name>
-  <version>1.8</version>
+  <version>2.4</version>
   <description>STM32H743</description>
    <cpu>
     <name>CM7</name>
@@ -1362,34 +1360,9 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>BDMA_CH0</name>
-        <description>BDMA channel 0 interrupt</description>
-        <value>129</value>
-      </interrupt>
-      <interrupt>
-        <name>BDMA_CH1</name>
-        <description>BDMA channel 1 interrupt</description>
-        <value>130</value>
-      </interrupt>
-      <interrupt>
-        <name>BDMA_CH2</name>
-        <description>BDMA channel 2 interrupt</description>
-        <value>131</value>
-      </interrupt>
-      <interrupt>
-        <name>BDMA_CH3</name>
-        <description>BDMA channel 3 interrupt</description>
-        <value>132</value>
-      </interrupt>
-      <interrupt>
-        <name>BDMA_CH4</name>
-        <description>BDMA channel 4 interrupt</description>
-        <value>133</value>
-      </interrupt>
-      <interrupt>
-        <name>BDMA_CH5</name>
-        <description>BDMA channel 5 interrupt</description>
-        <value>134</value>
+        <name>BDMA_CH7</name>
+        <description>BDMA channel 7 interrupt</description>
+        <value>136</value>
       </interrupt>
       <interrupt>
         <name>BDMA_CH6</name>
@@ -1397,9 +1370,34 @@ xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
         <value>135</value>
       </interrupt>
       <interrupt>
-        <name>BDMA_CH7</name>
-        <description>BDMA channel 7 interrupt</description>
-        <value>136</value>
+        <name>BDMA_CH5</name>
+        <description>BDMA channel 5 interrupt</description>
+        <value>134</value>
+      </interrupt>
+      <interrupt>
+        <name>BDMA_CH4</name>
+        <description>BDMA channel 4 interrupt</description>
+        <value>133</value>
+      </interrupt>
+      <interrupt>
+        <name>BDMA_CH3</name>
+        <description>BDMA channel 3 interrupt</description>
+        <value>132</value>
+      </interrupt>
+      <interrupt>
+        <name>BDMA_CH2</name>
+        <description>BDMA channel 2 interrupt</description>
+        <value>131</value>
+      </interrupt>
+      <interrupt>
+        <name>BDMA_CH1</name>
+        <description>BDMA channel 1 interrupt</description>
+        <value>130</value>
+      </interrupt>
+      <interrupt>
+        <name>BDMA_CH0</name>
+        <description>BDMA channel 0 interrupt</description>
+        <value>129</value>
       </interrupt>
       <registers>
           <register>
@@ -2625,7 +2623,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -3082,7 +3080,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -3539,7 +3537,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -3996,7 +3994,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -4453,7 +4451,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -4910,7 +4908,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -5367,7 +5365,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -5824,7 +5822,7 @@ It is read-only when the channel is enabled (EN = 1).</description>
                 <name>NDT</name>
                 <description>number of data to transfer (0 to 216 - 1)
 This field is updated by hardware when the channel is enabled:
-It is decremented after each single BDMA ‘read followed by write’ transfer, indicating the remaining amount of data items to transfer.
+It is decremented after each single BDMA 'read followed by write' transfer, indicating the remaining amount of data items to transfer.
 It is kept at zero when the programmed amount of data to transfer is reached, if the channel is not in circular mode (CIRC = 0 in the BDMA_CCRx register).
 It is reloaded automatically by the previously programmed value, when the transfer is complete, if the channel is in circular mode (CIRC = 1).
 If this field is zero, no transfer can be served whatever the channel status (enabled or not).
@@ -10010,7 +10008,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10078,7 +10076,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10146,7 +10144,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10214,7 +10212,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10282,7 +10280,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10350,7 +10348,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10418,7 +10416,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10486,7 +10484,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>Input DMA request line
               selected</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>5</bitWidth>
             </field>
             <field>
               <name>SOIE</name>
@@ -10958,82 +10956,300 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <register>
           <name>RGSR</name>
           <displayName>RGSR</displayName>
-          <description>DMAMux - DMA request generator status
-          register</description>
           <addressOffset>0x140</addressOffset>
           <size>0x20</size>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>OF</name>
-              <description>Trigger event overrun flag The flag is
-              set when a trigger event occurs on DMA request
-              generator channel x, while the DMA request generator
-              counter value is lower than GNBREQ. The flag is
-              cleared by writing 1 to the corresponding COFx bit in
-              DMAMUX_RGCFR register.</description>
+              <name>OF0</name>
+              <description>Trigger overrun event flag
+</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>OF1</name>
+              <description>Trigger overrun event flag
+</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>OF2</name>
+              <description>Trigger overrun event flag
+</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>OF3</name>
+              <description>Trigger overrun event flag
+</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>OF4</name>
+              <description>Trigger overrun event flag
+</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>OF5</name>
+              <description>Trigger overrun event flag
+</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>OF6</name>
+              <description>Trigger overrun event flag
+</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>OF7</name>
+              <description>Trigger overrun event flag
+</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
             </field>
           </fields>
         </register>
         <register>
           <name>RGCFR</name>
           <displayName>RGCFR</displayName>
-          <description>DMAMux - DMA request generator clear flag
-          register</description>
           <addressOffset>0x144</addressOffset>
           <size>0x20</size>
-          <access>write-only</access>
+          <access>read-only</access>
           <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>COF</name>
-              <description>Clear trigger event overrun flag Upon
-              setting, this bit clears the corresponding overrun
-              flag OFx in the DMAMUX_RGCSR register.</description>
+              <name>COF0</name>
+              <description>Clear trigger overrun event flag
+</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>COF1</name>
+              <description>Clear trigger overrun event flag
+</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>COF2</name>
+              <description>Clear trigger overrun event flag
+</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>COF3</name>
+              <description>Clear trigger overrun event flag
+</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>COF4</name>
+              <description>Clear trigger overrun event flag
+</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>COF5</name>
+              <description>Clear trigger overrun event flag
+</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>COF6</name>
+              <description>Clear trigger overrun event flag
+</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>COF7</name>
+              <description>Clear trigger overrun event flag
+</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
             </field>
           </fields>
         </register>
         <register>
           <name>CSR</name>
           <displayName>CSR</displayName>
-          <description>DMAMUX request line multiplexer interrupt
-          channel status register</description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>SOF</name>
-              <description>Synchronization overrun event
-              flag</description>
+              <name>SOF0</name>
+              <description>Synchronization overrun event flag
+</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SOF1</name>
+              <description>Synchronization overrun event flag
+</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SOF2</name>
+              <description>Synchronization overrun event flag
+</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SOF3</name>
+              <description>Synchronization overrun event flag
+</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SOF4</name>
+              <description>Synchronization overrun event flag
+</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SOF5</name>
+              <description>Synchronization overrun event flag
+</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SOF6</name>
+              <description>Synchronization overrun event flag
+</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SOF7</name>
+              <description>Synchronization overrun event flag
+</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
             </field>
           </fields>
         </register>
         <register>
-          <name>CFR</name>
-          <displayName>CFR</displayName>
-          <description>DMAMUX request line multiplexer interrupt
-          clear flag register</description>
-          <addressOffset>0x84</addressOffset>
-          <size>0x20</size>
-          <access>write-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>CSOF</name>
-              <description>Clear synchronization overrun event
-              flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-            </field>
+            <name>CFR</name>
+            <displayName>CFR</displayName>
+            <addressOffset>0x84</addressOffset>
+            <size>0x20</size>
+            <resetValue>0x00000000</resetValue>
+            <resetMask>0xFFFFFFFF</resetMask>
+            <fields>
+              <field>
+                <name>CSOF0</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>0</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
+              <field>
+                <name>CSOF1</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>1</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
+              <field>
+                <name>CSOF2</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>2</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
+              <field>
+                <name>CSOF3</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>3</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
+              <field>
+                <name>CSOF4</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>4</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
+              <field>
+                <name>CSOF5</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>5</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
+              <field>
+                <name>CSOF6</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>6</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
+              <field>
+                <name>CSOF7</name>
+                <description>Clear synchronization overrun event flag
+Writing 1 in each bit clears the corresponding overrun flag SOFx in the DMAMUX_CSR register.</description>
+                <bitOffset>7</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>write-only</access>
+              </field>
           </fields>
         </register>
       </registers>
@@ -17016,14 +17232,14 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>I2C1_EV</name>
-        <description>I2C1 event interrupt</description>
-        <value>31</value>
-      </interrupt>
-      <interrupt>
         <name>I2C1_ER</name>
         <description>I2C1 error interrupt</description>
         <value>32</value>
+      </interrupt>
+      <interrupt>
+        <name>I2C1_EV</name>
+        <description>I2C1 event interrupt</description>
+        <value>31</value>
       </interrupt>
       <registers>
         <register>
@@ -18046,44 +18262,44 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
       <name>I2C2</name>
       <baseAddress>0x40005800</baseAddress>
       <interrupt>
-        <name>I2C2_EV</name>
-        <description>I2C2 event interrupt</description>
-        <value>33</value>
-      </interrupt>
-      <interrupt>
         <name>I2C2_ER</name>
         <description>I2C2 error interrupt</description>
         <value>34</value>
       </interrupt>
-    </peripheral>
+    <interrupt>
+        <name>I2C2_EV</name>
+        <description>I2C2 event interrupt</description>
+        <value>33</value>
+      </interrupt>
+      </peripheral>
     <peripheral derivedFrom="I2C1">
       <name>I2C3</name>
       <baseAddress>0x40005C00</baseAddress>
-      <interrupt>
-        <name>I2C3_EV</name>
-        <description>I2C3 event interrupt</description>
-        <value>72</value>
-      </interrupt>
       <interrupt>
         <name>I2C3_ER</name>
         <description>I2C3 error interrupt</description>
         <value>73</value>
       </interrupt>
-    </peripheral>
+    <interrupt>
+        <name>I2C3_EV</name>
+        <description>I2C3 event interrupt</description>
+        <value>72</value>
+      </interrupt>
+      </peripheral>
     <peripheral derivedFrom="I2C1">
       <name>I2C4</name>
       <baseAddress>0x58001C00</baseAddress>
-      <interrupt>
-        <name>I2C4_EV</name>
-        <description>I2C4 event interrupt</description>
-        <value>95</value>
-      </interrupt>
       <interrupt>
         <name>I2C4_ER</name>
         <description>I2C4 error interrupt</description>
         <value>96</value>
       </interrupt>
-    </peripheral>
+    <interrupt>
+        <name>I2C4_EV</name>
+        <description>I2C4 event interrupt</description>
+        <value>95</value>
+      </interrupt>
+      </peripheral>
     <peripheral>
       <name>GPIOA</name>
       <description>GPIO</description>
@@ -31894,14 +32110,19 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>RTC_TAMP_STAMP_CSS_LSE</name>
-        <description>RTC tamper, timestamp</description>
-        <value>2</value>
+        <name>RTC_ALARM</name>
+        <description>RTC alarms (A and B)</description>
+        <value>41</value>
       </interrupt>
-      <interrupt>
+	  <interrupt>
         <name>RTC_WKUP</name>
         <description>RTC Wakeup interrupt</description>
         <value>3</value>
+      </interrupt>
+      <interrupt>
+        <name>RTC_TAMP_STAMP_CSS_LSE</name>
+        <description>RTC tamper, timestamp</description>
+        <value>2</value>
       </interrupt>
       <registers>
         <register>
@@ -35621,14 +35842,14 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>SDMMC1</name>
-        <description>SDMMC global interrupt</description>
-        <value>49</value>
-      </interrupt>
-      <interrupt>
         <name>SDMMC</name>
         <description>SDMMC global interrupt</description>
         <value>124</value>
+      </interrupt>
+      <interrupt>
+        <name>SDMMC1</name>
+        <description>SDMMC global interrupt</description>
+        <value>49</value>
       </interrupt>
       <registers>
         <register>
@@ -37342,14 +37563,14 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>WWDG1</name>
-        <description>Window Watchdog interrupt</description>
-        <value>0</value>
-      </interrupt>
-      <interrupt>
         <name>WWDG1_RST</name>
         <description>Window Watchdog interrupt</description>
         <value>143</value>
+      </interrupt>
+      <interrupt>
+        <name>WWDG1</name>
+        <description>Window Watchdog interrupt</description>
+        <value>0</value>
       </interrupt>
       <registers>
         <register>
@@ -38977,14 +39198,14 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>LTDC</name>
-        <description>LCD-TFT global interrupt</description>
-        <value>88</value>
-      </interrupt>
-      <interrupt>
         <name>LTDC_ER</name>
         <description>LCD-TFT error interrupt</description>
         <value>89</value>
+      </interrupt>
+      <interrupt>
+        <name>LTDC</name>
+        <description>LCD-TFT global interrupt</description>
+        <value>88</value>
       </interrupt>
       <registers>
         <register>
@@ -41928,6 +42149,11 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
     <peripheral derivedFrom="ADC3">
       <name>ADC1</name>
       <baseAddress>0x40022000</baseAddress>
+    <interrupt>
+        <name>ADC1_2</name>
+        <description>ADC1 and ADC2</description>
+        <value>18</value>
+      </interrupt>
     </peripheral>
     <peripheral derivedFrom="ADC3">
       <name>ADC2</name>
@@ -42217,12 +42443,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
     <peripheral derivedFrom="ADC3_Common">
       <name>ADC12_Common</name>
       <baseAddress>0x40022300</baseAddress>
-      <interrupt>
-        <name>ADC1_2</name>
-        <description>ADC1 and ADC2</description>
-        <value>18</value>
-      </interrupt>
-    </peripheral>
+      </peripheral>
     <peripheral>
       <name>CRC</name>
       <description>Cryptographic processor</description>
@@ -42543,6 +42764,31 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <description>CSI clock trimming</description>
               <bitOffset>26</bitOffset>
               <bitWidth>5</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>HSICFGR</name>
+          <displayName>HSICFGR</displayName>
+          <description>RCC HSI configuration register</description>
+          <alternateRegister>ICSCR</alternateRegister>
+          <addressOffset>0x4</addressOffset>
+          <size>0x20</size>
+          <resetValue>0x40000000</resetValue>
+          <fields>
+            <field>
+              <name>HSICAL</name>
+              <description>HSI clock calibration</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>HSITRIM</name>
+              <description>HSI clock trimming</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>7</bitWidth>
               <access>read-write</access>
             </field>
           </fields>
@@ -43070,28 +43316,28 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>FMCSRC</name>
+              <name>FMCSEL</name>
               <description>FMC kernel clock source
               selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>QSPISRC</name>
+              <name>QSPISEL</name>
               <description>QUADSPI kernel clock source
               selection</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>SDMMCSRC</name>
+              <name>SDMMCSEL</name>
               <description>SDMMC kernel clock source
               selection</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>CKPERSRC</name>
+              <name>CKPERSEL</name>
               <description>per_ck clock source
               selection</description>
               <bitOffset>28</bitOffset>
@@ -43110,56 +43356,56 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>SAI1SRC</name>
+              <name>SAI1SEL</name>
               <description>SAI1 and DFSDM1 kernel Aclk clock source
               selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>SAI23SRC</name>
+              <name>SAI23SEL</name>
               <description>SAI2 and SAI3 kernel clock source
               selection</description>
               <bitOffset>6</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>SPI123SRC</name>
+              <name>SPI123SEL</name>
               <description>SPI/I2S1,2 and 3 kernel clock source
               selection</description>
               <bitOffset>12</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>SPI45SRC</name>
+              <name>SPI45SEL</name>
               <description>SPI4 and 5 kernel clock source
               selection</description>
               <bitOffset>16</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>SPDIFSRC</name>
+              <name>SPDIFSEL</name>
               <description>SPDIFRX kernel clock source
               selection</description>
               <bitOffset>20</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>DFSDM1SRC</name>
+              <name>DFSDM1SEL</name>
               <description>DFSDM1 kernel Clk clock source
               selection</description>
               <bitOffset>24</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>FDCANSRC</name>
+              <name>FDCANSEL</name>
               <description>FDCAN kernel clock source
               selection</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>SWPSRC</name>
+              <name>SWPSEL</name>
               <description>SWPMI kernel clock source
               selection</description>
               <bitOffset>31</bitOffset>
@@ -43178,49 +43424,49 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>USART234578SRC</name>
+              <name>USART234578SEL</name>
               <description>USART2/3, UART4,5, 7/8 (APB1) kernel
               clock source selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>USART16SRC</name>
+              <name>USART16SEL</name>
               <description>USART1 and 6 kernel clock source
               selection</description>
               <bitOffset>3</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>RNGSRC</name>
+              <name>RNGSEL</name>
               <description>RNG kernel clock source
               selection</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>I2C123SRC</name>
+              <name>I2C123SEL</name>
               <description>I2C1,2,3 kernel clock source
               selection</description>
               <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>USBSRC</name>
+              <name>USBSEL</name>
               <description>USBOTG 1 and 2 kernel clock source
               selection</description>
               <bitOffset>20</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>CECSRC</name>
+              <name>CECSEL</name>
               <description>HDMI-CEC kernel clock source
               selection</description>
               <bitOffset>22</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>LPTIM1SRC</name>
+              <name>LPTIM1SEL</name>
               <description>LPTIM1 kernel clock source
               selection</description>
               <bitOffset>28</bitOffset>
@@ -43239,56 +43485,56 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>LPUART1SRC</name>
+              <name>LPUART1SEL</name>
               <description>LPUART1 kernel clock source
               selection</description>
               <bitOffset>0</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>I2C4SRC</name>
+              <name>I2C4SEL</name>
               <description>I2C4 kernel clock source
               selection</description>
               <bitOffset>8</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>LPTIM2SRC</name>
+              <name>LPTIM2SEL</name>
               <description>LPTIM2 kernel clock source
               selection</description>
               <bitOffset>10</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>LPTIM345SRC</name>
+              <name>LPTIM345SEL</name>
               <description>LPTIM3,4,5 kernel clock source
               selection</description>
               <bitOffset>13</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>ADCSRC</name>
+              <name>ADCSEL</name>
               <description>SAR ADC kernel clock source
               selection</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>SAI4ASRC</name>
+              <name>SAI4ASEL</name>
               <description>Sub-Block A of SAI4 kernel clock source
               selection</description>
               <bitOffset>21</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>SAI4BSRC</name>
+              <name>SAI4BSEL</name>
               <description>Sub-Block B of SAI4 kernel clock source
               selection</description>
               <bitOffset>24</bitOffset>
               <bitWidth>3</bitWidth>
             </field>
             <field>
-              <name>SPI6SRC</name>
+              <name>SPI6SEL</name>
               <description>SPI6 kernel clock source
               selection</description>
               <bitOffset>28</bitOffset>
@@ -44731,34 +44977,27 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
-              <name>USB2OTGHSULPIEN</name>
-              <description> Enable USB_PHY2 clocks </description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
-              <name>USB1OTGEN</name>
-              <description>USB1OTG Peripheral Clocks
-              Enable</description>
+              <name>USB1OTGHSEN</name>
+              <description>USB1OTG (OTG_HS1) Peripheral Clocks Enable</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USB1ULPIEN</name>
+              <name>USB1OTGHSULPIEN</name>
               <description>USB_PHY1 Clocks Enable</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USB2OTGEN</name>
+              <name>USB2OTGHSEN</name>
               <description>USB2OTG Peripheral Clocks
               Enable</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USB2ULPIEN</name>
+              <name>USB2OTGHSULPIEN</name>
               <description>USB_PHY2 Clocks Enable</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
@@ -44815,27 +45054,26 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USB1OTGEN</name>
-              <description>USB1OTG Peripheral Clocks
-              Enable</description>
+              <name>USB1OTGHSEN</name>
+              <description>USB1OTG (OTG_HS1) Peripheral Clocks Enable</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USB1ULPIEN</name>
+              <name>USB1OTGHSULPIEN</name>
               <description>USB_PHY1 Clocks Enable</description>
               <bitOffset>26</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USB2OTGEN</name>
+              <name>USB2OTGHSEN</name>
               <description>USB2OTG Peripheral Clocks
               Enable</description>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USB2ULPIEN</name>
+              <name>USB2OTGHSULPIEN</name>
               <description>USB_PHY2 Clocks Enable</description>
               <bitOffset>28</bitOffset>
               <bitWidth>1</bitWidth>
@@ -44852,9 +45090,8 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>CAMITFEN</name>
-              <description>CAMITF peripheral clock
-              enable</description>
+              <name>DCMIEN</name>
+              <description>DCMI peripheral clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -44916,9 +45153,8 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>CAMITFEN</name>
-              <description>CAMITF peripheral clock
-              enable</description>
+              <name>DCMIEN</name>
+              <description>DCMI peripheral clock enable</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -48589,16 +48825,11 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
       <name>LPTIM4</name>
       <baseAddress>0x58002C00</baseAddress>
       <interrupt>
-        <name>ETH_WKUP</name>
-        <description>Ethernet wakeup through EXTI</description>
-        <value>62</value>
-      </interrupt>
-      <interrupt>
         <name>LPTIM4</name>
-        <description>LPTIM2 timer interrupt</description>
+        <description>LPTIM4 timer interrupt</description>
         <value>140</value>
       </interrupt>
-    </peripheral>
+      </peripheral>
     <peripheral derivedFrom="LPTIM3">
       <name>LPTIM5</name>
       <baseAddress>0x58003000</baseAddress>
@@ -50096,39 +50327,9 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>PVD_PVM</name>
-        <description>PVD through EXTI line</description>
-        <value>1</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI0</name>
-        <description>EXTI Line 0 interrupt</description>
-        <value>6</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI1</name>
-        <description>EXTI Line 1 interrupt</description>
-        <value>7</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI2</name>
-        <description>EXTI Line 2 interrupt</description>
-        <value>8</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI3</name>
-        <description>EXTI Line 3interrupt</description>
-        <value>9</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI4</name>
-        <description>EXTI Line 4interrupt</description>
-        <value>10</value>
-      </interrupt>
-      <interrupt>
-        <name>EXTI9_5</name>
-        <description>EXTI Line[9:5] interrupts</description>
-        <value>23</value>
+        <name>FPU</name>
+        <description> CPU FPU interrupt</description>
+        <value>81</value>
       </interrupt>
       <interrupt>
         <name>EXTI15_10</name>
@@ -50136,14 +50337,39 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
         <value>40</value>
       </interrupt>
       <interrupt>
-        <name>RTC_ALARM</name>
-        <description>RTC alarms (A and B)</description>
-        <value>41</value>
+        <name>EXTI9_5</name>
+        <description>EXTI Line[9:5] interrupts</description>
+        <value>23</value>
       </interrupt>
-	  <interrupt>
-        <name>FPU</name>
-        <description> CPU FPU interrupt</description>
-        <value>81</value>
+      <interrupt>
+        <name>EXTI4</name>
+        <description>EXTI Line 4interrupt</description>
+        <value>10</value>
+      </interrupt>
+      <interrupt>
+        <name>EXTI3</name>
+        <description>EXTI Line 3interrupt</description>
+        <value>9</value>
+      </interrupt>
+      <interrupt>
+        <name>EXTI2</name>
+        <description>EXTI Line 2 interrupt</description>
+        <value>8</value>
+      </interrupt>
+      <interrupt>
+        <name>EXTI1</name>
+        <description>EXTI Line 1 interrupt</description>
+        <value>7</value>
+      </interrupt>
+      <interrupt>
+        <name>EXTI0</name>
+        <description>EXTI Line 0 interrupt</description>
+        <value>6</value>
+      </interrupt>
+      <interrupt>
+        <name>PVD_PVM</name>
+        <description>PVD through EXTI line</description>
+        <value>1</value>
       </interrupt>
       <registers>
         <register>
@@ -52977,200 +53203,167 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           </fields>
         </register>
         <register>
-          <name>M1SR</name>
-          <displayName>M1SR</displayName>
-          <description>RAMECC monitor x status
-          register</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>ECCSEIE</name>
-              <description>ECC single error interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEIE</name>
-              <description>ECC double error interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEBWIE</name>
-              <description>ECC double error on byte write (BW)
-              interrupt enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCELEN</name>
-              <description>ECC error latching enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M1FAR</name>
-          <displayName>M1FAR</displayName>
-          <description>RAMECC monitor x failing address
-          register</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>ECCSEIE</name>
-              <description>ECC single error interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEIE</name>
-              <description>ECC double error interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEBWIE</name>
-              <description>ECC double error on byte write (BW)
-              interrupt enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCELEN</name>
-              <description>ECC error latching enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M1FDRL</name>
-          <displayName>M1FDRL</displayName>
-          <description>RAMECC monitor x failing data low
-          register</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>ECCSEIE</name>
-              <description>ECC single error interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEIE</name>
-              <description>ECC double error interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEBWIE</name>
-              <description>ECC double error on byte write (BW)
-              interrupt enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCELEN</name>
-              <description>ECC error latching enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M1FDRH</name>
-          <displayName>M1FDRH</displayName>
-          <description>RAMECC monitor x failing data high
-          register</description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>ECCSEIE</name>
-              <description>ECC single error interrupt
-              enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEIE</name>
-              <description>ECC double error interrupt
-              enable</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCDEBWIE</name>
-              <description>ECC double error on byte write (BW)
-              interrupt enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ECCELEN</name>
-              <description>ECC error latching enable</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M1FECR</name>
-          <displayName>M1FECR</displayName>
-          <description>RAMECC monitor x failing ECC error code
-          register</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>SEDCF</name>
-              <description>ECC single error detected and corrected
-              flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DEDF</name>
-              <description>ECC double error detected
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DEBWDF</name>
-              <description>ECC double error on byte write (BW)
-              detected flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>M2CR</name>
           <displayName>M2CR</displayName>
           <description>RAMECC monitor x configuration
           register</description>
           <addressOffset>0x40</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ECCSEIE</name>
+              <description>ECC single error interrupt
+              enable</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEIE</name>
+              <description>ECC double error interrupt
+              enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEBWIE</name>
+              <description>ECC double error on byte write (BW)
+              interrupt enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCELEN</name>
+              <description>ECC error latching enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M3CR</name>
+          <displayName>M3CR</displayName>
+          <description>RAMECC monitor x configuration
+          register</description>
+          <addressOffset>0x60</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ECCSEIE</name>
+              <description>ECC single error interrupt
+              enable</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEIE</name>
+              <description>ECC double error interrupt
+              enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEBWIE</name>
+              <description>ECC double error on byte write (BW)
+              interrupt enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCELEN</name>
+              <description>ECC error latching enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M4CR</name>
+          <displayName>M4CR</displayName>
+          <description>RAMECC monitor x configuration
+          register</description>
+          <addressOffset>0x80</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ECCSEIE</name>
+              <description>ECC single error interrupt
+              enable</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEIE</name>
+              <description>ECC double error interrupt
+              enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEBWIE</name>
+              <description>ECC double error on byte write (BW)
+              interrupt enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCELEN</name>
+              <description>ECC error latching enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M5CR</name>
+          <displayName>M5CR</displayName>
+          <description>RAMECC monitor x configuration
+          register</description>
+          <addressOffset>0xA0</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ECCSEIE</name>
+              <description>ECC single error interrupt
+              enable</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEIE</name>
+              <description>ECC double error interrupt
+              enable</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCDEBWIE</name>
+              <description>ECC double error on byte write (BW)
+              interrupt enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ECCELEN</name>
+              <description>ECC error latching enable</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M1SR</name>
+          <displayName>M1SR</displayName>
+          <description>RAMECC monitor x status
+          register</description>
+          <addressOffset>0x24</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
@@ -53232,131 +53425,128 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           </fields>
         </register>
         <register>
-          <name>M2FAR</name>
-          <displayName>M2FAR</displayName>
-          <description>RAMECC monitor x failing address
-          register</description>
-          <addressOffset>0x48</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>SEDCF</name>
-              <description>ECC single error detected and corrected
-              flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DEDF</name>
-              <description>ECC double error detected
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DEBWDF</name>
-              <description>ECC double error on byte write (BW)
-              detected flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M2FDRL</name>
-          <displayName>M2FDRL</displayName>
-          <description>RAMECC monitor x failing data low
-          register</description>
-          <addressOffset>0x4C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>SEDCF</name>
-              <description>ECC single error detected and corrected
-              flag</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DEDF</name>
-              <description>ECC double error detected
-              flag</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>DEBWDF</name>
-              <description>ECC double error on byte write (BW)
-              detected flag</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M2FDRH</name>
-          <displayName>M2FDRH</displayName>
-          <description>RAMECC monitor x failing data high
-          register</description>
-          <addressOffset>0x50</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FADD</name>
-              <description>ECC error failing address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M2FECR</name>
-          <displayName>M2FECR</displayName>
-          <description>RAMECC monitor x failing ECC error code
-          register</description>
-          <addressOffset>0x58</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FADD</name>
-              <description>ECC error failing address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M3CR</name>
-          <displayName>M3CR</displayName>
-          <description>RAMECC monitor x configuration
-          register</description>
-          <addressOffset>0x60</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FADD</name>
-              <description>ECC error failing address</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>M3SR</name>
           <displayName>M3SR</displayName>
           <description>RAMECC monitor x status
           register</description>
           <addressOffset>0x64</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>SEDCF</name>
+              <description>ECC single error detected and corrected
+              flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DEDF</name>
+              <description>ECC double error detected
+              flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DEBWDF</name>
+              <description>ECC double error on byte write (BW)
+              detected flag</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M4SR</name>
+          <displayName>M4SR</displayName>
+          <description>RAMECC monitor x status
+          register</description>
+          <addressOffset>0x84</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>SEDCF</name>
+              <description>ECC single error detected and corrected
+              flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DEDF</name>
+              <description>ECC double error detected
+              flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DEBWDF</name>
+              <description>ECC double error on byte write (BW)
+              detected flag</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M5SR</name>
+          <displayName>M5SR</displayName>
+          <description>RAMECC monitor x status
+          register</description>
+          <addressOffset>0xA4</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>SEDCF</name>
+              <description>ECC single error detected and corrected
+              flag</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DEDF</name>
+              <description>ECC double error detected
+              flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DEBWDF</name>
+              <description>ECC double error on byte write (BW)
+              detected flag</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M1FAR</name>
+          <displayName>M1FAR</displayName>
+          <description>RAMECC monitor x failing address
+          register</description>
+          <addressOffset>0x28</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FADD</name>
+              <description>ECC error failing address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M2FAR</name>
+          <displayName>M2FAR</displayName>
+          <description>RAMECC monitor x failing address
+          register</description>
+          <addressOffset>0x48</addressOffset>
           <size>0x20</size>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
@@ -53376,12 +53566,84 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           register</description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FADD</name>
+              <description>ECC error failing address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M4FAR</name>
+          <displayName>M4FAR</displayName>
+          <description>RAMECC monitor x failing address
+          register</description>
+          <addressOffset>0x88</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FADD</name>
+              <description>ECC error failing address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M5FAR</name>
+          <displayName>M5FAR</displayName>
+          <description>RAMECC monitor x failing address
+          register</description>
+          <addressOffset>0xA8</addressOffset>
+          <size>0x20</size>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
               <name>FADD</name>
               <description>ECC error failing address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M1FDRL</name>
+          <displayName>M1FDRL</displayName>
+          <description>RAMECC monitor x failing data low
+          register</description>
+          <addressOffset>0x2C</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FDATAL</name>
+              <description>Failing data low</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M2FDRL</name>
+          <displayName>M2FDRL</displayName>
+          <description>RAMECC monitor x failing data low
+          register</description>
+          <addressOffset>0x4C</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FDATAL</name>
+              <description>Failing data low</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
             </field>
@@ -53406,83 +53668,47 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           </fields>
         </register>
         <register>
-          <name>M3FDRH</name>
-          <displayName>M3FDRH</displayName>
+          <name>M4FDRL</name>
+          <displayName>M4FDRL</displayName>
+          <description>RAMECC monitor x failing data low
+          register</description>
+          <addressOffset>0x8C</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FDATAL</name>
+              <description>Failing data low</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M5FDRL</name>
+          <displayName>M5FDRL</displayName>
+          <description>RAMECC monitor x failing data low
+          register</description>
+          <addressOffset>0xAC</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FDATAL</name>
+              <description>Failing data low</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M1FDRH</name>
+          <displayName>M1FDRH</displayName>
           <description>RAMECC monitor x failing data high
           register</description>
-          <addressOffset>0x70</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FDATAL</name>
-              <description>Failing data low</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M3FECR</name>
-          <displayName>M3FECR</displayName>
-          <description>RAMECC monitor x failing ECC error code
-          register</description>
-          <addressOffset>0x7C</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FDATAL</name>
-              <description>Failing data low</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M4CR</name>
-          <displayName>M4CR</displayName>
-          <description>RAMECC monitor x configuration
-          register</description>
-          <addressOffset>0x80</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FDATAL</name>
-              <description>Failing data low</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M4SR</name>
-          <displayName>M4SR</displayName>
-          <description>RAMECC monitor x status
-          register</description>
-          <addressOffset>0x84</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FDATAL</name>
-              <description>Failing data low</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M4FAR</name>
-          <displayName>M4FAR</displayName>
-          <description>RAMECC monitor x failing address
-          register</description>
-          <addressOffset>0x88</addressOffset>
+          <addressOffset>0x30</addressOffset>
           <size>0x20</size>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
@@ -53497,13 +53723,32 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           </fields>
         </register>
         <register>
-          <name>M4FDRL</name>
-          <displayName>M4FDRL</displayName>
-          <description>RAMECC monitor x failing data low
+          <name>M2FDRH</name>
+          <displayName>M2FDRH</displayName>
+          <description>RAMECC monitor x failing data high
           register</description>
-          <addressOffset>0x8C</addressOffset>
+          <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FDATAH</name>
+              <description>Failing data high (64-bit
+              memory)</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M3FDRH</name>
+          <displayName>M3FDRH</displayName>
+          <description>RAMECC monitor x failing data high
+          register</description>
+          <addressOffset>0x70</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
@@ -53535,103 +53780,84 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
           </fields>
         </register>
         <register>
+          <name>M5FDRH</name>
+          <displayName>M5FDRH</displayName>
+          <description>RAMECC monitor x failing data high
+          register</description>
+          <addressOffset>0xB0</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FEC</name>
+              <description>Failing error code</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M1FECR</name>
+          <displayName>M1FECR</displayName>
+          <description>RAMECC monitor x failing ECC error code
+          register</description>
+          <addressOffset>0x34</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FEC</name>
+              <description>Failing error code</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M2FECR</name>
+          <displayName>M2FECR</displayName>
+          <description>RAMECC monitor x failing ECC error code
+          register</description>
+          <addressOffset>0x58</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FEC</name>
+              <description>Failing error code</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>M3FECR</name>
+          <displayName>M3FECR</displayName>
+          <description>RAMECC monitor x failing ECC error code
+          register</description>
+          <addressOffset>0x7C</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>FEC</name>
+              <description>Failing error code</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>M4FECR</name>
           <displayName>M4FECR</displayName>
           <description>RAMECC monitor x failing ECC error code
           register</description>
           <alternateRegister>M4FDRH</alternateRegister>
           <addressOffset>0x90</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FDATAH</name>
-              <description>Failing data high (64-bit
-              memory)</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M5CR</name>
-          <displayName>M5CR</displayName>
-          <description>RAMECC monitor x configuration
-          register</description>
-          <addressOffset>0xA0</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FEC</name>
-              <description>Failing error code</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M5SR</name>
-          <displayName>M5SR</displayName>
-          <description>RAMECC monitor x status
-          register</description>
-          <addressOffset>0xA4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FEC</name>
-              <description>Failing error code</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M5FAR</name>
-          <displayName>M5FAR</displayName>
-          <description>RAMECC monitor x failing address
-          register</description>
-          <addressOffset>0xA8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FEC</name>
-              <description>Failing error code</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M5FDRL</name>
-          <displayName>M5FDRL</displayName>
-          <description>RAMECC monitor x failing data low
-          register</description>
-          <addressOffset>0xAC</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>FEC</name>
-              <description>Failing error code</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>M5FDRH</name>
-          <displayName>M5FDRH</displayName>
-          <description>RAMECC monitor x failing data high
-          register</description>
-          <addressOffset>0xB0</addressOffset>
           <size>0x20</size>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
@@ -54792,7 +55018,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
       <baseAddress>0x52008000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x1000</size>
+        <size>0x8</size>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
@@ -58478,14 +58704,9 @@ Setting this bit to 1 resets to 0 CRCRDERR1 flag in FLASH_SR1 register.</descrip
         <usage>registers</usage>
       </addressBlock>
 	  <interrupt>
-        <name>OTG_HS_EP1_OUT</name>
-        <description>OTG_HS out global interrupt</description>
-        <value>74</value>
-      </interrupt>
-      <interrupt>
-        <name>OTG_HS_EP1_IN</name>
-        <description>OTG_HS in global interrupt</description>
-        <value>75</value>
+        <name>OTG_HS</name>
+        <description>OTG_HS global interrupt</description>
+        <value>77</value>
       </interrupt>
       <interrupt>
         <name>OTG_HS_WKUP</name>
@@ -58493,9 +58714,14 @@ Setting this bit to 1 resets to 0 CRCRDERR1 flag in FLASH_SR1 register.</descrip
         <value>76</value>
       </interrupt>
       <interrupt>
-        <name>OTG_HS</name>
-        <description>OTG_HS global interrupt</description>
-        <value>77</value>
+        <name>OTG_HS_EP1_IN</name>
+        <description>OTG_HS in global interrupt</description>
+        <value>75</value>
+      </interrupt>
+      <interrupt>
+        <name>OTG_HS_EP1_OUT</name>
+        <description>OTG_HS out global interrupt</description>
+        <value>74</value>
       </interrupt>
       <registers>
         <register>
@@ -70716,6 +70942,11 @@ Minimum value is 16</description>
         <description>Ethernet global interrupt</description>
         <value>61</value>
       </interrupt>
+	  <interrupt>
+        <name>ETH_WKUP</name>
+        <description>Ethernet wakeup through EXTI</description>
+        <value>62</value>
+      </interrupt>
       <registers>
         <register>
           <name>MACCR</name>
@@ -73735,9 +73966,9 @@ Minimum value is 16</description>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>DMA_STR0</name>
-        <description>DMA1 Stream0</description>
-        <value>11</value>
+        <name>DMA1_STR7</name>
+        <description>DMA1 Stream7</description>
+        <value>47</value>
       </interrupt>
       <interrupt>
         <name>DMA_STR1</name>
@@ -73745,9 +73976,9 @@ Minimum value is 16</description>
         <value>12</value>
       </interrupt>
       <interrupt>
-        <name>DMA1_STR7</name>
-        <description>DMA1 Stream7</description>
-        <value>47</value>
+        <name>DMA_STR0</name>
+        <description>DMA1 Stream0</description>
+        <value>11</value>
       </interrupt>
       <registers>
         <register>
@@ -76340,6 +76571,46 @@ Minimum value is 16</description>
       <name>DMA2</name>
       <baseAddress>0x40020400</baseAddress>
       <interrupt>
+        <name>DMA2_STR7</name>
+        <description>DMA2 Stream7 interrupt</description>
+        <value>70</value>
+      </interrupt>
+    <interrupt>
+        <name>DMA2_STR6</name>
+        <description>DMA2 Stream6 interrupt</description>
+        <value>69</value>
+      </interrupt>
+      <interrupt>
+        <name>DMA2_STR5</name>
+        <description>DMA2 Stream5 interrupt</description>
+        <value>68</value>
+      </interrupt>
+      <interrupt>
+        <name>DMA2_STR4</name>
+        <description>DMA2 Stream4 interrupt</description>
+        <value>60</value>
+      </interrupt>
+      <interrupt>
+        <name>DMA2_STR3</name>
+        <description>DMA2 Stream3 interrupt</description>
+        <value>59</value>
+      </interrupt>
+      <interrupt>
+        <name>DMA2_STR2</name>
+        <description>DMA2 Stream2 interrupt</description>
+        <value>58</value>
+      </interrupt>
+      <interrupt>
+        <name>DMA2_STR1</name>
+        <description>DMA2 Stream1 interrupt</description>
+        <value>57</value>
+      </interrupt>
+      <interrupt>
+        <name>DMA2_STR0</name>
+        <description>DMA2 Stream0 interrupt</description>
+        <value>56</value>
+      </interrupt>
+      <interrupt>
         <name>DMA_STR2</name>
         <description>DMA1 Stream2</description>
         <value>13</value>
@@ -76364,47 +76635,7 @@ Minimum value is 16</description>
         <description>DMA1 Stream6</description>
         <value>17</value>
       </interrupt>
-      <interrupt>
-        <name>DMA2_STR0</name>
-        <description>DMA2 Stream0 interrupt</description>
-        <value>56</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2_STR1</name>
-        <description>DMA2 Stream1 interrupt</description>
-        <value>57</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2_STR2</name>
-        <description>DMA2 Stream2 interrupt</description>
-        <value>58</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2_STR3</name>
-        <description>DMA2 Stream3 interrupt</description>
-        <value>59</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2_STR4</name>
-        <description>DMA2 Stream4 interrupt</description>
-        <value>60</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2_STR5</name>
-        <description>DMA2 Stream5 interrupt</description>
-        <value>68</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2_STR6</name>
-        <description>DMA2 Stream6 interrupt</description>
-        <value>69</value>
-      </interrupt>
-      <interrupt>
-        <name>DMA2_STR7</name>
-        <description>DMA2 Stream7 interrupt</description>
-        <value>70</value>
-      </interrupt>
-    </peripheral>
+      </peripheral>
     <peripheral>
       <name>HRTIM_Master</name>
       <description>High Resolution Timer: Master
@@ -76904,14 +77135,14 @@ Minimum value is 16</description>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>HRTIM1_MST</name>
-        <description>HRTIM1 master timer interrupt</description>
-        <value>103</value>
-      </interrupt>
-      <interrupt>
         <name>HRTIM1_FLT</name>
         <description>HRTIM1 fault interrupt</description>
         <value>109</value>
+      </interrupt>
+      <interrupt>
+        <name>HRTIM1_MST</name>
+        <description>HRTIM1 master timer interrupt</description>
+        <value>103</value>
       </interrupt>
       <registers>
         <register>
@@ -91927,14 +92158,9 @@ Minimum value is 16</description>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>DFSDM1_FLT0</name>
-        <description>DFSDM1 filter 0 interrupt</description>
-        <value>110</value>
-      </interrupt>
-      <interrupt>
-        <name>DFSDM1_FLT1</name>
-        <description>DFSDM1 filter 1 interrupt</description>
-        <value>111</value>
+        <name>DFSDM1_FLT3</name>
+        <description>DFSDM1 filter 3 interrupt</description>
+        <value>113</value>
       </interrupt>
       <interrupt>
         <name>DFSDM1_FLT2</name>
@@ -91942,9 +92168,14 @@ Minimum value is 16</description>
         <value>112</value>
       </interrupt>
       <interrupt>
-        <name>DFSDM1_FLT3</name>
-        <description>DFSDM1 filter 3 interrupt</description>
-        <value>113</value>
+        <name>DFSDM1_FLT1</name>
+        <description>DFSDM1 filter 1 interrupt</description>
+        <value>111</value>
+      </interrupt>
+      <interrupt>
+        <name>DFSDM1_FLT0</name>
+        <description>DFSDM1 filter 0 interrupt</description>
+        <value>110</value>
       </interrupt>
       <registers>
         <register>
@@ -97979,7 +98210,12 @@ Minimum value is 16</description>
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <registers>
+      <interrupt>
+        <name>USART1</name>
+        <description>USART1 global interrupt</description>
+        <value>37</value>
+      </interrupt>
+    <registers>
         <register>
           <name>CR1</name>
           <displayName>CR1</displayName>
@@ -98964,28 +99200,23 @@ Minimum value is 16</description>
       <name>USART2</name>
       <baseAddress>0x40004400</baseAddress>
       <interrupt>
-        <name>USART1</name>
-        <description>USART1 global interrupt</description>
-        <value>37</value>
-      </interrupt>
-    </peripheral>
-    <peripheral derivedFrom="USART1">
-      <name>USART3</name>
-      <baseAddress>0x40004800</baseAddress>
-      <interrupt>
         <name>USART2</name>
         <description>USART2 global interrupt</description>
         <value>38</value>
       </interrupt>
     </peripheral>
     <peripheral derivedFrom="USART1">
-      <name>UART4</name>
-      <baseAddress>0x40004C00</baseAddress>
+      <name>USART3</name>
+      <baseAddress>0x40004800</baseAddress>
       <interrupt>
         <name>USART3</name>
         <description>USART3 global interrupt</description>
         <value>39</value>
       </interrupt>
+      </peripheral>
+    <peripheral derivedFrom="USART1">
+      <name>UART4</name>
+      <baseAddress>0x40004C00</baseAddress>
       <interrupt>
         <name>UART4</name>
         <description>UART4 global interrupt</description>
@@ -99039,14 +99270,9 @@ Minimum value is 16</description>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TIM1_BRK</name>
-        <description>TIM1 break interrupt</description>
-        <value>24</value>
-      </interrupt>
-      <interrupt>
-        <name>TIM1_UP</name>
-        <description>TIM1 update interrupt</description>
-        <value>25</value>
+        <name>TIM_CC</name>
+        <description>TIM1 capture / compare</description>
+        <value>27</value>
       </interrupt>
       <interrupt>
         <name>TIM1_TRG_COM</name>
@@ -99054,9 +99280,14 @@ Minimum value is 16</description>
         <value>26</value>
       </interrupt>
       <interrupt>
-        <name>TIM_CC</name>
-        <description>TIM1 capture / compare</description>
-        <value>27</value>
+        <name>TIM1_UP</name>
+        <description>TIM1 update interrupt</description>
+        <value>25</value>
+      </interrupt>
+      <interrupt>
+        <name>TIM1_BRK</name>
+        <description>TIM1 break interrupt</description>
+        <value>24</value>
       </interrupt>
       <registers>
         <register>
@@ -99703,7 +99934,7 @@ Minimum value is 16</description>
               <bitWidth>4</bitWidth>
             </field>
             <field>
-              <name>IC2PCS</name>
+              <name>IC2PSC</name>
               <description>Input capture 2 prescaler</description>
               <bitOffset>10</bitOffset>
               <bitWidth>2</bitWidth>
@@ -99722,7 +99953,7 @@ Minimum value is 16</description>
               <bitWidth>4</bitWidth>
             </field>
             <field>
-              <name>ICPCS</name>
+              <name>IC1PSC</name>
               <description>Input capture 1 prescaler</description>
               <bitOffset>2</bitOffset>
               <bitWidth>2</bitWidth>
@@ -100589,26 +100820,26 @@ Minimum value is 16</description>
       <name>TIM8</name>
       <baseAddress>0x40010400</baseAddress>
       <interrupt>
-        <name>TIM8_BRK_TIM12</name>
-        <description>TIM8 break and TIM12 global interrupts</description>
-        <value>43</value>
-      </interrupt>
-	  <interrupt>
-        <name>TIM8_UP_TIM13</name>
-        <description>TIM8 update and TIM13 global interrupts</description>
-        <value>44</value>
-      </interrupt>
-	  <interrupt>
+        <name>TIM8_CC</name>
+        <description>TIM8 capture / compare</description>
+        <value>46</value>
+	  </interrupt>
+    <interrupt>
         <name>TIM8_TRG_COM_TIM14</name>
         <description>TIM8 trigger /commutation and TIM14 global interrupts</description>
         <value>45</value>
       </interrupt>
       <interrupt>
-        <name>TIM8_CC</name>
-        <description>TIM8 capture / compare</description>
-        <value>46</value>
-	  </interrupt>
-    </peripheral>
+        <name>TIM8_UP_TIM13</name>
+        <description>TIM8 update and TIM13 global interrupts</description>
+        <value>44</value>
+      </interrupt>
+	  <interrupt>
+        <name>TIM8_BRK_TIM12</name>
+        <description>TIM8 break and TIM12 global interrupts</description>
+        <value>43</value>
+      </interrupt>
+	  </peripheral>
     <peripheral>
       <name>FDCAN1</name>
       <description>FDCAN1</description>
@@ -100620,9 +100851,9 @@ Minimum value is 16</description>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>FDCAN1_IT0</name>
-        <description>FDCAN1 Interrupt 0</description>
-        <value>19</value>
+        <name>FDCAN_CAL</name>
+        <description>CAN2TX interrupts</description>
+        <value>63</value>
       </interrupt>
       <interrupt>
         <name>FDCAN1_IT1</name>
@@ -100630,9 +100861,9 @@ Minimum value is 16</description>
         <value>21</value>
       </interrupt>
       <interrupt>
-        <name>FDCAN_CAL</name>
-        <description>CAN2TX interrupts</description>
-        <value>63</value>
+        <name>FDCAN1_IT0</name>
+        <description>FDCAN1 Interrupt 0</description>
+        <value>19</value>
       </interrupt>
       <registers>
         <register>
@@ -103915,16 +104146,16 @@ Minimum value is 16</description>
       <name>FDCAN2</name>
       <baseAddress>0x4000A400</baseAddress>
       <interrupt>
-        <name>FDCAN2_IT0</name>
-        <description>FDCAN2 Interrupt 0</description>
-        <value>20</value>
-      </interrupt>
-      <interrupt>
         <name>FDCAN2_IT1</name>
         <description>FDCAN2 Interrupt 1</description>
         <value>22</value>
       </interrupt>
-    </peripheral>
+    <interrupt>
+        <name>FDCAN2_IT0</name>
+        <description>FDCAN2 Interrupt 0</description>
+        <value>20</value>
+      </interrupt>
+      </peripheral>
     <peripheral>
       <name>CAN_CCU</name>
       <description>CCU registers</description>
@@ -104149,14 +104380,14 @@ Minimum value is 16</description>
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>MDIOS_WKUP</name>
-        <description>MDIOS wakeup</description>
-        <value>119</value>
-      </interrupt>
-      <interrupt>
         <name>MDIOS</name>
         <description>MDIOS global interrupt</description>
         <value>120</value>
+      </interrupt>
+      <interrupt>
+        <name>MDIOS_WKUP</name>
+        <description>MDIOS wakeup</description>
+        <value>119</value>
       </interrupt>
       <registers>
         <register>
@@ -105782,6 +106013,11 @@ Minimum value is 16</description>
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>SWPMI1</name>
+        <description>SWPMI global interrupt</description>
+        <value>115</value>
+      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -106189,11 +106425,6 @@ Minimum value is 16</description>
         <name>TIM2</name>
         <description>TIM2 global interrupt</description>
         <value>28</value>
-      </interrupt>
-      <interrupt>
-        <name>SWPMI1</name>
-        <description>SWPMI global interrupt</description>
-        <value>115</value>
       </interrupt>
       <registers>
         <register>
@@ -107221,15 +107452,15 @@ Minimum value is 16</description>
     <peripheral derivedFrom="TIM2">
       <name>TIM4</name>
       <baseAddress>0x40000800</baseAddress>
-    </peripheral>
-    <peripheral derivedFrom="TIM2">
-      <name>TIM5</name>
-      <baseAddress>0x40000C00</baseAddress>
-      <interrupt>
+	  <interrupt>
         <name>TIM4</name>
         <description>TIM4 global interrupt</description>
         <value>30</value>
       </interrupt>
+    </peripheral>
+    <peripheral derivedFrom="TIM2">
+      <name>TIM5</name>
+      <baseAddress>0x40000C00</baseAddress>
       <interrupt>
         <name>TIM5</name>
         <description>TIM5 global interrupt</description>

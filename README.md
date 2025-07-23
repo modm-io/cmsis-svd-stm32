@@ -9,7 +9,7 @@ If you prefer zipped SVD files, check out the [modm-ext/cmsis-svd-stm32-zip][rep
 Here is the list of the SVD file versions for each STM32 family:
 
 <!--families-->
-- STM32C0: v1.2
+- STM32C0: v1.5
 - STM32F0: v1.3
 - STM32F1: v1.2
 - STM32F2: v1.2
@@ -17,14 +17,14 @@ Here is the list of the SVD file versions for each STM32 family:
 - STM32F4: v2.0
 - STM32F7: v1.0
 - STM32G0: v1.6
-- STM32G4: v2.2
-- STM32H5: v1.7
-- STM32H7: v1.9
-- STM32H7RS: v1.0
+- STM32G4: v3.0
+- STM32H5: v1.9
+- STM32H7: v2.8
+- STM32H7RS: v1.3
 - STM32L0: v1.4
 - STM32L1: v1.4
-- STM32L4: v1.4
-- STM32L4+: v1.4
+- STM32L4: v1.9
+- STM32L4+: v1.6
 - STM32L5: v1.0
 - STM32N6: v1.0
 - STM32U0: v1.0
