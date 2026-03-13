@@ -18,7 +18,7 @@ Here is the list of the SVD file versions for each STM32 family:
 - STM32F7: v1.0
 - STM32G0: v1.6
 - STM32G4: v3.0
-- STM32H5: v1.9
+- STM32H5: v2.0
 - STM32H7: v2.8
 - STM32H7RS: v1.3
 - STM32L0: v1.4
