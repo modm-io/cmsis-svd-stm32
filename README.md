@@ -10,6 +10,7 @@ Here is the list of the SVD file versions for each STM32 family:
 
 <!--families-->
 - STM32C0: v1.5
+- STM32C5: v1.0
 - STM32F0: v1.3
 - STM32F1: v1.2
 - STM32F2: v1.2
