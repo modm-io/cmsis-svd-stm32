@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright (c) 2023 STMicroelectronics.
+Copyright (c) 2024 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -18,7 +18,7 @@ Copyright (c) 2023 STMicroelectronics.
 -->
 <device xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xsi:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32WB10_CM4</name>
-  <version>1.4</version>
+  <version>1.6</version>
   <description>STM32WB10_CM4</description>
   <cpu>
     <name>CM4</name>
@@ -50,525 +50,525 @@ Copyright (c) 2023 STMicroelectronics.
         <description>ADC1 global interrupt</description>
         <value>18</value>
       </interrupt>
-     <registers>
-            <register>
-               <name>ISR</name>
-               <displayName>ISR</displayName>
-               <description>ADC interrupt and status           register</description>
-               <addressOffset>0x0</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>ADRDY</name>
-                     <description>ADRDY</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOSMP</name>
-                     <description>EOSMP</description>
-                     <bitOffset>1</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOC</name>
-                     <description>EOC</description>
-                     <bitOffset>2</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOS</name>
-                     <description>EOS</description>
-                     <bitOffset>3</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>OVR</name>
-                     <description>OVR</description>
-                     <bitOffset>4</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD1</name>
-                     <description>AWD1</description>
-                     <bitOffset>7</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD2</name>
-                     <description>AWD2</description>
-                     <bitOffset>8</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD3</name>
-                     <description>AWD3</description>
-                     <bitOffset>9</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOCAL</name>
-                     <description>EOCAL</description>
-                     <bitOffset>11</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>CCRDY</name>
-                     <description>CCRDY</description>
-                     <bitOffset>13</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>IER</name>
-               <displayName>IER</displayName>
-               <description>ADC interrupt enable register</description>
-               <addressOffset>0x4</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>ADRDYIE</name>
-                     <description>ADRDYIE</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOSMPIE</name>
-                     <description>EOSMPIE</description>
-                     <bitOffset>1</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOCIE</name>
-                     <description>EOCIE</description>
-                     <bitOffset>2</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOSIE</name>
-                     <description>EOSIE</description>
-                     <bitOffset>3</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>OVRIE</name>
-                     <description>OVRIE</description>
-                     <bitOffset>4</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD1IE</name>
-                     <description>AWD1IE</description>
-                     <bitOffset>7</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD2IE</name>
-                     <description>AWD2IE</description>
-                     <bitOffset>8</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD3IE</name>
-                     <description>AWD3IE</description>
-                     <bitOffset>9</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EOCALIE</name>
-                     <description>EOCALIE</description>
-                     <bitOffset>11</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>CCRDYIE</name>
-                     <description>CCRDYIE</description>
-                     <bitOffset>13</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>CR</name>
-               <displayName>CR</displayName>
-               <description>ADC control register</description>
-               <addressOffset>0x8</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>ADEN</name>
-                     <description>ADEN</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>ADDIS</name>
-                     <description>ADDIS</description>
-                     <bitOffset>1</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>ADSTART</name>
-                     <description>ADSTART</description>
-                     <bitOffset>2</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>ADSTP</name>
-                     <description>ADSTP</description>
-                     <bitOffset>4</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>ADVREGEN</name>
-                     <description>ADVREGEN</description>
-                     <bitOffset>28</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>ADCAL</name>
-                     <description>ADCAL</description>
-                     <bitOffset>31</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>CFGR1</name>
-               <displayName>CFGR1</displayName>
-               <description>ADC configuration register 1</description>
-               <addressOffset>0xC</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>DMAEN</name>
-                     <description>DMAEN</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>DMACFG</name>
-                     <description>DMACFG</description>
-                     <bitOffset>1</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>SCANDIR</name>
-                     <description>SCANDIR</description>
-                     <bitOffset>2</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>RES</name>
-                     <description>RES</description>
-                     <bitOffset>3</bitOffset>
-                     <bitWidth>2</bitWidth>
-                  </field>
-                  <field>
-                     <name>ALIGN</name>
-                     <description>ALIGN</description>
-                     <bitOffset>5</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>EXTSEL</name>
-                     <description>EXTSEL</description>
-                     <bitOffset>6</bitOffset>
-                     <bitWidth>3</bitWidth>
-                  </field>
-                  <field>
-                     <name>EXTEN</name>
-                     <description>EXTEN</description>
-                     <bitOffset>10</bitOffset>
-                     <bitWidth>2</bitWidth>
-                  </field>
-                  <field>
-                     <name>OVRMOD</name>
-                     <description>OVRMOD</description>
-                     <bitOffset>12</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>CONT</name>
-                     <description>CONT</description>
-                     <bitOffset>13</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>WAIT</name>
-                     <description>WAIT</description>
-                     <bitOffset>14</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AUTOFF</name>
-                     <description>AUTOFF</description>
-                     <bitOffset>15</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>DISCEN</name>
-                     <description>DISCEN</description>
-                     <bitOffset>16</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>CHSELRMOD</name>
-                     <description>CHSELRMOD</description>
-                     <bitOffset>21</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD1SGL</name>
-                     <description>AWD1SGL</description>
-                     <bitOffset>22</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWD1EN</name>
-                     <description>AWD1EN</description>
-                     <bitOffset>23</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>AWDCH</name>
-                     <description>AWD1CH</description>
-                     <bitOffset>26</bitOffset>
-                     <bitWidth>5</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>CFGR2</name>
-               <displayName>CFGR2</displayName>
-               <description>ADC configuration register 2</description>
-               <addressOffset>0x10</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>LFTRIG</name>
-                     <description>LFTRIG</description>
-                     <bitOffset>29</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>CKMODE</name>
-                     <description>CKMODE</description>
-                     <bitOffset>30</bitOffset>
-                     <bitWidth>2</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>SMPR</name>
-               <displayName>SMPR</displayName>
-               <description>ADC sampling time register</description>
-               <addressOffset>0x14</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>SMP1</name>
-                     <description>SMP1</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>3</bitWidth>
-                  </field>
-                  <field>
-                     <name>SMP2</name>
-                     <description>SMP2</description>
-                     <bitOffset>4</bitOffset>
-                     <bitWidth>3</bitWidth>
-                  </field>
-                  <field>
-                     <name>SMPSEL</name>
-                     <description>SMPSEL</description>
-                     <bitOffset>8</bitOffset>
-                     <bitWidth>19</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>ADC_TR</name>
-               <displayName>ADC_TR</displayName>
-               <description>ADC watchdog threshold           register</description>
-               <addressOffset>0x20</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x0FFF0000</resetValue>
-               <fields>
-                  <field>
-                     <name>LT1</name>
-                     <description>LT1</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>12</bitWidth>
-                  </field>
-                  <field>
-                     <name>HT1</name>
-                     <description>HT1</description>
-                     <bitOffset>16</bitOffset>
-                     <bitWidth>12</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>CHSELR0</name>
-               <displayName>CHSELR0</displayName>
-               <description>channel selection register</description>
-               <addressOffset>0x28</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>CHSEL</name>
-                     <description>CHSEL</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>19</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>CHSELR1</name>
-               <displayName>CHSELR1</displayName>
-               <description>channel selection register</description>
-               <alternateRegister>CHSELR0</alternateRegister>
-               <addressOffset>0x28</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>SQ1</name>
-                     <description>SQ1</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>SQ2</name>
-                     <description>SQ2</description>
-                     <bitOffset>4</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>SQ3</name>
-                     <description>SQ3</description>
-                     <bitOffset>8</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>SQ4</name>
-                     <description>SQ4</description>
-                     <bitOffset>12</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>SQ5</name>
-                     <description>SQ5</description>
-                     <bitOffset>16</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>SQ6</name>
-                     <description>SQ6</description>
-                     <bitOffset>20</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>SQ7</name>
-                     <description>SQ7</description>
-                     <bitOffset>24</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>SQ8</name>
-                     <description>SQ8</description>
-                     <bitOffset>28</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>DR</name>
-               <displayName>DR</displayName>
-               <description>ADC data register</description>
-               <addressOffset>0x40</addressOffset>
-               <size>0x20</size>
-               <access>read-only</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>DATA</name>
-                     <description>DATA</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>16</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>CALFACT</name>
-               <displayName>CALFACT</displayName>
-               <description>ADC Calibration factor</description>
-               <addressOffset>0xB4</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>CALFACT</name>
-                     <description>CALFACT</description>
-                     <bitOffset>0</bitOffset>
-                     <bitWidth>7</bitWidth>
-                  </field>
-               </fields>
-            </register>
-            <register>
-               <name>CCR</name>
-               <displayName>CCR</displayName>
-               <description>ADC common configuration           register</description>
-               <addressOffset>0x308</addressOffset>
-               <size>0x20</size>
-               <access>read-write</access>
-               <resetValue>0x00000000</resetValue>
-               <fields>
-                  <field>
-                     <name>PRESC</name>
-                     <description>PRESC</description>
-                     <bitOffset>18</bitOffset>
-                     <bitWidth>4</bitWidth>
-                  </field>
-                  <field>
-                     <name>VREFEN</name>
-                     <description>VREFEN</description>
-                     <bitOffset>22</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>TSEN</name>
-                     <description>TSEN</description>
-                     <bitOffset>23</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-                  <field>
-                     <name>VBATEN</name>
-                     <description>VBATEN</description>
-                     <bitOffset>24</bitOffset>
-                     <bitWidth>1</bitWidth>
-                  </field>
-               </fields>
-            </register>
-     </registers>
+      <registers>
+        <register>
+          <name>ISR</name>
+          <displayName>ISR</displayName>
+          <description>ADC interrupt and status           register</description>
+          <addressOffset>0x0</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ADRDY</name>
+              <description>ADRDY</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOSMP</name>
+              <description>EOSMP</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOC</name>
+              <description>EOC</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOS</name>
+              <description>EOS</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>OVR</name>
+              <description>OVR</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD1</name>
+              <description>AWD1</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD2</name>
+              <description>AWD2</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD3</name>
+              <description>AWD3</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOCAL</name>
+              <description>EOCAL</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CCRDY</name>
+              <description>CCRDY</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IER</name>
+          <displayName>IER</displayName>
+          <description>ADC interrupt enable register</description>
+          <addressOffset>0x4</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ADRDYIE</name>
+              <description>ADRDYIE</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOSMPIE</name>
+              <description>EOSMPIE</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOCIE</name>
+              <description>EOCIE</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOSIE</name>
+              <description>EOSIE</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>OVRIE</name>
+              <description>OVRIE</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD1IE</name>
+              <description>AWD1IE</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD2IE</name>
+              <description>AWD2IE</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD3IE</name>
+              <description>AWD3IE</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EOCALIE</name>
+              <description>EOCALIE</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CCRDYIE</name>
+              <description>CCRDYIE</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CR</name>
+          <displayName>CR</displayName>
+          <description>ADC control register</description>
+          <addressOffset>0x8</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ADEN</name>
+              <description>ADEN</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADDIS</name>
+              <description>ADDIS</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADSTART</name>
+              <description>ADSTART</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADSTP</name>
+              <description>ADSTP</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADVREGEN</name>
+              <description>ADVREGEN</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADCAL</name>
+              <description>ADCAL</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CFGR1</name>
+          <displayName>CFGR1</displayName>
+          <description>ADC configuration register 1</description>
+          <addressOffset>0xC</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DMAEN</name>
+              <description>DMAEN</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DMACFG</name>
+              <description>DMACFG</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>SCANDIR</name>
+              <description>SCANDIR</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>RES</name>
+              <description>RES</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>ALIGN</name>
+              <description>ALIGN</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>EXTSEL</name>
+              <description>EXTSEL</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>EXTEN</name>
+              <description>EXTEN</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>OVRMOD</name>
+              <description>OVRMOD</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CONT</name>
+              <description>CONT</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>WAIT</name>
+              <description>WAIT</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AUTOFF</name>
+              <description>AUTOFF</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>DISCEN</name>
+              <description>DISCEN</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CHSELRMOD</name>
+              <description>CHSELRMOD</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD1SGL</name>
+              <description>AWD1SGL</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWD1EN</name>
+              <description>AWD1EN</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>AWDCH</name>
+              <description>AWD1CH</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>5</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CFGR2</name>
+          <displayName>CFGR2</displayName>
+          <description>ADC configuration register 2</description>
+          <addressOffset>0x10</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>LFTRIG</name>
+              <description>LFTRIG</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>CKMODE</name>
+              <description>CKMODE</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SMPR</name>
+          <displayName>SMPR</displayName>
+          <description>ADC sampling time register</description>
+          <addressOffset>0x14</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>SMP1</name>
+              <description>SMP1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>SMP2</name>
+              <description>SMP2</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>SMPSEL</name>
+              <description>SMPSEL</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>19</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ADC_TR</name>
+          <displayName>ADC_TR</displayName>
+          <description>ADC watchdog threshold           register</description>
+          <addressOffset>0x20</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x0FFF0000</resetValue>
+          <fields>
+            <field>
+              <name>LT1</name>
+              <description>LT1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+            <field>
+              <name>HT1</name>
+              <description>HT1</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>12</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CHSELR0</name>
+          <displayName>CHSELR0</displayName>
+          <description>channel selection register</description>
+          <addressOffset>0x28</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>CHSEL</name>
+              <description>CHSEL</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>19</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CHSELR1</name>
+          <displayName>CHSELR1</displayName>
+          <description>channel selection register</description>
+          <alternateRegister>CHSELR0</alternateRegister>
+          <addressOffset>0x28</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>SQ1</name>
+              <description>SQ1</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>SQ2</name>
+              <description>SQ2</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>SQ3</name>
+              <description>SQ3</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>SQ4</name>
+              <description>SQ4</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>SQ5</name>
+              <description>SQ5</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>SQ6</name>
+              <description>SQ6</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>SQ7</name>
+              <description>SQ7</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>SQ8</name>
+              <description>SQ8</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DR</name>
+          <displayName>DR</displayName>
+          <description>ADC data register</description>
+          <addressOffset>0x40</addressOffset>
+          <size>0x20</size>
+          <access>read-only</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>DATA</name>
+              <description>DATA</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CALFACT</name>
+          <displayName>CALFACT</displayName>
+          <description>ADC Calibration factor</description>
+          <addressOffset>0xB4</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>CALFACT</name>
+              <description>CALFACT</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>7</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CCR</name>
+          <displayName>CCR</displayName>
+          <description>ADC common configuration           register</description>
+          <addressOffset>0x308</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>PRESC</name>
+              <description>PRESC</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>VREFEN</name>
+              <description>VREFEN</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>TSEN</name>
+              <description>TSEN</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>VBATEN</name>
+              <description>VBATEN</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+      </registers>
     </peripheral>
     <peripheral>
       <name>CRC</name>
@@ -3600,7 +3600,7 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
+            <field>
               <name>RT41</name>
               <description>Rising trigger event configuration bit of Configurable Event input 41</description>
               <bitOffset>9</bitOffset>
@@ -3623,13 +3623,13 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
+            <field>
               <name>FT40</name>
               <description>Falling trigger event configuration bit of configurable event input 40</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
+            <field>
               <name>FT41</name>
               <description>Falling trigger event configuration bit of configurable event input 41</description>
               <bitOffset>9</bitOffset>
@@ -3658,7 +3658,7 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
+            <field>
               <name>SWI41</name>
               <description>Software interrupt on               event</description>
               <bitOffset>9</bitOffset>
@@ -3687,7 +3687,7 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
+            <field>
               <name>PIF41</name>
               <description>Configurable event inputs x+32 Pending               bit.</description>
               <bitOffset>9</bitOffset>
@@ -13306,7 +13306,7 @@ Copyright (c) 2023 STMicroelectronics.
           </fields>
         </register>
       </registers>
-	</peripheral>
+    </peripheral>
     <peripheral>
       <name>PWR</name>
       <description>Power control</description>
@@ -15020,11 +15020,6 @@ Copyright (c) 2023 STMicroelectronics.
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
-      <interrupt>
-        <name>RCC</name>
-        <description>RCC global interrupt</description>
-        <value>5</value>
-      </interrupt>
       <registers>
         <register>
           <name>CR</name>
@@ -15631,37 +15626,6 @@ Copyright (c) 2023 STMicroelectronics.
           </fields>
         </register>
         <register>
-          <name>SMPSCR</name>
-          <displayName>SMPSCR</displayName>
-          <description>Step Down converter control           register</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00000301</resetValue>
-          <fields>
-            <field>
-              <name>SMPSSWS</name>
-              <description>Step Down converter clock switch               status</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>SMPSDIV</name>
-              <description>Step Down converter clock               prescaler</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>SMPSSEL</name>
-              <description>Step Down converter clock               selection</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>2</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>AHB1RSTR</name>
           <displayName>AHB1RSTR</displayName>
           <description>AHB1 peripheral reset register</description>
@@ -15689,12 +15653,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DMA2RST</name>
-              <description>DMA2 reset</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>DMA1RST</name>
               <description>DMA1 reset</description>
               <bitOffset>0</bitOffset>
@@ -15712,18 +15670,6 @@ Copyright (c) 2023 STMicroelectronics.
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>AES1RST</name>
-              <description>AES1 hardware accelerator               reset</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ADCRST</name>
-              <description>ADC reset</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>GPIOHRST</name>
               <description>IO port H reset</description>
               <bitOffset>7</bitOffset>
@@ -15733,12 +15679,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>GPIOERST</name>
               <description>IO port E reset</description>
               <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>GPIODRST</name>
-              <description>IO port D reset</description>
-              <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -15806,12 +15746,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>QSPIRST</name>
-              <description>Quad SPI memory interface               reset</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -15830,39 +15764,9 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USBFSRST</name>
-              <description>USB FS reset</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CRSRST</name>
-              <description>CRS reset</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>I2C3RST</name>
-              <description>I2C3 reset</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>I2C1RST</name>
               <description>I2C1 reset</description>
               <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SPI2RST</name>
-              <description>SPI2 reset</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LCDRST</name>
-              <description>LCD interface reset</description>
-              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -15888,12 +15792,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>LPUART1RST</name>
-              <description>Low-power UART 1 reset</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -15905,24 +15803,6 @@ Copyright (c) 2023 STMicroelectronics.
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
-            <field>
-              <name>SAI1RST</name>
-              <description>Serial audio interface 1 (SAI1)               reset</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM17RST</name>
-              <description>TIM17 timer reset</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM16RST</name>
-              <description>TIM16 timer reset</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>USART1RST</name>
               <description>USART1 reset</description>
@@ -15939,6 +15819,12 @@ Copyright (c) 2023 STMicroelectronics.
               <name>TIM1RST</name>
               <description>TIM1 timer reset</description>
               <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADCRST</name>
+              <description>ADC reset</description>
+              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -15988,12 +15874,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DMA2EN</name>
-              <description>DMA2 clock enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>DMA1EN</name>
               <description>DMA1 clock enable</description>
               <bitOffset>0</bitOffset>
@@ -16011,18 +15891,6 @@ Copyright (c) 2023 STMicroelectronics.
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>AES1EN</name>
-              <description>AES1 accelerator clock               enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ADCEN</name>
-              <description>ADC clock enable</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>GPIOHEN</name>
               <description>IO port H clock enable</description>
               <bitOffset>7</bitOffset>
@@ -16032,12 +15900,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>GPIOEEN</name>
               <description>IO port E clock enable</description>
               <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>GPIODEN</name>
-              <description>IO port D clock enable</description>
-              <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -16061,9 +15923,9 @@ Copyright (c) 2023 STMicroelectronics.
           </fields>
         </register>
         <register>
-          <name>AHB3ENR</name>
+          <name>AHB4ENR</name>
           <displayName>AHB3ENR</displayName>
-          <description>AHB3 peripheral clock enable           register</description>
+          <description>RCC AHB4 peripheral clock enable register</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16105,12 +15967,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>QSPIEN</name>
-              <description>QSPIEN</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -16129,33 +15985,9 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USBEN</name>
-              <description>CPU1 USB clock enable</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CRSEN</name>
-              <description>CPU1 CRS clock enable</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>I2C3EN</name>
-              <description>CPU1 I2C3 clock enable</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>I2C1EN</name>
               <description>CPU1 I2C1 clock enable</description>
               <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SPI2EN</name>
-              <description>CPU1 SPI2 clock enable</description>
-              <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -16168,12 +16000,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>RTCAPBEN</name>
               <description>CPU1 RTC APB clock enable</description>
               <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LCDEN</name>
-              <description>CPU1 LCD clock enable</description>
-              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -16199,12 +16025,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>LPUART1EN</name>
-              <description>CPU1 Low power UART 1 clock               enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -16216,24 +16036,6 @@ Copyright (c) 2023 STMicroelectronics.
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
-            <field>
-              <name>SAI1EN</name>
-              <description>CPU1 SAI1 clock enable</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM17EN</name>
-              <description>CPU1 TIM17 timer clock               enable</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM16EN</name>
-              <description>CPU1 TIM16 timer clock               enable</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>USART1EN</name>
               <description>CPU1 USART1clock enable</description>
@@ -16248,8 +16050,14 @@ Copyright (c) 2023 STMicroelectronics.
             </field>
             <field>
               <name>TIM1EN</name>
-              <description>CPU1 TIM1 timer clock               enable</description>
+              <description>CPU1 TIM1 timer clock enable</description>
               <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADCEN</name>
+              <description>CPU1 ADC clock enable</description>
+              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -16288,12 +16096,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DMA2SMEN</name>
-              <description>CPU1 DMA2 clocks enable during Sleep and               Stop modes</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>DMA1SMEN</name>
               <description>CPU1 DMA1 clocks enable during Sleep and               Stop modes</description>
               <bitOffset>0</bitOffset>
@@ -16311,18 +16113,6 @@ Copyright (c) 2023 STMicroelectronics.
           <resetValue>0x0001209F</resetValue>
           <fields>
             <field>
-              <name>AES1SMEN</name>
-              <description>CPU1 AES1 accelerator clocks enable               during Sleep and Stop modes</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ADCFSSMEN</name>
-              <description>CPU1 ADC clocks enable during Sleep and               Stop modes</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>GPIOHSMEN</name>
               <description>CPU1 IO port H clocks enable during               Sleep and Stop modes</description>
               <bitOffset>7</bitOffset>
@@ -16332,12 +16122,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>GPIOESMEN</name>
               <description>CPU1 IO port E clocks enable during               Sleep and Stop modes</description>
               <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>GPIODSMEN</name>
-              <description>CPU1 IO port D clocks enable during               Sleep and Stop modes</description>
-              <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -16361,9 +16145,10 @@ Copyright (c) 2023 STMicroelectronics.
           </fields>
         </register>
         <register>
-          <name>AHB3SMENR</name>
+          <name>AHB4SMENR</name>
           <displayName>AHB3SMENR</displayName>
-          <description>AHB3 peripheral clocks enable in Sleep and           Stop modes register</description>
+          <description>RCC AHB4 peripheral clocks enable in Sleep and Stop
+modes register</description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -16399,12 +16184,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>QSPISMEN</name>
-              <description>QSPISMEN</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -16423,33 +16202,9 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USBSMEN</name>
-              <description>USB FS clocks enable during CPU1 Sleep               mode</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CRSMEN</name>
-              <description>CRS clocks enable during CPU1 Sleep               mode</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>I2C3SMEN</name>
-              <description>I2C3 clocks enable during CPU1 Sleep               mode</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>I2C1SMEN</name>
               <description>I2C1 clocks enable during CPU1 Sleep               mode</description>
               <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>SPI2SMEN</name>
-              <description>SPI2 clocks enable during CPU1 Sleep               mode</description>
-              <bitOffset>14</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -16462,12 +16217,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>RTCAPBSMEN</name>
               <description>RTC APB clocks enable during CPU1 Sleep               mode</description>
               <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LCDSMEN</name>
-              <description>LCD clocks enable during CPU1 Sleep               mode</description>
-              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -16493,12 +16242,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>LPUART1SMEN</name>
-              <description>Low power UART 1 clocks enable during               CPU1 Sleep mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -16510,24 +16253,6 @@ Copyright (c) 2023 STMicroelectronics.
           <access>read-write</access>
           <resetValue>0x00265800</resetValue>
           <fields>
-            <field>
-              <name>SAI1SMEN</name>
-              <description>SAI1 clocks enable during CPU1 Sleep               mode</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM17SMEN</name>
-              <description>TIM17 timer clocks enable during CPU1               Sleep mode</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM16SMEN</name>
-              <description>TIM16 timer clocks enable during CPU1               Sleep mode</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>USART1SMEN</name>
               <description>USART1clocks enable during CPU1 Sleep               mode</description>
@@ -16542,8 +16267,14 @@ Copyright (c) 2023 STMicroelectronics.
             </field>
             <field>
               <name>TIM1SMEN</name>
-              <description>TIM1 timer clocks enable during CPU1               Sleep mode</description>
+              <description>TIM1 timer clocks enable during CPU1 Sleep mode</description>
               <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADCSMEN</name>
+              <description>ADC clock enable during CPU1 CSleep mode</description>
+              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -16576,12 +16307,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>SAI1SEL</name>
-              <description>SAI1 clock source               selection</description>
-              <bitOffset>22</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
               <name>LPTIM2SEL</name>
               <description>Low power timer 2 clock source               selection</description>
               <bitOffset>20</bitOffset>
@@ -16591,12 +16316,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>LPTIM1SEL</name>
               <description>Low power timer 1 clock source               selection</description>
               <bitOffset>18</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>I2C3SEL</name>
-              <description>I2C3 clock source               selection</description>
-              <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
             <field>
@@ -16631,7 +16350,7 @@ Copyright (c) 2023 STMicroelectronics.
               <name>LSCOSEL</name>
               <description>Low speed clock output               selection</description>
               <bitOffset>25</bitOffset>
-              <bitWidth>2</bitWidth>
+              <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
@@ -16771,6 +16490,13 @@ Copyright (c) 2023 STMicroelectronics.
               <access>read-write</access>
             </field>
             <field>
+              <name>RFRSTS</name>
+              <description>Radio system BLE and 802.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
               <name>RFWKPSEL</name>
               <description>RF system wakeup clock source               selection</description>
               <bitOffset>14</bitOffset>
@@ -16778,24 +16504,10 @@ Copyright (c) 2023 STMicroelectronics.
               <access>read-write</access>
             </field>
             <field>
-              <name>LSI2BW</name>
-              <description>LSI2 oscillator bias               configuration</description>
+              <name>LSI2TRIM</name>
+              <description>LSI2 oscillator bias trim</description>
               <bitOffset>8</bitOffset>
               <bitWidth>4</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>LSI2TRIMOK</name>
-              <description>LSI2 oscillator trim OK</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>LSI2TRIMEN</name>
-              <description>LSI2 oscillator trimming               enable</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
@@ -16822,44 +16534,6 @@ Copyright (c) 2023 STMicroelectronics.
             <field>
               <name>LSI1ON</name>
               <description>LSI1 oscillator enabled</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>RFRSTS</name>
-              <description>Radio system BLE and 802.15.4 reset               status</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CRRCR</name>
-          <displayName>CRRCR</displayName>
-          <description>Clock recovery RC register</description>
-          <addressOffset>0x98</addressOffset>
-          <size>0x20</size>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>HSI48CAL</name>
-              <description>HSI48 clock calibration</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>9</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>HSI48RDY</name>
-              <description>HSI48 clock ready</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>HSI48ON</name>
-              <description>HSI48 oscillator enabled</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
@@ -16983,12 +16657,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DMA2EN</name>
-              <description>CPU2 DMA2 clock enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>DMA1EN</name>
               <description>CPU2 DMA1 clock enable</description>
               <bitOffset>0</bitOffset>
@@ -17006,18 +16674,6 @@ Copyright (c) 2023 STMicroelectronics.
           <resetValue>0x00000000</resetValue>
           <fields>
             <field>
-              <name>AES1EN</name>
-              <description>CPU2 AES1 accelerator clock               enable</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ADCEN</name>
-              <description>CPU2 ADC clock enable</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>GPIOHEN</name>
               <description>CPU2 IO port H clock               enable</description>
               <bitOffset>7</bitOffset>
@@ -17027,12 +16683,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>GPIOEEN</name>
               <description>CPU2 IO port E clock               enable</description>
               <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>GPIODEN</name>
-              <description>CPU2 IO port D clock               enable</description>
-              <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -17118,45 +16768,15 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USBEN</name>
-              <description>CPU2 USB clock enable</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CRSEN</name>
-              <description>CPU2 CRS clock enable</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>I2C3EN</name>
-              <description>CPU2 I2C3 clock enable</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>I2C1EN</name>
               <description>CPU2 I2C1 clock enable</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SPI2EN</name>
-              <description>CPU2 SPI2 clock enable</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>RTCAPBEN</name>
               <description>CPU2 RTC APB clock enable</description>
               <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LCDEN</name>
-              <description>CPU2 LCD clock enable</description>
-              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -17182,12 +16802,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>LPUART1EN</name>
-              <description>CPU2 Low power UART 1 clock               enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -17199,24 +16813,6 @@ Copyright (c) 2023 STMicroelectronics.
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
-            <field>
-              <name>SAI1EN</name>
-              <description>CPU2 SAI1 clock enable</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM17EN</name>
-              <description>CPU2 TIM17 timer clock               enable</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM16EN</name>
-              <description>CPU2 TIM16 timer clock               enable</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>USART1EN</name>
               <description>CPU2 USART1clock enable</description>
@@ -17231,8 +16827,14 @@ Copyright (c) 2023 STMicroelectronics.
             </field>
             <field>
               <name>TIM1EN</name>
-              <description>CPU2 TIM1 timer clock               enable</description>
+              <description>CPU2 TIM1 timer clock enable</description>
               <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>ADCEN</name>
+              <description>CPU2 ADC clock enable</description>
+              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
@@ -17246,12 +16848,6 @@ Copyright (c) 2023 STMicroelectronics.
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
           <fields>
-            <field>
-              <name>EN802</name>
-              <description>CPU2 802.15.4 interface clock               enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>BLEEN</name>
               <description>CPU2 BLE interface clock               enable</description>
@@ -17294,12 +16890,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>DMA2SMEN</name>
-              <description>CPU2 DMA2 clocks enable during Sleep and               Stop modes</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>DMA1SMEN</name>
               <description>CPU2 DMA1 clocks enable during Sleep and               Stop modes</description>
               <bitOffset>0</bitOffset>
@@ -17317,18 +16907,6 @@ Copyright (c) 2023 STMicroelectronics.
           <resetValue>0x0001209F</resetValue>
           <fields>
             <field>
-              <name>AES1SMEN</name>
-              <description>CPU2 AES1 accelerator clocks enable               during Sleep and Stop modes</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ADCFSSMEN</name>
-              <description>CPU2 ADC clocks enable during Sleep and               Stop modes</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>GPIOHSMEN</name>
               <description>CPU2 IO port H clocks enable during               Sleep and Stop modes</description>
               <bitOffset>7</bitOffset>
@@ -17338,12 +16916,6 @@ Copyright (c) 2023 STMicroelectronics.
               <name>GPIOESMEN</name>
               <description>CPU2 IO port E clocks enable during               Sleep and Stop modes</description>
               <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>GPIODSMEN</name>
-              <description>CPU2 IO port D clocks enable during               Sleep and Stop modes</description>
-              <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -17367,9 +16939,9 @@ Copyright (c) 2023 STMicroelectronics.
           </fields>
         </register>
         <register>
-          <name>C2AHB3SMENR</name>
-          <displayName>C2AHB3SMENR</displayName>
-          <description>CPU2 AHB3 peripheral clocks enable in Sleep           and Stop modes register</description>
+          <name>C2AHB4SMENR</name>
+          <displayName>C2AHB4SMENR</displayName>
+          <description>CPU2 AHB4 peripheral clocks enable in Sleep and Stop modes register</description>
           <addressOffset>0x170</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
@@ -17423,45 +16995,15 @@ Copyright (c) 2023 STMicroelectronics.
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>USBSMEN</name>
-              <description>USB FS clocks enable during CPU2 Sleep               mode</description>
-              <bitOffset>26</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CRSMEN</name>
-              <description>CRS clocks enable during CPU2 Sleep               mode</description>
-              <bitOffset>24</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>I2C3SMEN</name>
-              <description>I2C3 clocks enable during CPU2 Sleep               mode</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>I2C1SMEN</name>
               <description>I2C1 clocks enable during CPU2 Sleep               mode</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>SPI2SMEN</name>
-              <description>SPI2 clocks enable during CPU2 Sleep               mode</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>RTCAPBSMEN</name>
               <description>RTC APB clocks enable during CPU2 Sleep               mode</description>
               <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>LCDSMEN</name>
-              <description>LCD clocks enable during CPU2 Sleep               mode</description>
-              <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -17487,12 +17029,6 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>LPUART1SMEN</name>
-              <description>Low power UART 1 clocks enable during               CPU2 Sleep mode</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -17504,24 +17040,6 @@ Copyright (c) 2023 STMicroelectronics.
           <access>read-write</access>
           <resetValue>0x00265800</resetValue>
           <fields>
-            <field>
-              <name>SAI1SMEN</name>
-              <description>SAI1 clocks enable during CPU2 Sleep               mode</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM17SMEN</name>
-              <description>TIM17 timer clocks enable during CPU2               Sleep mode</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TIM16SMEN</name>
-              <description>TIM16 timer clocks enable during CPU2               Sleep mode</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>USART1SMEN</name>
               <description>USART1clocks enable during CPU2 Sleep               mode</description>
@@ -17540,6 +17058,12 @@ Copyright (c) 2023 STMicroelectronics.
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+            <field>
+              <name>ADCMEN</name>
+              <description>ADC clock enable during CPU2 CSleep mode</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
           </fields>
         </register>
         <register>
@@ -17552,14 +17076,8 @@ Copyright (c) 2023 STMicroelectronics.
           <resetValue>0x0000003</resetValue>
           <fields>
             <field>
-              <name>SMEN802</name>
-              <description>802.15.4 interface clocks enable during               CPU2 Sleep modes</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>BLESMEN</name>
-              <description>BLE interface clocks enable during CPU2               Sleep mode</description>
+              <description>BLE interface clocks enable during CPU2 Sleep mode</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
@@ -25048,5 +24566,5 @@ Copyright (c) 2023 STMicroelectronics.
         </register>
       </registers>
     </peripheral>
-    </peripherals>
+  </peripherals>
 </device>
